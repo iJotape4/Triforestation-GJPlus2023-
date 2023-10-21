@@ -8,7 +8,11 @@ namespace Terraforming.Dominoes
 {
     public class DominoToken : MonoBehaviour
     {
-        DominoPole[] poles;
+        [SerializeField] DominoPole[] poles;
+        Vector2 pos;
+        Vector2 dir;
+        // Create a List to store raycast directions
+        private List<Vector2> raycastDirections = new List<Vector2>();
 
         private void Awake()
         {
@@ -17,11 +21,8 @@ namespace Terraforming.Dominoes
 
         public bool IsValidRotation(float targetRotation)
         {
-            print(targetRotation);
-          
             // Calculate the actual rotation of the token
             float actualRotation = transform.localEulerAngles.z;
-            print(actualRotation);
             // Normalize both rotations to the range [0, 360]
             actualRotation = (360 + actualRotation) % 360;
             targetRotation = (360 + targetRotation) % 360;
@@ -35,6 +36,7 @@ namespace Terraforming.Dominoes
             bool isUpwardsValid = validUpwardsRotations.Any(angle => Mathf.Abs(angle - actualRotation) < tolerance) && validUpwardsRotations.Any(angle => Mathf.Abs(angle - targetRotation) < tolerance);
             bool isDownwardsValid = validDownwardsRotations.Any(angle => Mathf.Abs(angle - actualRotation) < tolerance) && validDownwardsRotations.Any(angle => Mathf.Abs(angle - targetRotation) < tolerance);
 
+            print("valid rotation");
             return isUpwardsValid || isDownwardsValid;
         }
 
@@ -42,40 +44,60 @@ namespace Terraforming.Dominoes
         {
             foreach (DominoPole pole in poles)
             {
-                // Iterate through both possible directions (+60 and -60 degrees from Z rotation).
                 for (int direction = 0; direction < 2; direction++)
                 {
-                    // Calculate the direction vector based on the direction index.
                     float angleOffset = direction == 0 ? 60f : -60f;
                     Quaternion rotation = Quaternion.Euler(0, 0, pole.transform.eulerAngles.z + angleOffset);
-                    Vector3 directionVector = rotation * Vector3.up;
+                    Vector2 directionVector = rotation * Vector2.up;
 
-                    // Create a ray from the position of the DominoToken in the calculated direction.
-                    Ray ray = new Ray(transform.position, directionVector);
-                    RaycastHit hit;
-
-                    // Define a layer mask for the DominoPole layer.
                     int dominoPoleLayerMask = LayerMask.GetMask("DominoPole");
+                    pos = pole.transform.position;
+                    dir = directionVector;
 
-                    // Perform the raycast.
-                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, dominoPoleLayerMask))
+                    raycastDirections.Add(directionVector);
+
+                    RaycastHit2D hit = Physics2D.Raycast(pole.transform.position, directionVector, 0.8f, dominoPoleLayerMask);
+
+                    if (hit.collider != null && (dominoPoleLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
                     {
-                        DominoPole hitPole = hit.transform.GetComponent<DominoPole>();
+                        DominoPole hitPole = hit.collider.GetComponent<DominoPole>();
 
-                        // Check if the hit DominoPole has the same biome as the pole in the loop.
                         if (hitPole != null && hitPole.biome == pole.biome)
                         {
-                            // Biome matches, continue checking the next pole.
+                            print("los biomas coinciden");
                             continue;
+                        }
+                        else
+                        {
+                            print("un bioma no coincidio");
+                            return false;
                         }
                     }
                 }
             }
 
-            // If all poles have matching biomes in at least one direction, return false.
-            return false;
+            return true;
+        }
+        
+        public void TurnOnColliders()
+        {
+            foreach(DominoPole pole in poles)
+            {
+                pole.TurncolliderOn();
+            }
+        }
+
+        // Draw the raycast directions in the Update method
+        private void Update()
+        {
+            foreach (Vector2 direction in raycastDirections)
+            {
+                Debug.DrawRay(transform.position, direction * 0.8f, Color.red); // Adjust the length (10f) and color as needed
+            }
         }
 
     }
+
+
 
 }

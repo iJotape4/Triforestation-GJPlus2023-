@@ -17,19 +17,21 @@ namespace Terraforming
 
         private Vector3 initialHoveredObjectScale;
         private static GameObject currentPointerDrag;
-        public void OnDrop(PointerEventData eventData)
+        virtual public void OnDrop(PointerEventData eventData)
         {
             //Debug.Log($"OnDrop {eventData.position}", gameObject);
             DominoToken token = eventData.pointerDrag.gameObject.GetComponent<DominoToken>();
-            if (token.IsValidRotation(transform.localEulerAngles.z))
+            if (token.IsValidRotation(transform.localEulerAngles.z) && token.IsValidBiome())
             {
-                print("yesSir");
+                eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
+                eventData.pointerDrag.transform.position = transform.position;
+                token.TurnOnColliders();
+                OnDropped?.Invoke(eventData);
+                RestoreHoveredObjectScale(eventData);
             }
-            OnDropped?.Invoke(eventData);
-            RestoreHoveredObjectScale(eventData);
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        virtual public void OnPointerEnter(PointerEventData eventData)
         {
             //Debug.Log($"OnPointerEnter {eventData.position}", gameObject);
             OnPointerEntered?.Invoke(eventData);
@@ -42,7 +44,7 @@ namespace Terraforming
             EventManager.Dispatch(ObjectInteractionEvents.Hover);
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        virtual public void OnPointerExit(PointerEventData eventData)
         {
             //Debug.Log($"OnPointerExit {eventData.position}", gameObject);
             OnPointerExited?.Invoke(eventData);
@@ -50,7 +52,7 @@ namespace Terraforming
             currentPointerDrag = null;
         }
 
-        private void RestoreHoveredObjectScale(PointerEventData eventData)
+        protected void RestoreHoveredObjectScale(PointerEventData eventData)
         {
             if (initialHoveredObjectScale == Vector3.zero)
                 return;
