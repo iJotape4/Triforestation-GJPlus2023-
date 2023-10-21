@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5203429501191661404}
   - component: {fileID: 8000918181200121696}
-  - component: {fileID: 9186029307835226847}
   - component: {fileID: 8223618841658063041}
+  - component: {fileID: 3291401773535084274}
   m_Layer: 6
   m_Name: Grid Cell
   m_TagString: Untagged
@@ -86,8 +86,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &9186029307835226847
-EdgeCollider2D:
+--- !u!114 &8223618841658063041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771521485236212731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e24058de41db942b24d7b66f4a0879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &3291401773535084274
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,25 +131,18 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.05
+  m_SpriteTilingProperty:
+    border: {x: 0.768, y: 0.79200006, z: 0.93600005, w: 1.212}
+    pivot: {x: 0.47824633, y: 0.36947796}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 10, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: 0.006084919, y: 1.2870699}
-  - {x: 1.1251087, y: -0.6507354}
-  - {x: -1.1046219, y: -0.6502056}
-  - {x: 0.005704403, y: 1.287038}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!114 &8223618841658063041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6771521485236212731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26e24058de41db942b24d7b66f4a0879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    m_Paths:
+    - - {x: 0.0072922707, y: 1.2920343}
+      - {x: -1.1516654, y: -0.6751268}
+      - {x: 1.1785965, y: -0.6887971}
+  m_UseDelaunayMesh: 0
