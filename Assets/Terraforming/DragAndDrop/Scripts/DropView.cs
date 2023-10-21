@@ -18,14 +18,14 @@ namespace Terraforming
         private static GameObject currentPointerDrag;
         public void OnDrop(PointerEventData eventData)
         {
-            //Debug.Log($"OnDrop {eventData.position}", gameObject);
+            Debug.Log($"OnDrop {eventData.position}", gameObject);
             OnDropped?.Invoke(eventData);
             RestoreHoveredObjectScale(eventData);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            //Debug.Log($"OnPointerEnter {eventData.position}", gameObject);
+            Debug.Log($"OnPointerEnter {eventData.position}", gameObject);
             OnPointerEntered?.Invoke(eventData);
             currentPointerDrag = eventData.pointerDrag;
             if (eventData.pointerDrag == null || IsDraggedObjectInteractableWithMe == null || !IsDraggedObjectInteractableWithMe(eventData))
