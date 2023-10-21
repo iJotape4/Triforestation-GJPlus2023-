@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d192a5c94bb4aa4393e94f2b29d45cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poles: []
 --- !u!60 &1509535163650539618
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -199,10 +200,22 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Name
       value: Pole (R)
       objectReference: {fileID: 0}
+    - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: poleCollider
+      value: 
+      objectReference: {fileID: 5189169515282249340}
     - target: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.284
@@ -248,6 +261,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+--- !u!60 &5189169515282249340 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+  m_PrefabInstance: {fileID: 255811502643198828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6830538981804189950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
@@ -277,10 +295,22 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Name
       value: Pole (L)
       objectReference: {fileID: 0}
+    - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: poleCollider
+      value: 
+      objectReference: {fileID: 8815884103800808625}
     - target: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.008
@@ -331,6 +361,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
   m_PrefabInstance: {fileID: 3591408466232732065}
   m_PrefabAsset: {fileID: 0}
+--- !u!60 &8815884103800808625 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+  m_PrefabInstance: {fileID: 3591408466232732065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6352748913603901759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -355,10 +390,22 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Name
       value: Pole (UP)
       objectReference: {fileID: 0}
+    - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: poleCollider
+      value: 
+      objectReference: {fileID: 1415834938664907823}
     - target: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.283
@@ -407,5 +454,10 @@ PrefabInstance:
 --- !u!4 &391636481032055469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+  m_PrefabInstance: {fileID: 6352748913603901759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &1415834938664907823 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
   m_PrefabInstance: {fileID: 6352748913603901759}
   m_PrefabAsset: {fileID: 0}
