@@ -6,7 +6,7 @@ namespace Terraforming.Dominoes
     {
 
         SpriteRenderer spriteRenderer;
-        ENUM_Biome biome;
+        public ENUM_Biome biome;
         BiomesManager biomesManager;
         private void Awake()
         {
