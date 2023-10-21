@@ -52,10 +52,30 @@ namespace Terraforming
         public void OnEndDrag(PointerEventData eventData)
         {
             //Debug.Log($"OnEndDrag {eventData.position}", gameObject);
-            transform.position = initialDragPosition;
-            collider.enabled = true;    
-            isDragging= false;
+            if (ValidateDrop())
+                Drop();
+            else
+                ReturnToPosition();
+
+
             OnDragEnded?.Invoke(eventData);
+        }
+        bool ValidateDrop()
+        {
+            //TODO : Depending if the object was placed in a right way
+            return false;
+        }
+
+        void ReturnToPosition()
+        {
+            transform.position = initialDragPosition;
+            collider.enabled = true;
+            isDragging = false;
+        }
+
+        void Drop()
+        {
+            //TODO : What should I do if drop is valid?
         }
 
         public void ForceAllowDragging() => draggingAllowed = true;
