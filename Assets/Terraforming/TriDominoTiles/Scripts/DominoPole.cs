@@ -14,7 +14,7 @@ namespace Terraforming.Dominoes
             biomesManager = BiomesManager.Instance;
         }
 
-        private void Start()
+        private void OnEnable()
         {
             biome = UsefulMethods.GetRandomFromEnum<ENUM_Biome>();
             SetBioma();
