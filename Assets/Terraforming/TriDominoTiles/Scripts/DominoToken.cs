@@ -51,10 +51,10 @@ namespace Terraforming.Dominoes
                     Vector2 directionVector = rotation * Vector2.up;
 
                     int dominoPoleLayerMask = LayerMask.GetMask("DominoPole");
-                    pos = pole.transform.position;
-                    dir = directionVector;
+                    ///pos = pole.transform.position;
+                    //dir = directionVector;
 
-                    raycastDirections.Add(directionVector);
+                    //raycastDirections.Add(directionVector);
 
                     RaycastHit2D hit = Physics2D.Raycast(pole.transform.position, directionVector, 0.8f, dominoPoleLayerMask);
 

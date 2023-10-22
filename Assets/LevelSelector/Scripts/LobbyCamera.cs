@@ -47,8 +47,9 @@ namespace LevelSelector
                         pointer_y = Input.GetTouch(0).deltaPosition.y;
                         MoveCamera();
                     }
+                    }
 #endif
-                }
+                
             }
         }
 
