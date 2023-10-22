@@ -1,10 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Terraforming.Dominoes
 {
-    public class DominoPole : MonoBehaviour
-    {
-
+    public class DominoPole : DropView 
+    { 
         SpriteRenderer spriteRenderer;
         public ENUM_Biome biome;
         BiomesManager biomesManager;
@@ -36,6 +36,11 @@ namespace Terraforming.Dominoes
         {
             biome = UsefulMethods.GetRandomFromEnum<ENUM_Biome>();
             SetBioma();
+
+        public override void OnDrop(PointerEventData eventData)
+        {
+            Debug.Log($"OnDrop {eventData.position}", gameObject);
+            RestoreHoveredObjectScale(eventData);
         }
     }
 }
