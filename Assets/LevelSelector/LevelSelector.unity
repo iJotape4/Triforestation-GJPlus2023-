@@ -670,6 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1073317579}
   - component: {fileID: 1073317578}
+  - component: {fileID: 1073317580}
   - component: {fileID: 1073317577}
   - component: {fileID: 1073317576}
   m_Layer: 5
@@ -762,6 +763,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1073317580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073317575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88dbdbb322050c34a9c7e80ab1a2d187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1487068207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1511,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1815787653408228528}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1073317580}
+        m_TargetAssemblyTypeName: LevelSelector.PlayButton, LevelSelector
+        m_MethodName: ClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1815787653408228531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1539,7 +1564,6 @@ GameObject:
   - component: {fileID: 1815787653408228531}
   - component: {fileID: 1815787653408228528}
   - component: {fileID: 1815787653408228529}
-  - component: {fileID: 1815787653408228536}
   - component: {fileID: 1815787653408228537}
   m_Layer: 5
   m_Name: PlayButton
@@ -1548,21 +1572,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1815787653408228536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815787653408228535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88dbdbb322050c34a9c7e80ab1a2d187, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: SwapPoles
-  pregamePopUp: {fileID: 0}
-  playButton: {fileID: 0}
 --- !u!61 &1815787653408228537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1872,7 +1881,7 @@ GameObject:
   - component: {fileID: 1815787654863511589}
   - component: {fileID: 4857224281113577753}
   m_Layer: 5
-  m_Name: Play
+  m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
