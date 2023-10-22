@@ -59,8 +59,7 @@ namespace Terraforming.Dominoes
         }
 
         public override void OnDrop(PointerEventData eventData)
-        {
-            Debug.Log($"OnDrop {eventData.position}", gameObject);
+        { 
             RestoreHoveredObjectScale(eventData);
         }
 
@@ -70,11 +69,6 @@ namespace Terraforming.Dominoes
             if (index >= 0 && index < biomesManager.biomesSprites.Length)
             {
                 spriteRenderer.sprite = biomesManager.biomesSprites[index];
-            }
-            else
-            {
-                print("El bioma raro fue: " + biome);
-                Debug.LogError("Invalid biome index: " + index);
             }
         }
 

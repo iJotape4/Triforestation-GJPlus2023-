@@ -75,7 +75,6 @@ namespace Terraforming.Dominoes
 
                     RaycastHit2D hit = Physics2D.Raycast(pole.transform.position, directionVector, 0.8f, dominoPoleLayerMask);
 
-                    Debug.DrawRay(pole.transform.position, directionVector * 0.8f, Color.red, 2.5f);
                     if (hit.collider != null)
                     {
                         DominoPole hitPole = hit.collider.GetComponent<DominoPole>();

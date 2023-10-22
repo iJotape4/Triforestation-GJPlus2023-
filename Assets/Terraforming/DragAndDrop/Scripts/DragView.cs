@@ -110,6 +110,11 @@ namespace Terraforming
 
                 // Change the layer of the parent GameObject to the default layer
                 parentObject.layer = LayerMask.NameToLayer("Default");
+                EventManager.RemoveListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
+                EventManager.RemoveListener(ENUM_DominoeEvent.validSwap, DisableClicking);
+                draggingAllowed = false;
+
+ 
             }
         }
 
