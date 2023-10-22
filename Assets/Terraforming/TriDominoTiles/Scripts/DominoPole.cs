@@ -1,10 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Terraforming.Dominoes
 {
-    public class DominoPole : MonoBehaviour
-    {
-
+    public class DominoPole : DropView 
+    { 
         SpriteRenderer spriteRenderer;
         ENUM_Biome biome;
         BiomesManager biomesManager;
@@ -24,6 +24,13 @@ namespace Terraforming.Dominoes
         {
             //TODO bioma 
             spriteRenderer.sprite = biomesManager.biomesSprites[(int)biome];              
+        }
+
+
+        public override void OnDrop(PointerEventData eventData)
+        {
+            Debug.Log($"OnDrop {eventData.position}", gameObject);
+            RestoreHoveredObjectScale(eventData);
         }
     }
 }
