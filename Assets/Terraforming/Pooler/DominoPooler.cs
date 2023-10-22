@@ -82,9 +82,9 @@ public class DominoPooler : MonoBehaviour
 
         // Update the order in layer to ensure the rightmost domino is on top.
         UpdateOrderInLayer();
+        Invoke("GetNextDomino", 0.2f);
         Invoke("GetNextDomino", 0.5f);
         Invoke("GetNextDomino", 0.8f);
-        Invoke("GetNextDomino", 1.0f);
     }
     //[ContextMenu("Get next domino")]
 
@@ -96,6 +96,7 @@ public class DominoPooler : MonoBehaviour
             if(_nextPosition == null)
             {
                 EventManager.Dispatch(ENUM_DominoeEvent.punishEvent);
+                TweenOver();
                 return null;
             }
 
@@ -125,11 +126,13 @@ public class DominoPooler : MonoBehaviour
 
                     // Rotate the GameObject back to 0 degrees
                     domino.transform.DORotate(Vector3.zero, moveDuration);
+
+                    TweenOver();
                 });
 
             // Play the sequence
             uncoverSequence.Play();
-            TweenOver();
+ 
             return domino;
         }
 
