@@ -55,7 +55,9 @@ public class DominoPooler : MonoBehaviour
 
         // Update the order in layer to ensure the rightmost domino is on top.
         UpdateOrderInLayer();
-        GetNextDomino();
+        Invoke("GetNextDomino", 0.5f);
+        Invoke("GetNextDomino", 0.8f);
+        Invoke("GetNextDomino", 1.0f);
     }
     [ContextMenu("Get next domino")]
     public DominoToken GetNextDomino()
