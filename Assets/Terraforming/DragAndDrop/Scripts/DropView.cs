@@ -11,7 +11,6 @@ namespace Terraforming
     {
         public event Action<PointerEventData> OnPointerEntered;
         public event Action<PointerEventData> OnPointerExited;
-        public event Action<PointerEventData> OnDropped;
 
         public Func<PointerEventData, bool> IsDraggedObjectInteractableWithMe;
 
@@ -26,7 +25,7 @@ namespace Terraforming
                 eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
                 eventData.pointerDrag.transform.position = transform.position;
                 token.TurnOnColliders();
-                OnDropped?.Invoke(eventData);
+                EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
                 RestoreHoveredObjectScale(eventData);
             }
         }
