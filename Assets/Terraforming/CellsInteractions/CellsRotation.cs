@@ -55,8 +55,6 @@ public class CellsRotation : MonoBehaviour
             isOver = false;
             Rotate(rotationSense);
         }
-
-       
     }
 
 }
