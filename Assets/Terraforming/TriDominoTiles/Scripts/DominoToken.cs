@@ -57,7 +57,13 @@ namespace Terraforming.Dominoes
 
         public bool IsValidBiome()
         {
-            int possibleConections = 0;
+            // Dictionary to store connection information for each pole position
+            Dictionary<ENUM_PolePosition , bool[]> poleConnections = new Dictionary<ENUM_PolePosition, bool[]>
+        {
+            { ENUM_PolePosition.Position1, new bool[2] }, // Index 0 is for "right", and Index 1 is for "left"
+            { ENUM_PolePosition.Position2, new bool[2] },
+            { ENUM_PolePosition.Position3, new bool[2] }
+};
             foreach (DominoPole pole in poles)
             {
                 for (int direction = 0; direction < 2; direction++)
@@ -75,22 +81,30 @@ namespace Terraforming.Dominoes
                     {
                         DominoPole hitPole = hit.collider.GetComponent<DominoPole>();
 
-                        if (hitPole != null && (hitPole.biome == pole.biome || ((int)hitPole.biome & (1 << (int)pole.biome  )) != 0 )) // Check if the poles match of if the pole is a subset of the comodin
+                        if (direction == 0)
                         {
-                            possibleConections++;
-                            continue;
+                            poleConnections[pole.position][0] = true; // "right" connection
                         }
                         else
                         {
-                            return false;
+                            poleConnections[pole.position][1] = true; // "left" connection
                         }
                     }
 
                 }
             }
-
-            if (possibleConections >= 2)
+            // Check if any of the specified connections are valid
+            if ((poleConnections[ENUM_PolePosition.Position1][0] && poleConnections[ENUM_PolePosition.Position3][1]) || // Pole 1 Right Raycast and Pole 3 Left Raycast
+                (poleConnections[ENUM_PolePosition.Position1][1] && poleConnections[ENUM_PolePosition.Position2][0]) || // Pole 1 Left Raycast and Pole 2 Right Raycast
+                (poleConnections[ENUM_PolePosition.Position2][1] && poleConnections[ENUM_PolePosition.Position3][0]))   // Pole 2 Left Raycast and Pole 3 Right Raycast
+            {
                 return true;
+            }
+            else
+            {
+                return false;
+            }
+
             return false;
         }
         

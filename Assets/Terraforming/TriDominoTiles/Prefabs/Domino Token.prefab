@@ -258,11 +258,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Name
-      value: Pole (R)
+      value: Pole (L)
       objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: position
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: poleCollider
@@ -353,11 +357,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Name
-      value: Pole (L)
+      value: Pole (UP)
       objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: position
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: poleCollider
@@ -448,11 +456,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Name
-      value: Pole (UP)
+      value: Pole (R)
       objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: position
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: poleCollider
