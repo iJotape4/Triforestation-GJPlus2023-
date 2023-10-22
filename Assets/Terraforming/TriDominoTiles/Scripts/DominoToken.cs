@@ -10,7 +10,7 @@ namespace Terraforming.Dominoes
     {
         [SerializeField] DominoPole[] poles;
         [SerializeField] SpriteRenderer dominoCover;
-        public float uncoverDuration = 0.8f;
+        public float uncoverDuration = 1.0f;
         // Create a List to store raycast directions
         private List<Vector2> raycastDirections = new List<Vector2>();
         private Collider2D dominoCollider;
