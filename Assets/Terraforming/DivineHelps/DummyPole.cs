@@ -49,4 +49,10 @@ public class DummyPole : DominoPole, IPointerDownHandler
         selected = selected ? false : true;
         spriteRenderer.color = selected ?  Color.grey :Color.white;
     }
+
+    public void UnselectOnCancelOrConfirm()
+    {
+        selected = false;
+        spriteRenderer.color = Color.white;
+    }
 }

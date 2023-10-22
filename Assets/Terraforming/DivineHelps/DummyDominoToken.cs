@@ -13,17 +13,25 @@ public class DummyDominoToken : MonoBehaviour
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.selectCardToSwipeEvent, SetPoles);
         EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, ConfirmSwap);
+        EventManager.AddListener(ENUM_DominoeEvent.cancelEvent, CancelSelection);
     }
+
+
     private void OnDestroy()
     {
         EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.selectCardToSwipeEvent, SetPoles);
         EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, ConfirmSwap);
+        EventManager.RemoveListener(ENUM_DominoeEvent.cancelEvent, CancelSelection);
     }
 
 
     private void Start()
     {
         poles = GetComponentsInChildren<DummyPole>();
+    }
+    private void CancelSelection()
+    {
+        SetSpritesActive(false);
     }
 
     private void SetPoles(DominoToken eventData)
@@ -40,7 +48,12 @@ public class DummyDominoToken : MonoBehaviour
     private void SetSpritesActive(bool active)
     {
         foreach (DummyPole pole in poles)
+        {
             pole.spriteRenderer.enabled = active;
+
+            if (!active)
+                pole.UnselectOnCancelOrConfirm();
+        }
     }
 
     public int GetSelectedPolesCount()

@@ -7,5 +7,6 @@ public class ButtonConfirm : UIButton
     protected override void ClickButtonMethod()
     {
         EventManager.Dispatch(currentConfirmableEvent);
+        EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, true);
     }
 }
