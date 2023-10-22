@@ -23,14 +23,18 @@ public class DominoPooler : MonoBehaviour
     [SerializeField, ReadOnly] private List<DominoToken> currentDominoesList;
     public float moveDuration = 0.5f; // Duration of the animation
 
+    private bool canDeployPunishment = true;
+
     private void Awake()
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
+        EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
     }
 
     private void OnDestroy()
     {
-        EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);        
+        EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
+       EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
     }
 
     private void OnDominoDropped(DominoToken domino)
@@ -98,7 +102,12 @@ public class DominoPooler : MonoBehaviour
             Transform _nextPosition = GetNextFreePosition();
             if(_nextPosition == null)
             {
-                EventManager.Dispatch(ENUM_DominoeEvent.punishEvent);
+                if (canDeployPunishment) 
+                {
+                    EventManager.Dispatch(ENUM_DominoeEvent.punishEvent);
+                    canDeployPunishment = false;
+                }
+                
                 TweenOver();
                 return null;
             }
@@ -185,5 +194,10 @@ public class DominoPooler : MonoBehaviour
 
         // Reset the currentIndex to the beginning.
         currentIndex = 0;
+    }
+
+    private void CanDeployPunishment()
+    {
+        canDeployPunishment = true;
     }
 }
