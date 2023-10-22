@@ -36,6 +36,7 @@ namespace Terraforming.Dominoes
         {
             biome = UsefulMethods.GetRandomFromEnum<ENUM_Biome>();
             SetBioma();
+        }
 
         public override void OnDrop(PointerEventData eventData)
         {
