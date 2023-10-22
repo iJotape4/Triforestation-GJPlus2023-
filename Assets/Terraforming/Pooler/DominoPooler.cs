@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Terraforming.Dominoes;
 using UnityEngine;
 using MyBox;
+using UnityEngine.InputSystem;
+using System.Diagnostics.Tracing;
+using UnityEngine.PlayerLoop;
 
 public class DominoPooler : MonoBehaviour
 {
@@ -12,6 +15,9 @@ public class DominoPooler : MonoBehaviour
     public float dominoSpacing = 0.1f;
     private List<DominoToken> dominoes = new List<DominoToken>();
     private int currentIndex = 0;
+
+    public InputAction poolerControl;
+    private bool isTweenOver = true;
 
     public DominoSpot[] dominoesSpots; // Current domino position
     [SerializeField, ReadOnly] private List<DominoToken> currentDominoesList;
@@ -38,6 +44,27 @@ public class DominoPooler : MonoBehaviour
         CreateDominoes();
     }
 
+    private void OnEnable()
+    {
+        poolerControl.Enable();
+    }
+
+    private void OnDisable()
+    {
+        poolerControl.Disable();
+    }
+
+    public void LateUpdate()
+    {
+        float poolRequested = poolerControl.ReadValue<float>();
+
+        if( poolRequested != 0 && isTweenOver)
+        {
+            isTweenOver = false;
+            GetNextDomino();
+        }
+    }
+
     void CreateDominoes()
     {
         for (int i = 0; i < totalDominoes; i++)
@@ -59,7 +86,8 @@ public class DominoPooler : MonoBehaviour
         Invoke("GetNextDomino", 0.8f);
         Invoke("GetNextDomino", 1.0f);
     }
-    [ContextMenu("Get next domino")]
+    //[ContextMenu("Get next domino")]
+
     public DominoToken GetNextDomino()
     {
         if (currentIndex < dominoes.Count)
@@ -83,6 +111,7 @@ public class DominoPooler : MonoBehaviour
             uncoverSequence.Append(domino.transform.DOLocalMove(_nextPosition.localPosition, moveDuration))
                 .OnStart(() =>
                 {
+                    
                     // Activate the movement
                     domino.ActiveDrag();
                 });
@@ -100,10 +129,16 @@ public class DominoPooler : MonoBehaviour
 
             // Play the sequence
             uncoverSequence.Play();
+            TweenOver();
             return domino;
         }
 
         return null; // All dominoes have been used.
+    }
+
+    public void TweenOver()
+    {
+        isTweenOver = true;
     }
 
      Transform GetNextFreePosition()
