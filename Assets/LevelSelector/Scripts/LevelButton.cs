@@ -1,43 +1,55 @@
-using TMPro;
+using Events;
+using System.Collections;
 using UnityEngine;
 
 namespace LevelSelector
 {
     public class LevelButton : MonoBehaviour
     {
-
         [SerializeField] public LevelData level;
-        [SerializeField] SpriteRenderer[] stars;
-        [SerializeField] public TextMeshProUGUI text;
         [SerializeField] PregamePopUp pregamePopUP;
-        [SerializeField] CircleCollider2D circleCollider;
+        [SerializeField] Collider circleCollider;
+        [SerializeField] ParticleSystem ps;
+        Coroutine openPopUpRoutine;
 
         private void Awake()
         {
-            stars =  transform.GetChild(0).GetComponentsInChildren<SpriteRenderer>();
             pregamePopUP = FindObjectOfType<PregamePopUp>(); 
-            circleCollider= GetComponent<CircleCollider2D>(); 
+            circleCollider= GetComponent<Collider>(); 
+            ps = GetComponentInChildren<ParticleSystem>();
 
             pregamePopUP.popUpEnabled+= SwitchButtonsActivation;
+
+            EventManager.AddListener(ENUM_LevelSelectorEvent.LevelSelected, UnselectNode);
         }
-        //private void Start()
-        //{
-        //    for (int i=0; i<stars.Length; i++)
-        //    {
-        //        if (!level.stars[i])
-        //            stars[i].color= Color.black;
-        //    }
-        //}
+
+        private void OnDestroy()
+        {
+            EventManager.RemoveListener(ENUM_LevelSelectorEvent.LevelSelected, UnselectNode);           
+        }
+
+        private void UnselectNode()
+        {
+            ps.Stop();
+            if (openPopUpRoutine != null)
+                StopCoroutine(openPopUpRoutine);
+        }
 
         private void SwitchButtonsActivation(bool activated)=>
             circleCollider.enabled= !activated;
 
-        public void OnMouseDown()=>   
-            pregamePopUP.EnablePopUP(level) ;
-        
+        public void OnMouseDown()=>
+           openPopUpRoutine= StartCoroutine(LevelSelected()) ;     
+
+        IEnumerator LevelSelected()
+        {
+            EventManager.Dispatch(ENUM_LevelSelectorEvent.LevelSelected);
+            ps.Play();
+            yield return new WaitForSeconds(1f);
+            pregamePopUP.EnablePopUP(level) ;     
+        }
 
         public void OnMouseUp()=>     
-            pregamePopUP.EnablePlayButton();
-        
+            pregamePopUP.EnablePlayButton();       
     }
 }
