@@ -16,4 +16,4 @@ MonoBehaviour:
   chainLevel: 2
   aliments: 2
   biome: 8
-  sprite: {fileID: 0}
+  sprite: {fileID: -174334682, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}

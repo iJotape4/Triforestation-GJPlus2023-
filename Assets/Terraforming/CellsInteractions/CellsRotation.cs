@@ -10,10 +10,15 @@ public class CellsRotation : MonoBehaviour
 
     [SerializeField] private float tweenTime = 0.5f;
     [SerializeField] private Ease vibrationEase;
-
+    [SerializeField] PolygonCollider2D polygonCollider;
     private float rotationValue = 60f;
 
     public bool isOver = true;
+
+    private void Start()
+    {
+        polygonCollider = GetComponent<PolygonCollider2D>();
+    }
 
     private void OnEnable()
     {
@@ -26,8 +31,7 @@ public class CellsRotation : MonoBehaviour
     }
 
     public void Rotate(float rotationSense)
-    {
-        
+    {     
         float targetRotation = transform.eulerAngles.z + rotationValue * rotationSense;
 
         // Aplicar rotación suavemente usando DOTween
@@ -41,6 +45,9 @@ public class CellsRotation : MonoBehaviour
 
     private void Update()
     {
+        if (!polygonCollider.enabled)
+            return;
+
         float rotationSense = CellsControls.ReadValue<float>();
 
         if(rotationSense != 0 && isOver == true)

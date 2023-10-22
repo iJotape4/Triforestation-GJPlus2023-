@@ -18,6 +18,7 @@ namespace LevelSelector
 
             playButton.onClick.AddListener( ClickButton);
             pregamePopUp.enablePlayButton += SwitchEnablePlayButton;
+    
         }
         
         private void SwitchEnablePlayButton(bool enable)=>

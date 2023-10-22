@@ -14,7 +14,7 @@ namespace LevelSelector
         public UnityAction<bool> enablePlayButton;
 
         private int levelNum;
-      
+
         public void EnablePopUP(LevelData newLevel)
         {
             level = newLevel;
@@ -43,6 +43,7 @@ namespace LevelSelector
         private void UpdateLevel()
         {
             levelNum = level.level;
+            UpdateText(levelNum.ToString());
         }
 
         private void UpdateText(string value)=>
