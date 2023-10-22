@@ -36,7 +36,10 @@ public class DominoPooler : MonoBehaviour
     private void OnDominoDropped(DominoToken domino)
     {
         currentDominoesList.Remove(domino);
-        GetNextDomino();
+        if (currentDominoesList.Count < 3)
+        {
+            GetNextDomino();
+        }
     }
 
     void Start()
