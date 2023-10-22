@@ -49,17 +49,18 @@ namespace LevelSelector
                     }
                     }
 #endif
-                
-            }
-        }
 
-        void MoveCamera()
-        {
-            Vector3 vec3 = new Vector3(
-                    Mathf.Clamp(gameObject.transform.position.x - pointer_x, limitCollider.bounds.min.x, limitCollider.bounds.max.x),
-                    Mathf.Clamp(gameObject.transform.position.y - pointer_y, limitCollider.bounds.min.y, limitCollider.bounds.max.y),
-                    0);
-            gameObject.transform.position = Vector3.MoveTowards(transform.position, vec3, 0.3f);
+            }
+
+
+            void MoveCamera()
+            {
+                Vector3 vec3 = new Vector3(
+                        Mathf.Clamp(gameObject.transform.position.x - pointer_x, limitCollider.bounds.min.x, limitCollider.bounds.max.x),
+                        Mathf.Clamp(gameObject.transform.position.y - pointer_y, limitCollider.bounds.min.y, limitCollider.bounds.max.y),
+                        0);
+                gameObject.transform.position = Vector3.MoveTowards(transform.position, vec3, 0.3f);
+            }
         }
     }
 }

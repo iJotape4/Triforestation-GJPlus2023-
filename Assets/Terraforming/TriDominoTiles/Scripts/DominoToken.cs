@@ -3,20 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using DG.Tweening;
 namespace Terraforming.Dominoes
 {
     public class DominoToken : MonoBehaviour
     {
         [SerializeField] DominoPole[] poles;
-        Vector2 pos;
-        Vector2 dir;
+        [SerializeField] SpriteRenderer dominoCover;
+        public float uncoverDuration = 1f;
         // Create a List to store raycast directions
         private List<Vector2> raycastDirections = new List<Vector2>();
+        private Collider2D dominoCollider;
 
         private void Awake()
         {
             poles = GetComponentsInChildren<DominoPole>();
+            dominoCover = GetComponent<SpriteRenderer>();
+            dominoCollider = GetComponent<Collider2D>();
         }
 
         public bool IsValidRotation(float targetRotation)
@@ -36,12 +39,12 @@ namespace Terraforming.Dominoes
             bool isUpwardsValid = validUpwardsRotations.Any(angle => Mathf.Abs(angle - actualRotation) < tolerance) && validUpwardsRotations.Any(angle => Mathf.Abs(angle - targetRotation) < tolerance);
             bool isDownwardsValid = validDownwardsRotations.Any(angle => Mathf.Abs(angle - actualRotation) < tolerance) && validDownwardsRotations.Any(angle => Mathf.Abs(angle - targetRotation) < tolerance);
 
-            print("valid rotation");
             return isUpwardsValid || isDownwardsValid;
         }
 
         public bool IsValidBiome()
         {
+            int possibleConections = 0;
             foreach (DominoPole pole in poles)
             {
                 for (int direction = 0; direction < 2; direction++)
@@ -51,51 +54,77 @@ namespace Terraforming.Dominoes
                     Vector2 directionVector = rotation * Vector2.up;
 
                     int dominoPoleLayerMask = LayerMask.GetMask("DominoPole");
-                    ///pos = pole.transform.position;
-                    //dir = directionVector;
 
-                    //raycastDirections.Add(directionVector);
 
                     RaycastHit2D hit = Physics2D.Raycast(pole.transform.position, directionVector, 0.8f, dominoPoleLayerMask);
 
-                    if (hit.collider != null && (dominoPoleLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
+                    if (hit.collider != null)
                     {
                         DominoPole hitPole = hit.collider.GetComponent<DominoPole>();
 
-                        if (hitPole != null && hitPole.biome == pole.biome)
+                        if (hitPole != null && (hitPole.biome == pole.biome || ((int)hitPole.biome & (1 << (int)pole.biome  )) != 0 )) // Check if the poles match of if the pole is a subset of the comodin
                         {
-                            print("los biomas coinciden");
+                            possibleConections++;
                             continue;
                         }
                         else
                         {
-                            print("un bioma no coincidio");
                             return false;
                         }
                     }
+
                 }
             }
 
-            return true;
+            if (possibleConections >= 2)
+                return true;
+            return false;
         }
         
         public void TurnOnColliders()
         {
             foreach(DominoPole pole in poles)
             {
-                pole.TurncolliderOn();
+                pole.TurnColliderOn();
             }
         }
 
-        // Draw the raycast directions in the Update method
-        private void Update()
+        public void TurnOffColliders()
         {
-            foreach (Vector2 direction in raycastDirections)
+            foreach (DominoPole pole in poles)
             {
-                Debug.DrawRay(transform.position, direction * 0.8f, Color.red); // Adjust the length (10f) and color as needed
+                pole.TurnColliderOff();
             }
         }
 
+        public void UncoverDomino()
+        {
+            // Rotate the GameObject by 90 degrees in the Y-axis
+            transform.DORotate(new Vector3(0, 90, 0), uncoverDuration)
+                .OnComplete(() =>
+                {
+                    // Deactivate the dominoCover
+                    dominoCover.enabled = false;
+
+                    // Rotate the GameObject back to 0 degrees
+                    transform.DORotate(Vector3.zero, uncoverDuration);
+                });
+        }
+
+        public void ResetDomino()
+        {
+            dominoCover.enabled = true;
+            dominoCollider.enabled = false;
+            foreach (DominoPole pole in poles)
+            {
+                pole.AssignBiome();
+            }
+        }
+
+        public void ActiveDrag()
+        {
+            dominoCollider.enabled = true;
+        }
     }
 
 
