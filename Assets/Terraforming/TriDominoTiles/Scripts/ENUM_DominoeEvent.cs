@@ -1,5 +1,6 @@
 public enum ENUM_DominoeEvent
 {
+    None = 0,
     getCardEvent,
     punishEvent,
     selectDoneEvent,
@@ -9,4 +10,5 @@ public enum ENUM_DominoeEvent
     confirmSwapEvent,
     setActivePlayFieldObjects,
     cancelEvent,
+    validSwap,
 }
