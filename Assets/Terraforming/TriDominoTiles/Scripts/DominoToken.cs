@@ -13,8 +13,6 @@ namespace Terraforming.Dominoes
         [SerializeField] public DominoPole[] poles;
         [SerializeField] SpriteRenderer dominoCover;
         public float uncoverDuration = 1f;
-        // Create a List to store raycast directions
-        private List<Vector2> raycastDirections = new List<Vector2>();
         private Collider2D dominoCollider;
 
         private void Awake()
@@ -88,12 +86,10 @@ namespace Terraforming.Dominoes
                             if (direction == 0)
                             {
                                 poleConnections[pole.position][1] = true; // "left" connection
-                                print("Pole: " + pole.position + " left conection");
                             }
                             else
                             {
                                 poleConnections[pole.position][0] = true; // "right" connection
-                                print("Pole: " + pole.position + " right conection");
                             }
                         }
 

@@ -26,6 +26,7 @@ namespace Terraforming
                 eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
                 eventData.pointerDrag.transform.position = transform.position;
                 token.TurnOnColliders();
+                gameObject.SetActive(false);
                 EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
                 RestoreHoveredObjectScale(eventData);
             }

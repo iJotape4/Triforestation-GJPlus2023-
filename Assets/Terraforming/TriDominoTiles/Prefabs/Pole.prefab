@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 2477637301919541156}
   - component: {fileID: 5980833006572162719}
   - component: {fileID: 5444694833500163344}
-  - component: {fileID: 9166280567388712725}
-  - component: {fileID: 5122445878185396330}
   m_Layer: 7
   m_Name: Pole
   m_TagString: Untagged
@@ -153,27 +151,3 @@ PolygonCollider2D:
       - {x: 0.006647183, y: -0.30332765}
       - {x: 0.54526794, y: 0.007653338}
   m_UseDelaunayMesh: 0
---- !u!114 &9166280567388712725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5468327343141673701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623367f8a7a575d4ca3a0a31ff1b9bb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5122445878185396330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5468327343141673701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9f4f29b6c138f44f85a410fa5e7a465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
