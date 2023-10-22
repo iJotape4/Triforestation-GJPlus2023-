@@ -1,5 +1,6 @@
 public enum ENUM_DominoeEvent
 {
+    None = 0,
     getCardEvent,
     punishEvent,
     selectDoneEvent,

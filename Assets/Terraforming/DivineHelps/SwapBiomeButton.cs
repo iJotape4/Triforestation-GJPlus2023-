@@ -1,6 +1,5 @@
 using Events;
-
-public class SwapBiome : UIButton
+public class SwapBiomeButton : UIButton
 {
     protected override void ClickButtonMethod()
     {
