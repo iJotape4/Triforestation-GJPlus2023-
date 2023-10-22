@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6168212283995880369
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1791664214015843626, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_Name
+      value: Acid Rain Token
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910753812137507507, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: biome
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945268102068021374, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: biome
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693296417114405088, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: biome
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843873389650382626, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.5533333
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843873389650382626, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.1555555
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986771577185787250, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2b480e85b93cea42999195a0a80fbb3, type: 3}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211230881198050938, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}

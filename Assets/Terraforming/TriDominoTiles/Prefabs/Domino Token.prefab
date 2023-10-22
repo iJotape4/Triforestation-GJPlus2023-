@@ -249,6 +249,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2477637301919541156, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477637301919541156, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
@@ -315,13 +319,48 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1765104765493282730}
+    - targetCorrespondingSourceObject: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4146342232947510465}
   m_SourcePrefab: {fileID: 100100000, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
 --- !u!60 &5189169515282249340 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
   m_PrefabInstance: {fileID: 255811502643198828}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5219590105290924425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+  m_PrefabInstance: {fileID: 255811502643198828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1765104765493282730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5219590105290924425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623367f8a7a575d4ca3a0a31ff1b9bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4146342232947510465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5219590105290924425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f4f29b6c138f44f85a410fa5e7a465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6830538981804189950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
@@ -346,6 +385,10 @@ PrefabInstance:
     - target: {fileID: 2477637301919541156, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477637301919541156, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2477637301919541156, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -414,13 +457,48 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6174246835113652335}
+    - targetCorrespondingSourceObject: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8966217127518789511}
   m_SourcePrefab: {fileID: 100100000, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
 --- !u!4 &7823067904865598003 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
   m_PrefabInstance: {fileID: 3591408466232732065}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8805760236915929924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
+  m_PrefabInstance: {fileID: 3591408466232732065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6174246835113652335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805760236915929924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623367f8a7a575d4ca3a0a31ff1b9bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8966217127518789511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805760236915929924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f4f29b6c138f44f85a410fa5e7a465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &8815884103800808625 stripped
 PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
@@ -434,42 +512,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3322478854557466938}
     m_Modifications:
-    - target: {fileID: 2477637301919541156, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
-      propertyPath: m_Size.x
-      value: 0.023
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477637301919541156, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
-      propertyPath: m_Size.y
-      value: 0.0236
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477637301919541156, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477637301919541156, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_Name
       value: Pole (R)
       objectReference: {fileID: 0}
-    - target: {fileID: 5468327343141673701, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
-      propertyPath: position
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980833006572162719, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
-      propertyPath: poleCollider
-      value: 
-      objectReference: {fileID: 1415834938664907823}
     - target: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.268
@@ -518,10 +564,5 @@ PrefabInstance:
 --- !u!4 &391636481032055469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6721094916411495314, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
-  m_PrefabInstance: {fileID: 6352748913603901759}
-  m_PrefabAsset: {fileID: 0}
---- !u!60 &1415834938664907823 stripped
-PolygonCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5444694833500163344, guid: 391d22d67912bed48b8b6b4bdf3299dd, type: 3}
   m_PrefabInstance: {fileID: 6352748913603901759}
   m_PrefabAsset: {fileID: 0}
