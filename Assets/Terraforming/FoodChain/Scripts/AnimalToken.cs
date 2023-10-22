@@ -5,7 +5,7 @@ public class AnimalToken : MonoBehaviour
 {
     [SerializeField] SpriteRenderer tokenSpr, animalSpr;
     [SerializeField] SpriteRenderer[] biomeSpr;
-    [SerializeField] Animal animal;
+    [SerializeField] public Animal animal;
     [SerializeField] Transform biomesParent;
     AnimalsManager animalsManager;
     private void Awake()

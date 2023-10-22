@@ -1,4 +1,3 @@
-using Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public enum ENUM_PolePosition
@@ -60,8 +59,19 @@ namespace Terraforming.Dominoes
 
         public override void OnDrop(PointerEventData eventData)
         {
-            Debug.Log($"OnDrop {eventData.position}", gameObject);
-            RestoreHoveredObjectScale(eventData);
+            if (biome == 0)
+                return;
+
+            AnimalToken token = eventData.pointerDrag.gameObject.GetComponent<AnimalToken>();
+
+            if (token == null)
+                return;
+
+            if ( (token.animal.biome &  biome ) == biome)
+            {
+                Debug.Log("isValid");
+                token.GetComponent<DragView>().ValidateDrop();
+            }
         }
 
         protected void SetBioma()
