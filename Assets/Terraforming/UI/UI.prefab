@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ev: 5
-  disableEvent: 7
+  disableEvent: 10
 --- !u!1 &3332532524031853282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ev: 5
-  disableEvent: 7
+  disableEvent: 10
 --- !u!1 &5994086824039674227
 GameObject:
   m_ObjectHideFlags: 0

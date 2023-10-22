@@ -10,4 +10,5 @@ public enum ENUM_DominoeEvent
     confirmSwapEvent,
     setActivePlayFieldObjects,
     cancelEvent,
+    validSwap,
 }
