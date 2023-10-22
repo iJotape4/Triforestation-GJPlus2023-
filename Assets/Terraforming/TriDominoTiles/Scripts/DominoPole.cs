@@ -6,8 +6,10 @@ namespace Terraforming.Dominoes
     {
 
         SpriteRenderer spriteRenderer;
-        ENUM_Biome biome;
+        public ENUM_Biome biome;
         BiomesManager biomesManager;
+
+        public Collider2D poleCollider;
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -24,6 +26,11 @@ namespace Terraforming.Dominoes
         {
             //TODO bioma 
             spriteRenderer.sprite = biomesManager.biomesSprites[(int)biome];              
+        }
+
+        public void TurncolliderOn()
+        {
+            poleCollider.enabled = true;
         }
     }
 }

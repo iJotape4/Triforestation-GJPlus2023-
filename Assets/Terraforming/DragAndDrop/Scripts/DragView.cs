@@ -16,6 +16,8 @@ namespace Terraforming
         private Vector3 initialDragPosition;
         private Vector3 currentDragPosition;
 
+        private bool validDrop = false;
+
         bool isDragging, draggingAllowed = true;
         private void Awake()
         {
@@ -52,7 +54,7 @@ namespace Terraforming
         public void OnEndDrag(PointerEventData eventData)
         {
             //Debug.Log($"OnEndDrag {eventData.position}", gameObject);
-            if (ValidateDrop())
+            if (validDrop)
                 Drop();
             else
                 ReturnToPosition();
@@ -60,10 +62,9 @@ namespace Terraforming
 
             OnDragEnded?.Invoke(eventData);
         }
-        bool ValidateDrop()
+        public void ValidateDrop()
         {
-            //TODO : Depending if the object was placed in a right way
-            return false;
+            validDrop = true;
         }
 
         void ReturnToPosition()
@@ -75,7 +76,15 @@ namespace Terraforming
 
         void Drop()
         {
-            //TODO : What should I do if drop is valid?
+            // Check if there is a parent GameObject
+            if (gameObject.transform.parent != null)
+            {
+                // Get the parent GameObject
+                GameObject parentObject = gameObject.transform.parent.gameObject;
+
+                // Change the layer of the parent GameObject to the default layer
+                parentObject.layer = LayerMask.NameToLayer("Default");
+            }
         }
 
         public void ForceAllowDragging() => draggingAllowed = true;
