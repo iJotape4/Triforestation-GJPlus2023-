@@ -4,4 +4,7 @@ public enum ENUM_DominoeEvent
     punishEvent,
     selectDoneEvent,
     dominoDroppedEvent,
+    startSwapEvent,
+    selectCardToSwipeEvent,
+    confirmSwapEvent,
 }

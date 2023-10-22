@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using Events;
+
 namespace Terraforming.Dominoes
 {
     public class DominoToken : MonoBehaviour
     {
-        [SerializeField] DominoPole[] poles;
+        [SerializeField] public DominoPole[] poles;
         [SerializeField] SpriteRenderer dominoCover;
         public float uncoverDuration = 1f;
         // Create a List to store raycast directions
@@ -20,6 +22,17 @@ namespace Terraforming.Dominoes
             poles = GetComponentsInChildren<DominoPole>();
             dominoCover = GetComponent<SpriteRenderer>();
             dominoCollider = GetComponent<Collider2D>();
+
+        }
+        private void OnDestroy()
+        {
+            
+        }
+
+        private void SetActive(bool eventData)
+        {
+           dominoCover.enabled = eventData;
+           dominoCollider.enabled = eventData;
         }
 
         public bool IsValidRotation(float targetRotation)
@@ -126,7 +139,4 @@ namespace Terraforming.Dominoes
             dominoCollider.enabled = true;
         }
     }
-
-
-
 }

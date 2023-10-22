@@ -1,11 +1,12 @@
 using Events;
 using UnityEngine;
 
-public class DivineHelpsBrain : MonoBehaviour
+public class DivineHelpsManager : SinglentonParent<DivineHelpsManager>
 {
     [SerializeField] GameObject divineHelpsPanel;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         EventManager.AddListener(ENUM_DominoeEvent.selectDoneEvent, EnableDivineHelpsPanel);
     }
 
@@ -17,5 +18,9 @@ public class DivineHelpsBrain : MonoBehaviour
     private void EnableDivineHelpsPanel()
     {
         divineHelpsPanel.SetActive(true);
+    }   
+    public void DisableDivineHelpsPanel()
+    {
+        divineHelpsPanel.SetActive(false);
     }
 }

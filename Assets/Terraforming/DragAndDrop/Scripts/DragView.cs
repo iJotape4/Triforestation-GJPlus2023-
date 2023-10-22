@@ -1,11 +1,14 @@
-﻿using System;
+﻿using DG.Tweening;
+using Events;
+using System;
+using Terraforming.Dominoes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Terraforming
 {
     [RequireComponent(typeof(Collider2D))]
-    public class DragView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class DragView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
     {
         public event Action<PointerEventData> OnDragBegan;
         public event Action<PointerEventData> OnDragEnded;
@@ -19,12 +22,36 @@ namespace Terraforming
         private bool validDrop = false;
 
         bool isDragging, draggingAllowed = true;
+
+        [Header("In Divine Dones Properties")]
+        private bool validClickInDivineDone = false;
+
         private void Awake()
         {
             mainCamera = Camera.main;
             collider = GetComponent<Collider2D>();
+            EventManager.AddListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
+            EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, DisableClicking);
         }
 
+        private void OnDestroy()
+        {
+            EventManager.RemoveListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
+            EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, DisableClicking);
+        }
+
+        private void EnableClicking()
+        {
+            draggingAllowed = false;
+            validClickInDivineDone = true;
+        }
+
+
+        private void DisableClicking()
+        {
+            draggingAllowed = true;
+            validClickInDivineDone = false;
+        }
         public void OnBeginDrag(PointerEventData eventData)
         {
             if (!draggingAllowed) return;
@@ -89,5 +116,12 @@ namespace Terraforming
 
         public void ForceAllowDragging() => draggingAllowed = true;
         public void ForceEndDrag(bool inTutorial) => draggingAllowed = !inTutorial;
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            if(!validClickInDivineDone) return;
+
+            EventManager.Dispatch(ENUM_DominoeEvent.selectCardToSwipeEvent,GetComponent<DominoToken>());
+        }
     }
 }

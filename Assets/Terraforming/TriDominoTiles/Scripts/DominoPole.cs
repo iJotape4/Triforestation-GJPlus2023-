@@ -1,3 +1,4 @@
+using Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -5,18 +6,28 @@ namespace Terraforming.Dominoes
 {
     public class DominoPole : DropView 
     { 
-        SpriteRenderer spriteRenderer;
+        public SpriteRenderer spriteRenderer;
         public ENUM_Biome biome;
-        BiomesManager biomesManager;
+        protected BiomesManager biomesManager;
 
         public Collider2D poleCollider;
-        private void Awake()
+        protected virtual void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            poleCollider = GetComponent<Collider2D>();
             biomesManager = BiomesManager.Instance;
         }
 
-        public void TurnColliderOn()
+    private void SetActive(bool eventData)
+    {
+        if (transform.parent.parent == null)
+            return;
+
+        spriteRenderer.enabled = eventData;
+        poleCollider.enabled = eventData;
+    }
+
+    public void TurnColliderOn()
         {
             poleCollider.enabled = true;
         }
@@ -26,9 +37,15 @@ namespace Terraforming.Dominoes
             poleCollider.enabled = true;
         }
 
-        public void AssignBiome()
+        public virtual void AssignBiome()
         {
             biome = UsefulMethods.GetRandomFromEnum<ENUM_Biome>();
+            SetBioma();
+        }
+
+        public virtual void AssignBiome(ENUM_Biome _biome)
+        {
+            biome = _biome;
             SetBioma();
         }
 
@@ -38,7 +55,7 @@ namespace Terraforming.Dominoes
             RestoreHoveredObjectScale(eventData);
         }
 
-        public void SetBioma()
+        protected void SetBioma()
         {
             int index = GetBiomeIndex(biome);
             if (index >= 0 && index < biomesManager.biomesSprites.Length)
@@ -52,7 +69,7 @@ namespace Terraforming.Dominoes
             }
         }
 
-        private int GetBiomeIndex(ENUM_Biome biome)
+        protected int GetBiomeIndex(ENUM_Biome biome)
         {
             switch (biome)
             {
