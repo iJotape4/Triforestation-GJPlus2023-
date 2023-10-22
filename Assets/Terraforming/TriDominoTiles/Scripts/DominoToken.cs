@@ -77,11 +77,12 @@ namespace Terraforming.Dominoes
 
                     RaycastHit2D hit = Physics2D.Raycast(pole.transform.position, directionVector, 0.8f, dominoPoleLayerMask);
 
+                    Debug.DrawRay(pole.transform.position, directionVector * 0.8f, Color.red, 2.5f);
                     if (hit.collider != null)
                     {
                         DominoPole hitPole = hit.collider.GetComponent<DominoPole>();
 
-                        if (hitPole != null && (hitPole.biome == pole.biome || ((int)hitPole.biome & (1 << (int)pole.biome)) != 0)) // Check if the poles match of if the pole is a subset of the comodin
+                        if (hitPole != null && (hitPole.biome == pole.biome || ((int)hitPole.biome == -1)))// Check if the poles match of if the pole is a subset of the comodin
                         {
 
                             if (direction == 0)
