@@ -10,7 +10,7 @@ namespace Terraforming.Dominoes
     {
         [SerializeField] DominoPole[] poles;
         [SerializeField] SpriteRenderer dominoCover;
-        public float uncoverDuration = 1.0f;
+        public float uncoverDuration = 1f;
         // Create a List to store raycast directions
         private List<Vector2> raycastDirections = new List<Vector2>();
         private Collider2D dominoCollider;
@@ -44,6 +44,7 @@ namespace Terraforming.Dominoes
 
         public bool IsValidBiome()
         {
+            int possibleConections = 0;
             foreach (DominoPole pole in poles)
             {
                 for (int direction = 0; direction < 2; direction++)
@@ -61,8 +62,9 @@ namespace Terraforming.Dominoes
                     {
                         DominoPole hitPole = hit.collider.GetComponent<DominoPole>();
 
-                        if (hitPole != null && hitPole.biome == pole.biome)
+                        if (hitPole != null && (hitPole.biome == pole.biome || ((int)hitPole.biome & (1 << (int)pole.biome  )) != 0 )) // Check if the poles match of if the pole is a subset of the comodin
                         {
+                            possibleConections++;
                             continue;
                         }
                         else
@@ -70,10 +72,13 @@ namespace Terraforming.Dominoes
                             return false;
                         }
                     }
+
                 }
             }
 
-            return true;
+            if (possibleConections >= 2)
+                return true;
+            return false;
         }
         
         public void TurnOnColliders()

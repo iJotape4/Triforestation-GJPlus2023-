@@ -35,7 +35,7 @@ public class DominoPooler : MonoBehaviour
         }
 
         // Update the order in layer to ensure the rightmost domino is on top.
-        //UpdateOrderInLayer();
+        UpdateOrderInLayer();
     }
     [ContextMenu("Get next domino")]
     public DominoToken GetNextDomino()
@@ -44,10 +44,31 @@ public class DominoPooler : MonoBehaviour
         {
             DominoToken domino = dominoes[currentIndex];
             currentIndex++;
-            domino.UncoverDomino();
 
-            domino.transform.DOLocalMove(currentDomino.localPosition, moveDuration).OnComplete(() => domino.ActiveDrag());
+            // Create a new DOTween sequence
+            Sequence uncoverSequence = DOTween.Sequence();
 
+            // Add the local move animation to the sequence
+            uncoverSequence.Append(domino.transform.DOLocalMove(currentDomino.localPosition, moveDuration))
+                .OnStart(() =>
+                {
+                    // Activate the movement
+                    domino.ActiveDrag();
+                });
+
+            // Add the rotation animation (both parts) to the sequence using Join
+            uncoverSequence.Join(domino.transform.DORotate(new Vector3(0, 90, 0), moveDuration, RotateMode.WorldAxisAdd))
+                .OnComplete(() =>
+                {
+                    // Deactivate the dominoCover
+                    domino.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+                    // Rotate the GameObject back to 0 degrees
+                    domino.transform.DORotate(Vector3.zero, moveDuration);
+                });
+
+            // Play the sequence
+            uncoverSequence.Play();
             return domino;
         }
 
@@ -56,9 +77,9 @@ public class DominoPooler : MonoBehaviour
 
     void UpdateOrderInLayer()
     {
-        for (int i = 0; i < currentIndex; i++)
+        for (int i = 0; i < dominoes.Count; i++)
         {
-            dominoes[i].GetComponent<SpriteRenderer>().sortingOrder = 60 - i;
+            dominoes[i].gameObject.GetComponent<SpriteRenderer>().sortingOrder = 100 - i;
         }
     }
     [ContextMenu("Reset Cards")]
