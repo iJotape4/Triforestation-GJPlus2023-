@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3322478854557466938}
+  - component: {fileID: 1219679024668876338}
   - component: {fileID: 5053201039116828158}
   - component: {fileID: 5916797520918013647}
   - component: {fileID: 4787395148101276971}
@@ -39,6 +40,54 @@ Transform:
   - {fileID: 6830538981804189950}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219679024668876338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5968929431831941738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d13a6e7953436840a884c8f1bcae191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CellsControls:
+    m_Name: Cells Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: fdd22747-9471-420b-abe3-21cebdd2393c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: cb0f5525-f27c-4399-b2ed-f13cba79e358
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Cells Controls
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 97ad0440-a98c-4b94-b835-5132cb871e35
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Cells Controls
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 93383b84-47b3-4577-be8f-20bd9e58f30e
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Cells Controls
+      m_Flags: 8
+    m_Flags: 0
+  tweenTime: 0.5
+  vibrationEase: 25
+  isOver: 1
 --- !u!212 &5053201039116828158
 SpriteRenderer:
   m_ObjectHideFlags: 0

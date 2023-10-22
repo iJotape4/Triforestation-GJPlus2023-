@@ -54,7 +54,6 @@ namespace Terraforming.Dominoes
 
                     int dominoPoleLayerMask = LayerMask.GetMask("DominoPole");
 
-                    raycastDirections.Add(directionVector);
 
                     RaycastHit2D hit = Physics2D.Raycast(pole.transform.position, directionVector, 0.8f, dominoPoleLayerMask);
 
