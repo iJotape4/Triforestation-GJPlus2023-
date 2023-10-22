@@ -30,7 +30,7 @@ public class DominoPooler : MonoBehaviour
     private void OnDominoDropped(DominoToken domino)
     {
         currentDominoesList.Remove(domino);
-
+        GetNextDomino();
     }
 
     void Start()
