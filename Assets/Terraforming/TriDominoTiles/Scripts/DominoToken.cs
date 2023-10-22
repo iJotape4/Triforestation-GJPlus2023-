@@ -81,16 +81,22 @@ namespace Terraforming.Dominoes
                     {
                         DominoPole hitPole = hit.collider.GetComponent<DominoPole>();
 
-                        if (direction == 0)
+                        if (hitPole != null && (hitPole.biome == pole.biome || ((int)hitPole.biome & (1 << (int)pole.biome)) != 0)) // Check if the poles match of if the pole is a subset of the comodin
                         {
-                            poleConnections[pole.position][0] = true; // "right" connection
-                        }
-                        else
-                        {
-                            poleConnections[pole.position][1] = true; // "left" connection
-                        }
-                    }
 
+                            if (direction == 0)
+                            {
+                                poleConnections[pole.position][1] = true; // "left" connection
+                                print("Pole: " + pole.position + " left conection");
+                            }
+                            else
+                            {
+                                poleConnections[pole.position][0] = true; // "right" connection
+                                print("Pole: " + pole.position + " right conection");
+                            }
+                        }
+
+                    }
                 }
             }
             // Check if any of the specified connections are valid
@@ -104,8 +110,6 @@ namespace Terraforming.Dominoes
             {
                 return false;
             }
-
-            return false;
         }
         
         public void TurnOnColliders()
