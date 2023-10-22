@@ -16,21 +16,26 @@ namespace Terraforming.Dominoes
             biomesManager = BiomesManager.Instance;
         }
 
-        private void Start()
-        {
-            biome = UsefulMethods.GetRandomFromEnum<ENUM_Biome>();
-            SetBioma();
-        }
-
         public void SetBioma()
         {
             //TODO bioma 
             spriteRenderer.sprite = biomesManager.biomesSprites[(int)biome];              
         }
 
-        public void TurncolliderOn()
+        public void TurnColliderOn()
         {
             poleCollider.enabled = true;
+        }
+
+        public void TurnColliderOff()
+        {
+            poleCollider.enabled = true;
+        }
+
+        public void AssignBiome()
+        {
+            biome = UsefulMethods.GetRandomFromEnum<ENUM_Biome>();
+            SetBioma();
         }
     }
 }
