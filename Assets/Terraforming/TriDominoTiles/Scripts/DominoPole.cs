@@ -69,8 +69,8 @@ namespace Terraforming.Dominoes
 
             if ( (token.animal.biome &  biome ) == biome)
             {
-                Debug.Log("isValid");
                 token.GetComponent<DragView>().ValidateDrop();
+                poleCollider.enabled= false;
             }
         }
 
@@ -84,7 +84,7 @@ namespace Terraforming.Dominoes
             else
             {
                 print("El bioma raro fue: " + biome);
-                Debug.LogError("Invalid biome index: " + index);
+                Debug.LogError("Invalid biome index: " + index, gameObject);
             }
         }
 
