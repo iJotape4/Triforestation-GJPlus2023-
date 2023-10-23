@@ -238,8 +238,10 @@ public class DominoPooler : MonoBehaviour
 
     private void FinishDominoPlacement(DominoToken token)
     {
-        CountBiomes();
-        print("count biomes");
+        if (currentDominoesList.Count == 0)
+        {
+            CountBiomes();
+        }  
     }
 
     // Method to increase the count of a specific biome.

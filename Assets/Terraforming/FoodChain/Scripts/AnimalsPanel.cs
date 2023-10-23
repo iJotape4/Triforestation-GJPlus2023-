@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Events;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class AnimalsPanel : MonoBehaviour
     List<Animal> animalsList = new List<Animal>();
     [SerializeField] GameObject animalTokenPrefab;
     [SerializeField] Transform[] childs;
-
+    public Transform finalAnimalPanelPosition;
     private void Awake()
     {
         EventManager.AddListener(ENUM_GameState.poolAnimals, PoolAnimals);
@@ -24,11 +25,16 @@ public class AnimalsPanel : MonoBehaviour
     {
         animalsManager = AnimalsManager.Instance;
         childs = GetComponentsInChildren<Transform>();
-        PoolAnimals();
     }
     
+    void MovePanel()
+    {
+        transform.DOMove(finalAnimalPanelPosition.position, 1.5f);
+    }
+
     void PoolAnimals()
     {
+        MovePanel();
         foreach (KeyValuePair< ENUM_Biome,int> pair in GameManager.Instance.biomeCounts)
         {
             Animal[] animalsInBiome = GetAnimalsBiome(pair.Key);

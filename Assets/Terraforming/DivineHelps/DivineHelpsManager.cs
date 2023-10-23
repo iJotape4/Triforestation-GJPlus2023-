@@ -4,6 +4,7 @@ using UnityEngine;
 public class DivineHelpsManager : SinglentonParent<DivineHelpsManager>
 {
     [SerializeField] GameObject divineHelpsPanel;
+    private Transform grid;
     protected override void Awake()
     {
         base.Awake();
@@ -25,6 +26,11 @@ public class DivineHelpsManager : SinglentonParent<DivineHelpsManager>
         divineHelpsPanel.SetActive(false);
     }
 
+    private void Start()
+    {
+        grid = FindObjectOfType<GridChangePhase>().transform;
+    }
+
     public void SpawnBonusMoor(GameObject moorPrefab)
     {
         GameObject[] cellGrids = GameObject.FindGameObjectsWithTag("GridCell");
@@ -39,7 +45,7 @@ public class DivineHelpsManager : SinglentonParent<DivineHelpsManager>
             if (randomCellGrid.activeInHierarchy)
             {
                 // Instantiate the replacement prefab at the position of the selected Cell Grid.
-                Instantiate(moorPrefab, randomCellGrid.transform.position, randomCellGrid.transform.rotation);
+                Instantiate(moorPrefab, randomCellGrid.transform.position, randomCellGrid.transform.rotation, grid);
 
                 // Deactivate (set inactive) the selected Cell Grid.
                 randomCellGrid.SetActive(false);
