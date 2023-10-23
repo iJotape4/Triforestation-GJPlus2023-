@@ -1,4 +1,6 @@
 public enum ENUM_SFXEvent
 {
-    deckStart
+    deckStart,
+    dragSound,
+    dropSound,
 }
