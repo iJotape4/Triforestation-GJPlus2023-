@@ -29,6 +29,7 @@ public class DominoPooler : MonoBehaviour
     private void Awake()
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
+        EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, FinishDominoPlacement);
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
         EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
         EventManager.AddListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
@@ -233,6 +234,12 @@ public class DominoPooler : MonoBehaviour
     private void CanDeployPunishment()
     {
         canDeployPunishment = true;
+    }
+
+    private void FinishDominoPlacement(DominoToken token)
+    {
+        CountBiomes();
+        print("count biomes");
     }
 
     // Method to increase the count of a specific biome.
