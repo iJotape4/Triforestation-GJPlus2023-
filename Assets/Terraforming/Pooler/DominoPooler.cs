@@ -5,8 +5,6 @@ using Terraforming.Dominoes;
 using UnityEngine;
 using MyBox;
 using UnityEngine.InputSystem;
-using System.Diagnostics.Tracing;
-using UnityEngine.PlayerLoop;
 
 public class DominoPooler : MonoBehaviour
 {
@@ -23,20 +21,29 @@ public class DominoPooler : MonoBehaviour
     [SerializeField, ReadOnly] private List<DominoToken> currentDominoesList;
     public float moveDuration = 0.5f; // Duration of the animation
 
+    private bool canDeployPunishment = true;
+
+    [SerializeField] TokenData[] tokenDatas;
+
     private void Awake()
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
+        EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
     }
 
     private void OnDestroy()
     {
-        EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);        
+        EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
+       EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
     }
 
     private void OnDominoDropped(DominoToken domino)
     {
         currentDominoesList.Remove(domino);
-        GetNextDomino();
+        if (currentDominoesList.Count < 3)
+        {
+            GetNextDomino();
+        }
     }
 
     void Start()
@@ -75,10 +82,11 @@ public class DominoPooler : MonoBehaviour
             // Set the position of the domino in a row from left to right.
             float xPos = i * dominoSpacing; // Adjust the spacing as needed.
             domino.transform.localPosition = new Vector3(xPos, 0, 0);
-
+            domino.tokenData = tokenDatas[i];
             dominoes.Add(domino);
             domino.ResetDomino();
         }
+        dominoes.Shuffle();
 
         // Update the order in layer to ensure the rightmost domino is on top.
         UpdateOrderInLayer();
@@ -95,7 +103,12 @@ public class DominoPooler : MonoBehaviour
             Transform _nextPosition = GetNextFreePosition();
             if(_nextPosition == null)
             {
-                EventManager.Dispatch(ENUM_DominoeEvent.punishEvent);
+                if (canDeployPunishment) 
+                {
+                    EventManager.Dispatch(ENUM_DominoeEvent.punishEvent);
+                    canDeployPunishment = false;
+                }
+                
                 TweenOver();
                 return null;
             }
@@ -182,5 +195,10 @@ public class DominoPooler : MonoBehaviour
 
         // Reset the currentIndex to the beginning.
         currentIndex = 0;
+    }
+
+    private void CanDeployPunishment()
+    {
+        canDeployPunishment = true;
     }
 }

@@ -1,14 +1,22 @@
-using Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
+public enum ENUM_PolePosition
+{
+    Position1 = 1,
+    Position2 = 2,
+    Position3 = 3
+}
 
 namespace Terraforming.Dominoes
 {
     public class DominoPole : DropView 
     { 
         public SpriteRenderer spriteRenderer;
+        public ENUM_PolePosition position;
         public ENUM_Biome biome;
         protected BiomesManager biomesManager;
+
+
 
         public Collider2D poleCollider;
         protected virtual void Awake()
@@ -51,8 +59,19 @@ namespace Terraforming.Dominoes
 
         public override void OnDrop(PointerEventData eventData)
         {
-            Debug.Log($"OnDrop {eventData.position}", gameObject);
-            RestoreHoveredObjectScale(eventData);
+            if (biome == 0)
+                return;
+
+            AnimalToken token = eventData.pointerDrag.gameObject.GetComponent<AnimalToken>();
+
+            if (token == null)
+                return;
+
+            if ( (token.animal.biome &  biome ) == biome)
+            {
+                Debug.Log("isValid");
+                token.GetComponent<DragView>().ValidateDrop();
+            }
         }
 
         protected void SetBioma()

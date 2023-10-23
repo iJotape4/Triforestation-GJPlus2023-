@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bb4bea4330824d549b301c3e060f727e
+guid: dfe25f8cf71144e43843385582feca4c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,11 +136,74 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Confirm_Icons_0
+      name: Atlas_Icons_0
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 503
+        width: 306
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e2896a40cda974b9194d48c37fb237
+      internalID: -493152008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Icons_1
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 543
+        width: 180
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566bde797c94f9a42b8af9bbfd7ffad8
+      internalID: 1949138227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Icons_2
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 542
+        width: 180
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc08563434ab004c90942424ad9f5c3
+      internalID: -2100766578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Icons_3
       rect:
         serializedVersion: 2
         x: 48
-        y: 56
+        y: 258
         width: 194
         height: 194
       alignment: 0
@@ -150,18 +213,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 189181a190b23cb4798ca99cdcc994bd
-      internalID: -538569718
+      spriteID: 3944fcfeed7675645855daf7cc76b844
+      internalID: 367766812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Confirm_Icons_1
+      name: Atlas_Icons_4
       rect:
         serializedVersion: 2
         x: 360
-        y: 56
+        y: 258
         width: 194
         height: 194
       alignment: 0
@@ -171,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03aadb2ead4a03347be1d7093b042109
-      internalID: -541467358
+      spriteID: fc0a051054e1fc04e9422847ee231335
+      internalID: -664083138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Confirm_Icons_3
+      name: Atlas_Icons_5
       rect:
         serializedVersion: 2
-        x: 700
-        y: 61
-        width: 202
-        height: 163
+        x: 702
+        y: 259
+        width: 203
+        height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffcf5442fe6d3ca4bb1aa26f8949aa2d
-      internalID: 1293503859
+      spriteID: bfd5a08f1f3d07c4b9100188f85948b2
+      internalID: -1977929466
       vertices: []
       indices: 
       edges: []
@@ -209,10 +272,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Confirm_Icons_0: -538569718
-      Confirm_Icons_1: -541467358
-      Confirm_Icons_2: -1644191439
-      Confirm_Icons_3: 1293503859
+      Atlas_Icons_0: -493152008
+      Atlas_Icons_1: 1949138227
+      Atlas_Icons_2: -2100766578
+      Atlas_Icons_3: 367766812
+      Atlas_Icons_4: -664083138
+      Atlas_Icons_5: -1977929466
+      Atlas_Icons_6: 427796591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
