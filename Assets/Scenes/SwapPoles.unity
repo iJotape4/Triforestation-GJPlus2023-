@@ -504,6 +504,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8816517638395297128, guid: 665438598566b8f40b7f611d04ac0f59, type: 3}
+      propertyPath: Params.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816517638395297128, guid: 665438598566b8f40b7f611d04ac0f59, type: 3}
+      propertyPath: Params.Array.data[0].Name
+      value: ChangeMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816517638395297128, guid: 665438598566b8f40b7f611d04ac0f59, type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5821252789251671015, guid: 665438598566b8f40b7f611d04ac0f59, type: 3}
