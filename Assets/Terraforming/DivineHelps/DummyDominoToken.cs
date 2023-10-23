@@ -74,7 +74,9 @@ public class DummyDominoToken : MonoBehaviour
 
     private void ConfirmSwap()
     {
-        GetSelectedPolesCount();
+        if(GetSelectedPolesCount() != 2)       
+            return;        
+
         ENUM_Biome biome1 = selectedPoles[0].biome;
         ENUM_Biome biome2 = selectedPoles[1].biome;
 
@@ -86,5 +88,6 @@ public class DummyDominoToken : MonoBehaviour
             realToken.poles[i].AssignBiome(poles[i].biome);         
         }
         SetSpritesActive(false);
+        EventManager.Dispatch(ENUM_DominoeEvent.validSwap);
     }
 }

@@ -20,11 +20,13 @@ namespace Terraforming
         {
             //Debug.Log($"OnDrop {eventData.position}", gameObject);
             DominoToken token = eventData.pointerDrag.gameObject.GetComponent<DominoToken>();
+            token.transform.position = transform.position;
             if (token.IsValidRotation(transform.localEulerAngles.z) && token.IsValidBiome())
             {
                 eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
                 eventData.pointerDrag.transform.position = transform.position;
                 token.TurnOnColliders();
+                gameObject.SetActive(false);
                 EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
                 RestoreHoveredObjectScale(eventData);
             }

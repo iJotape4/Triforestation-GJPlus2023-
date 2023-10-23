@@ -1,14 +1,23 @@
 using Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
+public enum ENUM_PolePosition
+{
+    Position1 = 1,
+    Position2 = 2,
+    Position3 = 3
+}
 
 namespace Terraforming.Dominoes
 {
     public class DominoPole : DropView 
     { 
         public SpriteRenderer spriteRenderer;
+        public ENUM_PolePosition position;
         public ENUM_Biome biome;
         protected BiomesManager biomesManager;
+
+
 
         public Collider2D poleCollider;
         protected virtual void Awake()
@@ -50,8 +59,7 @@ namespace Terraforming.Dominoes
         }
 
         public override void OnDrop(PointerEventData eventData)
-        {
-            Debug.Log($"OnDrop {eventData.position}", gameObject);
+        { 
             RestoreHoveredObjectScale(eventData);
         }
 
@@ -61,11 +69,6 @@ namespace Terraforming.Dominoes
             if (index >= 0 && index < biomesManager.biomesSprites.Length)
             {
                 spriteRenderer.sprite = biomesManager.biomesSprites[index];
-            }
-            else
-            {
-                print("El bioma raro fue: " + biome);
-                Debug.LogError("Invalid biome index: " + index);
             }
         }
 

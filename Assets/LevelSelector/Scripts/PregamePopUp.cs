@@ -43,7 +43,7 @@ namespace LevelSelector
         private void UpdateLevel()
         {
             levelNum = level.level;
-            UpdateText(levelNum.ToString());
+            UpdateText("Level " + levelNum.ToString());
         }
 
         private void UpdateText(string value)=>

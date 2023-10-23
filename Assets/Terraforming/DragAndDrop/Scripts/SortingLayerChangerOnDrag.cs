@@ -9,6 +9,7 @@ namespace Terraforming
         protected T sortingLayerModifiable;
         protected string initialSortingLayerName;
         protected SortingLayerName usedSortingLayerOnDrag = SortingLayerName.Dragged;
+        protected int dragSortingOrder = 2;
         private DragView dragView;
 
         private void Awake()
@@ -29,9 +30,29 @@ namespace Terraforming
         {
             initialSortingLayerName = (string)sortingLayerModifiable.GetType().GetProperty("sortingLayerName").GetValue(sortingLayerModifiable, null);
             sortingLayerModifiable.GetType().GetProperty("sortingLayerName").SetValue(sortingLayerModifiable, usedSortingLayerOnDrag.ToString(), null);
+
+            // Iterate through child objects and set their sorting order to "dragSortingOrder."
+            foreach (Transform child in transform)
+            {
+                if (child.TryGetComponent(out Renderer childRenderer))
+                {
+                    childRenderer.sortingOrder = dragSortingOrder;
+                }
+            }
         }
 
-        private void HandleDragEnded(PointerEventData pointerEventData) =>
+        private void HandleDragEnded(PointerEventData pointerEventData)
+        {
             sortingLayerModifiable.GetType().GetProperty("sortingLayerName").SetValue(sortingLayerModifiable, initialSortingLayerName, null);
+
+            // Iterate through child objects and set their sorting order back to 1.
+            foreach (Transform child in transform)
+            {
+                if (child.TryGetComponent(out Renderer childRenderer))
+                {
+                    childRenderer.sortingOrder = 1;
+                }
+            }
+        }
     }
 }

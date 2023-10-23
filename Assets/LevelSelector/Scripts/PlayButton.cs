@@ -7,26 +7,11 @@ namespace LevelSelector
 {
     public class PlayButton : MonoBehaviour
     {
-        [SerializeField, Scene] string sceneName;
-        [SerializeField] PregamePopUp pregamePopUp;
-        [SerializeField] public Button playButton;
-
-        private void Start()
-        {
-            pregamePopUp = GetComponentInParent<PregamePopUp>();
-            playButton =    GetComponent<Button>();
-
-            playButton.onClick.AddListener( ClickButton);
-            pregamePopUp.enablePlayButton += SwitchEnablePlayButton;
-    
-        }
         
-        private void SwitchEnablePlayButton(bool enable)=>
-            playButton.enabled= enable;
 
-        private void ClickButton()
+        public void ClickButton()
         {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene("SwapPoles");
             //SceneManager.sceneLoaded += OnSceneLoaded;
         }
 

@@ -31,13 +31,13 @@ namespace Terraforming
             mainCamera = Camera.main;
             collider = GetComponent<Collider2D>();
             EventManager.AddListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
-            EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, DisableClicking);
+            EventManager.AddListener(ENUM_DominoeEvent.validSwap, DisableClicking);
         }
 
         private void OnDestroy()
         {
             EventManager.RemoveListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
-            EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, DisableClicking);
+            EventManager.RemoveListener(ENUM_DominoeEvent.validSwap, DisableClicking);
         }
 
         private void EnableClicking()
@@ -45,7 +45,6 @@ namespace Terraforming
             draggingAllowed = false;
             validClickInDivineDone = true;
         }
-
 
         private void DisableClicking()
         {
@@ -111,6 +110,11 @@ namespace Terraforming
 
                 // Change the layer of the parent GameObject to the default layer
                 parentObject.layer = LayerMask.NameToLayer("Default");
+                EventManager.RemoveListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
+                EventManager.RemoveListener(ENUM_DominoeEvent.validSwap, DisableClicking);
+                draggingAllowed = false;
+
+ 
             }
         }
 
