@@ -13,7 +13,7 @@ public class DominoPooler : MonoBehaviour
     public float dominoSpacing = 0.1f;
     private List<DominoToken> dominoes = new List<DominoToken>();
     private int currentIndex = 0;
-
+    private bool lastCardOnHand = false;
     public InputAction poolerControl;
     private bool isTweenOver = true;
 
@@ -158,7 +158,7 @@ public class DominoPooler : MonoBehaviour
  
             return domino;
         }
-
+        lastCardOnHand = true;
         return null; // All dominoes have been used.
     }
 
@@ -204,7 +204,9 @@ public class DominoPooler : MonoBehaviour
         }
 
         // Reset the currentIndex to the beginning.
+        currentDominoesList.Clear();
         currentIndex = 0;
+        lastCardOnHand = false;
     }
 
     private void TradeCurrentCards()
