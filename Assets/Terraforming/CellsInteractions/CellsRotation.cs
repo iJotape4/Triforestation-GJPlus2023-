@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Events;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,6 +37,7 @@ public class CellsRotation : MonoBehaviour
 
         // Aplicar rotación suavemente usando DOTween
         transform.DORotate(new Vector3(0, 0, targetRotation), tweenTime).SetEase(vibrationEase).OnComplete(OverTween);
+        EventManager.Dispatch(ENUM_SFXEvent.RotateSound);
     }
 
     public void OverTween()

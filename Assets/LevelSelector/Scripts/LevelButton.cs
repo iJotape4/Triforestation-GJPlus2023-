@@ -1,6 +1,7 @@
 using Events;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LevelSelector
 {
@@ -44,9 +45,10 @@ namespace LevelSelector
         IEnumerator LevelSelected()
         {
             EventManager.Dispatch(ENUM_LevelSelectorEvent.LevelSelected);
+            EventManager.Dispatch(ENUM_LevelSelectorEvent.Play);
             ps.Play();
             yield return new WaitForSeconds(1f);
-            pregamePopUP.EnablePopUP(level) ;     
+            SceneManager.LoadScene("SwapPoles");
         }
 
         public void OnMouseUp()=>     
