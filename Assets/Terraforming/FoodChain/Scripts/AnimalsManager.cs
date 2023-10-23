@@ -10,8 +10,8 @@ public class AnimalsManager : SinglentonParent<AnimalsManager>
     const string biomesPath = "Biomes/UI";
     void Start()
     {
-        animals = Resources.LoadAll<Animal>(animalsPath); ;
-        biomesSprites = Resources.LoadAll<Sprite>(biomesPath);
-        moorSprite = biomesSprites[6];
+        //animals = Resources.LoadAll<Animal>(animalsPath); ;
+        //biomesSprites = Resources.LoadAll<Sprite>(biomesPath);
+        //moorSprite = biomesSprites[6];
     }
 }
