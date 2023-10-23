@@ -281,10 +281,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 1
+  HasSourceProject: 0
   HasPlatforms: 1
   sourceProjectPath: ../../FMODProjects/Jam2023/DominoesJam/DominoesJam.fspro
-  sourceBankPath: ../../FMODProjects/Jam2023/DominoesJam/Build
+  sourceBankPath: BuildFMOD
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
