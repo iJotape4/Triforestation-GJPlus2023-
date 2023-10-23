@@ -14,6 +14,7 @@ namespace Terraforming.Dominoes
         [SerializeField] SpriteRenderer dominoCover;
         public float uncoverDuration = 1f;
         private Collider2D dominoCollider;
+        public TokenData tokenData;
 
         private void Awake()
         {
@@ -143,9 +144,10 @@ namespace Terraforming.Dominoes
         {
             dominoCover.enabled = true;
             dominoCollider.enabled = false;
-            foreach (DominoPole pole in poles)
+
+            for(int i=0; i<poles.Length; i++)
             {
-                pole.AssignBiome();
+                poles[i].AssignBiome(tokenData.biomes[i]);
             }
         }
 
