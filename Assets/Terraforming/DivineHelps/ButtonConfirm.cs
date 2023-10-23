@@ -8,5 +8,6 @@ public class ButtonConfirm : UIButton
     {
         EventManager.Dispatch(currentConfirmableEvent);
         EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, true);
+        EventManager.Dispatch(ENUM_SFXEvent.checkSound);
     }
 }

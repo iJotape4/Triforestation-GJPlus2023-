@@ -30,6 +30,10 @@ namespace Terraforming
                 EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
                 RestoreHoveredObjectScale(eventData);
             }
+            else
+            {
+                EventManager.Dispatch(ENUM_SFXEvent.ErrorSound);
+            }
         }
 
         virtual public void OnPointerEnter(PointerEventData eventData)

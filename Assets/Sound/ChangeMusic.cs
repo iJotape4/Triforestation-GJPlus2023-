@@ -21,6 +21,7 @@ public class ChangeMusic : MonoBehaviour
         fmodEventInstance.start();
         sectionPlaying = sectionMusic;
 
+        StartCoroutine(ChangeMusicCoroutine());
     }
     private void FixedUpdate()
     {
@@ -37,4 +38,17 @@ public class ChangeMusic : MonoBehaviour
     {
         fmodEventInstance.release();
     }
+
+    private IEnumerator ChangeMusicCoroutine()
+    {
+        yield return new WaitForSeconds(30f);
+        ChangeSectionMusic(2);
+
+        yield return new WaitForSeconds(60f);
+        ChangeSectionMusic(3);
+
+        yield return new WaitForSeconds(90f);
+        ChangeSectionMusic(4);
+    }
+
 }

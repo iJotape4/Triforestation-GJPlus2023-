@@ -1,3 +1,4 @@
+using Events;
 using Terraforming.Dominoes;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -47,6 +48,7 @@ public class DummyPole : DominoPole, IPointerDownHandler
     public void Select()
     {
         selected = selected ? false : true;
+        EventManager.Dispatch(selected ? ENUM_SFXEvent.SelectSound : ENUM_SFXEvent.UnselectSound);
         spriteRenderer.color = selected ?  Color.grey :Color.white;
     }
 

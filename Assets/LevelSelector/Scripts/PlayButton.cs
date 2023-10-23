@@ -1,4 +1,6 @@
+using Events;
 using MyBox;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,12 +9,20 @@ namespace LevelSelector
 {
     public class PlayButton : MonoBehaviour
     {
-        
-
         public void ClickButton()
         {
-            SceneManager.LoadScene("SwapPoles");
+
+            StartCoroutine(PlayCourutine());
             //SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+
+        private IEnumerator PlayCourutine()
+        {
+            EventManager.Dispatch(ENUM_SFXEvent.PlaySound);
+            yield return new WaitForSeconds(2f);
+
+            SceneManager.LoadScene("SwapPoles");
         }
 
         //private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
