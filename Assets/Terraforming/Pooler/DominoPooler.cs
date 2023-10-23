@@ -99,6 +99,7 @@ public class DominoPooler : MonoBehaviour
         Invoke("GetNextDomino", 0.2f);
         Invoke("GetNextDomino", 0.5f);
         Invoke("GetNextDomino", 0.8f);
+        EventManager.Dispatch(ENUM_SFXEvent.deckStart);
     }
     //[ContextMenu("Get next domino")]
 
