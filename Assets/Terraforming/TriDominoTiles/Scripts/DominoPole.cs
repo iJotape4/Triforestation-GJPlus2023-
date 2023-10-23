@@ -1,4 +1,3 @@
-using Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public enum ENUM_PolePosition
@@ -59,8 +58,20 @@ namespace Terraforming.Dominoes
         }
 
         public override void OnDrop(PointerEventData eventData)
-        { 
-            RestoreHoveredObjectScale(eventData);
+        {
+            if (biome == 0)
+                return;
+
+            AnimalToken token = eventData.pointerDrag.gameObject.GetComponent<AnimalToken>();
+
+            if (token == null)
+                return;
+
+            if ( (token.animal.biome &  biome ) == biome)
+            {
+                token.GetComponent<DragView>().ValidateDrop();
+                poleCollider.enabled= false;
+            }
         }
 
         protected void SetBioma()
@@ -69,6 +80,11 @@ namespace Terraforming.Dominoes
             if (index >= 0 && index < biomesManager.biomesSprites.Length)
             {
                 spriteRenderer.sprite = biomesManager.biomesSprites[index];
+            }
+            else
+            {
+                print("El bioma raro fue: " + biome);
+                Debug.LogError("Invalid biome index: " + index, gameObject);
             }
         }
 

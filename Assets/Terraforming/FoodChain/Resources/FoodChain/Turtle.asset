@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Turtle
   chainLevel: 4
   aliments: 8
-  biome: 15
+  biome: 13
   sprite: {fileID: -1401769573, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}

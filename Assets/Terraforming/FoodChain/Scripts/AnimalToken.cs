@@ -5,17 +5,14 @@ public class AnimalToken : MonoBehaviour
 {
     [SerializeField] SpriteRenderer tokenSpr, animalSpr;
     [SerializeField] SpriteRenderer[] biomeSpr;
-    [SerializeField] Animal animal;
+    [SerializeField] public Animal animal;
     [SerializeField] Transform biomesParent;
     AnimalsManager animalsManager;
-    private void Awake()
-    {
-        
-    }
+
     private void Start()
     {
         animalsManager = AnimalsManager.Instance;
-        SetToken(animal);
+        //SetToken(animal);
     }
 
     public void SetToken(Animal an)
@@ -74,7 +71,7 @@ public class AnimalToken : MonoBehaviour
     Sprite GetBiomeSprite(ENUM_Biome biome)
     {
         int index = GetBiomeIndex(biome);
-        if (index >= 0 && index < animalsManager.biomesSprites.Length)
+        if (index >= 0 && index < AnimalsManager.Instance.biomesSprites.Length)
         {
             return animalsManager.biomesSprites[index];
         }
