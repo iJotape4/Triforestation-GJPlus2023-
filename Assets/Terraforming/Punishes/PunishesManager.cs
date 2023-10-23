@@ -45,7 +45,7 @@ public class PunishesManager : MonoBehaviour
                 selectedCellGrid.SetActive(false);
 
                 // Trigger the selectDone event or perform any other desired actions.
-                EventManager.Dispatch(ENUM_DominoeEvent.selectDoneEvent);
+                EventManager.Dispatch(ENUM_DominoeEvent.spawnedAcidRainEvent);
                 punishApplied = true;
             }
         }

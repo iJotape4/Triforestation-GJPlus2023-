@@ -30,7 +30,9 @@ public class DominoPooler : MonoBehaviour
     private void Awake()
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
+        EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
         EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
+        EventManager.AddListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
 
         foreach (ENUM_Biome biome in System.Enum.GetValues(typeof(ENUM_Biome)))
         {
@@ -41,7 +43,10 @@ public class DominoPooler : MonoBehaviour
     private void OnDestroy()
     {
         EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
-       EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
+        EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
+        EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
+        EventManager.RemoveListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
+
     }
 
     private void OnDominoDropped(DominoToken domino)
@@ -96,9 +101,8 @@ public class DominoPooler : MonoBehaviour
 
         // Update the order in layer to ensure the rightmost domino is on top.
         UpdateOrderInLayer();
-        Invoke("GetNextDomino", 0.2f);
-        Invoke("GetNextDomino", 0.5f);
-        Invoke("GetNextDomino", 0.8f);
+        GiveInitialDominoes();
+
     }
     //[ContextMenu("Get next domino")]
 
@@ -203,6 +207,27 @@ public class DominoPooler : MonoBehaviour
         currentIndex = 0;
     }
 
+    private void TradeCurrentCards()
+    {
+        foreach(DominoSpot spot in dominoesSpots)
+        {
+            Destroy(spot.currentToken.gameObject);
+            spot.SetCurrentToken(null);
+        }
+        currentDominoesList.Clear();
+        GiveInitialDominoes();
+        EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, false);
+        CanDeployPunishment();
+        
+    }
+
+    private void GiveInitialDominoes()
+    {
+        Invoke("GetNextDomino", 0.2f);
+        Invoke("GetNextDomino", 0.5f);
+        Invoke("GetNextDomino", 0.8f);
+    }
+    
     private void CanDeployPunishment()
     {
         canDeployPunishment = true;
