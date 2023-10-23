@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using MyBox;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField, Scene] string sceneName;
     public void exit()
     {
         Application.Quit();
@@ -12,6 +12,6 @@ public class MainMenu : MonoBehaviour
 
     public void play()
     {
-        SceneManager.LoadScene("SwapPoles");
+        SceneManager.LoadScene(sceneName);
     }
 }
