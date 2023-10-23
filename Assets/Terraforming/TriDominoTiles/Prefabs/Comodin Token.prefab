@@ -74,11 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1509535163650539618, guid: 6b55d531e1d86f94da60e972cb13f4fa, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.51470006
+      value: 0.5147001
       objectReference: {fileID: 0}
     - target: {fileID: 1509535163650539618, guid: 6b55d531e1d86f94da60e972cb13f4fa, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.35062093
+      value: 0.3506209
       objectReference: {fileID: 0}
     - target: {fileID: 1509535163650539618, guid: 6b55d531e1d86f94da60e972cb13f4fa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -204,6 +204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comodin Token
       objectReference: {fileID: 0}
+    - target: {fileID: 5968929431831941738, guid: 6b55d531e1d86f94da60e972cb13f4fa, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7122180123248011070, guid: 6b55d531e1d86f94da60e972cb13f4fa, type: 3}
       propertyPath: biome
       value: -1
@@ -263,6 +267,7 @@ PrefabInstance:
     - {fileID: 4146342232947510465, guid: 6b55d531e1d86f94da60e972cb13f4fa, type: 3}
     - {fileID: 4943340877094728454, guid: 6b55d531e1d86f94da60e972cb13f4fa, type: 3}
     - {fileID: 3917608105375049922, guid: 6b55d531e1d86f94da60e972cb13f4fa, type: 3}
+    - {fileID: 5916797520918013647, guid: 6b55d531e1d86f94da60e972cb13f4fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

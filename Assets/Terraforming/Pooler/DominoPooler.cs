@@ -23,12 +23,18 @@ public class DominoPooler : MonoBehaviour
 
     private bool canDeployPunishment = true;
 
+    public Dictionary<ENUM_Biome, int> biomeCounts = new Dictionary<ENUM_Biome, int>();
     [SerializeField] TokenData[] tokenDatas;
 
     private void Awake()
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
         EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
+
+        foreach (ENUM_Biome biome in System.Enum.GetValues(typeof(ENUM_Biome)))
+        {
+            biomeCounts[biome] = 0;
+        }
     }
 
     private void OnDestroy()
@@ -200,5 +206,33 @@ public class DominoPooler : MonoBehaviour
     private void CanDeployPunishment()
     {
         canDeployPunishment = true;
+    }
+
+    // Method to increase the count of a specific biome.
+    public void IncreaseBiomeCount(ENUM_Biome biome)
+    {
+        if (biomeCounts.ContainsKey(biome))
+        {
+            biomeCounts[biome]++;
+        }
+    }
+
+    [ContextMenu("Contar biomas")]
+    public void CountBiomes()
+    {
+        DominoToken[] tokensInBoard = GetComponentsInChildren<DominoToken>();
+
+        foreach (DominoToken token in tokensInBoard)
+        {
+            DominoPole[] poles = token.gameObject.GetComponentsInChildren<DominoPole>();
+
+            foreach(var pole in poles) 
+            {
+                IncreaseBiomeCount(pole.biome);
+            }
+        }
+
+        GameManager.Instance.SetDictionary(biomeCounts);
+        biomeCounts.Clear();
     }
 }
