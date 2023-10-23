@@ -8,6 +8,7 @@ public class BonusMoorButton : UIButton
     {
         EventManager.Dispatch(ENUM_DominoeEvent.startBonusMoorEvent, bonusMoorPrefab);
         EventManager.Dispatch(ENUM_DominoeEvent.tradeCardsForMoor);
+        EventManager.Dispatch(ENUM_DominoeEvent.validSwap);
         DivineHelpsManager.Instance.DisableDivineHelpsPanel();
     }
 
