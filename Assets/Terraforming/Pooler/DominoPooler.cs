@@ -103,7 +103,7 @@ public class DominoPooler : MonoBehaviour
         // Update the order in layer to ensure the rightmost domino is on top.
         UpdateOrderInLayer();
         GiveInitialDominoes();
-
+        EventManager.Dispatch(ENUM_SFXEvent.deckStart);
     }
     //[ContextMenu("Get next domino")]
 
