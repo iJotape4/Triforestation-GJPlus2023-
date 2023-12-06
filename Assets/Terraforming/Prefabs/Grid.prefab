@@ -242,6 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2908310950972668533}
+  - component: {fileID: 8816517638395297128}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -271,6 +272,39 @@ Transform:
   - {fileID: 8144430419008350869}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8816517638395297128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5803617959587437687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1083506270
+      Data2: 1271645443
+      Data3: -307273847
+      Data4: 231547772
+    Path: event:/Music/MainMusic/MainMusic
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: ChangeMusic
+    Value: 1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7717199140186098321
 GameObject:
   m_ObjectHideFlags: 0

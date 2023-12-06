@@ -11,4 +11,8 @@ public enum ENUM_DominoeEvent
     setActivePlayFieldObjects,
     cancelEvent,
     validSwap,
+    startBonusMoorEvent,
+    tradeCardsForMoor,
+    spawnedAcidRainEvent,
+
 }

@@ -59,6 +59,7 @@ namespace Terraforming
             collider.enabled = false;
             isDragging = true;
             OnDragBegan?.Invoke(eventData);
+            EventManager.Dispatch(ENUM_SFXEvent.dragSound);
         }
 
         public void OnDrag(PointerEventData eventData)

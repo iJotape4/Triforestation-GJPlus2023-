@@ -1,29 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
-using MyBox;
+using DG.Tweening;
+using Events;
 using UnityEngine;
 
 public class AnimalsPanel : MonoBehaviour
 {
-    [SerializeField, ReadOnly] public Dictionary<ENUM_Biome, int> biomeCounts = new Dictionary<ENUM_Biome, int>()
-    {
-        {ENUM_Biome.Meadow, 10},     
-    };
-
     AnimalsManager animalsManager;
     List<Animal> animalsList = new List<Animal>();
     [SerializeField] GameObject animalTokenPrefab;
     [SerializeField] Transform[] childs;
+    public Transform finalAnimalPanelPosition;
+    private void Awake()
+    {
+        EventManager.AddListener(ENUM_GameState.poolAnimals, PoolAnimals);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.RemoveListener(ENUM_GameState.poolAnimals, PoolAnimals);        
+    }
+
     void Start()
     {
         animalsManager = AnimalsManager.Instance;
         childs = GetComponentsInChildren<Transform>();
-        PoolAnimals();
     }
     
+    void MovePanel()
+    {
+        transform.DOMove(finalAnimalPanelPosition.position, 1.5f);
+    }
+
     void PoolAnimals()
     {
-        foreach (KeyValuePair< ENUM_Biome,int> pair in biomeCounts)
+        MovePanel();
+        foreach (KeyValuePair< ENUM_Biome,int> pair in GameManager.Instance.biomeCounts)
         {
             Animal[] animalsInBiome = GetAnimalsBiome(pair.Key);
             for(int i=0; i < pair.Value; i++)
@@ -37,6 +49,8 @@ public class AnimalsPanel : MonoBehaviour
             GameObject newAnimal = Instantiate(animalTokenPrefab, childs[j+2]);
             StartCoroutine(AnimalSetToken(newAnimal, j)); 
         }
+
+        StartCoroutine(CoroutineDoMove());
     }
    
     Animal GetRandomAnimalFromList(Animal[] animals)
@@ -65,5 +79,11 @@ public class AnimalsPanel : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         newAnimal.GetComponent<AnimalToken>().SetToken(animalsList[index]);
+    }
+
+    IEnumerator CoroutineDoMove()
+    {
+        yield return new WaitForSeconds(2f);
+        //TODO move here
     }
 }

@@ -13,7 +13,7 @@ public class DominoPooler : MonoBehaviour
     public float dominoSpacing = 0.1f;
     private List<DominoToken> dominoes = new List<DominoToken>();
     private int currentIndex = 0;
-
+    private bool lastCardOnHand = false;
     public InputAction poolerControl;
     private bool isTweenOver = true;
 
@@ -29,7 +29,10 @@ public class DominoPooler : MonoBehaviour
     private void Awake()
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
+        EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, FinishDominoPlacement);
+        EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
         EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
+        EventManager.AddListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
 
         foreach (ENUM_Biome biome in System.Enum.GetValues(typeof(ENUM_Biome)))
         {
@@ -40,7 +43,10 @@ public class DominoPooler : MonoBehaviour
     private void OnDestroy()
     {
         EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
-       EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
+        EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
+        EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
+        EventManager.RemoveListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
+
     }
 
     private void OnDominoDropped(DominoToken domino)
@@ -96,9 +102,8 @@ public class DominoPooler : MonoBehaviour
 
         // Update the order in layer to ensure the rightmost domino is on top.
         UpdateOrderInLayer();
-        Invoke("GetNextDomino", 0.2f);
-        Invoke("GetNextDomino", 0.5f);
-        Invoke("GetNextDomino", 0.8f);
+        GiveInitialDominoes();
+        EventManager.Dispatch(ENUM_SFXEvent.deckStart);
     }
     //[ContextMenu("Get next domino")]
 
@@ -154,7 +159,7 @@ public class DominoPooler : MonoBehaviour
  
             return domino;
         }
-
+        lastCardOnHand = true;
         return null; // All dominoes have been used.
     }
 
@@ -200,12 +205,43 @@ public class DominoPooler : MonoBehaviour
         }
 
         // Reset the currentIndex to the beginning.
+        currentDominoesList.Clear();
         currentIndex = 0;
+        lastCardOnHand = false;
     }
 
+    private void TradeCurrentCards()
+    {
+        foreach(DominoSpot spot in dominoesSpots)
+        {
+            Destroy(spot.currentToken.gameObject);
+            spot.SetCurrentToken(null);
+        }
+        currentDominoesList.Clear();
+        GiveInitialDominoes();
+        EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, false);
+        CanDeployPunishment();
+        
+    }
+
+    private void GiveInitialDominoes()
+    {
+        Invoke("GetNextDomino", 0.2f);
+        Invoke("GetNextDomino", 0.5f);
+        Invoke("GetNextDomino", 0.8f);
+    }
+    
     private void CanDeployPunishment()
     {
         canDeployPunishment = true;
+    }
+
+    private void FinishDominoPlacement(DominoToken token)
+    {
+        if (currentDominoesList.Count == 0)
+        {
+            CountBiomes();
+        }  
     }
 
     // Method to increase the count of a specific biome.

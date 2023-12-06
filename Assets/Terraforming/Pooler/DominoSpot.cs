@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DominoSpot : MonoBehaviour
 {
-    DominoToken currentToken = null;
+    public DominoToken currentToken = null;
 
     private void Awake()
     {
