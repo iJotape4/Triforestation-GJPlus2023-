@@ -11,14 +11,14 @@ public class CellsRotation : MonoBehaviour
 
     [SerializeField] private float tweenTime = 0.5f;
     [SerializeField] private Ease vibrationEase;
-    [SerializeField] PolygonCollider2D polygonCollider;
+    [SerializeField] Collider polygonCollider;
     private float rotationValue = 60f;
 
     public bool isOver = true;
 
     private void Start()
     {
-        polygonCollider = GetComponent<PolygonCollider2D>();
+        polygonCollider = GetComponent<Collider>();
     }
 
     private void OnEnable()

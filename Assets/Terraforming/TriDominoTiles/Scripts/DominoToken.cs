@@ -13,14 +13,14 @@ namespace Terraforming.Dominoes
         [SerializeField] public DominoPole[] poles;
         [SerializeField] SpriteRenderer dominoCover;
         public float uncoverDuration = 1f;
-        private Collider2D dominoCollider;
+        private Collider dominoCollider;
         public TokenData tokenData;
 
         private void Awake()
         {
             poles = GetComponentsInChildren<DominoPole>();
             dominoCover = GetComponent<SpriteRenderer>();
-            dominoCollider = GetComponent<Collider2D>();
+            dominoCollider = GetComponent<Collider>();
 
         }
         private void OnDestroy()
