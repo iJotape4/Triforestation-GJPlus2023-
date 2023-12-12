@@ -89,14 +89,14 @@ public class DominoPooler : MonoBehaviour
         for (int i = 0; i < totalDominoes; i++)
         {
             GameObject dominoObj = Instantiate(dominoPrefab[Random.RandomRange(0, 3)], transform);
-            DominoToken domino = dominoObj.GetComponent<DominoToken>();
+            //DominoToken domino = dominoObj.GetComponent<DominoToken>();
 
             // Set the position of the domino in a row from left to right.
             float xPos = i * dominoSpacing; // Adjust the spacing as needed.
-            domino.transform.localPosition = new Vector3(xPos, 0, 0);
-            domino.tokenData = tokenDatas[i];
-            dominoes.Add(domino);
-            domino.ResetDomino();
+            dominoObj.transform.localPosition = new Vector3(xPos, 0, 0);
+            //domino.tokenData = tokenDatas[i];
+            //dominoes.Add(domino);
+            //domino.ResetDomino();
         }
         dominoes.Shuffle();
 
