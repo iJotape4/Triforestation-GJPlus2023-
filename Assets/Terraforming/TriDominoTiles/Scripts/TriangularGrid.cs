@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class TriangularGrid : MonoBehaviour
 {
-    private float edgeLength = 2.172f; // Lenght of the edge of the Triangular Token
+    private float edgeLength = 2.962f; // Lenght of the edge of the Triangular Token
     private float sqrt3 = Mathf.Sqrt(3);
 
     public GameObject token;
-    public Vector3 initialPosition;
+    public Vector3Int initialPosition;
 
-    public Vector2 TriCenter(float a, float b, float c)
+    public Vector2 TriCenter(int a, int b, int c)
     {
         // Calculate the center using the provided formula
         float x = (0.5f * a - 0.5f * c) * edgeLength;

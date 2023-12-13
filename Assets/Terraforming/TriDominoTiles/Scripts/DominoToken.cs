@@ -16,6 +16,9 @@ namespace Terraforming.Dominoes
         private Collider dominoCollider;
         public TokenData tokenData;
 
+        // Define the valid rotation angles for upwards tokens
+        float[] validUpwardsRotations = new float[] { 0f, 120f, 240f };
+
         private void Awake()
         {
             poles = GetComponentsInChildren<DominoPole>();
@@ -34,8 +37,24 @@ namespace Terraforming.Dominoes
            dominoCollider.enabled = eventData;
         }
 
-        public bool IsValidRotation(float targetRotation)
+        public bool IsUpwards()
         {
+            // Calculate the actual rotation of the token
+            float actualRotation = transform.localEulerAngles.z;
+            // Normalize the rotation to the range [0, 360]
+            actualRotation = (360 + actualRotation) % 360;
+
+            // Check if the actualRotation is within the valid rotations for upwards tokens
+            float tolerance = 0.1f; // Adjust this tolerance as needed
+
+            // Check if the actualRotation is pointing upwards
+            bool isUpwardsValid = validUpwardsRotations.Any(angle => Mathf.Abs(angle - actualRotation) < tolerance);
+
+            return isUpwardsValid;
+
+
+            // CODE FOR 2D TRIFORESTATION
+            /*
             // Calculate the actual rotation of the token
             float actualRotation = transform.localEulerAngles.z;
             // Normalize both rotations to the range [0, 360]
@@ -52,6 +71,7 @@ namespace Terraforming.Dominoes
             bool isDownwardsValid = validDownwardsRotations.Any(angle => Mathf.Abs(angle - actualRotation) < tolerance) && validDownwardsRotations.Any(angle => Mathf.Abs(angle - targetRotation) < tolerance);
 
             return isUpwardsValid || isDownwardsValid;
+            */
         }
 
         public bool IsValidBiome()

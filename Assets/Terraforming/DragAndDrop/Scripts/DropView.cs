@@ -1,4 +1,5 @@
 ﻿using Events;
+using MyBox;
 using System;
 using Terraforming.Dominoes;
 using UnityEngine;
@@ -7,6 +8,7 @@ using UnityEngine.EventSystems;
 namespace Terraforming
 {
     [RequireComponent(typeof(Collider))]
+    [RequireComponent (typeof(TriangularGrid))]
     public class DropView : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public event Action<PointerEventData> OnPointerEntered;
@@ -16,8 +18,32 @@ namespace Terraforming
 
         private Vector3 initialHoveredObjectScale;
         private static GameObject currentPointerDrag;
+
+        private TriangularGrid grid;
+
+        private void Start()
+        {
+            grid = GetComponent<TriangularGrid>();
+        }
         virtual public void OnDrop(PointerEventData eventData)
         {
+            DominoToken token = eventData.pointerDrag.gameObject.GetComponent<DominoToken>();
+
+            Vector3 currentPos = token.transform.position;
+
+            Vector3Int triangle = grid.PickTri(currentPos.x , currentPos.z);
+
+            Vector2 triangleCenter = grid.TriCenter(triangle.x, triangle.y, triangle.z);
+
+            if ((token.IsUpwards() && grid.PointsUp(triangle.x, triangle.y, triangle.z)))
+            {
+                eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
+                eventData.pointerDrag.transform.position = new Vector3(triangleCenter.x, transform.position.y, triangleCenter.y);
+                token.TurnOnColliders();
+                EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
+                RestoreHoveredObjectScale(eventData);
+            }
+
             // CODE USED FOR THE 2D VERSION OF TREEFORESTATION
             /*
             //Debug.Log($"OnDrop {eventData.position}", gameObject);
