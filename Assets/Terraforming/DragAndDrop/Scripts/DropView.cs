@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 namespace Terraforming
 {
-    [RequireComponent(typeof(Collider2D))]
+    [RequireComponent(typeof(Collider))]
     public class DropView : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public event Action<PointerEventData> OnPointerEntered;
@@ -18,6 +18,8 @@ namespace Terraforming
         private static GameObject currentPointerDrag;
         virtual public void OnDrop(PointerEventData eventData)
         {
+            // CODE USED FOR THE 2D VERSION OF TREEFORESTATION
+            /*
             //Debug.Log($"OnDrop {eventData.position}", gameObject);
             DominoToken token = eventData.pointerDrag.gameObject.GetComponent<DominoToken>();
             token.transform.position = transform.position;
@@ -34,6 +36,7 @@ namespace Terraforming
             {
                 EventManager.Dispatch(ENUM_SFXEvent.ErrorSound);
             }
+            */
         }
 
         virtual public void OnPointerEnter(PointerEventData eventData)
