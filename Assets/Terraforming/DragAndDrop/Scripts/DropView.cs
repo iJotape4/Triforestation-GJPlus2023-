@@ -31,14 +31,19 @@ namespace Terraforming
 
             Vector3 currentPos = token.transform.position;
 
-            Vector3Int triangle = grid.PickTri(currentPos.x , currentPos.z);
+            Vector3Int triangleCell = grid.PickTri(currentPos.x , currentPos.z);
 
-            Vector2 triangleCenter = grid.TriCenter(triangle.x, triangle.y, triangle.z);
+            Vector2 triangleCenter = grid.TriCenter(triangleCell.x, triangleCell.y, triangleCell.z);
 
-            if ((token.IsUpwards() && grid.PointsUp(triangle.x, triangle.y, triangle.z)))
+            Vector3 tokenWorldPosition = new Vector3(triangleCenter.x, transform.position.y, triangleCenter.y);
+
+            bool rotationValid = (token.IsUpwards() && grid.PointsUp(triangleCell.x, triangleCell.y, triangleCell.z)) || (!token.IsUpwards() && !grid.PointsUp(triangleCell.x, triangleCell.y, triangleCell.z)); // checks if the rotation of the token matches the gird rotation
+
+            if (rotationValid && grid.IsCellFree(triangleCell))
             {
+                grid.OccupyCell(triangleCell);
                 eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
-                eventData.pointerDrag.transform.position = new Vector3(triangleCenter.x, transform.position.y, triangleCenter.y);
+                eventData.pointerDrag.transform.position = tokenWorldPosition;
                 token.TurnOnColliders();
                 EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
                 RestoreHoveredObjectScale(eventData);

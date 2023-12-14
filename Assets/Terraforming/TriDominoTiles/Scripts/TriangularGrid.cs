@@ -10,6 +10,7 @@ public class TriangularGrid : MonoBehaviour
 
     public GameObject token;
     public Vector3Int initialPosition;
+    private HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
 
     public Vector2 TriCenter(int a, int b, int c)
     {
@@ -62,6 +63,24 @@ public class TriangularGrid : MonoBehaviour
                 new Vector3Int(a, b, c + 1)
             };
         }
+    }
+
+    // Function to check if a cell is free
+    public bool IsCellFree(Vector3Int cell)
+    {
+        return !occupiedCells.Contains(cell);
+    }
+
+    // Function to occupy a cell
+    public void OccupyCell(Vector3Int cell)
+    {
+        occupiedCells.Add(cell);
+    }
+
+    // Function to free a cell
+    public void FreeCell(Vector3Int cell)
+    {
+        occupiedCells.Remove(cell);
     }
 
     private void Start()
