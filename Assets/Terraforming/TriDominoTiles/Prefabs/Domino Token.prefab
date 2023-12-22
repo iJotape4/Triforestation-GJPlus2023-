@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9538002
+      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.96
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.67
+      value: -2.48
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -113,7 +113,31 @@ MonoBehaviour:
     m_Id: 766d934f-acb3-4c3f-9183-e16290685060
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: 5f4f6957-a973-41bc-bb35-17605195531e
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Cells Controls
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: d8971861-d35b-4a58-b9f3-fcb18f9c7791
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Cells Controls
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 38af041e-3b9c-45c2-8bb0-b8278ee6d99b
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Cells Controls
+      m_Flags: 8
     m_Flags: 0
   tweenTime: 0.5
   vibrationEase: 0
@@ -428,13 +452,11 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2040
+  m_VersionIndex: 2043
   m_IsSelectable: 1
   m_SelectedFaces: 
-  m_SelectedEdges:
-  - a: 11
-    b: 10
-  m_SelectedVertices: 0b0000000a000000
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &483385700860654840
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -1,11 +1,9 @@
 using DG.Tweening;
 using Events;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CellsRotation : MonoBehaviour
+public class TokenRotation : MonoBehaviour
 {
     public InputAction CellsControls;
 
@@ -15,6 +13,16 @@ public class CellsRotation : MonoBehaviour
     private float rotationValue = 60f;
 
     public bool isOver = true;
+
+    private void Awake()
+    {
+        EventManager.AddListener<float>(ENUM_InputEvent.Rotate, PerformRotation);
+    }
+    
+    private void OnDestroy()
+    {
+        EventManager.RemoveListener<float>(ENUM_InputEvent.Rotate, PerformRotation);
+    }
 
     private void Start()
     {
@@ -31,12 +39,12 @@ public class CellsRotation : MonoBehaviour
         CellsControls.Disable();
     }
 
-    public void Rotate(float rotationSense)
+    public void RotateToken(float rotationSense)
     {     
-        float targetRotation = transform.eulerAngles.z + rotationValue * rotationSense;
+        float targetRotation = transform.eulerAngles.y + rotationValue * rotationSense;
 
-        // Aplicar rotación suavemente usando DOTween
-        transform.DORotate(new Vector3(0, 0, targetRotation), tweenTime).SetEase(vibrationEase).OnComplete(OverTween);
+        // Applies the rotation using DOTween
+        transform.DORotate(new Vector3(0, targetRotation,0 ), tweenTime).SetEase(vibrationEase).OnComplete(OverTween);
         EventManager.Dispatch(ENUM_SFXEvent.RotateSound);
     }
 
@@ -45,18 +53,15 @@ public class CellsRotation : MonoBehaviour
         isOver = true;
     }
 
-    private void Update()
+    private void PerformRotation(float rotationSense)
     {
         if (!polygonCollider.enabled)
             return;
 
-        float rotationSense = CellsControls.ReadValue<float>();
-
-        if(rotationSense != 0 && isOver == true)
+        if(isOver)
         {
             isOver = false;
-            Rotate(rotationSense);
+            RotateToken(rotationSense);
         }
     }
-
 }

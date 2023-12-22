@@ -20,10 +20,20 @@ public class TriangularGrid : MonoBehaviour
         return new Vector2(x, y);
     }
 
+    public Vector2 TriCenter(Vector3Int tri)
+    {
+        return TriCenter(tri.x, tri.y, tri.z);
+    }
+
     // Function to check if a triangle is pointing upwards
     public bool PointsUp(int a, int b, int c)
     {
         return a + b + c == 2;
+    }
+
+    public bool PointsUp(Vector3Int tri)
+    {
+        return PointsUp(tri.x, tri.y, tri.z);
     }
 
     // Function to find the triangle containing a given Cartesian coordinate point
