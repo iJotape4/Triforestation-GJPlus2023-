@@ -9,12 +9,12 @@ public class AutoFill : MonoBehaviour
 
     public ENUM_Biome biome;
 
-    SpriteRenderer spriteRenderer;
+    MeshRenderer meshRenderer;
     BiomesManager biomesManager;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        meshRenderer = GetComponent<MeshRenderer>();
         biomesManager = BiomesManager.Instance;
     }
 
@@ -46,7 +46,7 @@ public class AutoFill : MonoBehaviour
                 if (hitPole != null)
                 {
                     biome = hitPole.biome;
-                    spriteRenderer.sprite = biomesManager.biomesSprites[(int)biome];
+                meshRenderer.materials[0] = biomesManager.biomesMaterials[(int)biome];
                 }
                 
             }

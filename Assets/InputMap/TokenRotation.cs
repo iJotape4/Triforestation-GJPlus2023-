@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 
 public class TokenRotation : MonoBehaviour
 {
-    public InputAction CellsControls;
-
     [SerializeField] private float tweenTime = 0.5f;
     [SerializeField] private Ease vibrationEase;
     [SerializeField] Collider polygonCollider;
@@ -27,16 +25,6 @@ public class TokenRotation : MonoBehaviour
     private void Start()
     {
         polygonCollider = GetComponent<Collider>();
-    }
-
-    private void OnEnable()
-    {
-        CellsControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        CellsControls.Disable();
     }
 
     public void RotateToken(float rotationSense)

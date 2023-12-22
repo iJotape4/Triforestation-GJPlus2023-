@@ -81,23 +81,23 @@ public class AnimalToken : MonoBehaviour
 
     protected int GetBiomeIndex(ENUM_Biome biome)
     {
-        switch (biome)
+        int biomeID = biome switch
         {
-            case ENUM_Biome.Meadow:
-                return 0;
-            case ENUM_Biome.Flowers:
-                return 0;
-            case ENUM_Biome.Sweetwater:
-                return 2;
-            case ENUM_Biome.Forest:
-                return 3;
-            case ENUM_Biome.Jungle:
-                return 4;
-            case ENUM_Biome.Mountain:
-                return 5;
-            default:
-                return -1; // Handle other cases or error condition.
-        }
+            ENUM_Biome.Jungle => 0,
+            ENUM_Biome.Forest => 1,
+            ENUM_Biome.Mountain => 2,
+            ENUM_Biome.Savannah => 3,
+            ENUM_Biome.Meadow => 4,
+            ENUM_Biome.Sweetwater => 5,
+            //ENUM_Biome.SaltyWater => 6,
+            //ENUM_Biome.Snowy => 7,
+            //ENUM_Biome.Volcano => 8,
+            //ENUM_Biome.Flowers => 9,
+            //ENUM_Biome.Desert => 10,
+            //ENUM_Biome.Flat => 11,
+            _ => -1, // Handle other cases or error condition.
+        };
+            return biomeID;
     }
 
     void ClearBiomesArray()

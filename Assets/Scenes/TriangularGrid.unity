@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb70f2ea70d4734497fc1bdc312deeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  token: {fileID: 919132149155446097, guid: c2463324c85490642ae6947a68f2661f, type: 3}
+  token: {fileID: 4477710225184033123, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
   initialPosition: {x: 0, y: 1, z: 1}
 --- !u!4 &996464286
 Transform:
@@ -370,6 +370,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1784356900}
+    - target: {fileID: 483385700860654840, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f3367f56a9697f945b01a56b6cfe8ac9, type: 2}
+    - target: {fileID: 3665151977654406277, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db9dda1d4961c594aa017b255599a9d9, type: 2}
     - target: {fileID: 3850530493829927897, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.46
@@ -410,6 +418,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4240882062231851003, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 790b1210d3305794d9a73df4534a8bef, type: 2}
     - target: {fileID: 4477710225184033123, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_Name
       value: Domino Token
@@ -422,13 +434,13 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1784356900}
-    - target: {fileID: 5350913145134355597, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
-      propertyPath: m_SelectedEdges.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350913145134355597, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
-      propertyPath: m_SelectedVertices.Array.size
-      value: 0
+    - target: {fileID: 6229325795511735521, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68a66b14edb49794b8b0dc9fdf7f5925, type: 2}
+    - target: {fileID: 7308452336085354017, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

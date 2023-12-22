@@ -169,7 +169,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942edf1561d55484dbef8e6ec597919d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  biomesSprites: []
+  biomesMaterials: []
+  colorsMaterials:
+  - {fileID: 2100000, guid: 2cbf2f191ad24d34c81c751c11dadd91, type: 2}
+  - {fileID: 2100000, guid: 0fbed156314effa41bbd550d7a2e1560, type: 2}
+  - {fileID: 2100000, guid: 9f0082326a9625649b2526f39b30c979, type: 2}
+  - {fileID: 2100000, guid: 253ec146b3bd95b47ab4e8c296ee5e40, type: 2}
+  - {fileID: 2100000, guid: a2c3d47403e46bb49bcaffa5d7b7db7e, type: 2}
+  - {fileID: 2100000, guid: 73073f84e7731a849af87e7a41ad38f0, type: 2}
 --- !u!1 &6842003277220954310
 GameObject:
   m_ObjectHideFlags: 0

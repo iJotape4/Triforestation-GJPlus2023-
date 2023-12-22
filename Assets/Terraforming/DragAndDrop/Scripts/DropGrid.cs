@@ -15,6 +15,7 @@ namespace Terraforming
         {
             grid = GetComponent<TriangularGrid>();
         }
+
         public override void OnDrop(PointerEventData eventData)
         {
             DominoToken token = eventData.pointerDrag.gameObject.GetComponent<DominoToken>();
