@@ -97,7 +97,10 @@ public class TriangularGrid : MonoBehaviour
         foreach (var neighbor in TriNeighbours(initialPosition))
         {
             if (PointsUp(initialPosition))
-                Instantiate(gridTile, TriCenter(neighbor), transform.rotation* Quaternion.Euler(0,  180, 0));
+            {
+                var tile = Instantiate(gridTile, TriCenter(neighbor), transform.rotation* Quaternion.Euler(0,  180, 0));
+                tile.GetComponent<DropTile>().isUpwards = false;
+            }
             else
                 Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
 
