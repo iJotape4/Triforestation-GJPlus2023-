@@ -11,6 +11,7 @@ public class TriangularGrid : DropView
     [SerializeField] private GameObject token;
     public GameObject gridTile;
     public Vector3Int initialPosition;
+    private HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
 
     public static List<(float x, float y, float z)> occupiedPositions = new List<(float x, float y, float z)>();
 
@@ -82,6 +83,24 @@ public class TriangularGrid : DropView
                 new Vector3Int(a, b, c + 1)
             };
         }
+    }
+
+    // Function to check if a cell is free
+    public bool IsCellFree(Vector3Int cell)
+    {
+        return !occupiedCells.Contains(cell);
+    }
+
+    // Function to occupy a cell
+    public void OccupyCell(Vector3Int cell)
+    {
+        occupiedCells.Add(cell);
+    }
+
+    // Function to free a cell
+    public void FreeCell(Vector3Int cell)
+    {
+        occupiedCells.Remove(cell);
     }
 
     public Vector3Int[] TriNeighbours(Vector3Int tri)

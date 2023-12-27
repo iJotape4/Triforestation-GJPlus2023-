@@ -20,7 +20,7 @@ public class DropTile : TriangularGrid
     {
         DominoToken token = eventData.pointerDrag.gameObject.GetComponent<DominoToken>();
 
-        if(token.IsUpwards() == isUpwards)
+        if(token.IsUpwards() == isUpwards && token.IsValidBiome())
         {
             eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
             eventData.pointerDrag.transform.position = transform.position;
