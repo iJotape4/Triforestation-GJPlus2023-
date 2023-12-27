@@ -37,10 +37,11 @@ namespace Terraforming.Dominoes
            dominoCollider.enabled = eventData;
         }
 
+
         public bool IsUpwards()
         {
             // Calculate the actual rotation of the token
-            float actualRotation = transform.localEulerAngles.z;
+            float actualRotation = transform.localEulerAngles.y;
             // Normalize the rotation to the range [0, 360]
             actualRotation = (360 + actualRotation) % 360;
 

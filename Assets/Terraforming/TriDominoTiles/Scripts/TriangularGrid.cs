@@ -7,20 +7,21 @@ public class TriangularGrid : MonoBehaviour
     private float sqrt3 = Mathf.Sqrt(3);
 
     public GameObject token;
+    public GameObject gridTile;
     public Vector3Int initialPosition;
 
     public List<(int x, int y, int z)> occupiedPositions = new List<(int x, int y, int z)>();
 
-    public Vector2 TriCenter(int a, int b, int c)
+    public Vector3 TriCenter(int a, int b, int c)
     {
         // Calculate the center using the provided formula
         float x = (0.5f * a - 0.5f * c) * edgeLength;
         float y = (-sqrt3 / 6 * a + sqrt3 / 3 * b - sqrt3 / 6 * c) * edgeLength;
 
-        return new Vector2(x, y);
+        return new Vector3(x, 0,y);
     }
 
-    public Vector2 TriCenter(Vector3Int tri)
+    public Vector3 TriCenter(Vector3Int tri)
     {
         return TriCenter(tri.x, tri.y, tri.z);
     }
@@ -81,28 +82,43 @@ public class TriangularGrid : MonoBehaviour
         }
     }
 
+    public Vector3Int[] TriNeighbours(Vector3Int tri)
+    {
+        return TriNeighbours(tri.x, tri.y, tri.z);
+    }
 
     //TODO : Test purposes only, just delete!
     private void Start()
     {
-        Vector2 center1 = TriCenter(initialPosition.x, initialPosition.y, initialPosition.z);
-        Vector2 center2 = TriCenter(1, 0, 1);
-        Vector2 center3 = TriCenter(1, 1, 0);
-        Vector2 center4 = TriCenter(0, 2, 0);
-
+        GameObject token1 = Instantiate(token, TriCenter(initialPosition), transform.rotation);
+        token1.GetComponentInChildren<MeshCollider>().enabled = false;
         occupiedPositions.Add((initialPosition.x, initialPosition.y, initialPosition.z));
-        occupiedPositions.Add((1,0, 1));
-        occupiedPositions.Add((1, 1, 0));
-        occupiedPositions.Add((0, 2, 0));
 
-        Vector3 initialPos = new Vector3(center1.x, transform.position.y, center1.y);
-        Vector3 initialPos2 = new Vector3(center2.x, transform.position.y, center2.y);
-        Vector3 initialPos3 = new Vector3(center3.x, transform.position.y, center3.y);
-        Vector3 initialPos4 = new Vector3(center4.x, transform.position.y, center4.y);
+        foreach (var neighbor in TriNeighbours(initialPosition))
+        {
+            if (PointsUp(initialPosition))
+                Instantiate(gridTile, TriCenter(neighbor), transform.rotation* Quaternion.Euler(0,  180, 0));
+            else
+                Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
 
-        Instantiate(token, initialPos, transform.rotation);
-        Instantiate(token, initialPos2, transform.rotation);
-        Instantiate(token, initialPos3, transform.rotation);
-        Instantiate(token, initialPos4, transform.rotation);
+          //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
+            occupiedPositions.Add((neighbor.x, neighbor.y, neighbor.z));
+        }
+      
+        //occupiedPositions.Add((1,0, 1));
+        //occupiedPositions.Add((1, 1, 0));
+        //occupiedPositions.Add((0, 2, 0));
+
+        //Vector3 initialPos2 = new Vector3(center2.x, transform.position.y, center2.y);
+        //Vector3 initialPos3 = new Vector3(center3.x, transform.position.y, center3.y);
+        //Vector3 initialPos4 = new Vector3(center4.x, transform.position.y, center4.y);
+
+        //GameObject token2 =Instantiate(token, initialPos2, transform.rotation);
+        //token2.GetComponentInChildren<MeshCollider>().enabled = false;
+        //GameObject token3= Instantiate(token, initialPos3, transform.rotation);
+        //token3.GetComponentInChildren<MeshCollider>().enabled = false;
+        //GameObject token4 =Instantiate(token, initialPos4, transform.rotation);
+        //token4.GetComponentInChildren<MeshCollider>().enabled = false;
+
     }
 }

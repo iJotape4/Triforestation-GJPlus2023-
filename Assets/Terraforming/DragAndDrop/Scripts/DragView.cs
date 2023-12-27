@@ -54,7 +54,7 @@ namespace Terraforming
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
-            Debug.Log($"OnBeginDrag {eventData.position}", gameObject);
+            //Debug.Log($"OnBeginDrag {eventData.position}", gameObject);
             if (!draggingAllowed) return;
             initialDragPosition = transform.position;
             collider.enabled = false;
@@ -74,7 +74,7 @@ namespace Terraforming
                 eventData.pointerDrag = null;
                 return;
             }
-            Debug.Log($"OnDrag {eventData.position}", gameObject);
+            //Debug.Log($"OnDrag {eventData.position}", gameObject);
 
              
 
@@ -85,7 +85,7 @@ namespace Terraforming
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            Debug.Log($"OnEndDrag {eventData.position}", gameObject);
+            //Debug.Log($"OnEndDrag {eventData.position}", gameObject);
             if (validDrop)
                 Drop();
             else

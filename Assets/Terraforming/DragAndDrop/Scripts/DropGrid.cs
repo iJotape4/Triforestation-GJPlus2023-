@@ -10,7 +10,7 @@ namespace Terraforming
     public class DropGrid : DropView
     {     
         private TriangularGrid grid;
-
+        [SerializeField] float yOffsetForDownwardsToken = -0.5f;
         private void Start()
         {
             grid = GetComponent<TriangularGrid>();
@@ -33,6 +33,14 @@ namespace Terraforming
             {
                 eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
                 eventData.pointerDrag.transform.position = new Vector3(triangleCenter.x, transform.position.y, triangleCenter.y);
+                token.TurnOnColliders();
+                EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
+                RestoreHoveredObjectScale(eventData);
+            }else if (!token.IsUpwards() && grid.PointsUp((Vector3Int)triangle))
+            {
+                Debug.Log("Invalid rotation");
+                eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
+                eventData.pointerDrag.transform.position = new Vector3(triangleCenter.x, transform.position.y , triangleCenter.y - yOffsetForDownwardsToken);
                 token.TurnOnColliders();
                 EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
                 RestoreHoveredObjectScale(eventData);
