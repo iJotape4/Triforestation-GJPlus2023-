@@ -105,19 +105,13 @@ namespace Terraforming.Dominoes
                             if (direction == 0)
                             {
                                 poleConnections[pole.position][1] = true; // "left" connection
-                                print("left conection");
                             }
                             else
                             {
-                                print("right conection");
                                 poleConnections[pole.position][0] = true; // "right" connection
                             }
                         }
                         
-                    }
-                    else
-                    {
-                        print("no conection");
                     }
                 }
             }
