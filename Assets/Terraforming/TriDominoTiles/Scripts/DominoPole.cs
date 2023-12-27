@@ -11,7 +11,8 @@ public enum ENUM_PolePosition
 namespace Terraforming.Dominoes
 {
     public class DominoPole : DropView 
-    { 
+    {
+        public Transform pivot;
         public MeshRenderer meshRenderer;
         public ENUM_PolePosition position;
         public ENUM_Biome biome;
