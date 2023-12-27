@@ -329,7 +329,6 @@ GameObject:
   m_Component:
   - component: {fileID: 996464286}
   - component: {fileID: 996464285}
-  - component: {fileID: 996464287}
   - component: {fileID: 996464288}
   m_Layer: 0
   m_Name: Grid
@@ -368,19 +367,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &996464287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996464284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26e24058de41db942b24d7b66f4a0879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yOffsetForDownwardsToken: -1.7
 --- !u!65 &996464288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -698,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4477710225184033123, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4851472468327310498, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_Mesh
@@ -775,7 +761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4477710225184033123, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4851472468327310498, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_Mesh
@@ -1017,7 +1003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4477710225184033123, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4851472468327310498, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_Mesh
