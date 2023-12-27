@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TriangularGrid : MonoBehaviour
@@ -9,16 +7,24 @@ public class TriangularGrid : MonoBehaviour
     private float sqrt3 = Mathf.Sqrt(3);
 
     public GameObject token;
+    public GameObject gridTile;
     public Vector3Int initialPosition;
     private HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
 
-    public Vector2 TriCenter(int a, int b, int c)
+    public List<(int x, int y, int z)> occupiedPositions = new List<(int x, int y, int z)>();
+
+    public Vector3 TriCenter(int a, int b, int c)
     {
         // Calculate the center using the provided formula
         float x = (0.5f * a - 0.5f * c) * edgeLength;
         float y = (-sqrt3 / 6 * a + sqrt3 / 3 * b - sqrt3 / 6 * c) * edgeLength;
 
-        return new Vector2(x, y);
+        return new Vector3(x, 0,y);
+    }
+
+    public Vector3 TriCenter(Vector3Int tri)
+    {
+        return TriCenter(tri.x, tri.y, tri.z);
     }
 
     // Function to check if a triangle is pointing upwards
@@ -27,8 +33,14 @@ public class TriangularGrid : MonoBehaviour
         return a + b + c == 2;
     }
 
+    public bool PointsUp(Vector3Int tri)
+    {
+        return PointsUp(tri.x, tri.y, tri.z);
+    }
+
     // Function to find the triangle containing a given Cartesian coordinate point
-    public Vector3Int PickTri(float x, float y)
+    // Returns null if the triangle is already occupied
+    public Vector3Int? PickTri(float x, float y)
     {
         // Using dot product, measures which row and diagonals a given point occupies.
         // Or equivalently, multiply by the inverse matrix to tri_center
@@ -39,7 +51,13 @@ public class TriangularGrid : MonoBehaviour
         int b = Mathf.FloorToInt((sqrt3 * 2 / 3 * y) / edgeLength) + 1;
         int c = Mathf.CeilToInt((-1 * x - sqrt3 / 3 * y) / edgeLength);
 
-        return new Vector3Int(a, b, c);
+        if(occupiedPositions!=null && occupiedPositions.Contains((a, b, c)))        
+            return null;        
+        else
+        {
+            occupiedPositions.Add((a, b, c));
+            return new Vector3Int(a, b, c);
+        }
     }
 
     // Function to get triangles that share an edge with the given triangle
@@ -83,27 +101,46 @@ public class TriangularGrid : MonoBehaviour
         occupiedCells.Remove(cell);
     }
 
+    public Vector3Int[] TriNeighbours(Vector3Int tri)
+    {
+        return TriNeighbours(tri.x, tri.y, tri.z);
+    }
+
+    //TODO : Test purposes only, just delete!
     private void Start()
     {
-        Vector2 center1 = TriCenter(initialPosition.x, initialPosition.y, initialPosition.z);
+        GameObject token1 = Instantiate(token, TriCenter(initialPosition), transform.rotation);
+        token1.GetComponentInChildren<MeshCollider>().enabled = false;
+        occupiedPositions.Add((initialPosition.x, initialPosition.y, initialPosition.z));
 
-        Vector2 center2 = TriCenter(1, 0, 1);
+        foreach (var neighbor in TriNeighbours(initialPosition))
+        {
+            if (PointsUp(initialPosition))
+            {
+                var tile = Instantiate(gridTile, TriCenter(neighbor), transform.rotation* Quaternion.Euler(0,  180, 0));
+                tile.GetComponent<DropTile>().isUpwards = false;
+            }
+            else
+                Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
 
-        Vector2 center3 = TriCenter(1, 1, 0);
+          //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
+            occupiedPositions.Add((neighbor.x, neighbor.y, neighbor.z));
+        }
+      
+        //occupiedPositions.Add((1,0, 1));
+        //occupiedPositions.Add((1, 1, 0));
+        //occupiedPositions.Add((0, 2, 0));
 
-        Vector2 center4 = TriCenter(0, 2, 0);
+        //Vector3 initialPos2 = new Vector3(center2.x, transform.position.y, center2.y);
+        //Vector3 initialPos3 = new Vector3(center3.x, transform.position.y, center3.y);
+        //Vector3 initialPos4 = new Vector3(center4.x, transform.position.y, center4.y);
 
-        Vector3 initialPos = new Vector3(center1.x, transform.position.y, center1.y);
+        //GameObject token2 =Instantiate(token, initialPos2, transform.rotation);
+        //token2.GetComponentInChildren<MeshCollider>().enabled = false;
+        //GameObject token3= Instantiate(token, initialPos3, transform.rotation);
+        //token3.GetComponentInChildren<MeshCollider>().enabled = false;
+        //GameObject token4 =Instantiate(token, initialPos4, transform.rotation);
+        //token4.GetComponentInChildren<MeshCollider>().enabled = false;
 
-        Vector3 initialPos2 = new Vector3(center2.x, transform.position.y, center2.y);
-
-        Vector3 initialPos3 = new Vector3(center3.x, transform.position.y, center3.y);
-
-        Vector3 initialPos4 = new Vector3(center4.x, transform.position.y, center4.y);
-
-        Instantiate(token, initialPos, transform.rotation);
-        Instantiate(token, initialPos2, transform.rotation);
-        Instantiate(token, initialPos3, transform.rotation);
-        Instantiate(token, initialPos4, transform.rotation);
     }
 }

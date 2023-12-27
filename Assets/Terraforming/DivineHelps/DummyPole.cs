@@ -9,8 +9,8 @@ public class DummyPole : DominoPole, IPointerDownHandler
     DummyDominoToken token;
     protected override void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        poleCollider = GetComponent<Collider2D>();
+        meshRenderer = GetComponent<MeshRenderer>();
+        poleCollider = GetComponent<Collider>();
         biomesManager = BiomesManager.Instance;
         token = GetComponentInParent<DummyDominoToken>();
     }
@@ -49,12 +49,12 @@ public class DummyPole : DominoPole, IPointerDownHandler
     {
         selected = selected ? false : true;
         EventManager.Dispatch(selected ? ENUM_SFXEvent.SelectSound : ENUM_SFXEvent.UnselectSound);
-        spriteRenderer.color = selected ?  Color.grey :Color.white;
+      //  meshRenderer.color = selected ?  Color.grey :Color.white;
     }
 
     public void UnselectOnCancelOrConfirm()
     {
         selected = false;
-        spriteRenderer.color = Color.white;
+      //  meshRenderer.color = Color.white;
     }
 }
