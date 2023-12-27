@@ -7,13 +7,13 @@ using UnityEngine.EventSystems;
 
 namespace Terraforming
 {
-    [RequireComponent(typeof(Collider2D))]
+    [RequireComponent(typeof(Collider))]
     public class DragView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
     {
         public event Action<PointerEventData> OnDragBegan;
         public event Action<PointerEventData> OnDragEnded;
 
-        private new Collider2D collider;
+        private new Collider collider;
         private Camera mainCamera;
 
         private Vector3 initialDragPosition;
@@ -26,10 +26,11 @@ namespace Terraforming
         [Header("In Divine Dones Properties")]
         private bool validClickInDivineDone = false;
 
+        float distanceToCamera;
         private void Awake()
         {
             mainCamera = Camera.main;
-            collider = GetComponent<Collider2D>();
+            collider = GetComponent<Collider>();
             EventManager.AddListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
             EventManager.AddListener(ENUM_DominoeEvent.validSwap, DisableClicking);
         }
@@ -53,12 +54,13 @@ namespace Terraforming
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (!draggingAllowed) return;
             //Debug.Log($"OnBeginDrag {eventData.position}", gameObject);
+            if (!draggingAllowed) return;
             initialDragPosition = transform.position;
             collider.enabled = false;
             isDragging = true;
             OnDragBegan?.Invoke(eventData);
+            distanceToCamera = Vector3.Distance(transform.position, mainCamera.transform.position);
             EventManager.Dispatch(ENUM_SFXEvent.dragSound);
         }
 
@@ -73,8 +75,11 @@ namespace Terraforming
                 return;
             }
             //Debug.Log($"OnDrag {eventData.position}", gameObject);
-            currentDragPosition = mainCamera.ScreenToWorldPoint(eventData.position);
-            currentDragPosition.z = transform.position.z;
+
+             
+
+            // Update the current drag position in 3D space
+            currentDragPosition = mainCamera.ScreenToWorldPoint(new Vector3(eventData.position.x,  eventData.position.y, distanceToCamera));
             transform.position = currentDragPosition;
         }
 

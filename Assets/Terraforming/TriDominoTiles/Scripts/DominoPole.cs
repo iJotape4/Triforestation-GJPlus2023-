@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public enum ENUM_PolePosition
@@ -10,28 +11,35 @@ public enum ENUM_PolePosition
 namespace Terraforming.Dominoes
 {
     public class DominoPole : DropView 
-    { 
-        public SpriteRenderer spriteRenderer;
+    {
+        public Transform pivot;
+        public MeshRenderer meshRenderer;
         public ENUM_PolePosition position;
         public ENUM_Biome biome;
         protected BiomesManager biomesManager;
 
 
 
-        public Collider2D poleCollider;
+        public Collider poleCollider;
         protected virtual void Awake()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            poleCollider = GetComponent<Collider2D>();
+            meshRenderer = GetComponent<MeshRenderer>();
+            poleCollider = GetComponent<Collider>();
             biomesManager = BiomesManager.Instance;
         }
 
-    private void SetActive(bool eventData)
+        private void Start()
+        {
+            //TODO -> Delete this
+            AssignBiome();
+        }
+
+        private void SetActive(bool eventData)
     {
         if (transform.parent.parent == null)
             return;
 
-        spriteRenderer.enabled = eventData;
+        meshRenderer.enabled = eventData;
         poleCollider.enabled = eventData;
     }
 
@@ -77,9 +85,16 @@ namespace Terraforming.Dominoes
         protected void SetBioma()
         {
             int index = GetBiomeIndex(biome);
-            if (index >= 0 && index < biomesManager.biomesSprites.Length)
+            if (index >= 0 && index < biomesManager.biomesMaterials.Length)
             {
-                spriteRenderer.sprite = biomesManager.biomesSprites[index];
+                //TODO -> change for mesh renderer
+                // spriteRenderer.sprite = biomesManager.biomesSprites[index];
+
+                List<Material> materials = biomesManager.GetBiomeMaterials(index);
+                materials.Add(meshRenderer.materials[2]);
+
+                meshRenderer.SetMaterials(materials);
+                Debug.Log("SetBioma: " + biome+ "and material" + biomesManager.biomesMaterials[index]);
             }
             else
             {
@@ -90,23 +105,23 @@ namespace Terraforming.Dominoes
 
         protected int GetBiomeIndex(ENUM_Biome biome)
         {
-            switch (biome)
+            int biomeID = biome switch
             {
-                case ENUM_Biome.Meadow:
-                    return 0;
-                case ENUM_Biome.Flowers:
-                    return 1;
-                case ENUM_Biome.Sweetwater:
-                    return 2;
-                case ENUM_Biome.Forest:
-                    return 3;
-                case ENUM_Biome.Jungle:
-                    return 4;
-                case ENUM_Biome.Mountain:
-                    return 5;
-                default:
-                    return -1; // Handle other cases or error condition.
-            }
+                ENUM_Biome.Jungle => 0,
+                ENUM_Biome.Forest => 1,
+                ENUM_Biome.Mountain => 2,
+                ENUM_Biome.Savannah => 3,
+                ENUM_Biome.Meadow => 4,
+                ENUM_Biome.Sweetwater => 5,
+                //ENUM_Biome.SaltyWater => 6,
+                //ENUM_Biome.Snowy => 7,
+                //ENUM_Biome.Volcano => 8,
+                //ENUM_Biome.Flowers => 9,
+                //ENUM_Biome.Desert => 10,
+                //ENUM_Biome.Flat => 11,
+                _ => -1, // Handle other cases or error condition.
+            };
+            return biomeID;
         }
     }
 }
