@@ -438,3 +438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39459f2e390077c4fba502b4f3141600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  token: {fileID: 0}
+  gridTile: {fileID: 5364615176062154162}
+  initialPosition: {x: 0, y: 0, z: 0}
+  isUpwards: 1
+  neighbors: []

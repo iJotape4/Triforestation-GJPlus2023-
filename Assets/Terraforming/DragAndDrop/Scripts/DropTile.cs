@@ -4,11 +4,17 @@ using Terraforming.Dominoes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DropTile : DropView
+public class DropTile : TriangularGrid
 {
     public bool isUpwards = true;
     MeshRenderer meshRenderer;
-    private void Start() => meshRenderer = GetComponent<MeshRenderer>();
+    public Vector3Int intCenter;
+
+    private void Start()
+    {
+        meshRenderer = GetComponent<MeshRenderer>();
+        ChangeAlphaMaterial(0);
+    }
 
     public override void OnDrop(PointerEventData eventData)
     {
@@ -19,8 +25,9 @@ public class DropTile : DropView
             eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
             eventData.pointerDrag.transform.position = transform.position;
             token.TurnOnColliders();
-            gameObject.SetActive(false);
+            GenerateNeighBors(intCenter);
             EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
+            gameObject.SetActive(false);
         }
     }
 

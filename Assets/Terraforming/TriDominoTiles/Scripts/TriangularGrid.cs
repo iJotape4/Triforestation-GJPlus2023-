@@ -1,16 +1,18 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class TriangularGrid : MonoBehaviour
+public class TriangularGrid : DropView
 {
     private float edgeLength = 2.962f; // Lenght of the edge of the Triangular Token
     private float sqrt3 = Mathf.Sqrt(3);
 
-    public GameObject token;
+    [SerializeField] private GameObject token;
     public GameObject gridTile;
     public Vector3Int initialPosition;
 
-    public List<(int x, int y, int z)> occupiedPositions = new List<(int x, int y, int z)>();
+    public static List<(float x, float y, float z)> occupiedPositions = new List<(float x, float y, float z)>();
 
     public Vector3 TriCenter(int a, int b, int c)
     {
@@ -90,24 +92,12 @@ public class TriangularGrid : MonoBehaviour
     //TODO : Test purposes only, just delete!
     private void Start()
     {
-        GameObject token1 = Instantiate(token, TriCenter(initialPosition), transform.rotation);
+        Vector3 center = TriCenter(initialPosition);
+        GameObject token1 = Instantiate(token, center, transform.rotation);
         token1.GetComponentInChildren<MeshCollider>().enabled = false;
-        occupiedPositions.Add((initialPosition.x, initialPosition.y, initialPosition.z));
+        occupiedPositions.Add(Vector3ToTuple(center));
+        GenerateNeighBors(initialPosition);
 
-        foreach (var neighbor in TriNeighbours(initialPosition))
-        {
-            if (PointsUp(initialPosition))
-            {
-                var tile = Instantiate(gridTile, TriCenter(neighbor), transform.rotation* Quaternion.Euler(0,  180, 0));
-                tile.GetComponent<DropTile>().isUpwards = false;
-            }
-            else
-                Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
-
-          //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
-            occupiedPositions.Add((neighbor.x, neighbor.y, neighbor.z));
-        }
-      
         //occupiedPositions.Add((1,0, 1));
         //occupiedPositions.Add((1, 1, 0));
         //occupiedPositions.Add((0, 2, 0));
@@ -124,4 +114,40 @@ public class TriangularGrid : MonoBehaviour
         //token4.GetComponentInChildren<MeshCollider>().enabled = false;
 
     }
+
+    public void GenerateNeighBors(Vector3Int position)
+    {
+        foreach (var neighbor in TriNeighbours(position))
+        {
+            Vector3 center = TriCenter(neighbor);
+            if (occupiedPositions.Contains(Vector3ToTuple(center)))
+                continue;
+
+            occupiedPositions.Add((center.x, center.y, center.z));
+            Quaternion rotation;
+
+            if (PointsUp(position))
+            {
+                var tile = Instantiate(gridTile, center, transform.rotation * Quaternion.Euler(0, 180, 0));
+                rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+                DropTile dropTile = tile.GetComponent<DropTile>();
+                dropTile.isUpwards = false;
+                dropTile.intCenter = neighbor;
+            }
+            else
+            {
+                var tile = Instantiate(gridTile, center, Quaternion.Euler(Vector3.zero));
+                DropTile dropTile = tile.GetComponent<DropTile>();
+                tile.GetComponent<DropTile>().isUpwards = true;
+                dropTile.intCenter = neighbor;
+            }
+
+            Debug.Log($"Neighbor {center}");
+            //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
+        }
+    }
+
+    public (float x, float y, float z) Vector3ToTuple(Vector3 center)=> ((float x, float y, float z))(center.x, center.y, center.z);
+
+    public override void OnDrop(PointerEventData eventData) { }
 }
