@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6845496828675583418}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.86602545, z: 0, w: 0.49999994}
-  m_LocalPosition: {x: -0.1, y: 0, z: -0.17}
+  m_LocalPosition: {x: -0.259, y: 0.24999999, z: -0.132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 7800787929495963942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.86602545, z: 0, w: 0.49999994}
-  m_LocalPosition: {x: 0.66, y: 0, z: -0.38}
+  m_LocalPosition: {x: 0.432, y: 0.24999999, z: -0.199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 8258437087265233757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.49}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -246,9 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebfda3688f9ae1439fbb57aa53988c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivot: {fileID: 0}
+  pivot: {fileID: 2505452969552036743}
   meshRenderer: {fileID: 0}
-  position: 0
+  position: 3
   biome: 0
   poleCollider: {fileID: 0}
 --- !u!64 &1980388499556223665
@@ -290,9 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebfda3688f9ae1439fbb57aa53988c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivot: {fileID: 0}
+  pivot: {fileID: 4729373749501696277}
   meshRenderer: {fileID: 0}
-  position: 0
+  position: 1
   biome: 0
   poleCollider: {fileID: 0}
 --- !u!64 &6044199075420639526
@@ -777,9 +777,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebfda3688f9ae1439fbb57aa53988c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivot: {fileID: 0}
+  pivot: {fileID: 2925830442639920659}
   meshRenderer: {fileID: 0}
-  position: 0
+  position: 2
   biome: 0
   poleCollider: {fileID: 0}
 --- !u!64 &1241708834892502672

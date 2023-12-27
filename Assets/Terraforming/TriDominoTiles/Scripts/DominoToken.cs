@@ -90,14 +90,13 @@ namespace Terraforming.Dominoes
                 for (int direction = 0; direction < 2; direction++)
                 {
                     float angleOffset = direction == 0 ? 60f : -60f;
-                    Quaternion rotation = Quaternion.Euler(0, pole.transform.eulerAngles.y + angleOffset, 0); // Rotate in the Y-axis
+                    Quaternion rotation = Quaternion.Euler(0, pole.pivot.eulerAngles.y + angleOffset, 0); // Rotate in the Y-axis
                     Vector3 directionVector = rotation * Vector3.forward; // Use Vector3.forward for the X-Z plane
 
                     int dominoPoleLayerMask = LayerMask.GetMask("DominoPole");
 
                     RaycastHit hit;
-
-                    if (Physics.Raycast(pole.transform.position, directionVector, out hit, 1.2f, dominoPoleLayerMask))
+                    if (Physics.Raycast(pole.pivot.position, directionVector, out hit, 1.5f, dominoPoleLayerMask))
                     {
                         DominoPole hitPole = hit.collider.GetComponent<DominoPole>();
 
@@ -106,12 +105,19 @@ namespace Terraforming.Dominoes
                             if (direction == 0)
                             {
                                 poleConnections[pole.position][1] = true; // "left" connection
+                                print("left conection");
                             }
                             else
                             {
+                                print("right conection");
                                 poleConnections[pole.position][0] = true; // "right" connection
                             }
                         }
+                        
+                    }
+                    else
+                    {
+                        print("no conection");
                     }
                 }
             }
@@ -121,12 +127,10 @@ namespace Terraforming.Dominoes
                 (poleConnections[ENUM_PolePosition.Position1][1] && poleConnections[ENUM_PolePosition.Position2][0]) ||
                 (poleConnections[ENUM_PolePosition.Position2][1] && poleConnections[ENUM_PolePosition.Position3][0]))
             {
-                print("si");
                 return true;
             }
             else
             {
-                print("no");
                 return false;
             }
         }
@@ -184,20 +188,20 @@ namespace Terraforming.Dominoes
                 for (int direction = 0; direction < 2; direction++)
                 {
                     float angleOffset = direction == 0 ? 60f : -60f;
-                    Quaternion rotation = Quaternion.Euler(0, pole.transform.eulerAngles.y + angleOffset, 0); // Rotate in the Y-axis
+                    Quaternion rotation = Quaternion.Euler(0, pole.pivot.eulerAngles.y + angleOffset, 0); // Rotate in the Y-axis
                     Vector3 directionVector = rotation * Vector3.forward; // Use Vector3.forward for the X-Z plane
 
                     Gizmos.color = Color.red; // Set the color of the Gizmo line
-                    Gizmos.DrawRay(pole.transform.position, directionVector * 1.2f); // Draw the ray
+                    Gizmos.DrawRay(pole.pivot.position, directionVector * 1.2f); // Draw the ray
 
                     int dominoPoleLayerMask = LayerMask.GetMask("DominoPole");
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(pole.transform.position, directionVector, out hit, 1.2f, dominoPoleLayerMask))
+                    if (Physics.Raycast(pole.pivot.position, directionVector, out hit, 1.2f, dominoPoleLayerMask))
                     {
                         Gizmos.color = Color.green; // Set the color of the Gizmo line for successful hit
-                        Gizmos.DrawLine(pole.transform.position, hit.point);
+                        Gizmos.DrawLine(pole.pivot.position, hit.point);
                     }
                 }
             }
