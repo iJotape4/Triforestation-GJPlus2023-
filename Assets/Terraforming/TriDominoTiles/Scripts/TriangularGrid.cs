@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,8 +11,6 @@ public class TriangularGrid : DropView
     public GameObject gridTile;
     public Vector3Int initialPosition;
     private HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
-
-    public static List<(float x, float y, float z)> occupiedPositions = new List<(float x, float y, float z)>();
 
     public Vector3 TriCenter(int a, int b, int c)
     {
@@ -53,11 +50,11 @@ public class TriangularGrid : DropView
         int b = Mathf.FloorToInt((sqrt3 * 2 / 3 * y) / edgeLength) + 1;
         int c = Mathf.CeilToInt((-1 * x - sqrt3 / 3 * y) / edgeLength);
 
-        if(occupiedPositions!=null && occupiedPositions.Contains((a, b, c)))        
+        if(occupiedCells!=null && IsCellFree(new Vector3Int(a,b,c)))
             return null;        
         else
         {
-            occupiedPositions.Add((a, b, c));
+            OccupyCell(new Vector3Int(a, b, c));
             return new Vector3Int(a, b, c);
         }
     }
@@ -114,24 +111,8 @@ public class TriangularGrid : DropView
         Vector3 center = TriCenter(initialPosition);
         GameObject token1 = Instantiate(token, center, transform.rotation);
         token1.GetComponentInChildren<MeshCollider>().enabled = false;
-        occupiedPositions.Add(Vector3ToTuple(center));
+        OccupyCell(initialPosition);
         GenerateNeighBors(initialPosition);
-
-        //occupiedPositions.Add((1,0, 1));
-        //occupiedPositions.Add((1, 1, 0));
-        //occupiedPositions.Add((0, 2, 0));
-
-        //Vector3 initialPos2 = new Vector3(center2.x, transform.position.y, center2.y);
-        //Vector3 initialPos3 = new Vector3(center3.x, transform.position.y, center3.y);
-        //Vector3 initialPos4 = new Vector3(center4.x, transform.position.y, center4.y);
-
-        //GameObject token2 =Instantiate(token, initialPos2, transform.rotation);
-        //token2.GetComponentInChildren<MeshCollider>().enabled = false;
-        //GameObject token3= Instantiate(token, initialPos3, transform.rotation);
-        //token3.GetComponentInChildren<MeshCollider>().enabled = false;
-        //GameObject token4 =Instantiate(token, initialPos4, transform.rotation);
-        //token4.GetComponentInChildren<MeshCollider>().enabled = false;
-
     }
 
     public void GenerateNeighBors(Vector3Int position)
@@ -139,10 +120,10 @@ public class TriangularGrid : DropView
         foreach (var neighbor in TriNeighbours(position))
         {
             Vector3 center = TriCenter(neighbor);
-            if (occupiedPositions.Contains(Vector3ToTuple(center)))
+            if(!IsCellFree(neighbor))
                 continue;
-
-            occupiedPositions.Add((center.x, center.y, center.z));
+            
+            OccupyCell(neighbor);
             Quaternion rotation;
 
             if (PointsUp(position))
@@ -165,8 +146,5 @@ public class TriangularGrid : DropView
             //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
         }
     }
-
-    public (float x, float y, float z) Vector3ToTuple(Vector3 center)=> ((float x, float y, float z))(center.x, center.y, center.z);
-
     public override void OnDrop(PointerEventData eventData) { }
 }
