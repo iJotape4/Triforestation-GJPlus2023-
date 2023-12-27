@@ -91,12 +91,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8980484911726974196, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5993565190212229374}
+    - targetCorrespondingSourceObject: {fileID: -8980484911726974196, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2789690648081084638}
     - targetCorrespondingSourceObject: {fileID: 6307778111350665747, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3825192217023223637}
+    - targetCorrespondingSourceObject: {fileID: 6307778111350665747, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 518967187326801106}
     - targetCorrespondingSourceObject: {fileID: 2389521877736823912, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5010632919338565808}
+    - targetCorrespondingSourceObject: {fileID: 2389521877736823912, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6040448918694570541}
   m_SourcePrefab: {fileID: 100100000, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
 --- !u!1 &1426555953669515354 stripped
 GameObject:
@@ -115,10 +124,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebfda3688f9ae1439fbb57aa53988c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
+  meshRenderer: {fileID: 0}
   position: 0
   biome: 0
   poleCollider: {fileID: 0}
+--- !u!64 &6040448918694570541
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426555953669515354}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6744896120764754537, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
 --- !u!1 &3583604050185527102 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8980484911726974196, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
@@ -136,10 +167,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebfda3688f9ae1439fbb57aa53988c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
+  meshRenderer: {fileID: 0}
   position: 0
   biome: 0
   poleCollider: {fileID: 0}
+--- !u!64 &2789690648081084638
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583604050185527102}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2809507336787786775, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
 --- !u!1 &4477710225184033123 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
@@ -595,7 +648,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebfda3688f9ae1439fbb57aa53988c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
+  meshRenderer: {fileID: 0}
   position: 0
   biome: 0
   poleCollider: {fileID: 0}
+--- !u!64 &518967187326801106
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308452336085354017}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3814435929070937838, guid: 490b7cd39030ecd4aaebb55a4cc569f1, type: 3}
