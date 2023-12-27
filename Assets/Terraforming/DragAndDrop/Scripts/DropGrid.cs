@@ -22,11 +22,14 @@ namespace Terraforming
 
             Vector3 currentPos = token.transform.position;
 
-            Vector3Int triangle = grid.PickTri(currentPos.x , currentPos.z);
+            Vector3Int? triangle = grid.PickTri(currentPos.x , currentPos.z);
 
-            Vector2 triangleCenter = grid.TriCenter(triangle);
+            if (triangle == null)
+                return;
 
-            if (token.IsUpwards() && grid.PointsUp(triangle))
+            Vector2 triangleCenter = grid.TriCenter((Vector3Int)triangle);
+
+            if (token.IsUpwards() && grid.PointsUp((Vector3Int)triangle))
             {
                 eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
                 eventData.pointerDrag.transform.position = new Vector3(triangleCenter.x, transform.position.y, triangleCenter.y);

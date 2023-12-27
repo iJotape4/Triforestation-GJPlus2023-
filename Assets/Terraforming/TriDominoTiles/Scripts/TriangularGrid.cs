@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TriangularGrid : MonoBehaviour
@@ -10,6 +8,8 @@ public class TriangularGrid : MonoBehaviour
 
     public GameObject token;
     public Vector3Int initialPosition;
+
+    public List<(int x, int y, int z)> occupiedPositions = new List<(int x, int y, int z)>();
 
     public Vector2 TriCenter(int a, int b, int c)
     {
@@ -37,7 +37,8 @@ public class TriangularGrid : MonoBehaviour
     }
 
     // Function to find the triangle containing a given Cartesian coordinate point
-    public Vector3Int PickTri(float x, float y)
+    // Returns null if the triangle is already occupied
+    public Vector3Int? PickTri(float x, float y)
     {
         // Using dot product, measures which row and diagonals a given point occupies.
         // Or equivalently, multiply by the inverse matrix to tri_center
@@ -48,7 +49,13 @@ public class TriangularGrid : MonoBehaviour
         int b = Mathf.FloorToInt((sqrt3 * 2 / 3 * y) / edgeLength) + 1;
         int c = Mathf.CeilToInt((-1 * x - sqrt3 / 3 * y) / edgeLength);
 
-        return new Vector3Int(a, b, c);
+        if(occupiedPositions!=null && occupiedPositions.Contains((a, b, c)))        
+            return null;        
+        else
+        {
+            occupiedPositions.Add((a, b, c));
+            return new Vector3Int(a, b, c);
+        }
     }
 
     // Function to get triangles that share an edge with the given triangle
@@ -74,22 +81,23 @@ public class TriangularGrid : MonoBehaviour
         }
     }
 
+
+    //TODO : Test purposes only, just delete!
     private void Start()
     {
         Vector2 center1 = TriCenter(initialPosition.x, initialPosition.y, initialPosition.z);
-
         Vector2 center2 = TriCenter(1, 0, 1);
-
         Vector2 center3 = TriCenter(1, 1, 0);
-
         Vector2 center4 = TriCenter(0, 2, 0);
 
+        occupiedPositions.Add((initialPosition.x, initialPosition.y, initialPosition.z));
+        occupiedPositions.Add((1,0, 1));
+        occupiedPositions.Add((1, 1, 0));
+        occupiedPositions.Add((0, 2, 0));
+
         Vector3 initialPos = new Vector3(center1.x, transform.position.y, center1.y);
-
         Vector3 initialPos2 = new Vector3(center2.x, transform.position.y, center2.y);
-
         Vector3 initialPos3 = new Vector3(center3.x, transform.position.y, center3.y);
-
         Vector3 initialPos4 = new Vector3(center4.x, transform.position.y, center4.y);
 
         Instantiate(token, initialPos, transform.rotation);
