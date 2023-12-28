@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "AskDivineGift",
+                    "type": "Button",
+                    "id": "6d59e321-00b2-400e-a06e-b0cf4ad29f66",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -48,6 +57,17 @@
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2850d3ee-72f9-47b3-af40-52ae306c0a80",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AskDivineGift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

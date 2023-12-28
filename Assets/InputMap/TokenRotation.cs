@@ -43,7 +43,8 @@ public class TokenRotation : MonoBehaviour
 
     private void PerformRotation(float rotationSense)
     {
-        if (!polygonCollider.enabled)
+
+        if (polygonCollider == null || !polygonCollider.enabled)
             return;
 
         if(isOver)

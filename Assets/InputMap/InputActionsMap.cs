@@ -35,6 +35,15 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AskDivineGift"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d59e321-00b2-400e-a06e-b0cf4ad29f66"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -70,6 +79,17 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
                     ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2850d3ee-72f9-47b3-af40-52ae306c0a80"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AskDivineGift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -79,6 +99,7 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
         // MainActions
         m_MainActions = asset.FindActionMap("MainActions", throwIfNotFound: true);
         m_MainActions_Rotate = m_MainActions.FindAction("Rotate", throwIfNotFound: true);
+        m_MainActions_AskDivineGift = m_MainActions.FindAction("AskDivineGift", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -141,11 +162,13 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_MainActions;
     private List<IMainActionsActions> m_MainActionsActionsCallbackInterfaces = new List<IMainActionsActions>();
     private readonly InputAction m_MainActions_Rotate;
+    private readonly InputAction m_MainActions_AskDivineGift;
     public struct MainActionsActions
     {
         private @InputActionsMap m_Wrapper;
         public MainActionsActions(@InputActionsMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @Rotate => m_Wrapper.m_MainActions_Rotate;
+        public InputAction @AskDivineGift => m_Wrapper.m_MainActions_AskDivineGift;
         public InputActionMap Get() { return m_Wrapper.m_MainActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -158,6 +181,9 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
             @Rotate.started += instance.OnRotate;
             @Rotate.performed += instance.OnRotate;
             @Rotate.canceled += instance.OnRotate;
+            @AskDivineGift.started += instance.OnAskDivineGift;
+            @AskDivineGift.performed += instance.OnAskDivineGift;
+            @AskDivineGift.canceled += instance.OnAskDivineGift;
         }
 
         private void UnregisterCallbacks(IMainActionsActions instance)
@@ -165,6 +191,9 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
             @Rotate.started -= instance.OnRotate;
             @Rotate.performed -= instance.OnRotate;
             @Rotate.canceled -= instance.OnRotate;
+            @AskDivineGift.started -= instance.OnAskDivineGift;
+            @AskDivineGift.performed -= instance.OnAskDivineGift;
+            @AskDivineGift.canceled -= instance.OnAskDivineGift;
         }
 
         public void RemoveCallbacks(IMainActionsActions instance)
@@ -185,5 +214,6 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
     public interface IMainActionsActions
     {
         void OnRotate(InputAction.CallbackContext context);
+        void OnAskDivineGift(InputAction.CallbackContext context);
     }
 }

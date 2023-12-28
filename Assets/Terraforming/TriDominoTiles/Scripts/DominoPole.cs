@@ -94,7 +94,7 @@ namespace Terraforming.Dominoes
                 materials.Add(meshRenderer.materials[2]);
 
                 meshRenderer.SetMaterials(materials);
-                Debug.Log("SetBioma: " + biome+ "and material" + biomesManager.biomesMaterials[index]);
+                //Debug.Log("SetBioma: " + biome+ "and material" + biomesManager.biomesMaterials[index]);
             }
             else
             {

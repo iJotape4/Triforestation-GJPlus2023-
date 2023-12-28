@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Terraforming.Dominoes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -105,14 +106,21 @@ public class TriangularGrid : DropView
         return TriNeighbours(tri.x, tri.y, tri.z);
     }
 
-    //TODO : Test purposes only, just delete!
     private void Start()
+    {
+        SpawnInitialDominoe();
+    }
+
+    // TODO : Add a method to set the initialPosition coords from level selector
+    private void SpawnInitialDominoe()
     {
         Vector3 center = TriCenter(initialPosition);
         GameObject token1 = Instantiate(token, center, transform.rotation);
         token1.GetComponentInChildren<MeshCollider>().enabled = false;
         OccupyCell(initialPosition);
         GenerateNeighBors(initialPosition);
+        TokenData tokenData = token1.GetComponent<DominoToken>().tokenData = new TokenData(); ;
+        tokenData.biomes = new ENUM_Biome[] { (ENUM_Biome)(-1), (ENUM_Biome)(-1), (ENUM_Biome)(-1) };
     }
 
     public void GenerateNeighBors(Vector3Int position)
@@ -142,7 +150,7 @@ public class TriangularGrid : DropView
                 dropTile.intCenter = neighbor;
             }
 
-            Debug.Log($"Neighbor {center}");
+            //Debug.Log($"Neighbor {center}");
             //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
         }
     }

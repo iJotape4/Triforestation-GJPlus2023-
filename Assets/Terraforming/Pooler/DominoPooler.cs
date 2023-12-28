@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 public class DominoPooler : MonoBehaviour
 {
-    public GameObject[] dominoPrefab; // Reference to the domino prefab.
+    [SerializeField] public GameObject dominoPrefab; // Reference to the domino prefab.
     public int totalDominoes = 52; // Total number of dominoes to be created.
     public float dominoSpacing = 0.1f;
     private List<DominoToken> dominoes = new List<DominoToken>();
@@ -88,15 +88,15 @@ public class DominoPooler : MonoBehaviour
     {
         for (int i = 0; i < totalDominoes; i++)
         {
-            GameObject dominoObj = Instantiate(dominoPrefab[Random.RandomRange(0, 3)], transform);
-            //DominoToken domino = dominoObj.GetComponent<DominoToken>();
+            GameObject dominoObj = Instantiate(dominoPrefab, transform);
+            DominoToken domino = dominoObj.GetComponent<DominoToken>();
 
             // Set the position of the domino in a row from left to right.
             float xPos = i * dominoSpacing; // Adjust the spacing as needed.
             dominoObj.transform.localPosition = new Vector3(xPos, 0, 0);
-            //domino.tokenData = tokenDatas[i];
-            //dominoes.Add(domino);
-            //domino.ResetDomino();
+            domino.tokenData = tokenDatas[i];
+            dominoes.Add(domino);
+            domino.ResetDomino();
         }
         dominoes.Shuffle();
 
@@ -142,11 +142,9 @@ public class DominoPooler : MonoBehaviour
                 });
 
             // Add the rotation animation (both parts) to the sequence using Join
-            uncoverSequence.Join(domino.transform.DORotate(new Vector3(0, 90, 0), moveDuration, RotateMode.WorldAxisAdd))
+            uncoverSequence.Join(domino.transform.DORotate(new Vector3(0, 0, 180), moveDuration, RotateMode.WorldAxisAdd))
                 .OnComplete(() =>
                 {
-                    // Deactivate the dominoCover
-                    domino.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
                     // Rotate the GameObject back to 0 degrees
                     domino.transform.DORotate(Vector3.zero, moveDuration);
@@ -187,7 +185,7 @@ public class DominoPooler : MonoBehaviour
     {
         for (int i = 0; i < dominoes.Count; i++)
         {
-            dominoes[i].gameObject.GetComponent<SpriteRenderer>().sortingOrder = 100 - i;
+            dominoes[i].gameObject.GetComponent<MeshRenderer>().sortingOrder = 100 - i;
         }
     }
     [ContextMenu("Reset Cards")]

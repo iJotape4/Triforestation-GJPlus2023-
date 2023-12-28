@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     private void Start()
     {
         mainActions.Rotate.started += ctx => PerformRotation(ctx.ReadValue<float>());
+        mainActions.AskDivineGift.performed += ctx => EventManager.Dispatch(ENUM_InputEvent.AskDivineGift);
     }
 
     private void PerformRotation(float axisValue)
@@ -28,5 +29,6 @@ public class InputManager : MonoBehaviour
 
 public enum ENUM_InputEvent
 {
-    Rotate
+    Rotate,
+    AskDivineGift
 }
