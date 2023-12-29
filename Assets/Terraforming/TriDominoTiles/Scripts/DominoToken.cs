@@ -11,7 +11,7 @@ namespace Terraforming.Dominoes
     public class DominoToken : MonoBehaviour
     {
         [SerializeField] public DominoPole[] poles;
-        [SerializeField] SpriteRenderer dominoCover;
+       // [SerializeField] SpriteRenderer dominoCover;
         public float uncoverDuration = 1f;
         private Collider dominoCollider;
         public TokenData tokenData;
@@ -22,18 +22,12 @@ namespace Terraforming.Dominoes
         private void Awake()
         {
             poles = GetComponentsInChildren<DominoPole>();
-            dominoCover = GetComponent<SpriteRenderer>();
             dominoCollider = GetComponent<Collider>();
-
-        }
-        private void OnDestroy()
-        {
-            
         }
 
         private void SetActive(bool eventData)
         {
-           dominoCover.enabled = eventData;
+           //dominoCover.enabled = eventData;
            dominoCollider.enabled = eventData;
         }
 
@@ -99,7 +93,6 @@ namespace Terraforming.Dominoes
                     if (Physics.Raycast(pole.pivot.position, directionVector, out hit, 1.5f, dominoPoleLayerMask))
                     {
                         DominoPole hitPole = hit.collider.GetComponent<DominoPole>();
-
                         if (hitPole != null && (hitPole.biome == pole.biome || ((int)hitPole.biome == -1)))
                         {
                             if (direction == 0)
@@ -116,7 +109,7 @@ namespace Terraforming.Dominoes
                 }
             }
 
-            // Check if any of the specified connections are valid
+                // Check if any of the specified connections are valid
             if ((poleConnections[ENUM_PolePosition.Position1][0] && poleConnections[ENUM_PolePosition.Position3][1]) ||
                 (poleConnections[ENUM_PolePosition.Position1][1] && poleConnections[ENUM_PolePosition.Position2][0]) ||
                 (poleConnections[ENUM_PolePosition.Position2][1] && poleConnections[ENUM_PolePosition.Position3][0]))
@@ -147,21 +140,23 @@ namespace Terraforming.Dominoes
 
         public void UncoverDomino()
         {
-            // Rotate the GameObject by 90 degrees in the Y-axis
-            transform.DORotate(new Vector3(0, 90, 0), uncoverDuration)
+            // Rotate the GameObject by 180 degrees in the Z-axis
+            transform.DORotate(new Vector3(0, 0, 180), uncoverDuration)
                 .OnComplete(() =>
                 {
-                    // Deactivate the dominoCover
-                    dominoCover.enabled = false;
-
                     // Rotate the GameObject back to 0 degrees
                     transform.DORotate(Vector3.zero, uncoverDuration);
                 });
         }
 
+        void CoverDomino()
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180f));
+        }
+
         public void ResetDomino()
         {
-            dominoCover.enabled = true;
+            CoverDomino();
             dominoCollider.enabled = false;
 
             for(int i=0; i<poles.Length; i++)
