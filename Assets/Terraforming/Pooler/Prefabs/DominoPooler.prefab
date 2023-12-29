@@ -129,6 +129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DominoSpot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2297972122728261685, guid: d14c67bb508574e438f3ec8b159635c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6725301485448519267, guid: d14c67bb508574e438f3ec8b159635c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.630001
@@ -394,6 +398,10 @@ PrefabInstance:
     - target: {fileID: 2297972122728261685, guid: d14c67bb508574e438f3ec8b159635c6, type: 3}
       propertyPath: m_Name
       value: DominoSpot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2297972122728261685, guid: d14c67bb508574e438f3ec8b159635c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6725301485448519267, guid: d14c67bb508574e438f3ec8b159635c6, type: 3}
       propertyPath: m_LocalPosition.x

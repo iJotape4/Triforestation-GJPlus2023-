@@ -5,19 +5,26 @@ public class PunishesManager : MonoBehaviour
 {
     [SerializeField] private GameObject acidRainPrefab;
     private TriangularGrid grid;
+    private bool inStandBy = false;
 
     private void Awake()
     {
         EventManager.AddListener(ENUM_DominoeEvent.punishEvent, TriggerRandomPunish);
+        EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, SetStandBy);
+        EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, QuitStandBy);
     }
 
 
     private void OnDestroy()
     {
         EventManager.RemoveListener(ENUM_DominoeEvent.punishEvent, TriggerRandomPunish);
+        EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, SetStandBy);
+        EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, QuitStandBy);
     }
     private void TriggerRandomPunish()
     {
+        if(inStandBy)
+            return;
         // TODO: Add more random punishes
         AcidRainPunish();
         EventManager.Dispatch(ENUM_DominoeEvent.selectDoneEvent);
@@ -38,4 +45,7 @@ public class PunishesManager : MonoBehaviour
         grid.OccupyCell((Vector3Int)selectedGridCell.center);
         EventManager.Dispatch(ENUM_DominoeEvent.spawnedAcidRainEvent); 
     }
+
+    public void SetStandBy() => inStandBy =true;
+    public void QuitStandBy() => inStandBy = false;
 }

@@ -15,7 +15,7 @@ namespace Terraforming.Dominoes
         public float uncoverDuration = 1f;
         private Collider dominoCollider;
         public TokenData tokenData;
-
+        private bool wasSwaped;
         // Define the valid rotation angles for upwards tokens
         float[] validUpwardsRotations = new float[] { 0f, 120f, 240f };
 
@@ -23,6 +23,15 @@ namespace Terraforming.Dominoes
         {
             poles = GetComponentsInChildren<DominoPole>();
             dominoCollider = GetComponent<Collider>();
+            EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
+            EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
+        }
+
+
+        private void OnDestroy()
+        {
+            EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
+            EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
         }
 
         private void SetActive(bool eventData)
@@ -169,6 +178,27 @@ namespace Terraforming.Dominoes
         {
             dominoCollider.enabled = true;
         }
+
+        //Swap the biomes. Can be reverted calling the method again
+        public void SwapBiomes()
+        {
+            ENUM_Biome biome1 = poles[0].biome;
+            ENUM_Biome biome2 = poles[1].biome;
+            poles[0].AssignBiome(biome2);
+            poles[1].AssignBiome(biome1);
+            wasSwaped = true;
+        }
+
+        public void RevertSwapBiome()
+        {
+            if (!wasSwaped)
+                return;
+
+            SwapBiomes();
+            SetWasSwappedToFalse();
+        }
+
+        public void SetWasSwappedToFalse() => wasSwaped =false;
 
         private void OnDrawGizmos()
         {

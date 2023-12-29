@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Terraforming.Dominoes;
 using UnityEngine;
 using MyBox;
-using UnityEngine.InputSystem;
 
 public class DominoPooler : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class DominoPooler : MonoBehaviour
     private bool lastCardOnHand = false;
     private bool isTweenOver = true;
 
-    public DominoSpot[] dominoesSpots; // Current domino position
+    public DominoSpot[] dominoesSpots; 
     [SerializeField, ReadOnly] private List<DominoToken> currentDominoesList;
     public float moveDuration = 0.5f; // Duration of the animation
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnableOrDisableOnGetEvent : MonoBehaviour
 {
-    [SerializeField] ENUM_DominoeEvent ev = ENUM_DominoeEvent.startSwapEvent;
+    [SerializeField] ENUM_DominoeEvent ev = ENUM_DominoeEvent.startOrRestartSwapEvent;
     [SerializeField] ENUM_DominoeEvent disableEvent;
     private void Awake()
     {
