@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7970905238308966921}
   m_Layer: 6
   m_Name: GridTile
-  m_TagString: Untagged
+  m_TagString: GridCell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,4 +442,4 @@ MonoBehaviour:
   gridTile: {fileID: 5364615176062154162}
   initialPosition: {x: 0, y: 0, z: 0}
   isUpwards: 1
-  neighbors: []
+  intCenter: {x: 0, y: 0, z: 0}

@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3301d3d271126ef40a571daafeb49160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusMoorPrefab: {fileID: 1791664214015843626, guid: 34c9b3cc116575e4bb9eebb84a5eb05d, type: 3}
+  bonusMoorPrefab: {fileID: 2085694070061048311, guid: f4ee5526b4f10f348b18b3ff6c1079c8, type: 3}
 --- !u!1 &6265680018332907960
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PunishesManager : MonoBehaviour
 {
     [SerializeField] private GameObject acidRainPrefab;
-    private Transform grid;
+    private TriangularGrid grid;
 
     private void Awake()
     {
@@ -18,41 +18,24 @@ public class PunishesManager : MonoBehaviour
     }
     private void TriggerRandomPunish()
     {
+        // TODO: Add more random punishes
         AcidRainPunish();
         EventManager.Dispatch(ENUM_DominoeEvent.selectDoneEvent);
     }
     private void Start()
     {
-        grid = FindObjectOfType<GridChangePhase>().transform;
+        grid = FindObjectOfType<TriangularGrid>();
     }
     private void AcidRainPunish()
     {
-        // Get all objects with the "CellGrid" tag in the scene.
-        GameObject[] cellGrids = GameObject.FindGameObjectsWithTag("GridCell");
-  
+        (Vector3? position, Quaternion? rotation, Vector3Int? center) selectedGridCell = grid.GetRandomFreeCell();
+        if (selectedGridCell.position == null || selectedGridCell.rotation == null || selectedGridCell.center == null)
+            return;
 
-        // Select a random active Cell Grid.
-        GameObject selectedCellGrid = null;
-        bool punishApplied = false;
-        while (!punishApplied)
-        {
-            int randomIndex = Random.Range(0, cellGrids.Length);
-            GameObject randomCellGrid = cellGrids[randomIndex];
-
-            if (randomCellGrid.activeInHierarchy)
-            {
-                selectedCellGrid = randomCellGrid;
-
-                // Instantiate the replacement prefab at the position of the selected Cell Grid.
-                Instantiate(acidRainPrefab, selectedCellGrid.transform.position, selectedCellGrid.transform.rotation, grid);
-
-                // Deactivate (set inactive) the selected Cell Grid.
-                selectedCellGrid.SetActive(false);
-
-                // Trigger the selectDone event or perform any other desired actions.
-                EventManager.Dispatch(ENUM_DominoeEvent.spawnedAcidRainEvent);
-                punishApplied = true;
-            }
-        }
+        // Instantiate the replacement prefab at the position of the selected Cell Grid.
+        Instantiate(acidRainPrefab, (Vector3)selectedGridCell.position, (Quaternion)selectedGridCell.rotation, grid.transform);
+        // Trigger the selectDone event or perform any other desired actions.
+        grid.OccupyCell((Vector3Int)selectedGridCell.center);
+        EventManager.Dispatch(ENUM_DominoeEvent.spawnedAcidRainEvent); 
     }
 }

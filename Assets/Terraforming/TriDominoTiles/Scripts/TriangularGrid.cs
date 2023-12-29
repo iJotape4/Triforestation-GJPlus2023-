@@ -1,3 +1,4 @@
+using Events;
 using System.Collections.Generic;
 using Terraforming.Dominoes;
 using UnityEngine;
@@ -11,7 +12,8 @@ public class TriangularGrid : DropView
     [SerializeField] private GameObject token;
     public GameObject gridTile;
     public Vector3Int initialPosition;
-    private HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
+    private static HashSet<Vector3Int> generatedCells = new HashSet<Vector3Int>();
+    private static HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
 
     public Vector3 TriCenter(int a, int b, int c)
     {
@@ -118,6 +120,7 @@ public class TriangularGrid : DropView
         GameObject token1 = Instantiate(token, center, transform.rotation);
         token1.GetComponentInChildren<MeshCollider>().enabled = false;
         OccupyCell(initialPosition);
+        generatedCells.Add(initialPosition);
         GenerateNeighBors(initialPosition);
         TokenData tokenData = token1.GetComponent<DominoToken>().tokenData = new TokenData(); ;
         tokenData.biomes = new ENUM_Biome[] { (ENUM_Biome)(-1), (ENUM_Biome)(-1), (ENUM_Biome)(-1) };
@@ -125,13 +128,16 @@ public class TriangularGrid : DropView
 
     public void GenerateNeighBors(Vector3Int position)
     {
+        //We assume that when I want to generate neighbors is because I occupied the cell in any way
+        OccupyCell(position);
+
         foreach (var neighbor in TriNeighbours(position))
         {
             Vector3 center = TriCenter(neighbor);
             if(!IsCellFree(neighbor))
                 continue;
-            
-            OccupyCell(neighbor);
+
+            generatedCells.Add(neighbor);
             Quaternion rotation;
 
             if (PointsUp(position))
@@ -150,9 +156,30 @@ public class TriangularGrid : DropView
                 dropTile.intCenter = neighbor;
             }
 
-            //Debug.Log($"Neighbor {center}");
+            Debug.Log($"Neighbor {center}");
             //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
         }
     }
+
+    //Get a random cell from generated cells hash that is not in the occupied cells hash
+    public (Vector3? position, Quaternion? rotation, Vector3Int? center) GetRandomFreeCell()
+    {
+        List<Vector3Int> freeCells = new List<Vector3Int>();
+        foreach (Vector3Int cell in generatedCells)       
+            if (!occupiedCells.Contains(cell))          
+                freeCells.Add(cell);               
+
+        if(freeCells.Count == 0)
+        {
+            EventManager.Dispatch(ENUM_GameState.boardFinished);
+            return (null, null, null); //TODO: Change this to a custom exception (NoFreeCellsException)
+        }
+
+        int randomIndex = Random.Range(0, freeCells.Count);
+        Quaternion rotation = PointsUp(freeCells[randomIndex]) ? Quaternion.Euler(Vector3.zero) :  Quaternion.Euler(0, 180, 0);
+
+        return  (TriCenter( freeCells[randomIndex]) , rotation, freeCells[randomIndex]);
+    }
+
     public override void OnDrop(PointerEventData eventData) { }
 }

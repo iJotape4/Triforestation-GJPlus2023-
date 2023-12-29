@@ -14,7 +14,6 @@ public class DominoPooler : MonoBehaviour
     private List<DominoToken> dominoes = new List<DominoToken>();
     private int currentIndex = 0;
     private bool lastCardOnHand = false;
-    public InputAction poolerControl;
     private bool isTweenOver = true;
 
     public DominoSpot[] dominoesSpots; // Current domino position
@@ -31,7 +30,6 @@ public class DominoPooler : MonoBehaviour
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, FinishDominoPlacement);
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
-        EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
         EventManager.AddListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
 
         foreach (ENUM_Biome biome in System.Enum.GetValues(typeof(ENUM_Biome)))
@@ -44,9 +42,7 @@ public class DominoPooler : MonoBehaviour
     {
         EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
-        EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
         EventManager.RemoveListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
-
     }
 
     private void OnDominoDropped(DominoToken domino)
@@ -61,27 +57,6 @@ public class DominoPooler : MonoBehaviour
     void Start()
     {
         CreateDominoes();
-    }
-
-    private void OnEnable()
-    {
-        poolerControl.Enable();
-    }
-
-    private void OnDisable()
-    {
-        poolerControl.Disable();
-    }
-
-    public void LateUpdate()
-    {
-        float poolRequested = poolerControl.ReadValue<float>();
-
-        if( poolRequested != 0 && isTweenOver)
-        {
-            isTweenOver = false;
-            GetNextDomino();
-        }
     }
 
     void CreateDominoes()
@@ -112,18 +87,6 @@ public class DominoPooler : MonoBehaviour
         if (currentIndex < dominoes.Count)
         {
             Transform _nextPosition = GetNextFreePosition();
-            if(_nextPosition == null)
-            {
-                if (canDeployPunishment) 
-                {
-                    EventManager.Dispatch(ENUM_DominoeEvent.punishEvent);
-                    canDeployPunishment = false;
-                }
-                
-                TweenOver();
-                return null;
-            }
-
             EventManager.Dispatch(ENUM_DominoeEvent.getCardEvent);
 
             DominoToken domino = dominoes[currentIndex];
@@ -212,14 +175,14 @@ public class DominoPooler : MonoBehaviour
     {
         foreach(DominoSpot spot in dominoesSpots)
         {
+            if (spot.IsSpotFree())
+                continue;
             Destroy(spot.currentToken.gameObject);
             spot.SetCurrentToken(null);
         }
         currentDominoesList.Clear();
         GiveInitialDominoes();
         EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, false);
-        CanDeployPunishment();
-        
     }
 
     private void GiveInitialDominoes()
@@ -227,11 +190,6 @@ public class DominoPooler : MonoBehaviour
         Invoke("GetNextDomino", 0.2f);
         Invoke("GetNextDomino", 0.5f);
         Invoke("GetNextDomino", 0.8f);
-    }
-    
-    private void CanDeployPunishment()
-    {
-        canDeployPunishment = true;
     }
 
     private void FinishDominoPlacement(DominoToken token)

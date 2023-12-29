@@ -26,7 +26,7 @@ public class DropTile : TriangularGrid
             eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
             eventData.pointerDrag.transform.position = transform.position;
             token.TurnOnColliders();
-            GenerateNeighBors(intCenter);
+            GenerateNeighBors();
             EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
             gameObject.SetActive(false);
         }
@@ -66,4 +66,11 @@ public class DropTile : TriangularGrid
         color.a = alpha;
         meshRenderer.material.color = color;
     }
+
+    public void GenerateNeighBors()=> GenerateNeighBors(intCenter);
+    
+    public void OccupyCell() => OccupyCell(intCenter);
+
+    //Method to determine if this cell is free
+    public bool IsCellFree() => IsCellFree(intCenter);
 }

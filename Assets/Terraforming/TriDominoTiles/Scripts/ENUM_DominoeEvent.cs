@@ -14,5 +14,5 @@ public enum ENUM_DominoeEvent
     startBonusMoorEvent,
     tradeCardsForMoor,
     spawnedAcidRainEvent,
-
+    spawnedMoorEvent,
 }
