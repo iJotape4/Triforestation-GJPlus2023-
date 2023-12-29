@@ -19,6 +19,7 @@ public class DropTile : TriangularGrid
     public override void OnDrop(PointerEventData eventData)
     {
         DominoToken token = eventData.pointerDrag.gameObject.GetComponent<DominoToken>();
+        token.transform.position = transform.position;
 
         if(token.IsUpwards() == isUpwards && token.IsValidBiome())
         {
