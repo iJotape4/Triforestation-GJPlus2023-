@@ -28,12 +28,6 @@ namespace Terraforming.Dominoes
             biomesManager = BiomesManager.Instance;
         }
 
-        private void Start()
-        {
-            //TODO -> Delete this
-            AssignBiome();
-        }
-
         private void SetActive(bool eventData)
     {
         if (transform.parent.parent == null)
