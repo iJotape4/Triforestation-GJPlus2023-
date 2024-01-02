@@ -15,6 +15,9 @@ public class TriangularGrid : DropView
     private static HashSet<Vector3Int> generatedCells = new HashSet<Vector3Int>();
     private static HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
 
+    private ((int min, int max) x , (int min, int max) y , (int min,  int max) z) currentRange;
+    
+
     public Vector3 TriCenter(int a, int b, int c)
     {
         // Calculate the center using the provided formula
@@ -95,6 +98,7 @@ public class TriangularGrid : DropView
     public void OccupyCell(Vector3Int cell)
     {
         occupiedCells.Add(cell);
+        Debug.Log($"Occupied {cell}");
     }
 
     // Function to free a cell
@@ -106,6 +110,26 @@ public class TriangularGrid : DropView
     public Vector3Int[] TriNeighbours(Vector3Int tri)
     {
         return TriNeighbours(tri.x, tri.y, tri.z);
+    }
+
+    public void CalculateMaxRange(Vector3Int cell)
+    {
+        if(currentRange.y.max < cell.y)       
+            currentRange.y.max = cell.y;        
+        else if(currentRange.y.min > cell.y)
+            currentRange.y.min = cell.y;
+        
+        if(currentRange.x.max < cell.x)     
+               currentRange.x.max = cell.x;
+        
+        else if(currentRange.x.min > cell.x)        
+            currentRange.x.min = cell.x;
+        
+        if(currentRange.z.max < cell.z)       
+            currentRange.z.max = cell.z;
+        
+        else if(currentRange.z.min > cell.z)
+            currentRange.z.min = cell.z;
     }
 
     private void Start()
@@ -156,7 +180,7 @@ public class TriangularGrid : DropView
                 dropTile.intCenter = neighbor;
             }
 
-            Debug.Log($"Neighbor {center}");
+            //Debug.Log($"Neighbor {center}");
             //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
         }
     }
