@@ -99,8 +99,6 @@ public class DominoPooler : MonoBehaviour
                 .OnStart(() =>
                 {
                     
-                    // Activate the movement
-                    domino.ActiveDrag();
                 });
 
             // Add the rotation animation (both parts) to the sequence using Join
@@ -109,9 +107,8 @@ public class DominoPooler : MonoBehaviour
                 {
 
                     // Rotate the GameObject back to 0 degrees
-                    domino.transform.DORotate(Vector3.zero, moveDuration);
-
                     TweenOver();
+                    domino.ActiveDrag();
                 });
 
             // Play the sequence

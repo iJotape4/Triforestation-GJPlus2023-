@@ -34,13 +34,6 @@ namespace Terraforming.Dominoes
             EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
         }
 
-        private void SetActive(bool eventData)
-        {
-           //dominoCover.enabled = eventData;
-           dominoCollider.enabled = eventData;
-        }
-
-
         public bool IsUpwards()
         {
             // Calculate the actual rotation of the token
