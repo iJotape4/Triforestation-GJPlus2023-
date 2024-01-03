@@ -329,6 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3000715823891056968}
+  - component: {fileID: 4667512100933732034}
   m_Layer: 0
   m_Name: LocalizationManager
   m_TagString: Untagged
@@ -351,6 +352,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3651540804794997864}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4667512100933732034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829256692075344259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cdcfff114c5d041a6d1d630b32bcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &968022434506484593
 PrefabInstance:
   m_ObjectHideFlags: 0
