@@ -103,6 +103,7 @@ namespace Terraforming
         public void ValidateDrop()
         {
             validDrop = true;
+            transform.parent = null;
         }
 
         void ReturnToPosition()

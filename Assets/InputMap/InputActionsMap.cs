@@ -44,6 +44,15 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CameraMovement"",
+                    ""type"": ""Value"",
+                    ""id"": ""33ddcbc0-d202-4b68-9f03-d6628552305c"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -90,6 +99,61 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
                     ""action"": ""AskDivineGift"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""d8fc3267-abea-42d7-95a1-df3b33dbb63c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3bc617f7-6953-4b86-b6b1-436bc13c887c"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""a7f522bf-0fcc-40a5-8179-fbf21f57599b"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""84bad8ef-6beb-4092-9ae1-5eca6031ca5b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""af356d4d-769c-48ca-b701-e59afc30e6dd"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -100,6 +164,7 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
         m_MainActions = asset.FindActionMap("MainActions", throwIfNotFound: true);
         m_MainActions_Rotate = m_MainActions.FindAction("Rotate", throwIfNotFound: true);
         m_MainActions_AskDivineGift = m_MainActions.FindAction("AskDivineGift", throwIfNotFound: true);
+        m_MainActions_CameraMovement = m_MainActions.FindAction("CameraMovement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,12 +228,14 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
     private List<IMainActionsActions> m_MainActionsActionsCallbackInterfaces = new List<IMainActionsActions>();
     private readonly InputAction m_MainActions_Rotate;
     private readonly InputAction m_MainActions_AskDivineGift;
+    private readonly InputAction m_MainActions_CameraMovement;
     public struct MainActionsActions
     {
         private @InputActionsMap m_Wrapper;
         public MainActionsActions(@InputActionsMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @Rotate => m_Wrapper.m_MainActions_Rotate;
         public InputAction @AskDivineGift => m_Wrapper.m_MainActions_AskDivineGift;
+        public InputAction @CameraMovement => m_Wrapper.m_MainActions_CameraMovement;
         public InputActionMap Get() { return m_Wrapper.m_MainActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -184,6 +251,9 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
             @AskDivineGift.started += instance.OnAskDivineGift;
             @AskDivineGift.performed += instance.OnAskDivineGift;
             @AskDivineGift.canceled += instance.OnAskDivineGift;
+            @CameraMovement.started += instance.OnCameraMovement;
+            @CameraMovement.performed += instance.OnCameraMovement;
+            @CameraMovement.canceled += instance.OnCameraMovement;
         }
 
         private void UnregisterCallbacks(IMainActionsActions instance)
@@ -194,6 +264,9 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
             @AskDivineGift.started -= instance.OnAskDivineGift;
             @AskDivineGift.performed -= instance.OnAskDivineGift;
             @AskDivineGift.canceled -= instance.OnAskDivineGift;
+            @CameraMovement.started -= instance.OnCameraMovement;
+            @CameraMovement.performed -= instance.OnCameraMovement;
+            @CameraMovement.canceled -= instance.OnCameraMovement;
         }
 
         public void RemoveCallbacks(IMainActionsActions instance)
@@ -215,5 +288,6 @@ public partial class @InputActionsMap: IInputActionCollection2, IDisposable
     {
         void OnRotate(InputAction.CallbackContext context);
         void OnAskDivineGift(InputAction.CallbackContext context);
+        void OnCameraMovement(InputAction.CallbackContext context);
     }
 }
