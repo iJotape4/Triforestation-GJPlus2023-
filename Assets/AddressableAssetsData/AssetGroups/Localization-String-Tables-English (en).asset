@@ -17,8 +17,44 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: b0d691017c714d34fa3885baf2455daf
   m_SerializeEntries:
-  - m_GUID: f1dd8cbe5ee2125488944cd98bf9e736
+  - m_GUID: 2fe069ec45ca8c84eb2f1de4b4817e54
+    m_Address: Dialogues_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c299893b8736c4c43bd7bdaf9e039f2d
+    m_Address: FTUE_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c31129e1497633442aaf8991ccca2a24
+    m_Address: UI_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ce29b9b7bcf9454289877d48f87c93b
+    m_Address: Challenges_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e163f009ede168408e81858e5df932e
     m_Address: Fauna_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b69222e2915c364faaf943f3964fbb6
+    m_Address: Flora_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 659a47741a7bfc04198c540c8764f0be
+    m_Address: Biomas_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

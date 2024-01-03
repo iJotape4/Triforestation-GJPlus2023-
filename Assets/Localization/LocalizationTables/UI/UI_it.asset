@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_it
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: it
+  m_SharedData: {fileID: 11400000, guid: ba93719ce5695f149a4e5277b03064e6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 451403776
+    m_Localized: Giocare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180992
+    m_Localized: Opzioni di gioco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180993
+    m_Localized: Esci
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180994
+    m_Localized: Configurazione
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180995
+    m_Localized: Caratteristiche principali
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180996
+    m_Localized: Lingua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180997
+    m_Localized: Scegliere una lingua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180998
+    m_Localized: Continua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180999
+    m_Localized: Caricamento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181000
+    m_Localized: "Qualit\xE0 grafica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181001
+    m_Localized: Alta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181002
+    m_Localized: Ultra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181003
+    m_Localized: Medio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181004
+    m_Localized: Basso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181005
+    m_Localized: Suoni di sottofondo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181006
+    m_Localized: Effetti sonori
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181007
+    m_Localized: Impostazioni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181008
+    m_Localized: "Modalit\xE0 display"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181009
+    m_Localized: Schermo intero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181010
+    m_Localized: Finestra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181011
+    m_Localized: Nuovo gioco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181012
+    m_Localized: Come giocare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181013
+    m_Localized: Armadio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181014
+    m_Localized: Crediti
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

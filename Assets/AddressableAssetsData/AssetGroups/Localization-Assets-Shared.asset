@@ -17,8 +17,40 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ec86c1554d970434aaffc61bb2ff419f
   m_SerializeEntries:
-  - m_GUID: ac5ab8c78af19884889d3c76964aa455
-    m_Address: Assets/Localization/LocalizationTables/Fauna Shared Data.asset
+  - m_GUID: 2095f625303a6f34d8c168fa0281e48b
+    m_Address: Assets/Localization/LocalizationTables/Dialogues/Dialogues Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e47f5aa9a4286c340a7b77f2fc09c5c6
+    m_Address: Assets/Localization/LocalizationTables/FTUE/FTUE Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba93719ce5695f149a4e5277b03064e6
+    m_Address: Assets/Localization/LocalizationTables/UI/UI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1fd4fa41dda17746a23893cf9669652
+    m_Address: Assets/Localization/LocalizationTables/Challenges/Challenges Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1fc4dc13eec8a2c4bb178afad60c6706
+    m_Address: Assets/Localization/LocalizationTables/Fauna/Fauna Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c908f618a7a19db479f49b0aecc2ae16
+    m_Address: Assets/Localization/LocalizationTables/Flora/Flora Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eef22d64e6ebdf043b7382306655e5ff
+    m_Address: Assets/Localization/LocalizationTables/Biomas/Biomas Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

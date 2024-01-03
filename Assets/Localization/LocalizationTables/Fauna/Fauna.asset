@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Fauna
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 1fc4dc13eec8a2c4bb178afad60c6706, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 7e163f009ede168408e81858e5df932e, type: 2}
+  - {fileID: 11400000, guid: 2d81da9be8b02ca42bc368529622a946, type: 2}
+  - {fileID: 11400000, guid: 36385d36025101a44ae42622e2680a1a, type: 2}
+  - {fileID: 11400000, guid: 4fefe36c24582884c9a8a16cc99064dc, type: 2}
+  - {fileID: 11400000, guid: bb2b156a73aa37d4ca98a813bb3b45f4, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

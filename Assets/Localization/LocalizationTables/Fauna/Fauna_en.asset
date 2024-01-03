@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Fauna_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 1fc4dc13eec8a2c4bb178afad60c6706, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 501735424
+    m_Localized: Alpha male
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318336
+    m_Localized: Primary consumers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318337
+    m_Localized: Secondary consumers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318338
+    m_Localized: Tertiary consumer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318339
+    m_Localized: Decomposer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318340
+    m_Localized: Predator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318341
+    m_Localized: Prey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318342
+    m_Localized: Mushroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318343
+    m_Localized: Animal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318344
+    m_Localized: Toucan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318345
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318346
+    m_Localized: Anaconda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318347
+    m_Localized: Titan beetle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512640
+    m_Localized: Titi monkey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512641
+    m_Localized: Squirrel monkey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512642
+    m_Localized: Golden poison frog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512643
+    m_Localized: Blue macaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512644
+    m_Localized: Capybara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512645
+    m_Localized: Jaguar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512646
+    m_Localized: Harpy eagle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512647
+    m_Localized: Red squirrel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512648
+    m_Localized: Red fox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512649
+    m_Localized: Brown bear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512650
+    m_Localized: Fly agaric
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512651
+    m_Localized: Gusano de las nieves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512652
+    m_Localized: 'Cabra blanca '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512653
+    m_Localized: "B\xFAho Nival"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512654
+    m_Localized: Lince Canadiense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512655
+    m_Localized: Okapi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512656
+    m_Localized: "Le\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512657
+    m_Localized: Hiena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512658
+    m_Localized: Termita
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

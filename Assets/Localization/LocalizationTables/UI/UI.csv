@@ -1,0 +1,25 @@
+Key,English(en),Spanish(es),Portuguese (Brazil)(pt-BR),Italian(it),Korean(ko)
+MM_Play,Play,Jugar,Jogar,Giocare,플레이
+MM_Options,Options,Opciones,Opções,Opzioni di gioco,옵션
+MM_Exit,Exit,Salir,Sair,Esci,출구
+MM_Config,Config,Configuración,Configurar,Configurazione,구성
+MM_KeyFeatures,Key Features,Características principales,Principais recursos,Caratteristiche principali,주요 특징들
+MM_Language,Language,Lenguaje,Idioma,Lingua,언어
+MM_Choosealanguage,Choose a language,Escoge un idioma,Escolha um idioma,Scegliere una lingua,언어를 선택하세요
+MM_Continue,Continue,Continuar,Continuar,Continua,계속하다
+MM_Loading,Loading,Cargando,Carregamento,Caricamento,로드 중
+MM_QualityGraphic,Graphics Quality,Calidad de los Gráficos,Qualidade gráfica,Qualità grafica,그래픽 품질
+MM_High,High,Alta,Alto,Alta,높은
+MM_Ultra,Ultra,Ultra,Ultra,Ultra,극단론자
+MM_Medio,Medio,Medio,Médio,Medio,메디오
+MM_Low,Low,Bajo,Baixa,Basso,낮은
+MM_BackgroundSounds,Background sounds,Sonidos de fondo,Sons de fundo,Suoni di sottofondo,배경음
+MM_SoundEffects,Sound Effects,Efectos de Sonido,Efeitos sonoros,Effetti sonori,음향 효과
+MM_Settings,Settings,Ajustes,Configurações,Impostazioni,설정
+MM_Display,Display mode,Modo de visualización,Modo de exibição,Modalità display,디스플레이 모드
+MM_FullScreen,Full screen,Pantalla completa,Tela cheia,Schermo intero,전체 화면
+MM_Window,Window,Ventana,Janela,Finestra,창문
+MM_NewGame,New Game,Nuevo Juego,Novo jogo,Nuovo gioco,새로운 게임
+MM_HowToPlay,How to play,Como jugar,Como jogar,Come giocare,게임 방법
+MM_Closet,Wardrobe,Guardarropa natural,Guarda-roupa,Armadio,옷장
+MM_Creditos,Credits,Créditos,Créditos,Crediti,영화 크레딧

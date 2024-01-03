@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Biomas Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Biomas
+  m_TableCollectionNameGuidString: eef22d64e6ebdf043b7382306655e5ff
+  m_Entries:
+  - m_Id: 443015168
+    m_Key: Biome_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476569600
+    m_Key: Biome_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476569601
+    m_Key: Biome_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476569602
+    m_Key: Biome_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476569603
+    m_Key: Biome_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476569604
+    m_Key: Biome_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476569605
+    m_Key: Biome_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476569606
+    m_Key: Biome_8
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5451822943416614918
+  references:
+    version: 2
+    RefIds:
+    - rid: 5451822943416614918
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1704324911231

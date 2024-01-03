@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: ba93719ce5695f149a4e5277b03064e6
+  m_Entries:
+  - m_Id: 451403776
+    m_Key: MM_Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180992
+    m_Key: MM_Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180993
+    m_Key: MM_Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180994
+    m_Key: MM_Config
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180995
+    m_Key: MM_KeyFeatures
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180996
+    m_Key: MM_Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180997
+    m_Key: MM_Choosealanguage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180998
+    m_Key: MM_Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180999
+    m_Key: MM_Loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181000
+    m_Key: MM_QualityGraphic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181001
+    m_Key: MM_High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181002
+    m_Key: MM_Ultra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181003
+    m_Key: MM_Medio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181004
+    m_Key: MM_Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181005
+    m_Key: MM_BackgroundSounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181006
+    m_Key: MM_SoundEffects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181007
+    m_Key: MM_Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181008
+    m_Key: MM_Display
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181009
+    m_Key: MM_FullScreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181010
+    m_Key: MM_Window
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181011
+    m_Key: MM_NewGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181012
+    m_Key: MM_HowToPlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181013
+    m_Key: MM_Closet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181014
+    m_Key: MM_Creditos
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5451822943416614914
+  references:
+    version: 2
+    RefIds:
+    - rid: 5451822943416614914
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1704324908586
