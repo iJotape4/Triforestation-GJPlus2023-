@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Fauna_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: ac5ab8c78af19884889d3c76964aa455, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2820701413376
+    m_Localized: Animal Alfa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413377
+    m_Localized: Consumidor Primario
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413378
+    m_Localized: Consumidor Secundario
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413379
+    m_Localized: Consumidor Terciario
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413380
+    m_Localized: Descomponedor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413381
+    m_Localized: Depredador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413382
+    m_Localized: Presa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413383
+    m_Localized: 'Hongo '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413384
+    m_Localized: 'Animal '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413385
+    m_Localized: "Tuc\xE1n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413386
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413387
+    m_Localized: Anaconda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413388
+    m_Localized: "Escarabajo Tit\xE1n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413389
+    m_Localized: "Mono Tit\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413390
+    m_Localized: Mono Ardilla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413391
+    m_Localized: Rana Venenosa Dorada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413392
+    m_Localized: Guacamayo Azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413393
+    m_Localized: Chiguiro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413394
+    m_Localized: Jaguar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413395
+    m_Localized: "\xC1guila Harp\xEDa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413396
+    m_Localized: Ardilla Roja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413397
+    m_Localized: Zorro Rojo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413398
+    m_Localized: Oso Pardo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413399
+    m_Localized: Amanita Muscaria
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413400
+    m_Localized: Gusano de las nieves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413401
+    m_Localized: 'Cabra blanca '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413402
+    m_Localized: "B\xFAho Nival"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413403
+    m_Localized: Lince Canadiense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413404
+    m_Localized: Okapi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413405
+    m_Localized: "Le\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413406
+    m_Localized: Hiena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413407
+    m_Localized: Termita
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

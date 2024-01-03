@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Fauna_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: ac5ab8c78af19884889d3c76964aa455, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2820701413376
+    m_Localized: Macho alfa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413377
+    m_Localized: "Consumidor prim\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413378
+    m_Localized: "Consumidor secund\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413379
+    m_Localized: "Consumidor terci\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413380
+    m_Localized: Decompositor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413381
+    m_Localized: Predador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413382
+    m_Localized: Presa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413383
+    m_Localized: Cogumelo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413384
+    m_Localized: Animal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413385
+    m_Localized: Tucano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413386
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413387
+    m_Localized: Sucuri gigante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413388
+    m_Localized: "Besouro Tit\xE3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413389
+    m_Localized: "Macaco Tit\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413390
+    m_Localized: Macaco esquilo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413391
+    m_Localized: "R\xE3 venenosa dourada"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413392
+    m_Localized: Arara azul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413393
+    m_Localized: Capivara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413394
+    m_Localized: Jaguar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413395
+    m_Localized: "\xC1guia harpia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413396
+    m_Localized: Esquilo vermelho
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413397
+    m_Localized: Raposa vermelha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413398
+    m_Localized: Urso pardo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2820701413399
+    m_Localized: Cogumelos mata-moscas
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
