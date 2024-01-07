@@ -19,6 +19,7 @@ namespace Terraforming.Dominoes
         protected BiomesManager biomesManager;
 
         public Collider poleCollider;
+        public bool occupuied { get; private set; }
 
         // Define the first color with hexadecimal code #6481FF
         Color blue = new Color(0x64 / 255f, 0x81 / 255f, 0xFF / 255f);
@@ -72,11 +73,17 @@ namespace Terraforming.Dominoes
             if (token == null)
                return;
 
+            if(occupuied)
+            {
+                token.InvalidDrop();
+                return;
+            }
+
             //Check when the animal is a condor.
             if ((int)token.animal.biome == -1)
             {
                 if ((int)biome == -1f)
-                    poleCollider.enabled = false;
+                    OccupyPole();
                 else
                 {
                     token.InvalidDrop();
@@ -86,7 +93,7 @@ namespace Terraforming.Dominoes
             //Check when animal is not a condor
             else if ((biome & token.animal.biome) == biome)
             {
-                poleCollider.enabled = false;
+                OccupyPole();
             }
             else
             {
@@ -148,14 +155,16 @@ namespace Terraforming.Dominoes
        
         public void CheckBiome(ENUM_Biome _biome)
         {
-            if(_biome == biome)
-            {
-                meshRenderer.material.color = blue;
-            }
-            else
+            if(occupuied || _biome != biome)
             {
                 meshRenderer.material.color = red;
             }
+            else
+            {
+                meshRenderer.material.color = blue;
+            }
         }
+
+        public void OccupyPole() => occupuied = true;
     }
 }
