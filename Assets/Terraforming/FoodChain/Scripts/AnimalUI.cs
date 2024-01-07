@@ -59,13 +59,6 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public void OnPointerUp(PointerEventData eventData)
     {
         isDragging = false;
-        if(!canDrop)
-        {
-            Destroy(spawnedPrefab);
-        }
-        
-        canDrop = false;
-        spawnedPrefab = null;
     }
 
     private Vector3 GetMouseWorldPosition(PointerEventData eventData)
@@ -76,12 +69,19 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         if (Physics.Raycast(ray, out hit))
         {
             DominoPole pole = hit.transform.GetComponent<DominoPole>();
-            canDrop = pole!=null? pole.CheckBiome(animal.biome) : false;
+            if(pole)
+                pole.CheckBiome(animal.biome);
 
             return hit.point;
         }
 
         Debug.LogWarning("No hit", spawnedPrefab);
         return Vector3.zero; // Default if no hit
+    }
+
+    public void InvalidDrop()
+    {
+        Destroy(spawnedPrefab);
+        spawnedPrefab = null;
     }
 }

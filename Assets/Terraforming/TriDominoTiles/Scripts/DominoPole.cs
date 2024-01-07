@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -79,7 +78,10 @@ namespace Terraforming.Dominoes
                 if ((int)biome == -1f)
                     poleCollider.enabled = false;
                 else
+                {
+                    token.InvalidDrop();
                     return;
+                }
             }
             //Check when animal is not a condor
             else if ((biome & token.animal.biome) == biome)
@@ -88,6 +90,7 @@ namespace Terraforming.Dominoes
             }
             else
             {
+                token.InvalidDrop();
                 return;
             }
                 // TODO: Add validations for enabled hazards ( acid rain)
@@ -143,17 +146,15 @@ namespace Terraforming.Dominoes
             return biomeID;
         }
        
-        public bool CheckBiome(ENUM_Biome _biome)
+        public void CheckBiome(ENUM_Biome _biome)
         {
             if(_biome == biome)
             {
                 meshRenderer.material.color = blue;
-                return true;
             }
             else
             {
                 meshRenderer.material.color = red;
-                return false;
             }
         }
     }
