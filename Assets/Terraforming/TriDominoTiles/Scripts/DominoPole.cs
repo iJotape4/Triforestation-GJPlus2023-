@@ -82,8 +82,8 @@ namespace Terraforming.Dominoes
             //Check when the animal is a condor.
             if ((int)token.animal.biome == -1)
             {
-                if ((int)biome == -1f)
-                    OccupyPole();
+                if ((int)biome == -1f)             
+                    OccupyPole(token.spawnedPrefab, transform);              
                 else
                 {
                     token.InvalidDrop();
@@ -93,7 +93,7 @@ namespace Terraforming.Dominoes
             //Check when animal is not a condor
             else if ((biome & token.animal.biome) == biome)
             {
-                OccupyPole();
+                OccupyPole(token.spawnedPrefab, pivot.transform);
             }
             else
             {
@@ -165,6 +165,10 @@ namespace Terraforming.Dominoes
             }
         }
 
-        public void OccupyPole() => occupuied = true;
+        public void OccupyPole(GameObject animal, Transform position)
+        {
+            occupuied = true;
+            animal.transform.position = position.position;
+        }
     }
 }
