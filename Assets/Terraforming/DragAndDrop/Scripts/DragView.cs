@@ -86,6 +86,7 @@ namespace Terraforming
 
             // Update the current drag position in 3D space
             currentDragPosition = mainCamera.ScreenToWorldPoint(new Vector3(eventData.position.x,  eventData.position.y, distanceToCamera));
+            Debug.Log(eventData.position);
             transform.position = currentDragPosition;
         }
 
@@ -97,13 +98,11 @@ namespace Terraforming
             else
                 ReturnToPosition();
 
-
             OnDragEnded?.Invoke(eventData);
         }
         public void ValidateDrop()
         {
             validDrop = true;
-            transform.parent = null;
         }
 
         void ReturnToPosition()
@@ -115,20 +114,9 @@ namespace Terraforming
 
         void Drop()
         {
-            // Check if there is a parent GameObject
-            if (gameObject.transform.parent != null)
-            {
-                // Get the parent GameObject
-                GameObject parentObject = gameObject.transform.parent.gameObject;
-
-                // Change the layer of the parent GameObject to the default layer
-                parentObject.layer = LayerMask.NameToLayer("Default");
-                EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, EnableClicking);
-                EventManager.RemoveListener(ENUM_DominoeEvent.validSwap, DisableClicking);
-                draggingAllowed = false;
-
- 
-            }
+            EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, EnableClicking);
+            EventManager.RemoveListener(ENUM_DominoeEvent.validSwap, DisableClicking);
+            draggingAllowed = false;       
         }
 
         public void ForceAllowDragging() => draggingAllowed = true;

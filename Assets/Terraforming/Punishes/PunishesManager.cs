@@ -31,7 +31,7 @@ public class PunishesManager : MonoBehaviour
     }
     private void Start()
     {
-        grid = FindObjectOfType<TriangularGrid>();
+        grid = TriangularGrid.FindTriangularGrid();
     }
     private void AcidRainPunish()
     {

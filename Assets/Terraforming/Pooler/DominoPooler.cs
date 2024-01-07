@@ -208,7 +208,7 @@ public class DominoPooler : MonoBehaviour
     [ContextMenu("Contar biomas")]
     public void CountBiomes()
     {
-        DominoToken[] tokensInBoard = GetComponentsInChildren<DominoToken>();
+        DominoToken[] tokensInBoard = TriangularGrid.FindTriangularGrid().GetComponentsInChildren<DominoToken>();
 
         foreach (DominoToken token in tokensInBoard)
         {

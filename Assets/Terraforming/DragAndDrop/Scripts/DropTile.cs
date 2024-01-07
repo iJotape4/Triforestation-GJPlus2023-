@@ -9,26 +9,34 @@ public class DropTile : TriangularGrid
     public bool isUpwards = true;
     MeshRenderer meshRenderer;
     public Vector3Int intCenter;
+    MeshCollider meshCollider;
 
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+        meshCollider = GetComponent<MeshCollider>();
         ChangeAlphaMaterial(0);
     }
 
     public override void OnDrop(PointerEventData eventData)
     {
         DominoToken token = eventData.pointerDrag.gameObject.GetComponent<DominoToken>();
-        token.transform.position = transform.position;
+        //Avoids this method when the dropen thing is not a token ( ex : an animal)
+        if (token == null)
+            return;
 
+        token.transform.position = transform.position;
         if(token.IsUpwards() == isUpwards && token.IsValidBiome())
         {
             eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
             eventData.pointerDrag.transform.position = transform.position;
             token.TurnOnColliders();
             GenerateNeighBors();
+            //Set the token as child of the grid-cell
+            //In this way, the grid cell could be free again if the token is removed by a swipe
+            token.SetParent(this.transform);
+            meshCollider.enabled = false;
             EventManager.Dispatch(ENUM_DominoeEvent.dominoDroppedEvent, token);
-            gameObject.SetActive(false);
         }
     }
 

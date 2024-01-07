@@ -15,5 +15,6 @@ MonoBehaviour:
   name: Anaconda
   chainLevel: 1
   aliments: 2
-  biome: 16
+  biome: 1
   sprite: {fileID: -1307022405, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
+  _3dPrefab: {fileID: 5766867320943129003, guid: caebb8647bcfa0d4bb094e43a8a89276, type: 3}

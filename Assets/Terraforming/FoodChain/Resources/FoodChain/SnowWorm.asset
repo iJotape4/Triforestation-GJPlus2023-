@@ -15,5 +15,6 @@ MonoBehaviour:
   name: SnowWorm
   chainLevel: 8
   aliments: 0
-  biome: 32
+  biome: 36
   sprite: {fileID: -1429834701, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
+  _3dPrefab: {fileID: 5610368355758788582, guid: 839b805b17093404f803335a0460fb48, type: 3}

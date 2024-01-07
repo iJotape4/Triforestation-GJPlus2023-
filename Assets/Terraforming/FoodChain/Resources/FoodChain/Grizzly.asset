@@ -15,5 +15,6 @@ MonoBehaviour:
   name: Grizzly
   chainLevel: 1
   aliments: 2
-  biome: 8
+  biome: 2
   sprite: {fileID: 141989173, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
+  _3dPrefab: {fileID: 5610368355758788582, guid: 839b805b17093404f803335a0460fb48, type: 3}

@@ -193,6 +193,7 @@ namespace Terraforming.Dominoes
 
         public void SetWasSwappedToFalse() => wasSwaped =false;
 
+        public void SetParent(Transform newParent) => gameObject.transform.parent = newParent;
         private void OnDrawGizmos()
         {
             foreach (DominoPole pole in poles)

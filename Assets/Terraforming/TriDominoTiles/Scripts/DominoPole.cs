@@ -64,16 +64,16 @@ namespace Terraforming.Dominoes
             if (biome == 0)
                 return;
 
-            AnimalToken token = eventData.pointerDrag.gameObject.GetComponent<AnimalToken>();
+            //AnimalToken token = eventData.pointerDrag.gameObject.GetComponent<AnimalToken>();
 
-            if (token == null)
-                return;
+            //if (token == null)
+            //    return;
 
-            if ( (token.animal.biome &  biome ) == biome)
-            {
-                token.GetComponent<DragView>().ValidateDrop();
-                poleCollider.enabled= false;
-            }
+            //if ( (token.animal.biome &  biome ) == biome)
+            //{
+            //    token.GetComponent<DragView>().ValidateDrop();
+            //    poleCollider.enabled= false;
+            //}
         }
 
         protected void SetBioma()

@@ -141,7 +141,7 @@ public class TriangularGrid : DropView
     private void SpawnInitialDominoe()
     {
         Vector3 center = TriCenter(initialPosition);
-        GameObject token1 = Instantiate(token, center, transform.rotation);
+        GameObject token1 = Instantiate(token, center, transform.rotation, this.gameObject.transform);
         token1.GetComponentInChildren<MeshCollider>().enabled = false;
         OccupyCell(initialPosition);
         generatedCells.Add(initialPosition);
@@ -166,7 +166,7 @@ public class TriangularGrid : DropView
 
             if (PointsUp(position))
             {
-                var tile = Instantiate(gridTile, center, transform.rotation * Quaternion.Euler(0, 180, 0));
+                var tile = Instantiate(gridTile, center, transform.rotation * Quaternion.Euler(0, 180, 0), this.gameObject.transform.transform.root);
                 rotation = transform.rotation * Quaternion.Euler(0, 180, 0);
                 DropTile dropTile = tile.GetComponent<DropTile>();
                 dropTile.isUpwards = false;
@@ -174,7 +174,7 @@ public class TriangularGrid : DropView
             }
             else
             {
-                var tile = Instantiate(gridTile, center, Quaternion.Euler(Vector3.zero));
+                var tile = Instantiate(gridTile, center, Quaternion.Euler(Vector3.zero), this.gameObject.transform.root);
                 DropTile dropTile = tile.GetComponent<DropTile>();
                 tile.GetComponent<DropTile>().isUpwards = true;
                 dropTile.intCenter = neighbor;
@@ -205,5 +205,6 @@ public class TriangularGrid : DropView
         return  (TriCenter( freeCells[randomIndex]) , rotation, freeCells[randomIndex]);
     }
 
+    public static TriangularGrid FindTriangularGrid() => FindObjectOfType<TriangularGrid>().transform.root.GetComponent<TriangularGrid>();
     public override void OnDrop(PointerEventData eventData) { }
 }

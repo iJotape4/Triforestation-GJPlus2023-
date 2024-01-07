@@ -28,7 +28,7 @@ public class DivineHelpsManager : SinglentonParent<DivineHelpsManager>
 
     private void Start()
     {
-        grid = FindObjectOfType<TriangularGrid>();
+        grid = TriangularGrid.FindTriangularGrid() ;
     }
 
     public void SpawnBonusMoor(GameObject moorPrefab)

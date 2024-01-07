@@ -9,6 +9,8 @@ public class Animal : ScriptableObject
     [SerializeField] public ENUM_FoodChainLevel aliments;
     [SerializeField] public ENUM_Biome biome;
     [SerializeField] public Sprite sprite;
+    [SerializeField] public GameObject _3dPrefab;
+    
 
     [ContextMenu("SetAliments")]
     public void SetAliments()
