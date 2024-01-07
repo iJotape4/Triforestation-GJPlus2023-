@@ -1,5 +1,4 @@
 using Events;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,32 +18,37 @@ public class AnimalsUIPanel : MonoBehaviour
     {
         EventManager.RemoveListener(ENUM_GameState.poolAnimals, PoolAnimals);
     }
-
+    /// <summary>
+    /// Checks for the current biomes in the level, then search the animals that can be found in the biomes. Finally, create the UI pictures for each animal
+    /// </summary>
     [ContextMenu("PoolAnimals")]
     private void PoolAnimals()
     {
         foreach (KeyValuePair<ENUM_Biome, int> pair in GameManager.Instance.biomeCounts)
         {
-            Animal[] animalsInBiome = GetAnimalsBiome(pair.Key);
-            for (int i = 0; i < pair.Value; i++)
+            if (pair.Value > 0)
             {
-                animalsList.Add(GetRandomAnimalFromList(animalsInBiome));
+                Animal[] animalsInBiome = GetAnimalsBiome(pair.Key);
+                foreach (Animal animal in animalsInBiome)
+                {
+                    if(!animalsList.Contains(animal))
+                    animalsList.Add(animal);
+                }
             }
         }
 
-        for (int j = 0; j < animalsList.Count; j++)
+        //Create UI pictures for each animal
+        for (int i = 0; i < animalsList.Count; i++)
         {
             GameObject newAnimal = Instantiate(animalUIPicturePrefab, gameObject.transform);
-            StartCoroutine(AnimalSetToken(newAnimal, j));
+            newAnimal.GetComponent<AnimalUI>().SetAnimal(animalsList[i]);
         }
     }
-
-    Animal GetRandomAnimalFromList(Animal[] animals)
-    {
-        int r = UnityEngine.Random.Range(0, animals.Length);
-        return animals[r];
-    }
-
+    /// <summary>
+    /// Check in the animals data and returns every animal that can be found in the biome
+    /// </summary>
+    /// <param name="biome"></param>
+    /// <returns></returns>
     Animal[] GetAnimalsBiome(ENUM_Biome biome)
     {
         List<Animal> animals = new List<Animal>();
@@ -52,19 +56,16 @@ public class AnimalsUIPanel : MonoBehaviour
         {
             if (animal.biome.HasFlag(biome))
             {
-                if (animal.chainLevel.HasFlag(ENUM_FoodChainLevel.Prey) || animal.chainLevel.HasFlag(ENUM_FoodChainLevel.Predator))
+                //TODO: add the verification for bugs when available
+                //If no acid rain with biomes around, no bugs should be spawned in the UI
+                if (!animal.chainLevel.HasFlag(ENUM_FoodChainLevel.Bug))
                 {
                     animals.Add(animal);
                 }
+
             }
         }
         return animals.ToArray();
-    }
-
-    IEnumerator AnimalSetToken(GameObject newAnimal, int index)
-    {
-        yield return new WaitForSeconds(2f);
-        newAnimal.GetComponent<AnimalUI>().SetAnimal(animalsList[index]);
     }
 
     void Start()
