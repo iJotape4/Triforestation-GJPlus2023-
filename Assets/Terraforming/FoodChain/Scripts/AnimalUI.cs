@@ -15,10 +15,7 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     [Header("CurrentPrefab Data")]
     private bool isDragging = false;
     public GameObject spawnedPrefab; // The instance of the spawned prefab
-    private bool canDrop;
 
-    //TODO: Add fields for animal Data, and load the reference prefab from the animal data
-    //TODO: Add the drop function taking in account the raycasting
     void Start()
     {
         mainCamera = Camera.main;
