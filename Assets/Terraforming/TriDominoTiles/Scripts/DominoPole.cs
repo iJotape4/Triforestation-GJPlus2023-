@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -18,9 +19,12 @@ namespace Terraforming.Dominoes
         public ENUM_Biome biome;
         protected BiomesManager biomesManager;
 
-
-
         public Collider poleCollider;
+
+        // Define the first color with hexadecimal code #6481FF
+        Color blue = new Color(0x64 / 255f, 0x81 / 255f, 0xFF / 255f);
+        // Define the second color with hexadecimal code #FF6D6D
+        Color red = new Color(0xFF / 255f, 0x6D / 255f, 0x6D / 255f);
         protected virtual void Awake()
         {
             meshRenderer = GetComponent<MeshRenderer>();
@@ -64,17 +68,39 @@ namespace Terraforming.Dominoes
             if (biome == 0)
                 return;
 
-            //AnimalToken token = eventData.pointerDrag.gameObject.GetComponent<AnimalToken>();
+            AnimalUI token = eventData.pointerDrag.gameObject.GetComponent<AnimalUI>();
 
-            //if (token == null)
-            //    return;
+            if (token == null)
+               return;
 
-            //if ( (token.animal.biome &  biome ) == biome)
-            //{
-            //    token.GetComponent<DragView>().ValidateDrop();
-            //    poleCollider.enabled= false;
-            //}
+            //Check when the animal is a condor.
+            if ((int)token.animal.biome == -1)
+            {
+                if ((int)biome == -1f)
+                    poleCollider.enabled = false;
+                else
+                    return;
+            }
+            //Check when animal is not a condor
+            else if ((biome & token.animal.biome) == biome)
+            {
+                poleCollider.enabled = false;
+            }
+            else
+            {
+                return;
+            }
+                // TODO: Add validations for enabled hazards ( acid rain)
+               //TODO: Add scoring
         }
+
+        public override void OnPointerExit(PointerEventData eventData)
+        {
+            base.OnPointerExit(eventData);
+            RestoreColor();          
+        }
+
+        public void RestoreColor() => meshRenderer.material.color = Color.white;
 
         protected void SetBioma()
         {
@@ -96,7 +122,6 @@ namespace Terraforming.Dominoes
                 Debug.LogError("Invalid biome index: " + index, gameObject);
             }
         }
-
         protected int GetBiomeIndex(ENUM_Biome biome)
         {
             int biomeID = biome switch
@@ -116,6 +141,20 @@ namespace Terraforming.Dominoes
                 _ => -1, // Handle other cases or error condition.
             };
             return biomeID;
+        }
+       
+        public bool CheckBiome(ENUM_Biome _biome)
+        {
+            if(_biome == biome)
+            {
+                meshRenderer.material.color = blue;
+                return true;
+            }
+            else
+            {
+                meshRenderer.material.color = red;
+                return false;
+            }
         }
     }
 }

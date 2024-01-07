@@ -1,17 +1,21 @@
+using Terraforming.Dominoes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
-    private bool isDragging = false;
     private Camera mainCamera;
 
     [Header("Animal Data")]
-    [SerializeField] Animal animal;
+    [SerializeField] public Animal animal;
     [SerializeField] Image UiImage;
     public GameObject prefabToSpawn; // Reference to the prefab
+
+    [Header("CurrentPrefab Data")]
+    private bool isDragging = false;
     private GameObject spawnedPrefab; // The instance of the spawned prefab
+    private bool canDrop;
 
     //TODO: Add fields for animal Data, and load the reference prefab from the animal data
     //TODO: Add the drop function taking in account the raycasting
@@ -48,10 +52,20 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             spawnedPrefab.transform.position = GetMouseWorldPosition(eventData);
         }
     }
-
+    /// <summary>
+    /// Clean the spawned prefab if the drop is not valid
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnPointerUp(PointerEventData eventData)
     {
         isDragging = false;
+        if(!canDrop)
+        {
+            Destroy(spawnedPrefab);
+        }
+        
+        canDrop = false;
+        spawnedPrefab = null;
     }
 
     private Vector3 GetMouseWorldPosition(PointerEventData eventData)
@@ -61,6 +75,9 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            DominoPole pole = hit.transform.GetComponent<DominoPole>();
+            canDrop = pole!=null? pole.CheckBiome(animal.biome) : false;
+
             return hit.point;
         }
 
