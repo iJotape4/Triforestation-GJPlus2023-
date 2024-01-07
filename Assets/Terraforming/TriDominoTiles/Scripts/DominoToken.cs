@@ -13,13 +13,13 @@ namespace Terraforming.Dominoes
         [SerializeField] public DominoPole[] poles;
        // [SerializeField] SpriteRenderer dominoCover;
         public float uncoverDuration = 1f;
-        private Collider dominoCollider;
+        protected Collider dominoCollider;
         public TokenData tokenData;
         private bool wasSwaped;
         // Define the valid rotation angles for upwards tokens
         float[] validUpwardsRotations = new float[] { 0f, 120f, 240f };
 
-        private void Awake()
+        protected virtual void Awake()
         {
             poles = GetComponentsInChildren<DominoPole>();
             dominoCollider = GetComponent<Collider>();
@@ -28,7 +28,7 @@ namespace Terraforming.Dominoes
         }
 
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
             EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
@@ -151,7 +151,7 @@ namespace Terraforming.Dominoes
                 });
         }
 
-        void CoverDomino()
+        protected void CoverDomino()
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180f));
         }
@@ -196,6 +196,10 @@ namespace Terraforming.Dominoes
         public void SetParent(Transform newParent) => gameObject.transform.parent = newParent;
         private void OnDrawGizmos()
         {
+            ///Do not draw gizmos hazards or comodin tokens after the putting animals phase started
+            if (poles.Length <= 1)
+                return;
+
             foreach (DominoPole pole in poles)
             {
                 for (int direction = 0; direction < 2; direction++)
