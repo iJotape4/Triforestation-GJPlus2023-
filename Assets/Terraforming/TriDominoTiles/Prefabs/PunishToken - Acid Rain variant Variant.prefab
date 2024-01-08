@@ -20,6 +20,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 70e7d1274bfd9644a8e9c6acf7307aca, type: 2}
+    - target: {fileID: 1241708834892502672, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980388499556223665, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3665151977654406277, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -72,13 +80,69 @@ PrefabInstance:
       propertyPath: m_Name
       value: PunishToken - Acid Rain variant Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4851472468327310498, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044199075420639526, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6229325795511735521, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -3672573984484725944, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+    - {fileID: -1821685226391206065, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+    - {fileID: -8795550288409427267, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4477710225184033123, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8978674345496922001}
+    - targetCorrespondingSourceObject: {fileID: 4477710225184033123, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6682700520512008701}
   m_SourcePrefab: {fileID: 100100000, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+--- !u!1 &8585841966260664896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4477710225184033123, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+  m_PrefabInstance: {fileID: 5261062527212663587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8978674345496922001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585841966260664896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec76a10a93288c3459e077ce862b48c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poles: []
+  uncoverDuration: 0.5
+  tokenData: {fileID: 0}
+  dominoPoleLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &6682700520512008701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585841966260664896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebfda3688f9ae1439fbb57aa53988c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivot: {fileID: 0}
+  meshRenderer: {fileID: 0}
+  position: 0
+  biome: 0
+  poleCollider: {fileID: 0}

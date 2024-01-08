@@ -9,7 +9,7 @@ public class DropTile : TriangularGrid
     public bool isUpwards = true;
     MeshRenderer meshRenderer;
     public Vector3Int intCenter;
-    MeshCollider meshCollider;
+    public MeshCollider meshCollider { get; private set; }
 
     private void Start()
     {

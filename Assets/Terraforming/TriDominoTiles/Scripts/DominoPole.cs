@@ -22,9 +22,9 @@ namespace Terraforming.Dominoes
         public bool occupuied { get; private set; }
 
         // Define the first color with hexadecimal code #6481FF
-        Color blue = new Color(0x64 / 255f, 0x81 / 255f, 0xFF / 255f);
+        public static Color blue = new Color(0x64 / 255f, 0x81 / 255f, 0xFF / 255f);
         // Define the second color with hexadecimal code #FF6D6D
-        Color red = new Color(0xFF / 255f, 0x6D / 255f, 0x6D / 255f);
+        public static Color red = new Color(0xFF / 255f, 0x6D / 255f, 0x6D / 255f);
         protected virtual void Awake()
         {
             meshRenderer = GetComponent<MeshRenderer>();
@@ -48,7 +48,7 @@ namespace Terraforming.Dominoes
 
         public void TurnColliderOff()
         {
-            poleCollider.enabled = true;
+            poleCollider.enabled = false;
         }
 
         public virtual void AssignBiome()
@@ -65,9 +65,6 @@ namespace Terraforming.Dominoes
 
         public override void OnDrop(PointerEventData eventData)
         {
-            if (biome == 0)
-                return;
-
             AnimalUI token = eventData.pointerDrag.gameObject.GetComponent<AnimalUI>();
 
             if (token == null)
@@ -90,6 +87,25 @@ namespace Terraforming.Dominoes
                     return;
                 }
             }
+            else if(token.animal.chainLevel == ENUM_FoodChainLevel.Bug && biome == 0)
+            {
+                PunishToken thisPunishToken = GetComponent<PunishToken>();
+                if (thisPunishToken.savable)
+                {
+                    OccupyPole(token.spawnedPrefab, transform);
+                    thisPunishToken.RecoverEcosystem(token.animal.biome, token.spawnedPrefab);
+                }
+                else
+                {
+                    token.InvalidDrop();
+                    return;
+                }              
+            }
+            else if(biome == 0)
+            {
+                token.InvalidDrop();
+                return;
+            }
             //Check when animal is not a condor
             else if ((biome & token.animal.biome) == biome)
             {
@@ -100,8 +116,8 @@ namespace Terraforming.Dominoes
                 token.InvalidDrop();
                 return;
             }
-                // TODO: Add validations for enabled hazards ( acid rain)
-               //TODO: Add scoring
+                
+            //TODO: Add scoring
         }
 
         public override void OnPointerExit(PointerEventData eventData)
@@ -155,14 +171,24 @@ namespace Terraforming.Dominoes
        
         public void CheckBiome(ENUM_Biome _biome)
         {
-            if(occupuied || _biome != biome)
+            if (biome == 0)
+                Debug.Log("Biome: " + biome);
+
+            if (occupuied || _biome != biome)
             {
-                meshRenderer.material.color = red;
+                ChangeMeshColor(red);
+                if (biome == 0)
+                Debug.Log("RED");
             }
             else
             {
-                meshRenderer.material.color = blue;
+                ChangeMeshColor(blue);
             }
+        }
+
+        private void ChangeMeshColor(Color color)
+        {
+            meshRenderer.material.color = color;
         }
 
         public void OccupyPole(GameObject animal, Transform position)

@@ -1,6 +1,8 @@
 public enum ENUM_GameState
 {
-    boardFinished,
+    firstPhaseFinished,
+    poolDescomposers,
+    recoveredEcosystem,
     poolAnimals,
     win,
     loose

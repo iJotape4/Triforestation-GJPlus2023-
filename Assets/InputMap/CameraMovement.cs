@@ -40,5 +40,5 @@ public class CameraMovement : MonoBehaviour
         mainActions.CameraMovement.canceled += ctx => SetMovementInput(Vector2.zero);
         actionMap.Enable();
     }
-    private void OnDestroy() => actionMap.Disable();
+    private void OnDisable() => actionMap.Disable();
 }

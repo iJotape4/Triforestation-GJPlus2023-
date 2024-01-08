@@ -98,7 +98,7 @@ public class TriangularGrid : DropView
     public void OccupyCell(Vector3Int cell)
     {
         occupiedCells.Add(cell);
-        Debug.Log($"Occupied {cell}");
+        //Debug.Log($"Occupied {cell}");
     }
 
     // Function to free a cell
@@ -195,7 +195,7 @@ public class TriangularGrid : DropView
 
         if(freeCells.Count == 0)
         {
-            EventManager.Dispatch(ENUM_GameState.boardFinished);
+            EventManager.Dispatch(ENUM_GameState.firstPhaseFinished);
             return (null, null, null); //TODO: Change this to a custom exception (NoFreeCellsException)
         }
 
@@ -203,6 +203,16 @@ public class TriangularGrid : DropView
         Quaternion rotation = PointsUp(freeCells[randomIndex]) ? Quaternion.Euler(Vector3.zero) :  Quaternion.Euler(0, 180, 0);
 
         return  (TriCenter( freeCells[randomIndex]) , rotation, freeCells[randomIndex]);
+    }
+
+    public DropTile FindDropTileByIntCenter(Vector3Int center)
+    {
+        foreach(var tile in FindObjectsOfType<DropTile>())
+        {
+            if (tile.intCenter == center)
+                return tile;
+        }
+        return null;
     }
 
     public static TriangularGrid FindTriangularGrid() => FindObjectOfType<TriangularGrid>().transform.root.GetComponent<TriangularGrid>();

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6268585740690386699}
   - component: {fileID: 8521356881192559224}
+  - component: {fileID: 5794915451906864518}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -47,3 +48,15 @@ MonoBehaviour:
   token: {fileID: 2085694070061048311, guid: f4ee5526b4f10f348b18b3ff6c1079c8, type: 3}
   gridTile: {fileID: 5364615176062154162, guid: ca0df04499f19134ca33efeb10b19d4f, type: 3}
   initialPosition: {x: 0, y: 1, z: 1}
+--- !u!114 &5794915451906864518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880946060814512151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca75d37977e66ca47aefe489cc5143ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

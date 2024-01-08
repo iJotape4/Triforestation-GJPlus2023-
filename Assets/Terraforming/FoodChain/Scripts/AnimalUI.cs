@@ -66,8 +66,19 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         if (Physics.Raycast(ray, out hit))
         {
             DominoPole pole = hit.transform.GetComponent<DominoPole>();
-            if(pole)
-                pole.CheckBiome(animal.biome);
+            if (pole)
+            {
+                if(animal.chainLevel != ENUM_FoodChainLevel.Bug)
+                {
+                    pole.CheckBiome(animal.biome);
+                    Debug.Log("Biome: " + animal.biome);
+                    Debug.Log("PoleBiome: " + pole.biome);
+                }
+                else
+                {
+                      pole.CheckBiome(0);
+                }
+            }
 
             return hit.point;
         }

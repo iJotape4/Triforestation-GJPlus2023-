@@ -81,12 +81,9 @@ namespace Terraforming
                 return;
             }
             //Debug.Log($"OnDrag {eventData.position}", gameObject);
-
-             
-
+           
             // Update the current drag position in 3D space
             currentDragPosition = mainCamera.ScreenToWorldPoint(new Vector3(eventData.position.x,  eventData.position.y, distanceToCamera));
-            Debug.Log(eventData.position);
             transform.position = currentDragPosition;
         }
 

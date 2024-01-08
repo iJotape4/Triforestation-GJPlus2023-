@@ -11,6 +11,6 @@ public class GameManager : SinglentonParent<GameManager>
     public void SetDictionary(Dictionary<ENUM_Biome, int> dict)
     {
         biomeCounts = dict;
-        EventManager.Dispatch(ENUM_GameState.poolAnimals);
+        EventManager.Dispatch(ENUM_GameState.firstPhaseFinished);
     }
 }
