@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
     }
 
     private void OnEnable() => actionMap.Enable();
-    private void OnDestroy() => actionMap.Disable();
+    private void  OnDisable() => actionMap.Disable();
 }
 
 public enum ENUM_InputEvent

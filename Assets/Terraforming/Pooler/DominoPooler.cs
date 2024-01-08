@@ -221,6 +221,5 @@ public class DominoPooler : MonoBehaviour
         }
 
         GameManager.Instance.SetDictionary(biomeCounts);
-        biomeCounts.Clear();
     }
 }

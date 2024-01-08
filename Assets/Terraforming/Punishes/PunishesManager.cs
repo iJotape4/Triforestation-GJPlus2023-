@@ -39,10 +39,12 @@ public class PunishesManager : MonoBehaviour
         if (selectedGridCell.position == null || selectedGridCell.rotation == null || selectedGridCell.center == null)
             return;
 
+        DropTile gridTile = grid.FindDropTileByIntCenter((Vector3Int)selectedGridCell.center);
         // Instantiate the replacement prefab at the position of the selected Cell Grid.
-        Instantiate(acidRainPrefab, (Vector3)selectedGridCell.position, (Quaternion)selectedGridCell.rotation, grid.transform);
+        Instantiate(acidRainPrefab, (Vector3)selectedGridCell.position, (Quaternion)selectedGridCell.rotation, gridTile.transform);
         // Trigger the selectDone event or perform any other desired actions.
         grid.OccupyCell((Vector3Int)selectedGridCell.center);
+        gridTile.meshCollider.enabled = false;
         EventManager.Dispatch(ENUM_DominoeEvent.spawnedAcidRainEvent); 
     }
 

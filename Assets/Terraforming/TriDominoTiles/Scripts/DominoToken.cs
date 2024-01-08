@@ -21,7 +21,7 @@ namespace Terraforming.Dominoes
 
         protected virtual void Awake()
         {
-            poles = GetComponentsInChildren<DominoPole>();
+            poles = Array.FindAll(GetComponentsInChildren<DominoPole>(), c => c.gameObject != gameObject);
             dominoCollider = GetComponent<Collider>();
             EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
             EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
@@ -194,6 +194,14 @@ namespace Terraforming.Dominoes
         public void SetWasSwappedToFalse() => wasSwaped =false;
 
         public void SetParent(Transform newParent) => gameObject.transform.parent = newParent;
+
+        /// <summary>
+        /// Only call this method when the token is a comodin token or a hazard token
+        /// </summary>
+        /// <param name="biomeValue"> -1= Everything / 0 = None </param>
+
+
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             ///Do not draw gizmos hazards or comodin tokens after the putting animals phase started
@@ -202,6 +210,9 @@ namespace Terraforming.Dominoes
 
             foreach (DominoPole pole in poles)
             {
+                if (pole.pivot == null)
+                    return;
+
                 for (int direction = 0; direction < 2; direction++)
                 {
                     float angleOffset = direction == 0 ? 60f : -60f;
@@ -223,5 +234,6 @@ namespace Terraforming.Dominoes
                 }
             }
         }
+#endif
     }
 }

@@ -1,6 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
+using Events;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
@@ -15,6 +14,19 @@ public class CameraMovement : MonoBehaviour
     {
         actionMap = new InputActionsMap();
         mainActions = actionMap.MainActions;
+
+        EventManager.AddListener(ENUM_GameState.firstPhaseFinished, TransitionToPuttingAnimalsPosition);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.RemoveListener(ENUM_GameState.firstPhaseFinished, TransitionToPuttingAnimalsPosition);
+    }
+
+    private void TransitionToPuttingAnimalsPosition()
+    {
+        transform.DOMove(new Vector3(transform.position.x, 3f, transform.position.z),2f);
+        transform.DORotate(new Vector3(20f, 0f, 0f), 2f);
     }
 
     private void Update()
@@ -40,5 +52,5 @@ public class CameraMovement : MonoBehaviour
         mainActions.CameraMovement.canceled += ctx => SetMovementInput(Vector2.zero);
         actionMap.Enable();
     }
-    private void OnDestroy() => actionMap.Disable();
+    private void OnDisable() => actionMap.Disable();
 }
