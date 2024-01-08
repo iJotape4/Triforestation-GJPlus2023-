@@ -15,6 +15,7 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     [Header("CurrentPrefab Data")]
     private bool isDragging = false;
     public GameObject spawnedPrefab; // The instance of the spawned prefab
+    private bool canDrop;
 
     void Start()
     {
@@ -56,6 +57,8 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public void OnPointerUp(PointerEventData eventData)
     {
         isDragging = false;
+        if (!canDrop)    
+            InvalidDrop();       
     }
 
     private Vector3 GetMouseWorldPosition(PointerEventData eventData)
@@ -68,18 +71,19 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             DominoPole pole = hit.transform.GetComponent<DominoPole>();
             if (pole)
             {
+                canDrop = true;
                 if(animal.chainLevel != ENUM_FoodChainLevel.Bug)
                 {
                     pole.CheckBiome(animal.biome);
-                    Debug.Log("Biome: " + animal.biome);
-                    Debug.Log("PoleBiome: " + pole.biome);
                 }
                 else
                 {
                       pole.CheckBiome(0);
                 }
             }
-
+            else           
+                canDrop = false;
+            
             return hit.point;
         }
 
