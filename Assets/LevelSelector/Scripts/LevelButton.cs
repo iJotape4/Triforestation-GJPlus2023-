@@ -19,7 +19,7 @@ namespace LevelSelector
             circleCollider= GetComponent<Collider>(); 
             ps = GetComponentInChildren<ParticleSystem>();
 
-            pregamePopUP.popUpEnabled+= SwitchButtonsActivation;
+            //pregamePopUP.popUpEnabled+= SwitchButtonsActivation;
 
             EventManager.AddListener(ENUM_LevelSelectorEvent.LevelSelected, UnselectNode);
         }

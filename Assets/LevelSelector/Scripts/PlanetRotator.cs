@@ -17,8 +17,8 @@ public class PlanetRotator : MonoBehaviour
 
     private void Awake()
     {
-        pregamePopUP = FindObjectOfType<PregamePopUp>();
-        pregamePopUP.popUpEnabled += SwitchCameraActivation;
+        // pregamePopUP = FindObjectOfType<PregamePopUp>();
+        // pregamePopUP.popUpEnabled += SwitchCameraActivation;
         EventManager.AddListener(ENUM_LevelSelectorEvent.LevelSelected, RestartRotation);
 
     }
