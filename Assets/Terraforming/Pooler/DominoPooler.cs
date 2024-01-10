@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using Terraforming.Dominoes;
 using UnityEngine;
 using MyBox;
+using LevelSelector;
 
 public class DominoPooler : MonoBehaviour
 {
     [SerializeField] public GameObject dominoPrefab; // Reference to the domino prefab.
-    public int totalDominoes = 52; // Total number of dominoes to be created.
     public float dominoSpacing = 0.1f;
     private List<DominoToken> dominoes = new List<DominoToken>();
     private int currentIndex = 0;
@@ -22,7 +22,7 @@ public class DominoPooler : MonoBehaviour
     private bool canDeployPunishment = true;
 
     public Dictionary<ENUM_Biome, int> biomeCounts = new Dictionary<ENUM_Biome, int>();
-    [SerializeField] TokenData[] tokenDatas;
+    [SerializeField] LevelData levelData;
 
     private void Awake()
     {
@@ -60,7 +60,7 @@ public class DominoPooler : MonoBehaviour
 
     void CreateDominoes()
     {
-        for (int i = 0; i < totalDominoes; i++)
+        for (int i = 0; i < levelData.dominoesAmount; i++)
         {
             GameObject dominoObj = Instantiate(dominoPrefab, transform);
             DominoToken domino = dominoObj.GetComponent<DominoToken>();
@@ -68,7 +68,7 @@ public class DominoPooler : MonoBehaviour
             // Set the position of the domino in a row from left to right.
             float xPos = i * dominoSpacing; // Adjust the spacing as needed.
             dominoObj.transform.localPosition = new Vector3(xPos, 0, 0);
-            domino.tokenData = tokenDatas[i];
+            domino.tokenData = levelData.tokenDatas[i];
             dominoes.Add(domino);
             domino.ResetDomino();
         }
