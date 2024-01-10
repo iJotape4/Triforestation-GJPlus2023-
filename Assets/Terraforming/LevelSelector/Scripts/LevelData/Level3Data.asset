@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level3Data
   m_EditorClassIdentifier: 
   level: 3
-  dominoesAmount: 28
   tokensInLevelMultiplier: 2
+  dominoesAmount: 28
   tokenDatas:
   - {fileID: 11400000, guid: 3e78339c6c992a143ac1c1a4044ec7b5, type: 2}
   - {fileID: 11400000, guid: f5a34d4e8f23d924dbe539df38d33465, type: 2}
