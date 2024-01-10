@@ -16,7 +16,7 @@ namespace LevelSelector
         [Header("Dominoes")]
         [Range(1, 200)] public int dominoesAmount;
 
-        [SerializeField] TokenData[] tokenData;
+        [SerializeField] public TokenData[] tokenDatas;
 
         //[Header("LevelGoals")]
         //[Range(1, 400)] public int time = 200;
@@ -28,13 +28,13 @@ namespace LevelSelector
 #if UNITY_EDITOR
 
         public static string tokenDatasPath =  Path.Combine("Assets", "Terraforming", "TriDominoTiles", "Scripts", "Data", "DominoToken", "Level");
-        public static string levelDatasPath = Path.Combine("Assets","LevelSelector","Scripts","LevelData");
+        public static string levelDatasPath = Path.Combine("Assets", "Terraforming","LevelSelector","Scripts","LevelData");
 
         public TokenData[] GetTokenDatas()
         {
-            tokenData = LoadAssets<TokenData>(tokenDatasPath+level);
-            dominoesAmount = tokenData.Length;
-            return tokenData;
+            tokenDatas = LoadAssets<TokenData>(tokenDatasPath+level);
+            dominoesAmount = tokenDatas.Length;
+            return tokenDatas;
         }
 
         [MenuItem("DevTools/UpdateAllLevelsData",false, 10)]

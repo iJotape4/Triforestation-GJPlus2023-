@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa9670ba31a2554fb8d3848168f915f, type: 3}
+  m_Name: Level1Data
+  m_EditorClassIdentifier: 
+  level: 1
+  dominoesAmount: 11
+  tokenDatas:
+  - {fileID: 11400000, guid: f690fbae3bf40c54982be41c7c9a9379, type: 2}
+  - {fileID: 11400000, guid: 4328df2289c07b64d8e1915ec2289bac, type: 2}
+  - {fileID: 11400000, guid: 9314b7655630dd84f9d4969a225ac38d, type: 2}
+  - {fileID: 11400000, guid: 5e3b3ab21cb747b4291e5bc66b869c91, type: 2}
+  - {fileID: 11400000, guid: cd8f678c355c40d45b11de03b821e065, type: 2}
+  - {fileID: 11400000, guid: a7a7be801f17b5d49965ceaf0887cefa, type: 2}
+  - {fileID: 11400000, guid: f1bf066aca7bc3743a282022636bab0f, type: 2}
+  - {fileID: 11400000, guid: ca2d815b0a762ea4d8a6f52b96841400, type: 2}
+  - {fileID: 11400000, guid: b63b7959127e1e046a7710a93fe4215e, type: 2}
+  - {fileID: 11400000, guid: ce8eb1651b3943247a96defa5aba42f2, type: 2}
+  - {fileID: 11400000, guid: 356a843b2f231bf4eb293ec334448c23, type: 2}
