@@ -21,7 +21,7 @@ namespace Terraforming.Dominoes
 
         protected virtual void Awake()
         {
-            poles = Array.FindAll(GetComponentsInChildren<DominoPole>(), c => c.gameObject != gameObject);
+           // poles = Array.FindAll(GetComponentsInChildren<DominoPole>(), c => c.gameObject != gameObject);
             dominoCollider = GetComponent<Collider>();
             EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
             EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);

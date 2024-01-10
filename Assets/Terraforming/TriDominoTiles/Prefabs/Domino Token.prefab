@@ -355,8 +355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d192a5c94bb4aa4393e94f2b29d45cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poles: []
-  dominoCover: {fileID: 0}
+  poles:
+  - {fileID: 5993565190212229374}
+  - {fileID: 5010632919338565808}
+  - {fileID: 3825192217023223637}
   uncoverDuration: 0.5
   tokenData: {fileID: 0}
 --- !u!114 &-1821685226391206065
