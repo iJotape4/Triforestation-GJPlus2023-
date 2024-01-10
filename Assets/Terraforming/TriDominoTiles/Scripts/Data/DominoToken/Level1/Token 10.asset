@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca43aedeeff27b4ebee83e4fc1095dc, type: 3}
   m_Name: Token 10
   m_EditorClassIdentifier: 
-  biomes: 010000000100000001000000
+  biomes: 040000000200000001000000
