@@ -31,7 +31,7 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private void SetAnimalValues()
     {
         UiImage.sprite = animal.sprite;
-        prefabToSpawn = animal._3dPrefab;
+        prefabToSpawn = animal.Get3DPrefab();
     }
 
     public void OnPointerDown(PointerEventData eventData)

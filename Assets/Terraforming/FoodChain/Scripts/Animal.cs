@@ -9,8 +9,15 @@ public class Animal : ScriptableObject
     [SerializeField] public ENUM_FoodChainLevel aliments;
     [SerializeField] public ENUM_Biome biome;
     [SerializeField] public Sprite sprite;
-    [SerializeField] public GameObject _3dPrefab;
+    [SerializeField] private GameObject[] _3dPrefab;
     
+
+   //Create  a method that returns a random prefab from the array
+   public GameObject Get3DPrefab()
+   {
+        int randomIndex = UnityEngine.Random.Range(0, _3dPrefab.Length);
+        return _3dPrefab[randomIndex];
+   }
 
     [ContextMenu("SetAliments")]
     public void SetAliments()
