@@ -1,7 +1,4 @@
 #if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
@@ -11,8 +8,11 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using System.Text.RegularExpressions;
+
+using UnityEditor;
 using UnityEditor.Localization;
 using UnityEditor.Localization.Plugins.CSV;
+
 
 
 /// <summary>
@@ -31,7 +31,6 @@ public class GoogleSheetsReader : MonoBehaviour
 
     private static Dictionary<string, Dictionary<string, string>> localizationTable;
 
-#if UNITY_EDITOR
     [MenuItem("DevTools/Read Localization Google Sheet",false, 100)]
     private static void ReadGoogleSheetInEditMode()
     {
@@ -43,9 +42,7 @@ public class GoogleSheetsReader : MonoBehaviour
         reader.StartCoroutine(reader.ReadData());
 
     }
-#endif
 
-#if UNITY_EDITOR
     /// <summary>
     /// Destroy the object if Application is playing
     /// </summary>
@@ -54,7 +51,6 @@ public class GoogleSheetsReader : MonoBehaviour
         if(Application.isPlaying)
         DestroyImmediate(this);
     }
-#endif
 
     /// <summary>
     /// Reads data from G-Drive File
@@ -153,3 +149,5 @@ public class GoogleSheetsReader : MonoBehaviour
         catch(Exception e) { Debug.LogError("Maybe do you have a null value in your cells. check the table "+tableName + "\n"+e.Message); }
     }
 }
+
+#endif
