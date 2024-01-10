@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Terraforming/LevelSelector/LevelSelector.unity
     guid: ae6f111412d01a24a96c4b8127c0fccd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SwapPoles.unity
     guid: b90256e9537664f4c98c0db998cb6a30
+  - enabled: 1
+    path: Assets/Scenes/TriangularGridWithTiles.unity
+    guid: 5efa14d7929170c4dafae18a39bc52e1
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: ece7049f36eddc742a5e559130e9269e, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 98a2627a5fc675c4891aeda314e11928, type: 2}

@@ -12,6 +12,8 @@ namespace LevelSelector
         [SerializeField] Collider circleCollider;
         [SerializeField] ParticleSystem ps;
         Coroutine openPopUpRoutine;
+        const string sceneToLoad = "TriangularGridWithTiles"; 
+        const string levelSelectorScene = "LevelSelector";
 
         private void Awake()
         {
@@ -48,10 +50,33 @@ namespace LevelSelector
             EventManager.Dispatch(ENUM_LevelSelectorEvent.Play);
             ps.Play();
             yield return new WaitForSeconds(1f);
-            SceneManager.LoadScene("SwapPoles");
+            StartCoroutine(LoadSceneAndExecuteScript());
         }
 
-        public void OnMouseUp()=>     
-            pregamePopUP.EnablePlayButton();       
+        IEnumerator LoadSceneAndExecuteScript()
+        {
+            // Load the scene asynchronously
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+
+            // Wait until the scene is fully loaded
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+
+            StartCoroutine(SetLevelData());          
+        }
+
+        IEnumerator SetLevelData()
+        {
+            DominoPooler pooler = FindObjectOfType<DominoPooler>();
+            pooler.SetLevel(level);
+            SceneManager.UnloadSceneAsync(levelSelectorScene);
+            yield return null;
+        }
+
+
+        public void OnMouseUp()=>
+            pregamePopUP?.EnablePlayButton();       
     }
 }

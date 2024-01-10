@@ -22,7 +22,7 @@ public class DominoPooler : MonoBehaviour
     private bool canDeployPunishment = true;
 
     public Dictionary<ENUM_Biome, int> biomeCounts = new Dictionary<ENUM_Biome, int>();
-    [SerializeField] LevelData levelData;
+    [SerializeField] public LevelData levelData { get; private set; }
 
     private void Awake()
     {
@@ -53,8 +53,9 @@ public class DominoPooler : MonoBehaviour
         }
     }
 
-    void Start()
+    public void SetLevel(LevelData _levelData)
     {
+        levelData = _levelData;
         CreateDominoes();
     }
 
