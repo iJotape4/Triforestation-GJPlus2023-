@@ -114,6 +114,38 @@ MonoBehaviour:
     m_Localized: Crediti
     m_Metadata:
       m_Items: []
+  - m_Id: 2229106281086976
+    m_Localized: Livello trofico
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864192
+    m_Localized: Continua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864193
+    m_Localized: "S\xCC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864194
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864195
+    m_Localized: I progressi non verranno salvati. Vuoi uscire?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864196
+    m_Localized: "\xC8 tempo di ripopolare il mondo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864197
+    m_Localized: Non ci sono ecosistemi da recuperare a questo livello
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864198
+    m_Localized: "\xE8 tempo di recuperare alcuni ecosistemi"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

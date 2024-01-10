@@ -146,6 +146,34 @@ MonoBehaviour:
     m_Localized: Termita
     m_Metadata:
       m_Items: []
+  - m_Id: 2229104972464128
+    m_Localized: verme del ghiacciaio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852736
+    m_Localized: Capra bianca
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852737
+    m_Localized: Gufo delle nev
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852738
+    m_Localized: Lince Canadese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852739
+    m_Localized: 'Leone '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852740
+    m_Localized: Iena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852741
+    m_Localized: Termite
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

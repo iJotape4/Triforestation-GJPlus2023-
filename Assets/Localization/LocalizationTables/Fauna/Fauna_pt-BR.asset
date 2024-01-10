@@ -131,7 +131,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 518512655
-    m_Localized: Okapi
+    m_Localized: Ocapi
     m_Metadata:
       m_Items: []
   - m_Id: 518512656
@@ -144,6 +144,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 518512658
     m_Localized: Termita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104972464128
+    m_Localized: Minhoca do gelo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852736
+    m_Localized: Cabra branca
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852737
+    m_Localized: Coruja nevada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852738
+    m_Localized: Lince Canadense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852739
+    m_Localized: "Le\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852740
+    m_Localized: Hiena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852741
+    m_Localized: Cupim
     m_Metadata:
       m_Items: []
   references:

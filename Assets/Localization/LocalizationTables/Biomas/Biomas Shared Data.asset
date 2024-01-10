@@ -47,6 +47,10 @@ MonoBehaviour:
     m_Key: Biome_8
     m_Metadata:
       m_Items: []
+  - m_Id: 2229103865167872
+    m_Key: Biome_9
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

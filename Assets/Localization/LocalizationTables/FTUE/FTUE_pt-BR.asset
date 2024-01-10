@@ -19,15 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 505929728
-    m_Localized: xxxxxxxxxx
+    m_Localized: "Explore sua conex\xE3o com a natureza atrav\xE9s de Links Ecol\xF3gicos.
+      Desbloqueie acess\xF3rios exclusivos para o Frailej\xF3n atrav\xE9s de seus
+      esfor\xE7os para restaurar o mundo."
     m_Metadata:
       m_Items: []
   - m_Id: 522706944
-    m_Localized: xxxxxxxxxx
+    m_Localized: Personalize seu avatar e leve consigo o orgulho de cada triomino
+      colocado e desafio superado!
     m_Metadata:
       m_Items: []
   - m_Id: 522706945
-    m_Localized: xxxxxxxxxx
+    m_Localized: "Nesta se\xE7\xE3o est\xE3o os desafios que podem lhe dar recompensas
+      extraordin\xE1rias"
     m_Metadata:
       m_Items: []
   references:

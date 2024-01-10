@@ -50,6 +50,18 @@ MonoBehaviour:
     m_Localized: "Apu\xED"
     m_Metadata:
       m_Items: []
+  - m_Id: 2229104376872960
+    m_Localized: Folha de bordo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104389455872
+    m_Localized: "Ac\xE1cia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104389455873
+    m_Localized: Fynbos
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

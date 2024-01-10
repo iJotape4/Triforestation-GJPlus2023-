@@ -19,15 +19,17 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 443015168
-    m_Localized: xxxxxxxxxxx
+    m_Localized: "\uC774 \uC218\uC900\uC758 \uACFC\uC81C\uB294 \uCCAB \uBC88\uC9F8
+      \uC0DD\uD0DC\uACC4\uB97C \uC644\uB8CC\uD558\uB294 \uAC83\uC785\uB2C8\uB2E4."
     m_Metadata:
       m_Items: []
   - m_Id: 459792384
-    m_Localized: xxxxxxxxxxx
+    m_Localized: "\uC0C8\uB85C\uC6B4 \uAF43\uC774 \uB2E4\uC2DC \uD0DC\uC5B4\uB0AC\uC2B5\uB2C8\uB2E4:
+      \uCD08\uC6D0 \uC0DD\uBB3C \uAD70\uACC4\uB85C \uAF43\uC744 \uADF8\uB824\uBCF4\uC138\uC694"
     m_Metadata:
       m_Items: []
   - m_Id: 459792385
-    m_Localized: xxxxxxxxxxx
+    m_Localized: Che succede
     m_Metadata:
       m_Items: []
   references:

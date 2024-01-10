@@ -19,15 +19,16 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 443015168
-    m_Localized: xxxxxxxxxxx
+    m_Localized: The challenge at this level will be about getting done your first
+      ecosystem
     m_Metadata:
       m_Items: []
   - m_Id: 459792384
-    m_Localized: xxxxxxxxxxx
+    m_Localized: 'A new flower is reborn: draw a flower with the meadow biome'
     m_Metadata:
       m_Items: []
   - m_Id: 459792385
-    m_Localized: xxxxxxxxxxx
+    m_Localized: What's up
     m_Metadata:
       m_Items: []
   references:

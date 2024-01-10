@@ -19,15 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 505929728
-    m_Localized: xxxxxxxxxx
+    m_Localized: "Esplora la tua connessione con la natura attraverso i collegamenti
+      ecologici. Sblocca accessori unici per Frailej\xF3n grazie ai tuoi sforzi per
+      ripristinare il mondo."
     m_Metadata:
       m_Items: []
   - m_Id: 522706944
-    m_Localized: xxxxxxxxxx
+    m_Localized: Personalizza il tuo avatar e porta con te l'orgoglio di ogni triomino
+      piazzato e sfida superata!
     m_Metadata:
       m_Items: []
   - m_Id: 522706945
-    m_Localized: xxxxxxxxxx
+    m_Localized: In questa sezione ci sono le sfide che potrebbero darti ricompense
+      straordinarie
     m_Metadata:
       m_Items: []
   references:

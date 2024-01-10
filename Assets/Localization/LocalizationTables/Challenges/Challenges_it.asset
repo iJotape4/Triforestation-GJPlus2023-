@@ -19,15 +19,16 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 443015168
-    m_Localized: xxxxxxxxxxx
+    m_Localized: "La sfida a questo livello riguarder\xE0 la realizzazione del tuo
+      primo ecosistema"
     m_Metadata:
       m_Items: []
   - m_Id: 459792384
-    m_Localized: xxxxxxxxxxx
+    m_Localized: 'Un nuovo fiore rinasce: disegna un fiore con il bioma del prato'
     m_Metadata:
       m_Items: []
   - m_Id: 459792385
-    m_Localized: xxxxxxxxxxx
+    m_Localized: "O que \xE9 que h\xE1 velhinho?"
     m_Metadata:
       m_Items: []
   references:

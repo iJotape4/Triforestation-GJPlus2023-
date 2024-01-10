@@ -114,6 +114,38 @@ MonoBehaviour:
     m_Localized: "Cr\xE9ditos"
     m_Metadata:
       m_Items: []
+  - m_Id: 2229106281086976
+    m_Localized: "Nivel Tr\xF3fico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864192
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864193
+    m_Localized: Si
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864194
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864195
+    m_Localized: "El Progreso no se guardar\xE1. Quieres salir?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864196
+    m_Localized: Momento de repoblar el mundo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864197
+    m_Localized: No hay ecosistemas para recuperar en este nivel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864198
+    m_Localized: Hora de recuperar algunos ecosistemas
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

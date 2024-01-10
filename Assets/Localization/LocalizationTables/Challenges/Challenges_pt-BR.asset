@@ -19,15 +19,15 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 443015168
-    m_Localized: xxxxxxxxxxx
+    m_Localized: "O desafio neste n\xEDvel ser\xE1 concluir seu primeiro ecossistema"
     m_Metadata:
       m_Items: []
   - m_Id: 459792384
-    m_Localized: xxxxxxxxxxx
+    m_Localized: 'Uma nova flor renasce: desenhe uma flor com o bioma prado'
     m_Metadata:
       m_Items: []
   - m_Id: 459792385
-    m_Localized: xxxxxxxxxxx
+    m_Localized: Que hay de nuevo viejo?
     m_Metadata:
       m_Items: []
   references:

@@ -23,3 +23,11 @@ MM_NewGame,New Game,Nuevo Juego,Novo jogo,Nuovo gioco,새로운 게임
 MM_HowToPlay,How to play,Como jugar,Como jogar,Come giocare,게임 방법
 MM_Closet,Wardrobe,Guardarropa natural,Guarda-roupa,Armadio,옷장
 MM_Creditos,Credits,Créditos,Créditos,Crediti,영화 크레딧
+IG_TrophicChain,Trophic level,Nivel Trófico,Nível trófico,Livello trofico,영양 수준
+IG_Resume,Resume,Continuar,Continuar,Continua,계속하다
+IG_Yes,Yes,Si,Sim,SÌ,예
+IG_No,No,No,Não,No,아니요
+IG_Progress,Progress will not be saved. Do you want to exit?,El Progreso no se guardará. Quieres salir?,O progresso não será salvo. Você quer sair?,I progressi non verranno salvati. Vuoi uscire?,진행 상황은 저장되지 않습니다. 종료하시겠습니까?
+IG_TimeToRepoblate,It's time to repopulate the world,Momento de repoblar el mundo,É hora de repovoar o mundo,È tempo di ripopolare il mondo,이제 세상을 다시 채울 시간이다
+IG_NoneToRecover,There are no ecosystems to recover at this level,No hay ecosistemas para recuperar en este nivel,Não há ecossistemas para recuperar neste nível,Non ci sono ecosistemi da recuperare a questo livello,이 수준에서는 복구할 생태계가 없습니다.
+IG_TimeToRecover,It's time to recover some ecosystems,Hora de recuperar algunos ecosistemas,É hora de recuperar alguns ecossistemas,è tempo di recuperare alcuni ecosistemi,이제 생태계를 회복할 때입니다

@@ -146,6 +146,34 @@ MonoBehaviour:
     m_Localized: Termita
     m_Metadata:
       m_Items: []
+  - m_Id: 2229104972464128
+    m_Localized: Gusano de las nieves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852736
+    m_Localized: 'Cabra blanca '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852737
+    m_Localized: "B\xFAho Nival"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852738
+    m_Localized: Lince Canadiense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852739
+    m_Localized: "Le\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852740
+    m_Localized: Hiena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852741
+    m_Localized: Termita
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

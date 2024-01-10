@@ -50,6 +50,18 @@ MonoBehaviour:
     m_Localized: Golden fig tree
     m_Metadata:
       m_Items: []
+  - m_Id: 2229104376872960
+    m_Localized: Maple leaf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104389455872
+    m_Localized: Golden wattle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104389455873
+    m_Localized: Fynbos
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

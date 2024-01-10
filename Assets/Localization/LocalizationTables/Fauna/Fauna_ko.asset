@@ -131,7 +131,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 518512655
-    m_Localized: Okapi
+    m_Localized: "\uC624\uCE74\uD53C"
     m_Metadata:
       m_Items: []
   - m_Id: 518512656
@@ -144,6 +144,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 518512658
     m_Localized: Termita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104972464128
+    m_Localized: "\uBE59\uD558 \uBC8C\uB808"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852736
+    m_Localized: "\uD770\uC5FC\uC18C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852737
+    m_Localized: "\uB208\uB36E\uC778 \uC62C\uBE7C\uBBF8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852738
+    m_Localized: "\uCE90\uB098\uB2E4\uC2A4\uB77C\uC18C\uB2C8"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852739
+    m_Localized: "\uC0AC\uC790"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852740
+    m_Localized: "\uD558\uC774\uC5D0\uB098"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852741
+    m_Localized: "\uD770\uAC1C\uBBF8"
     m_Metadata:
       m_Items: []
   references:

@@ -19,15 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 505929728
-    m_Localized: xxxxxxxxxx
+    m_Localized: "Explore your connection with nature through Ecological Links. Unlock
+      unique accessories for the Frailej\xF3n through your efforts in restoring the
+      world."
     m_Metadata:
       m_Items: []
   - m_Id: 522706944
-    m_Localized: xxxxxxxxxx
+    m_Localized: Customize your avatar and carry with you the pride of every triomino
+      placed and challenge overcome!
     m_Metadata:
       m_Items: []
   - m_Id: 522706945
-    m_Localized: xxxxxxxxxx
+    m_Localized: In this section are the challenges that may give you extraordinary
+      rewards
     m_Metadata:
       m_Items: []
   references:

@@ -111,6 +111,38 @@ MonoBehaviour:
     m_Key: AnimalTitle_Fly agaric
     m_Metadata:
       m_Items: []
+  - m_Id: 2229104972464128
+    m_Key: AnimalTitle_Ice worm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852736
+    m_Key: AnimalTitle_White goat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852737
+    m_Key: AnimalTitle_Snowy owl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852738
+    m_Key: AnimalTitle_Canadian lynx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512655
+    m_Key: AnimalTitle_Okapi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852739
+    m_Key: AnimalTitle_Lion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852740
+    m_Key: AnimalTitle_Hyena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852741
+    m_Key: AnimalTitle_Termite
+    m_Metadata:
+      m_Items: []
   - m_Id: 518512651
     m_Key: AnimalTitle_Gusano de las nieves
     m_Metadata:
@@ -125,10 +157,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 518512654
     m_Key: AnimalTitle_Lince Canadiense
-    m_Metadata:
-      m_Items: []
-  - m_Id: 518512655
-    m_Key: AnimalTitle_Okapi
     m_Metadata:
       m_Items: []
   - m_Id: 518512656

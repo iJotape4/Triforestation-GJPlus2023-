@@ -114,6 +114,38 @@ MonoBehaviour:
     m_Localized: Credits
     m_Metadata:
       m_Items: []
+  - m_Id: 2229106281086976
+    m_Localized: Trophic level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864192
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864193
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864194
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864195
+    m_Localized: Progress will not be saved. Do you want to exit?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864196
+    m_Localized: It's time to repopulate the world
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864197
+    m_Localized: There are no ecosystems to recover at this level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864198
+    m_Localized: It's time to recover some ecosystems
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

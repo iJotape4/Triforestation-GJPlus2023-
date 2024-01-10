@@ -111,6 +111,38 @@ MonoBehaviour:
     m_Key: MM_Creditos
     m_Metadata:
       m_Items: []
+  - m_Id: 2229106281086976
+    m_Key: IG_TrophicChain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864192
+    m_Key: IG_Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864193
+    m_Key: IG_Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864194
+    m_Key: IG_No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864195
+    m_Key: IG_Progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864196
+    m_Key: IG_TimeToRepoblate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864197
+    m_Key: IG_NoneToRecover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864198
+    m_Key: IG_TimeToRecover
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
