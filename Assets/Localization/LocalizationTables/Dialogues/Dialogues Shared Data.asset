@@ -13,8 +13,32 @@ MonoBehaviour:
   m_Name: Dialogues Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: Dialogues
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: 2095f625303a6f34d8c168fa0281e48b
+  m_Entries:
+  - m_Id: 613220352
+    m_Key: D_Title1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646774784
+    m_Key: D_Title2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 581339774976
+    m_Key: DM_Dialogue1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740224
+    m_Key: DM_Dialogue1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740225
+    m_Key: DM_Dialogue1_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740226
+    m_Key: DM_Dialogue1_4
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

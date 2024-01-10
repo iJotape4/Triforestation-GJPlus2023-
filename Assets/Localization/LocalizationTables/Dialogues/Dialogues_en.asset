@@ -17,7 +17,34 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 2095f625303a6f34d8c168fa0281e48b, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 613220352
+    m_Localized: Mother Mountain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646774784
+    m_Localized: "Frailej\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 581339774976
+    m_Localized: Greetings. earth's children! Welcome to Triforestation. where your
+      mission is to heal the wound that humanity left on our beloved planet Earth.
+      Here. every choice matters. Are you ready to go on board on this noble task?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740224
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740225
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740226
+    m_Localized: I'm so thrilled. Look around. this is your canvas. With triominos
+      of biomes. you will build the new Pangea.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

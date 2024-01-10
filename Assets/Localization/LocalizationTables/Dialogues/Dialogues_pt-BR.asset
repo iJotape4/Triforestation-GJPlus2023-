@@ -17,7 +17,35 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 2095f625303a6f34d8c168fa0281e48b, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 613220352
+    m_Localized: "M\xE3e do bosque"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646774784
+    m_Localized: "Frailej\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 581339774976
+    m_Localized: "Sauda\xE7\xF5es. filhos da terra! Bem-vindo \xE0 Triforestation.
+      onde sua miss\xE3o \xE9 curar a ferida que a humanidade deixou em nosso amado
+      planeta Terra. Aqui. toda escolha \xE9 importante. Voc\xEA est\xE1 pronto para
+      embarcar nesta nobre tarefa?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740224
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740225
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740226
+    m_Localized: "Estou t\xE3o emocionado. Olhar em volta. esta \xE9 a sua tela.
+      Com triominos de biomas. voc\xEA construir\xE1 a nova Pangea."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

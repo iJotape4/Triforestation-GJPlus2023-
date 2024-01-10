@@ -17,7 +17,35 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 2095f625303a6f34d8c168fa0281e48b, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 613220352
+    m_Localized: Madre Montagna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646774784
+    m_Localized: "Frailej\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 581339774976
+    m_Localized: "Saluti. figli della terra! Benvenuti nella Triforestation. dove
+      la tua missione \xE8 curare la ferita che l'umanit\xE0 ha lasciato sul nostro
+      amato pianeta Terra. Qui. ogni scelta conta. Siete pronti a salire a bordo
+      di questo nobile compito?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740224
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740225
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740226
+    m_Localized: "Sono cos\xEC emozionato. Guardati intorno. questa \xE8 la tua tela.
+      Con triomini di biomi. costruirai la nuova Pangea."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
