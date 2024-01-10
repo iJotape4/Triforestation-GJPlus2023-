@@ -17,4 +17,5 @@ MonoBehaviour:
   aliments: 2
   biome: 1
   sprite: {fileID: -1307022405, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
-  _3dPrefab: {fileID: 2008245617533206449, guid: fb3a333eff852424c89f81fad6bfee46, type: 3}
+  _3dPrefab:
+  - {fileID: 2008245617533206449, guid: fb3a333eff852424c89f81fad6bfee46, type: 3}
