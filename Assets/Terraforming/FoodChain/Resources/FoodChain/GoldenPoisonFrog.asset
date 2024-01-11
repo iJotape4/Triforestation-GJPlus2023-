@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GoldenPoisonFrog
   m_EditorClassIdentifier: 
   name: GoldenPoisonFrog
-  chainLevel: 2
+  chainLevel: 4
   aliments: 2
   biome: 1
   sprite: {fileID: 34019606, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}

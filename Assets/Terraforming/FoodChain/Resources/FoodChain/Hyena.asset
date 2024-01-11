@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
-  m_Name: Okapi
+  m_Name: Hyena
   m_EditorClassIdentifier: 
-  name: Okapi
-  chainLevel: 4
-  aliments: 0
+  name: Termite
+  chainLevel: 2
+  aliments: 2
   biome: 8
-  sprite: {fileID: 280296314, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
+  sprite: {fileID: 805250440, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
-  - {fileID: 1122889753887530288, guid: 8cc8042a696969246a2d1eb6c1315dc1, type: 3}
+  - {fileID: 6649569481775955041, guid: 19bf4843a54f9094eba8d9d075b59d67, type: 3}
