@@ -216,6 +216,12 @@ public class TriangularGrid : DropView
         return null;
     }
 
+    public static void ClearHashes()
+    {
+        occupiedCells.Clear();
+        generatedCells.Clear();
+    }
+
     public static TriangularGrid FindTriangularGrid() => FindObjectOfType<TriangularGrid>().transform.root.GetComponent<TriangularGrid>();
     public override void OnDrop(PointerEventData eventData) { }
 }
