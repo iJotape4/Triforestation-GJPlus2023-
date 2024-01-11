@@ -33,7 +33,7 @@ public class AnimalsUIPanel : MonoBehaviour
         EventManager.RemoveListener(ENUM_AnimalEvent.animalDroped, EnableAnimalsPanel);
     }
 
-    private void EnableAnimalsPanel()
+    public void EnableAnimalsPanel()
     {
         anim.SetBool(animationParam, true);
     }
