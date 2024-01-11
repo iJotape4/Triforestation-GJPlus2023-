@@ -6,6 +6,7 @@ public class PunishesManager : MonoBehaviour
     [SerializeField] private GameObject acidRainPrefab;
     private TriangularGrid grid;
     private bool inStandBy = false;
+    public int punishCount = 0;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class PunishesManager : MonoBehaviour
         if(inStandBy)
             return;
         // TODO: Add more random punishes
+        punishCount++;
         AcidRainPunish();
         EventManager.Dispatch(ENUM_DominoeEvent.selectDoneEvent);
     }

@@ -180,6 +180,7 @@ public class TriangularGrid : DropView
                 dropTile.intCenter = neighbor;
             }
 
+            EventManager.Dispatch(ENUM_DominoeEvent.generatedTileEvent, center);
             //Debug.Log($"Neighbor {center}");
             //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
         }

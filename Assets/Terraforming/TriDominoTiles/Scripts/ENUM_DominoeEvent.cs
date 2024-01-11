@@ -15,4 +15,5 @@ public enum ENUM_DominoeEvent
     tradeCardsForMoor,
     spawnedAcidRainEvent,
     spawnedMoorEvent,
+    generatedTileEvent,
 }

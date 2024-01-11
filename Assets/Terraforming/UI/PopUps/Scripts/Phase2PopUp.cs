@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 
-public class Phase2PopUp : MonoBehaviour
+public class Phase2PopUp : PopUp
 {
     [SerializeField] LocalizedString descomponsersLocalizedString;
     [SerializeField] LocalizedString nothingToRevocerLocalizedString;
@@ -12,20 +12,11 @@ public class Phase2PopUp : MonoBehaviour
 
     [SerializeField] LocalizeStringEvent popUpText;
 
-    [Header("Animation Params")]
-    Animator animator;
-    const string animationParamTrigger = "Enable";
-
     bool descomposersTriggered;
     private void Awake()
     {
         EventManager.AddListener(ENUM_GameState.poolDescomposers, SetDescomposersText);
         EventManager.AddListener(ENUM_GameState.poolAnimals, SetAnimalsText);
-    }
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
     }
 
     private void OnDestroy()
@@ -37,13 +28,11 @@ public class Phase2PopUp : MonoBehaviour
     private IEnumerator AnimalsCoroutine()
     {
         yield return new WaitForSeconds(1f);
-
     }
 
     private IEnumerator DescomposersCoroutine()
     {
-        yield return new WaitForSeconds(0.1f);
-        
+        yield return new WaitForSeconds(0.1f);       
     }
 
     private void SetAnimalsText()
@@ -54,13 +43,13 @@ public class Phase2PopUp : MonoBehaviour
         else
             popUpText.StringReference = animalsLocalizedString;
 
-        animator.SetBool(animationParamTrigger, true);
+        OpenPopUp(true);
     }
 
     private void SetDescomposersText()
     {
         popUpText.StringReference = descomponsersLocalizedString;
         descomposersTriggered = true;
-        animator.SetBool(animationParamTrigger, true);
+        OpenPopUp(true);
     }
 }
