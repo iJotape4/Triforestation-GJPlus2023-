@@ -91,10 +91,13 @@ public class DominoPooler : MonoBehaviour
     //[ContextMenu("Get next domino")]
 
     public DominoToken GetNextDomino()
-    {
+    {          
         if (currentIndex < dominoes.Count)
         {
             Transform _nextPosition = GetNextFreePosition();
+            if (_nextPosition == null)
+                return null;
+
             EventManager.Dispatch(ENUM_DominoeEvent.getCardEvent);
 
             DominoToken domino = dominoes[currentIndex];
@@ -103,6 +106,7 @@ public class DominoPooler : MonoBehaviour
             // Create a new DOTween sequence
             Sequence uncoverSequence = DOTween.Sequence();
 
+          
             // Add the local move animation to the sequence
             uncoverSequence.Append(domino.transform.DOLocalMove(_nextPosition.localPosition, moveDuration))
                 .OnStart(() =>
@@ -194,7 +198,7 @@ public class DominoPooler : MonoBehaviour
     {
         Invoke("GetNextDomino", 0.2f);
         Invoke("GetNextDomino", 0.5f);
-        Invoke("GetNextDomino", 0.8f);
+        //Invoke("GetNextDomino", 0.8f);
     }
 
     private void FinishDominoPlacement(DominoToken token)
