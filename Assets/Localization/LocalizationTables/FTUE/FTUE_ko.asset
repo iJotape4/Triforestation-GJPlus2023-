@@ -36,6 +36,14 @@ MonoBehaviour:
       \uC904 \uC218 \uC788\uB294 \uB3C4\uC804 \uACFC\uC81C\uAC00 \uC788\uC2B5\uB2C8\uB2E4."
     m_Metadata:
       m_Items: []
+  - m_Id: 2554967198859264
+    m_Localized: PLACEHOLDER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554967228219392
+    m_Localized: ' sunt in culpa qui officia deserunt mollit anim id est laborum'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

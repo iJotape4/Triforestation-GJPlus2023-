@@ -34,6 +34,14 @@ MonoBehaviour:
       recompensas"
     m_Metadata:
       m_Items: []
+  - m_Id: 2554967198859264
+    m_Localized: PLACEHOLDER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554967228219392
+    m_Localized: ' consectetur adipiscing elit'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

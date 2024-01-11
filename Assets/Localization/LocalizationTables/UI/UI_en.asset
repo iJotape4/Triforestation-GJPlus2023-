@@ -147,6 +147,10 @@ MonoBehaviour:
     m_Localized: It's time to recover some ecosystems
     m_Metadata:
       m_Items: []
+  - m_Id: 2555160522719232
+    m_Localized: You loose
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

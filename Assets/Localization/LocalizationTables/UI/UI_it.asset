@@ -147,6 +147,10 @@ MonoBehaviour:
     m_Localized: "\xE8 tempo di recuperare alcuni ecosistemi"
     m_Metadata:
       m_Items: []
+  - m_Id: 2555160522719232
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

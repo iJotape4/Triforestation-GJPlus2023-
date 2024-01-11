@@ -143,6 +143,10 @@ MonoBehaviour:
     m_Key: IG_TimeToRecover
     m_Metadata:
       m_Items: []
+  - m_Id: 2555160522719232
+    m_Key: IG_GameOver
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

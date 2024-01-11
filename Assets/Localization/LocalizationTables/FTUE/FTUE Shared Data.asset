@@ -27,6 +27,14 @@ MonoBehaviour:
     m_Key: FTUE_Challenges1
     m_Metadata:
       m_Items: []
+  - m_Id: 2554967198859264
+    m_Key: FTUE_ShortPlaceholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554967228219392
+    m_Key: FTUE_LongPlaceholder
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

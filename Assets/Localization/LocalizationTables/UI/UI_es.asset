@@ -147,6 +147,10 @@ MonoBehaviour:
     m_Localized: Hora de recuperar algunos ecosistemas
     m_Metadata:
       m_Items: []
+  - m_Id: 2555160522719232
+    m_Localized: Perdiste!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
