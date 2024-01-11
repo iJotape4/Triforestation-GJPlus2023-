@@ -1,3 +1,4 @@
+using Events;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -195,6 +196,7 @@ namespace Terraforming.Dominoes
         {
             occupuied = true;
             animal.transform.position = position.position;
+            EventManager.Dispatch(ENUM_AnimalEvent.animalDroped);
         }
     }
 }

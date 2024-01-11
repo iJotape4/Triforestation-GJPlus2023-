@@ -9,16 +9,37 @@ public class AnimalsUIPanel : MonoBehaviour
     [SerializeField] GameObject animalUIPicturePrefab;
     [SerializeField] Animator anim;
 
+    const string animationParam = "Enable";
+
     private void Awake()
     {
         EventManager.AddListener(ENUM_GameState.poolAnimals, PoolAnimals);
         EventManager.AddListener(ENUM_GameState.poolDescomposers, PoolDescomposers);
+
+        EventManager.AddListener(ENUM_AnimalEvent.animalPrefabCreated, DisableAnimalsPanel);
+        EventManager.AddListener(ENUM_GameState.secondPhaseFinished, DisableAnimalsPanel);
+        EventManager.AddListener(ENUM_AnimalEvent.animalPrefabDestroyed, EnableAnimalsPanel);
+        EventManager.AddListener(ENUM_AnimalEvent.animalDroped, EnableAnimalsPanel);
     }
 
     private void OnDestroy()
     {
         EventManager.RemoveListener(ENUM_GameState.poolAnimals, PoolAnimals);
         EventManager.RemoveListener(ENUM_GameState.poolDescomposers, PoolDescomposers);
+
+        EventManager.RemoveListener(ENUM_AnimalEvent.animalPrefabCreated, DisableAnimalsPanel);
+        EventManager.RemoveListener(ENUM_GameState.secondPhaseFinished, DisableAnimalsPanel);
+        EventManager.RemoveListener(ENUM_AnimalEvent.animalPrefabDestroyed, EnableAnimalsPanel);
+        EventManager.RemoveListener(ENUM_AnimalEvent.animalDroped, EnableAnimalsPanel);
+    }
+
+    private void EnableAnimalsPanel()
+    {
+        anim.SetBool(animationParam, true);
+    }
+    private void DisableAnimalsPanel()
+    {
+           anim.SetBool(animationParam, false);
     }
     /// <summary>
     /// Checks for the current biomes in the level, then search the animals that can be found in the biomes. Finally, create the UI pictures for each animal
@@ -46,6 +67,7 @@ public class AnimalsUIPanel : MonoBehaviour
             GameObject newAnimal = Instantiate(animalUIPicturePrefab, gameObject.transform);
             newAnimal.GetComponent<AnimalUI>().SetAnimal(animalsList[i]);
         }
+        EnableAnimalsPanel();
     }
     /// <summary>
     /// Check in the animals data and returns every animal that can be found in the biome
@@ -87,6 +109,8 @@ public class AnimalsUIPanel : MonoBehaviour
             GameObject newAnimal = Instantiate(animalUIPicturePrefab, gameObject.transform);
             newAnimal.GetComponent<AnimalUI>().SetAnimal(animalsList[i]);
         }
+
+        EnableAnimalsPanel();
     }
 
     //A method to destroy every child of this  gameobject

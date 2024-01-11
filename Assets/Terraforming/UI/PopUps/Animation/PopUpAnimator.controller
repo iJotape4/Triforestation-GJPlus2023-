@@ -76,10 +76,10 @@ AnimatorStateMachine:
     m_Position: {x: 190, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -904990053482465315}
-    m_Position: {x: 340, y: 280, z: 0}
+    m_Position: {x: 350, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2263439362822169266}
-    m_Position: {x: 470, y: 180, z: 0}
+    m_Position: {x: 540, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1952743230452127035}
     m_Position: {x: 350, y: 70, z: 0}
@@ -161,7 +161,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -182,7 +182,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AppearAnimation 0
+  m_Name: AppearAnimation 1
   m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:

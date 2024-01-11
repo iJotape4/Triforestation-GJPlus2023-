@@ -6,5 +6,6 @@ public enum ENUM_GameState
     recoveredEcosystem,
     poolAnimals,
     win,
-    loose
+    loose,
+    secondPhaseFinished,
 }

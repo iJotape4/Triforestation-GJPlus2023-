@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AnimalsUIPanel
+  m_Controller: {fileID: 9100000, guid: 6e581be21e834034fa322f9bc5e14cac, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 63cc0da21d9db3a438f672bce2a09497, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3bb2eb451d749da499b82be5db0615b7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 51f64b014fbdb1848b04c0c9fe5f6038, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a4faa54f9c896934192664a6ee72b094, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 522a9707dd2905843bcfccdc38e799ab, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3630f5d7092002c4caedee4218b267f1, type: 2}

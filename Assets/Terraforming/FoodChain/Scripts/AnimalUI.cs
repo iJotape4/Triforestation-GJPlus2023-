@@ -1,3 +1,4 @@
+using Events;
 using Terraforming.Dominoes;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -38,7 +39,7 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     {
         // Spawn the prefab at the cursor position
         spawnedPrefab = Instantiate(prefabToSpawn, GetMouseWorldPosition(eventData), Quaternion.identity);
-
+        EventManager.Dispatch(ENUM_AnimalEvent.animalPrefabCreated);
         isDragging = true;
     }
 
@@ -95,5 +96,6 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     {
         Destroy(spawnedPrefab);
         spawnedPrefab = null;
+        EventManager.Dispatch(ENUM_AnimalEvent.animalPrefabDestroyed);
     }
 }
