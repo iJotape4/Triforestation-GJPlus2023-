@@ -139,7 +139,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864197
-    m_Localized: No hay ecosistemas para recuperar en este nivel
+    m_Localized: No hay ecosistemas para recuperar en este nivel. Momento de repoblar
+      el mundo
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864198

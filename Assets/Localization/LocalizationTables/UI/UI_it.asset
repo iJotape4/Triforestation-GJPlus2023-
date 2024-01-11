@@ -139,7 +139,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864197
-    m_Localized: Non ci sono ecosistemi da recuperare a questo livello
+    m_Localized: "Non ci sono ecosistemi da recuperare a questo livello. \xC8 tempo
+      di ripopolare il mondo"
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864198

@@ -139,7 +139,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864197
-    m_Localized: There are no ecosystems to recover at this level
+    m_Localized: There are no ecosystems to recover at this level. It's time to repopulate
+      the world
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864198
