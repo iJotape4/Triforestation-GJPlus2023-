@@ -1,0 +1,1 @@
+public class EnableOrDisableOnGetGameStateEvent : EnableOrDisableOnGetEvent<ENUM_GameState> { }

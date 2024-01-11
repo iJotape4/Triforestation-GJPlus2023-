@@ -24,7 +24,7 @@ public class LevelFlowManagement : MonoBehaviour
 
     private IEnumerator CountSavablehazardsCoroutine()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         PunishToken[] hazards = GetComponentsInChildren<PunishToken>();
         foreach (PunishToken hazard in hazards)
         {
