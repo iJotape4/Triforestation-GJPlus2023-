@@ -27,23 +27,177 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 581339774976
-    m_Localized: "Sauda\xE7\xF5es. filhos da terra! Bem-vindo \xE0 Triforestation.
-      onde sua miss\xE3o \xE9 curar a ferida que a humanidade deixou em nosso amado
-      planeta Terra. Aqui. toda escolha \xE9 importante. Voc\xEA est\xE1 pronto para
-      embarcar nesta nobre tarefa?"
+    m_Localized: "Sauda\xE7\xF5es. filhos da terra! Bem-vindo \xE0 Triforestation."
     m_Metadata:
       m_Items: []
   - m_Id: 2365122740224
-    m_Localized: xxxxxxxxxx
+    m_Localized: "Sua miss\xE3o \xE9 curar a ferida que a humanidade deixou em nosso
+      amado planeta Terra."
     m_Metadata:
       m_Items: []
   - m_Id: 2365122740225
-    m_Localized: xxxxxxxxxx
+    m_Localized: "Aqui. toda escolha \xE9 importante. Voc\xEA est\xE1 pronto para
+      embarcar nesta nobre tarefa?"
     m_Metadata:
       m_Items: []
   - m_Id: 2365122740226
     m_Localized: "Estou t\xE3o emocionado. Olhar em volta. esta \xE9 a sua tela.
       Com triominos de biomas. voc\xEA construir\xE1 a nova Pangea."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886082359853056
+    m_Localized: "Por que triomin\xF3 e n\xE3o domin\xF3? Oh querido frailej\xF3n.
+      As melhores coisas sempre v\xEAm em tr\xEAs."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858112
+    m_Localized: "Sol. a lua e as estrelas. Ou como diriam as \xE1rvores. raizes.
+      tronco e folhas! A natureza sempre d\xE1 seus melhores golpes em tr\xEAs movimentos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858113
+    m_Localized: "Prezado Frailej\xF3n. Agora deixe-me gui\xE1-lo na arte dos triomin\xF3s
+      do bioma."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858114
+    m_Localized: "Cada pe\xE7a tem tr\xEAs lados. e de cada lado. voc\xEA encontrar\xE1
+      a ess\xEAncia de um bioma."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957952
+    m_Localized: "Floresta. selva. Montanha. cada um espera fazer parte da sua cria\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957953
+    m_Localized: "Una as duas faces de cada pe\xE7a com seu respectivo ecossistema
+      e assim pe\xE7a por pe\xE7a voc\xEA estar\xE1 reflorestando o planeta de amanh\xE3."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957954
+    m_Localized: "Ent\xE3o. com cada escolha. voc\xEA construir\xE1 um mundo onde
+      a diversidade florescer\xE1."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957955
+    m_Localized: "Agora. pegue esses triomin\xF3s. Frailej\xF3n. e deixe-os gui\xE1-lo
+      em dire\xE7\xE3o \xE0 restaura\xE7\xE3o da terra."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957956
+    m_Localized: "Que cada conex\xE3o seja como um sussurro da natureza celebrando
+      a sua sabedoria!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957957
+    m_Localized: "Agora. Vou te dar um presente da minha ess\xEAncia. Um curinga"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957958
+    m_Localized: "Use-o em tempos dif\xEDceis. quando voc\xEA sente que n\xE3o pode
+      avan\xE7ar ou ingressar em nenhum bioma."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957959
+    m_Localized: "Mas lembre-se que cada relevo tem seu tributo no equil\xEDbrio
+      natural. portanto uma pe\xE7a aleat\xF3ria do tabuleiro ser\xE1 bloqueada por
+      uma cat\xE1strofe e voc\xEA ter\xE1 que contorn\xE1-la para cur\xE1-la."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152256
+    m_Localized: "Mas n\xE3o se preocupe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152257
+    m_Localized: A natureza aprecia a criatividade. Experimente e receba recompensas
+      de uma era antiga!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152258
+    m_Localized: "A fase de incuba\xE7\xE3o foi bem-sucedida. Agora. nidifica animais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152259
+    m_Localized: "Lembrar. segue a cadeia alimentar: decompositores. consumidores
+      prim\xE1rios. secund\xE1rio. terci\xE1rios e o predador alfa. Estrat\xE9gia
+      \xE9 a chave."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152260
+    m_Localized: "Busque o equil\xEDbrio meu filho. Um ecossistema harmonioso ir\xE1
+      recompens\xE1-lo com mais vida e pontos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152261
+    m_Localized: "Cuide de cada relacionamento na natureza como uma m\xE3e cuida
+      de seu filho."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152262
+    m_Localized: "Boa sorte. Frailej\xF3n! Que o conhecimento o guie em sua jornada
+      rumo \xE0 restaura\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152263
+    m_Localized: "Estarei aqui para cuidar de voc\xEA e orient\xE1-lo neste nobre
+      prop\xF3sito."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152264
+    m_Localized: "N\xE3o se esque\xE7a: A vida sempre surge dos lugares mais inesperados
+      e sempre ressurge apesar das cat\xE1strofes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152265
+    m_Localized: No entanto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152266
+    m_Localized: "Prezado Frailej\xF3nes. no fascinante reino da Triforestation.
+      Agora eles podem embarcar em uma competi\xE7\xE3o ecologicamente correta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152267
+    m_Localized: "Neste modo. cada um de voc\xEAs ser\xE1 um guardi\xE3o do seu pr\xF3prio
+      canto da nova Pang\xE9ia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152268
+    m_Localized: "Mas. Ou\xE7a com aten\xE7\xE3o. meus entes queridos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152269
+    m_Localized: "N\xE3o se trata apenas de construir harmonia. mas para desafiar
+      o outro Frailej\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152270
+    m_Localized: "Eles podem enviar pragas ou desencadear eventos naturais na \xE1rea
+      advers\xE1ria."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152271
+    m_Localized: "Sim. Sim. mas com sabedoria! Cada t\xE1tica tem seu custo. e devem
+      pesar a balan\xE7a entre ataque e defesa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152272
+    m_Localized: "Pragas e eventos s\xE3o como sussurros naturais de desafio e lembre-se"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152273
+    m_Localized: "Lembrar. meus pequenos. A vit\xF3ria n\xE3o \xE9 medida apenas
+      em pontos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152274
+    m_Localized: Mas na capacidade de harmonizar o seu ecossistema apesar das tempestades
+      que o outro possa desencadear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839121346560
+    m_Localized: "Que comece a competi\xE7\xE3o e que a nova Pang\xE9ia flores\xE7a
+      com a sua ast\xFAcia e cuidado!"
     m_Metadata:
       m_Items: []
   references:
