@@ -9,10 +9,10 @@ public class TriangularGrid : DropView
     private float edgeLength = 2.962f; // Lenght of the edge of the Triangular Token
     private float sqrt3 = Mathf.Sqrt(3);
 
-    [SerializeField] private GameObject token;
+    [SerializeField] protected GameObject token;
     public GameObject gridTile;
     public Vector3Int initialPosition;
-    private HashSet<Vector3Int> generatedCells = new HashSet<Vector3Int>();
+    protected HashSet<Vector3Int> generatedCells = new HashSet<Vector3Int>();
     private HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
 
     private ((int min, int max) x , (int min, int max) y , (int min,  int max) z) currentRange;

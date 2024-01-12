@@ -198,7 +198,7 @@ public class DominoPooler : MonoBehaviour
     {
         Invoke("GetNextDomino", 0.2f);
         Invoke("GetNextDomino", 0.5f);
-        //Invoke("GetNextDomino", 0.8f);
+        Invoke("GetNextDomino", 0.8f);
     }
 
     private void FinishDominoPlacement(DominoToken token)

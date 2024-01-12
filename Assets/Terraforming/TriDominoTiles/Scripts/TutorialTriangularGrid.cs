@@ -9,8 +9,14 @@ public class TutorialTriangularGrid : TriangularGrid
 
     protected override void Start()
     {
-        base.Start();
-        // Additional setup for the tutorial grid.
+        Vector3 center = TriCenter(initialPosition);
+        GameObject token1 = Instantiate(token, center, Quaternion.Euler(0, 60, 0), this.gameObject.transform);
+        token1.GetComponentInChildren<MeshCollider>().enabled = false;
+        OccupyCell(initialPosition);
+        generatedCells.Add(initialPosition);
+        GenerateNeighBors(initialPosition);
+        TokenData tokenData = token1.GetComponent<DominoToken>().tokenData = new TokenData(); ;
+        tokenData.biomes = new ENUM_Biome[] { (ENUM_Biome)(-1), (ENUM_Biome)(-1), (ENUM_Biome)(-1) };
         StartTutorial();
     }
 
