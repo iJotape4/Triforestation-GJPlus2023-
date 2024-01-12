@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
-  m_Name: SnowWorm
+  m_Name: IceWorm
   m_EditorClassIdentifier: 
-  name: SnowWorm
+  name: IceWorm
   chainLevel: 8
   aliments: 0
   biome: 4
