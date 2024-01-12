@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: CanadianLynx
   chainLevel: 4
-  aliments: 2
+  aliments: 8
   biome: 4
   sprite: {fileID: 1315108004, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:

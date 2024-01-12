@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fox
   chainLevel: 2
-  aliments: 2
+  aliments: 4
   biome: 2
   sprite: {fileID: -1954884513, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
