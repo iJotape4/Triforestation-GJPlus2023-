@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: bb4738e2158eceb479bee3963265abf1, type: 3}
+        m_Texture: {fileID: 2800000, guid: e6fe7852e69b25c4ebbf68583b00b63e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -82,7 +82,7 @@ Material:
     - _UseColorMap: 1
     - _UseEmissiveMap: 0
     - _UseMetallicMap: 1
-    - _UseNormalMap: 1
+    - _UseNormalMap: 0
     - _UseRoughnessMap: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
