@@ -7,6 +7,9 @@ public class ClosePopUPButton : UIButton
 
     protected override void ClickButtonMethod()
     {
-        popUp.SetBool(animationParamTrigger,false);
+        if (popUp != null)
+            popUp.SetBool(animationParamTrigger,false);
+        else
+            gameObject.SetActive(false);
     }
 }
