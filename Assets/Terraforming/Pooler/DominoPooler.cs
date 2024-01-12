@@ -10,7 +10,7 @@ public class DominoPooler : MonoBehaviour
 {
     [SerializeField] public GameObject dominoPrefab; // Reference to the domino prefab.
     public float dominoSpacing = 0.1f;
-    private List<DominoToken> dominoes = new List<DominoToken>();
+    protected List<DominoToken> dominoes = new List<DominoToken>();
     private int currentIndex = 0;
     private bool lastCardOnHand = false;
     private bool isTweenOver = true;
@@ -24,7 +24,7 @@ public class DominoPooler : MonoBehaviour
     public Dictionary<ENUM_Biome, int> biomeCounts = new Dictionary<ENUM_Biome, int>();
     [SerializeField] public LevelData levelData;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, FinishDominoPlacement);
@@ -37,14 +37,14 @@ public class DominoPooler : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
         EventManager.RemoveListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
     }
 
-    private void OnDominoDropped(DominoToken domino)
+    protected virtual void OnDominoDropped(DominoToken domino)
     {
         currentDominoesList.Remove(domino);
         if (currentDominoesList.Count < 3)
@@ -54,7 +54,7 @@ public class DominoPooler : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    private void Start()
+    protected virtual void Start()
     {
         if(levelData != null)
             CreateDominoes();
@@ -67,7 +67,7 @@ public class DominoPooler : MonoBehaviour
         CreateDominoes();
     }
 
-    void CreateDominoes()
+    protected virtual void CreateDominoes()
     {
         for (int i = 0; i < levelData.dominoesAmount; i++)
         {
@@ -153,7 +153,7 @@ public class DominoPooler : MonoBehaviour
         return null;
      }
 
-    void UpdateOrderInLayer()
+    protected void UpdateOrderInLayer()
     {
         for (int i = 0; i < dominoes.Count; i++)
         {
@@ -194,7 +194,7 @@ public class DominoPooler : MonoBehaviour
         EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, false);
     }
 
-    private void GiveInitialDominoes()
+    protected void GiveInitialDominoes()
     {
         Invoke("GetNextDomino", 0.2f);
         Invoke("GetNextDomino", 0.5f);

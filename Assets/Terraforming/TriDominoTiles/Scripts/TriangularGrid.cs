@@ -132,7 +132,7 @@ public class TriangularGrid : DropView
             currentRange.z.min = cell.z;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         SpawnInitialDominoe();
     }

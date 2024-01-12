@@ -16,7 +16,7 @@ MonoBehaviour:
   tokensInLevelMultiplier: 1
   dominoesAmount: 13
   tokenDatas:
-  - {fileID: 11400000, guid: 356a843b2f231bf4eb293ec334448c23, type: 2}
+  - {fileID: 11400000, guid: f690fbae3bf40c54982be41c7c9a9379, type: 2}
   - {fileID: 11400000, guid: 46e8fbfd6d4b4a94590ecdc3693645f0, type: 2}
   - {fileID: 11400000, guid: 261e587c96a6b634fa4cdb20a5ae88a4, type: 2}
   - {fileID: 11400000, guid: 3487839c59f5f8a4b8a2268c1513fc1e, type: 2}
