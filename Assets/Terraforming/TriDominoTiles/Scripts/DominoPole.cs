@@ -14,6 +14,7 @@ namespace Terraforming.Dominoes
     public class DominoPole : DropView 
     {
         public Transform pivot;
+        public Transform centroid;
         public MeshRenderer meshRenderer;
         public ENUM_PolePosition position;
         public ENUM_Biome biome;
@@ -110,7 +111,7 @@ namespace Terraforming.Dominoes
             //Check when animal is not a condor
             else if ((biome & token.animal.biome) == biome)
             {
-                OccupyPole(token.spawnedPrefab, pivot.transform);
+                OccupyPole(token.spawnedPrefab, centroid);
             }
             else
             {

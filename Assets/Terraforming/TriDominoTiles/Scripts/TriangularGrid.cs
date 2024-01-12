@@ -12,8 +12,8 @@ public class TriangularGrid : DropView
     [SerializeField] private GameObject token;
     public GameObject gridTile;
     public Vector3Int initialPosition;
-    private static HashSet<Vector3Int> generatedCells = new HashSet<Vector3Int>();
-    private static HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
+    private HashSet<Vector3Int> generatedCells = new HashSet<Vector3Int>();
+    private HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
 
     private ((int min, int max) x , (int min, int max) y , (int min,  int max) z) currentRange;
     
@@ -214,12 +214,6 @@ public class TriangularGrid : DropView
                 return tile;
         }
         return null;
-    }
-
-    public static void ClearHashes()
-    {
-        occupiedCells.Clear();
-        generatedCells.Clear();
     }
 
     public static TriangularGrid FindTriangularGrid() => FindObjectOfType<TriangularGrid>().transform.root.GetComponent<TriangularGrid>();

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
   m_Name: Hyena
   m_EditorClassIdentifier: 
-  name: Termite
+  name: Hyena
   chainLevel: 2
-  aliments: 2
+  aliments: 4
   biome: 8
   sprite: {fileID: 805250440, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
-  - {fileID: 6649569481775955041, guid: 19bf4843a54f9094eba8d9d075b59d67, type: 3}
+  - {fileID: 8123146740754915772, guid: 7ae7d08378356df448aca8e913392c6e, type: 3}

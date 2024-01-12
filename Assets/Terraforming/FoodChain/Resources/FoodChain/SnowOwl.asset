@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: SnowOwl
   chainLevel: 2
-  aliments: 2
+  aliments: 4
   biome: 4
   sprite: {fileID: 326271078, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:

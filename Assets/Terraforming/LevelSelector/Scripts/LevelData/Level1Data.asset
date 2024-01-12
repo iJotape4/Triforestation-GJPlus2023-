@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   tokensInLevelMultiplier: 1
-  dominoesAmount: 13
+  dominoesAmount: 12
   tokenDatas:
   - {fileID: 11400000, guid: f690fbae3bf40c54982be41c7c9a9379, type: 2}
   - {fileID: 11400000, guid: 46e8fbfd6d4b4a94590ecdc3693645f0, type: 2}
@@ -28,4 +28,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 26b8170e5bbdc1746bcdd855d99be9f7, type: 2}
   - {fileID: 11400000, guid: be850ee02a109de46a9386e88bcb8ac7, type: 2}
   - {fileID: 11400000, guid: 91fac4bb8f44e0d4da35534779f554a7, type: 2}
-  - {fileID: 11400000, guid: 32983022aaf964348af5aa060c49001a, type: 2}
