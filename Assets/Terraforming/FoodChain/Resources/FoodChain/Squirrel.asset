@@ -18,4 +18,4 @@ MonoBehaviour:
   biome: 2
   sprite: {fileID: -336954498, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
-  - {fileID: 6649569481775955041, guid: 19bf4843a54f9094eba8d9d075b59d67, type: 3}
+  - {fileID: 3096839409865954737, guid: dd37397c3c6336646a9407f44cf146af, type: 3}
