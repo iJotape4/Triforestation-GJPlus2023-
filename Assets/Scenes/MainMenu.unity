@@ -288,6 +288,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93865c3cebb25f48894809850168c6c, type: 3}
+--- !u!1 &667704878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 667704880}
+  - component: {fileID: 667704879}
+  m_Layer: 0
+  m_Name: reader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &667704879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667704878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21739dea84654bb4c95eef41d3e13bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &667704880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667704878}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875835868
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +564,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5018837431573707001, guid: 33079a20c61bcc749ac00a9d2767a842, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5957035449824990779, guid: 33079a20c61bcc749ac00a9d2767a842, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -532,12 +580,20 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6007668004105343771, guid: 33079a20c61bcc749ac00a9d2767a842, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6151223534006724316, guid: 33079a20c61bcc749ac00a9d2767a842, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6151223534006724316, guid: 33079a20c61bcc749ac00a9d2767a842, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781657122290639557, guid: 33079a20c61bcc749ac00a9d2767a842, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8864782637145373920, guid: 33079a20c61bcc749ac00a9d2767a842, type: 3}
@@ -1324,10 +1380,6 @@ PrefabInstance:
       propertyPath: objectToActivate
       value: 
       objectReference: {fileID: 466400597}
-    - target: {fileID: 2869399717939505161, guid: 3c997236157e9ca48b48440a4741d91f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7124289724581564068, guid: 3c997236157e9ca48b48440a4741d91f, type: 3}
       propertyPath: m_Name
       value: MainMenu
@@ -1387,3 +1439,4 @@ SceneRoots:
   - {fileID: 665171899}
   - {fileID: 7428263168204426916}
   - {fileID: 1746925974}
+  - {fileID: 667704880}
