@@ -148,7 +148,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2555160522719232
-    m_Localized: Perdiste!
+    m_Localized: "\xA1Oops"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3487724911190016
+    m_Localized: Triforestation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190728589312
+    m_Localized: General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532352
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532353
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3521262901518336
+    m_Localized: Confirmar
     m_Metadata:
       m_Items: []
   references:

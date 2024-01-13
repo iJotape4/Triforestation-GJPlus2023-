@@ -7,7 +7,7 @@ public enum ENUM_DominoeEvent
     dominoDroppedEvent,
     startOrRestartSwapEvent,
     selectCardToSwipeEvent,
-    confirmSwapEvent,
+    finishPunishEvent,
     setActivePlayFieldObjects,
     cancelEvent,
     validSwap,
