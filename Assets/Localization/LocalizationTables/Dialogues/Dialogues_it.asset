@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogues_it
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: it
+  m_SharedData: {fileID: 11400000, guid: 2095f625303a6f34d8c168fa0281e48b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 613220352
+    m_Localized: Madre Montagna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646774784
+    m_Localized: "Frailej\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 581339774976
+    m_Localized: Saluti. figli della terra! Benvenuti nella Triforestation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740224
+    m_Localized: "La tua missione \xE8 curare la ferita che l'umanit\xE0 ha lasciato
+      sul nostro amato pianeta Terra. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740225
+    m_Localized: Qui. ogni scelta conta. Siete pronti a salire a bordo di questo
+      nobile compito?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740226
+    m_Localized: "Sono cos\xEC emozionato. Guardati intorno. questa \xE8 la tua tela.
+      Con triomini di biomi. costruirai la nuova Pangea."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886082359853056
+    m_Localized: "Perch\xE8 triomino e non domino? Oh caro frailej\xF3n. Le cose
+      migliori arrivano sempre senza tre. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858112
+    m_Localized: Sole. la luna e le stelle. O come direbbero gli alberi. radici.
+      tronco e foglie! La natura realizza sempre i suoi scatti migliori in tre mosse!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858113
+    m_Localized: "Caro Frailej\xF3n. Ora lascia che ti guidi nell'arte dei triomini
+      del bioma."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858114
+    m_Localized: Ogni pezzo ha tre lati. e su ciascun lato. troverai l'essenza di
+      un bioma.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957952
+    m_Localized: Foresta. giungla. Montagna. tutti sperano di far parte della tua
+      creazione.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957953
+    m_Localized: "Unisci due lati di ogni pezzo con il rispettivo ecosistema e cos\xEC
+      pezzo dopo pezzo riforesterai il pianeta di domani."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957954
+    m_Localized: "Cos\xEC. con ogni scelta. costruirai un mondo in cui fiorisce la
+      diversit\xE0."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957955
+    m_Localized: "Ora. prendi questi triomini. Frailej\xF3n. e lasciate che vi guidino
+      verso la restaurazione della terra."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957956
+    m_Localized: Possa ogni connessione essere come un sussurro della natura che
+      celebra la tua saggezza!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957957
+    m_Localized: "Ora. Ti far\xF2 dono della mia essenza. un jolly."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957958
+    m_Localized: Usalo nei momenti difficili. quando ritieni di non poter avanzare
+      o unirti a nessun bioma.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957959
+    m_Localized: "Tenete per\xF2 presente che ogni rilievo ha il suo tributo nell'equilibrio
+      naturale. quindi un pezzo a caso sulla scacchiera verr\xE0 bloccato da una
+      catastrofe e dovrete aggirarlo per curarlo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152256
+    m_Localized: " meu querido filho tamb\xE9m. Voc\xEA pode formar formas com os
+      biomas para desafios adicionais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152257
+    m_Localized: "La natura apprezza la creativit\xE0. Provalo e ottieni ricompense
+      di un'epoca antica!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152258
+    m_Localized: La fase di incubazione ha avuto successo. Ora. nidifica animali.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152259
+    m_Localized: "Ricordare. segue la catena alimentare: decompositori. consumatori
+      primari. secondario. terziari e il predatore alfa. La strategia \xE8 la chiave."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152260
+    m_Localized: Cerca l'equilibrio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152261
+    m_Localized: Prenditi cura di ogni relazione nella natura come una madre si prende
+      cura di suo figlio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152262
+    m_Localized: "Buona fortuna. Frailej\xF3n! Possa la conoscenza guidarti nel tuo
+      viaggio verso la restaurazione."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152263
+    m_Localized: "Sar\xF2 qui per prendermi cura di te e guidarti in questo nobile
+      scopo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152264
+    m_Localized: "Non dimenticare La vita nasce sempre dai luoghi pi\xF9 inaspettati
+      e riemerge sempre nonostante le catastrofi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152265
+    m_Localized: " isso n\xE3o \xE9 desculpa para fazer mal o seu trabalho. Nosso
+      dever como seres avan\xE7ados \xE9 cuidar e proteger todos os seres vivos de
+      que precisam. isso. V\xE1 em frente!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152266
+    m_Localized: "Cari Frailej\xF3nes. nell'affascinante regno della Triforestation.
+      Ora possono lanciarsi in una competizione ecosostenibile."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152267
+    m_Localized: "In questa modalit\xE0. ognuno di voi sar\xE0 custode del proprio
+      angolo della nuova Pangea."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152268
+    m_Localized: Ma. Ascolta attentamente. i miei cari.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152269
+    m_Localized: "Non si tratta solo di costruire armonia. ma per sfidare l'altro
+      Frailej\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152270
+    m_Localized: Possono inviare piaghe o innescare eventi naturali nell'area dell'avversario.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152271
+    m_Localized: "S\xEC. S\xEC. ma con saggezza! Ogni tattica ha il suo costo. e
+      devono valutare l'equilibrio tra attacco e difesa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152272
+    m_Localized: ' se ficarem fora de controle'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152273
+    m_Localized: Ricordare. i miei piccoli. La vittoria non si misura solo in punti.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152274
+    m_Localized: "Ma nella capacit\xE0 di armonizzare il proprio ecosistema nonostante
+      le tempeste che l\u2019altro pu\xF2 scatenare."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839121346560
+    m_Localized: Che la competizione abbia inizio e che la nuova Pangea fiorisca
+      con la tua astuzia e cura!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

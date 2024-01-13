@@ -7,13 +7,13 @@ using UnityEngine.EventSystems;
 
 namespace Terraforming
 {
-    [RequireComponent(typeof(Collider2D))]
+    [RequireComponent(typeof(Collider))]
     public class DragView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler
     {
         public event Action<PointerEventData> OnDragBegan;
         public event Action<PointerEventData> OnDragEnded;
 
-        private new Collider2D collider;
+        private new Collider collider;
         private Camera mainCamera;
 
         private Vector3 initialDragPosition;
@@ -26,18 +26,21 @@ namespace Terraforming
         [Header("In Divine Dones Properties")]
         private bool validClickInDivineDone = false;
 
+        float distanceToCamera;
         private void Awake()
         {
             mainCamera = Camera.main;
-            collider = GetComponent<Collider2D>();
-            EventManager.AddListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
-            EventManager.AddListener(ENUM_DominoeEvent.validSwap, DisableClicking);
+            collider = GetComponent<Collider>();
+            EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, EnableClicking);
+            EventManager.AddListener(ENUM_DominoeEvent.selectCardToSwipeEvent, DisableClicking);
+            EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, EnableDrag);
         }
 
         private void OnDestroy()
         {
-            EventManager.RemoveListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
-            EventManager.RemoveListener(ENUM_DominoeEvent.validSwap, DisableClicking);
+            EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, EnableClicking);
+            EventManager.RemoveListener(ENUM_DominoeEvent.selectCardToSwipeEvent, DisableClicking);
+            EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, EnableDrag);
         }
 
         private void EnableClicking()
@@ -48,17 +51,22 @@ namespace Terraforming
 
         private void DisableClicking()
         {
-            draggingAllowed = true;
             validClickInDivineDone = false;
+        }
+
+        private void EnableDrag()
+        {
+            draggingAllowed = true;
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (!draggingAllowed) return;
             //Debug.Log($"OnBeginDrag {eventData.position}", gameObject);
+            if (!draggingAllowed) return;
             initialDragPosition = transform.position;
             collider.enabled = false;
             isDragging = true;
             OnDragBegan?.Invoke(eventData);
+            distanceToCamera = Vector3.Distance(transform.position, mainCamera.transform.position);
             EventManager.Dispatch(ENUM_SFXEvent.dragSound);
         }
 
@@ -73,8 +81,9 @@ namespace Terraforming
                 return;
             }
             //Debug.Log($"OnDrag {eventData.position}", gameObject);
-            currentDragPosition = mainCamera.ScreenToWorldPoint(eventData.position);
-            currentDragPosition.z = transform.position.z;
+           
+            // Update the current drag position in 3D space
+            currentDragPosition = mainCamera.ScreenToWorldPoint(new Vector3(eventData.position.x,  eventData.position.y, distanceToCamera));
             transform.position = currentDragPosition;
         }
 
@@ -85,7 +94,6 @@ namespace Terraforming
                 Drop();
             else
                 ReturnToPosition();
-
 
             OnDragEnded?.Invoke(eventData);
         }
@@ -103,20 +111,9 @@ namespace Terraforming
 
         void Drop()
         {
-            // Check if there is a parent GameObject
-            if (gameObject.transform.parent != null)
-            {
-                // Get the parent GameObject
-                GameObject parentObject = gameObject.transform.parent.gameObject;
-
-                // Change the layer of the parent GameObject to the default layer
-                parentObject.layer = LayerMask.NameToLayer("Default");
-                EventManager.RemoveListener(ENUM_DominoeEvent.startSwapEvent, EnableClicking);
-                EventManager.RemoveListener(ENUM_DominoeEvent.validSwap, DisableClicking);
-                draggingAllowed = false;
-
- 
-            }
+            EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, EnableClicking);
+            EventManager.RemoveListener(ENUM_DominoeEvent.validSwap, DisableClicking);
+            draggingAllowed = false;       
         }
 
         public void ForceAllowDragging() => draggingAllowed = true;
@@ -125,8 +122,8 @@ namespace Terraforming
         public void OnPointerDown(PointerEventData eventData)
         {
             if(!validClickInDivineDone) return;
-
-            EventManager.Dispatch(ENUM_DominoeEvent.selectCardToSwipeEvent,GetComponent<DominoToken>());
+            GetComponent<DominoToken>().SwapBiomes() ;
+            EventManager.Dispatch(ENUM_DominoeEvent.selectCardToSwipeEvent);
         }
     }
 }

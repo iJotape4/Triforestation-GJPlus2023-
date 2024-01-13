@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: ba93719ce5695f149a4e5277b03064e6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 451403776
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180992
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180993
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180994
+    m_Localized: Config
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180995
+    m_Localized: Key Features
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180996
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180997
+    m_Localized: Choose a language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180998
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180999
+    m_Localized: Loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181000
+    m_Localized: Graphics Quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181001
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181002
+    m_Localized: Ultra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181003
+    m_Localized: Medio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181004
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181005
+    m_Localized: Background sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181006
+    m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181007
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181008
+    m_Localized: Display mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181009
+    m_Localized: Full screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181010
+    m_Localized: Window
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181011
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181012
+    m_Localized: How to play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181013
+    m_Localized: Wardrobe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181014
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106281086976
+    m_Localized: Trophic level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864192
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864193
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864194
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864195
+    m_Localized: Progress will not be saved. Do you want to exit?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864196
+    m_Localized: It's time to repopulate the world
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864197
+    m_Localized: There are no ecosystems to recover at this level. It's time to repopulate
+      the world
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864198
+    m_Localized: It's time to recover some ecosystems
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555160522719232
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3487724911190016
+    m_Localized: Triforestation
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

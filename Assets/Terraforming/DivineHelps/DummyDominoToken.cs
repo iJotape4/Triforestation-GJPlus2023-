@@ -49,7 +49,7 @@ public class DummyDominoToken : MonoBehaviour
     {
         foreach (DummyPole pole in poles)
         {
-            pole.spriteRenderer.enabled = active;
+            pole.meshRenderer.enabled = active;
 
             if (!active)
                 pole.UnselectOnCancelOrConfirm();

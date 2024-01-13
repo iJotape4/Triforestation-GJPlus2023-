@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
+  m_Name: Fox
+  m_EditorClassIdentifier: 
+  name: Fox
+  chainLevel: 2
+  aliments: 4
+  biome: 2
+  sprite: {fileID: -1954884513, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
+  _3dPrefab:
+  - {fileID: 8849616815564060321, guid: 4b3d36e9ee3cfff4ca5c4e69f081e792, type: 3}

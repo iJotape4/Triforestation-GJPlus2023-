@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Dialogues Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Dialogues
+  m_TableCollectionNameGuidString: 2095f625303a6f34d8c168fa0281e48b
+  m_Entries:
+  - m_Id: 613220352
+    m_Key: D_Title1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646774784
+    m_Key: D_Title2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 581339774976
+    m_Key: DM_Dialogue1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740224
+    m_Key: DM_Dialogue1_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740225
+    m_Key: DM_Dialogue1_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740226
+    m_Key: DM_Dialogue1_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886082359853056
+    m_Key: DM_Dialogue1_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858112
+    m_Key: DM_Dialogue1_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858113
+    m_Key: DM_Dialogue1_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858114
+    m_Key: DM_Dialogue1_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957952
+    m_Key: DM_Dialogue1_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957953
+    m_Key: DM_Dialogue1_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957954
+    m_Key: DM_Dialogue1_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957955
+    m_Key: DM_Dialogue1_12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957956
+    m_Key: DM_Dialogue1_13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957957
+    m_Key: DM_Dialogue2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957958
+    m_Key: DM_Dialogue2_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957959
+    m_Key: DM_Dialogue2_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152256
+    m_Key: DM_Dialogue2_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152257
+    m_Key: DM_Dialogue2_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152258
+    m_Key: DM_Dialogue2_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152259
+    m_Key: DM_Dialogue2_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152260
+    m_Key: DM_Dialogue2_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152261
+    m_Key: DM_Dialogue2_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152262
+    m_Key: DM_Dialogue2_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152263
+    m_Key: DM_Dialogue2_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152264
+    m_Key: DM_Dialogue2_12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152265
+    m_Key: DM_Dialogue2_13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152266
+    m_Key: DM_Dialogue2_14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152267
+    m_Key: DM_Dialogue2_15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152268
+    m_Key: DM_Dialogue2_16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152269
+    m_Key: DM_Dialogue2_17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152270
+    m_Key: DM_Dialogue2_18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152271
+    m_Key: DM_MP_Dialogue3_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152272
+    m_Key: DM_MP_Dialogue3_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152273
+    m_Key: DM_MP_Dialogue4_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152274
+    m_Key: DM_MP_Dialogue4_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839121346560
+    m_Key: DM_MP_Dialogue4_3
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5451823082631856274
+  references:
+    version: 2
+    RefIds:
+    - rid: 5451823082631856274
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1704858229098

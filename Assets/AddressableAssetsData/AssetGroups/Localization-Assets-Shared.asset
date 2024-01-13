@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Shared
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ec86c1554d970434aaffc61bb2ff419f
+  m_SerializeEntries:
+  - m_GUID: 2095f625303a6f34d8c168fa0281e48b
+    m_Address: Assets/Localization/LocalizationTables/Dialogues/Dialogues Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e47f5aa9a4286c340a7b77f2fc09c5c6
+    m_Address: Assets/Localization/LocalizationTables/FTUE/FTUE Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba93719ce5695f149a4e5277b03064e6
+    m_Address: Assets/Localization/LocalizationTables/UI/UI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1fd4fa41dda17746a23893cf9669652
+    m_Address: Assets/Localization/LocalizationTables/Challenges/Challenges Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1fc4dc13eec8a2c4bb178afad60c6706
+    m_Address: Assets/Localization/LocalizationTables/Fauna/Fauna Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c908f618a7a19db479f49b0aecc2ae16
+    m_Address: Assets/Localization/LocalizationTables/Flora/Flora Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eef22d64e6ebdf043b7382306655e5ff
+    m_Address: Assets/Localization/LocalizationTables/Biomas/Biomas Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 294bb3ed985659b4db5876b29dc2deea, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7637ad58458af6b4d9bfa860ec8b91b6, type: 2}
+    - {fileID: 11400000, guid: 52a74e3f28aa5b443bd935618daad395, type: 2}

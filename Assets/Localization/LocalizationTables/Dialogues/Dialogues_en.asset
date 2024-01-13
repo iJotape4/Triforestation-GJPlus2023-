@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogues_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 2095f625303a6f34d8c168fa0281e48b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 613220352
+    m_Localized: Mother Mountain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646774784
+    m_Localized: "Frailej\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 581339774976
+    m_Localized: Greetings. earth's children! Welcome to Triforestation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740224
+    m_Localized: Your mission is to heal the wound that humanity left on our beloved
+      planet Earth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740225
+    m_Localized: Here. every choice matters. Are you ready to go on board on this
+      noble task?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2365122740226
+    m_Localized: I'm so thrilled. Look around. this is your canvas. With triominos
+      of biomes. you will build the new Pangea.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886082359853056
+    m_Localized: "Why triomino and not dominoes? Oh dear frailej\xF3n. The best things
+      always come in threes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858112
+    m_Localized: Sun. the moon and the stars. Or as the trees would say. roots. trunk
+      and leaves! Nature always makes her best shots in three moves!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858113
+    m_Localized: "Dear Frailej\xF3n. Now let me guide you in the art of biome triominoes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886672032858114
+    m_Localized: Each piece has three sides. and on each side. you will find the
+      essence of a biome.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957952
+    m_Localized: Forest. jungle. Mountain. each one hopes to be part of your creation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957953
+    m_Localized: Join two sides of each piece with their respective ecosystem and
+      thus piece by piece you will be reforesting the planet of tomorrow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957954
+    m_Localized: So. with each choice. you will build a world where diversity flourishes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957955
+    m_Localized: "Now. take these triominoes. Frailej\xF3n. and let them guide you
+      toward the restoration of the earth."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957956
+    m_Localized: May each connection be like a whisper of nature celebrating your
+      wisdom!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957957
+    m_Localized: Now. I will give you a gift of my essence. a wild card.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957958
+    m_Localized: Use it in difficult times. when you feel like you can't advance
+      or join any biome.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839112957959
+    m_Localized: But keep in mind that each relief has its tribute in the natural
+      balance. therefore a random piece on the board will be blocked by a catastrophe
+      and you will have to go around it to heal it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152256
+    m_Localized: But don't worry. my dear son too. You can form shapes with the biomes
+      for additional challenges.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152257
+    m_Localized: Nature appreciates creativity. Try it and get rewards from an ancient
+      era!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152258
+    m_Localized: The incubation phase was successful. Now. nests animals.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152259
+    m_Localized: 'Remember. follows the food chain: decomposers. primary consumers.
+      secondary. tertiaries and the alpha predator. Strategy is the key.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152260
+    m_Localized: Seek balance my son. A harmonious ecosystem will reward you with
+      more life and points.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152261
+    m_Localized: Take care of each relationship in nature as a mother takes care
+      of her child.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152262
+    m_Localized: "Good luck. Frailej\xF3n! May knowledge guide you on your journey
+      towards restoration."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152263
+    m_Localized: I will be here to take care of you and guide you in this noble purpose.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152264
+    m_Localized: Don't forget Life always springs from the most unexpected places
+      and always re-emerges despite catastrophes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152265
+    m_Localized: However. this is no excuse for doing your job poorly. Our duty as
+      advanced beings is to care for and protect all living beings that They need
+      it. Go ahead!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152266
+    m_Localized: "Dear Frailej\xF3nes. in the fascinating kingdom of Triforestation.
+      Now they can embark on an eco-friendly competition."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152267
+    m_Localized: In this mode. each of you will be a guardian of your own corner
+      of the new Pangea.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152268
+    m_Localized: But. Listen carefully. my loved ones.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152269
+    m_Localized: "It's not just about building harmony. but to challenge the other
+      Frailej\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152270
+    m_Localized: They can send plagues or trigger natural events in the opponent's
+      area.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152271
+    m_Localized: Yeah. Yeah. but with wisdom! Each tactic has its cost. and they
+      must weigh the balance between attack and defense.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152272
+    m_Localized: Pests and events are like natural whispers of challenge and remember
+      if they get out of control they could affect you too!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152273
+    m_Localized: Remember. my little ones. Victory is not only measured in points.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839117152274
+    m_Localized: But in the ability to harmonize their ecosystem despite the storms
+      that the other may unleash.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886839121346560
+    m_Localized: Let the competition begin and may the new Pangea flourish with your
+      cunning and care!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

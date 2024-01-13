@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Fauna_it
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: it
+  m_SharedData: {fileID: 11400000, guid: 1fc4dc13eec8a2c4bb178afad60c6706, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 501735424
+    m_Localized: Maschio alfa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318336
+    m_Localized: Consumatori primari
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318337
+    m_Localized: Consumatori secondari
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318338
+    m_Localized: Consumatori terziari
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318339
+    m_Localized: Decompositori
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318340
+    m_Localized: Predatore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318341
+    m_Localized: Preda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318342
+    m_Localized: Fungo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318343
+    m_Localized: Animale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318344
+    m_Localized: Tucano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318345
+    m_Localized: xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318346
+    m_Localized: Anaconda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318347
+    m_Localized: 'Scarabeo Titano '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512640
+    m_Localized: Scimmia Titi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512641
+    m_Localized: Scimmia scoiattolo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512642
+    m_Localized: Rana velenosa dorata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512643
+    m_Localized: 'Ara blu '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512644
+    m_Localized: Capibara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512645
+    m_Localized: Giaguaro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512646
+    m_Localized: Aquila arpia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512647
+    m_Localized: 'Scoiattolo rosso '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512648
+    m_Localized: Volpe rossa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512649
+    m_Localized: Orso bruno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512650
+    m_Localized: Ovolo malefico
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512651
+    m_Localized: Gusano de las nieves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512652
+    m_Localized: 'Cabra blanca '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512653
+    m_Localized: "B\xFAho Nival"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512654
+    m_Localized: Lince Canadiense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512655
+    m_Localized: Okapi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512656
+    m_Localized: "Le\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512657
+    m_Localized: Hiena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512658
+    m_Localized: Termita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104972464128
+    m_Localized: verme del ghiacciaio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852736
+    m_Localized: Capra bianca
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852737
+    m_Localized: Gufo delle nev
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852738
+    m_Localized: Lince Canadese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852739
+    m_Localized: 'Leone '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852740
+    m_Localized: Iena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852741
+    m_Localized: Termite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3487722931478528
+    m_Localized: xxxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

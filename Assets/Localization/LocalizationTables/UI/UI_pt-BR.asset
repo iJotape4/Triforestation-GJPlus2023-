@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: ba93719ce5695f149a4e5277b03064e6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 451403776
+    m_Localized: Jogar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180992
+    m_Localized: "Op\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180993
+    m_Localized: Sair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180994
+    m_Localized: Configurar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180995
+    m_Localized: Principais recursos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180996
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180997
+    m_Localized: Escolha um idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180998
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468180999
+    m_Localized: Carregamento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181000
+    m_Localized: "Qualidade gr\xE1fica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181001
+    m_Localized: Alto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181002
+    m_Localized: Ultra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181003
+    m_Localized: "M\xE9dio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181004
+    m_Localized: Baixa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181005
+    m_Localized: Sons de fundo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181006
+    m_Localized: Efeitos sonoros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181007
+    m_Localized: "Configura\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181008
+    m_Localized: "Modo de exibi\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181009
+    m_Localized: Tela cheia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181010
+    m_Localized: Janela
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181011
+    m_Localized: Novo jogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181012
+    m_Localized: Como jogar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181013
+    m_Localized: Guarda-roupa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468181014
+    m_Localized: "Cr\xE9ditos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106281086976
+    m_Localized: "N\xEDvel tr\xF3fico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864192
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864193
+    m_Localized: Sim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864194
+    m_Localized: "N\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864195
+    m_Localized: "O progresso n\xE3o ser\xE1 salvo. Voc\xEA quer sair?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864196
+    m_Localized: "\xC9 hora de repovoar o mundo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864197
+    m_Localized: "N\xE3o h\xE1 ecossistemas para recuperar neste n\xEDvel. \xC9 hora
+      de repovoar o mundo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229106297864198
+    m_Localized: "\xC9 hora de recuperar alguns ecossistemas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555160522719232
+    m_Localized: " lluvia \xE1cida del Proterozoico! La moda ecol\xF3gica tiene sus
+      caprichos. \xA1Vuelve a intentarlo y demu\xE9strale a la naturaleza tu poder!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3487724911190016
+    m_Localized: Triforestation
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

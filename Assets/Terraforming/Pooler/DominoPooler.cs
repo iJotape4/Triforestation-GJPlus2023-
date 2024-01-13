@@ -4,34 +4,31 @@ using System.Collections.Generic;
 using Terraforming.Dominoes;
 using UnityEngine;
 using MyBox;
-using UnityEngine.InputSystem;
+using LevelSelector;
 
 public class DominoPooler : MonoBehaviour
 {
-    public GameObject dominoPrefab; // Reference to the domino prefab.
-    public int totalDominoes = 52; // Total number of dominoes to be created.
+    [SerializeField] public GameObject dominoPrefab; // Reference to the domino prefab.
     public float dominoSpacing = 0.1f;
     private List<DominoToken> dominoes = new List<DominoToken>();
     private int currentIndex = 0;
     private bool lastCardOnHand = false;
-    public InputAction poolerControl;
     private bool isTweenOver = true;
 
-    public DominoSpot[] dominoesSpots; // Current domino position
+    public DominoSpot[] dominoesSpots; 
     [SerializeField, ReadOnly] private List<DominoToken> currentDominoesList;
     public float moveDuration = 0.5f; // Duration of the animation
 
     private bool canDeployPunishment = true;
 
     public Dictionary<ENUM_Biome, int> biomeCounts = new Dictionary<ENUM_Biome, int>();
-    [SerializeField] TokenData[] tokenDatas;
+    [SerializeField] public LevelData levelData;
 
     private void Awake()
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, FinishDominoPlacement);
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
-        EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
         EventManager.AddListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
 
         foreach (ENUM_Biome biome in System.Enum.GetValues(typeof(ENUM_Biome)))
@@ -44,9 +41,7 @@ public class DominoPooler : MonoBehaviour
     {
         EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
-        EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, CanDeployPunishment);
         EventManager.RemoveListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
-
     }
 
     private void OnDominoDropped(DominoToken domino)
@@ -58,43 +53,31 @@ public class DominoPooler : MonoBehaviour
         }
     }
 
-    void Start()
+#if UNITY_EDITOR
+    private void Start()
     {
+        if(levelData != null)
+            CreateDominoes();
+    }
+#endif
+
+    public void SetLevel(LevelData _levelData)
+    {
+        levelData = _levelData;
         CreateDominoes();
-    }
-
-    private void OnEnable()
-    {
-        poolerControl.Enable();
-    }
-
-    private void OnDisable()
-    {
-        poolerControl.Disable();
-    }
-
-    public void LateUpdate()
-    {
-        float poolRequested = poolerControl.ReadValue<float>();
-
-        if( poolRequested != 0 && isTweenOver)
-        {
-            isTweenOver = false;
-            GetNextDomino();
-        }
     }
 
     void CreateDominoes()
     {
-        for (int i = 0; i < totalDominoes; i++)
+        for (int i = 0; i < levelData.dominoesAmount; i++)
         {
             GameObject dominoObj = Instantiate(dominoPrefab, transform);
             DominoToken domino = dominoObj.GetComponent<DominoToken>();
 
             // Set the position of the domino in a row from left to right.
             float xPos = i * dominoSpacing; // Adjust the spacing as needed.
-            domino.transform.localPosition = new Vector3(xPos, 0, 0);
-            domino.tokenData = tokenDatas[i];
+            dominoObj.transform.localPosition = new Vector3(xPos, 0, 0);
+            domino.tokenData = levelData.tokenDatas[i];
             dominoes.Add(domino);
             domino.ResetDomino();
         }
@@ -108,21 +91,12 @@ public class DominoPooler : MonoBehaviour
     //[ContextMenu("Get next domino")]
 
     public DominoToken GetNextDomino()
-    {
+    {          
         if (currentIndex < dominoes.Count)
         {
             Transform _nextPosition = GetNextFreePosition();
-            if(_nextPosition == null)
-            {
-                if (canDeployPunishment) 
-                {
-                    EventManager.Dispatch(ENUM_DominoeEvent.punishEvent);
-                    canDeployPunishment = false;
-                }
-                
-                TweenOver();
+            if (_nextPosition == null)
                 return null;
-            }
 
             EventManager.Dispatch(ENUM_DominoeEvent.getCardEvent);
 
@@ -132,26 +106,22 @@ public class DominoPooler : MonoBehaviour
             // Create a new DOTween sequence
             Sequence uncoverSequence = DOTween.Sequence();
 
+          
             // Add the local move animation to the sequence
             uncoverSequence.Append(domino.transform.DOLocalMove(_nextPosition.localPosition, moveDuration))
                 .OnStart(() =>
                 {
                     
-                    // Activate the movement
-                    domino.ActiveDrag();
                 });
 
             // Add the rotation animation (both parts) to the sequence using Join
-            uncoverSequence.Join(domino.transform.DORotate(new Vector3(0, 90, 0), moveDuration, RotateMode.WorldAxisAdd))
+            uncoverSequence.Join(domino.transform.DORotate(new Vector3(0, 0, 180), moveDuration, RotateMode.WorldAxisAdd))
                 .OnComplete(() =>
                 {
-                    // Deactivate the dominoCover
-                    domino.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
                     // Rotate the GameObject back to 0 degrees
-                    domino.transform.DORotate(Vector3.zero, moveDuration);
-
                     TweenOver();
+                    domino.ActiveDrag();
                 });
 
             // Play the sequence
@@ -187,7 +157,7 @@ public class DominoPooler : MonoBehaviour
     {
         for (int i = 0; i < dominoes.Count; i++)
         {
-            dominoes[i].gameObject.GetComponent<SpriteRenderer>().sortingOrder = 100 - i;
+            dominoes[i].gameObject.GetComponent<MeshRenderer>().sortingOrder = 100 - i;
         }
     }
     [ContextMenu("Reset Cards")]
@@ -214,26 +184,21 @@ public class DominoPooler : MonoBehaviour
     {
         foreach(DominoSpot spot in dominoesSpots)
         {
+            if (spot.IsSpotFree())
+                continue;
             Destroy(spot.currentToken.gameObject);
             spot.SetCurrentToken(null);
         }
         currentDominoesList.Clear();
         GiveInitialDominoes();
         EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, false);
-        CanDeployPunishment();
-        
     }
 
     private void GiveInitialDominoes()
     {
         Invoke("GetNextDomino", 0.2f);
         Invoke("GetNextDomino", 0.5f);
-        Invoke("GetNextDomino", 0.8f);
-    }
-    
-    private void CanDeployPunishment()
-    {
-        canDeployPunishment = true;
+        //Invoke("GetNextDomino", 0.8f);
     }
 
     private void FinishDominoPlacement(DominoToken token)
@@ -256,7 +221,7 @@ public class DominoPooler : MonoBehaviour
     [ContextMenu("Contar biomas")]
     public void CountBiomes()
     {
-        DominoToken[] tokensInBoard = GetComponentsInChildren<DominoToken>();
+        DominoToken[] tokensInBoard = TriangularGrid.FindTriangularGrid().GetComponentsInChildren<DominoToken>();
 
         foreach (DominoToken token in tokensInBoard)
         {
@@ -269,6 +234,5 @@ public class DominoPooler : MonoBehaviour
         }
 
         GameManager.Instance.SetDictionary(biomeCounts);
-        biomeCounts.Clear();
     }
 }

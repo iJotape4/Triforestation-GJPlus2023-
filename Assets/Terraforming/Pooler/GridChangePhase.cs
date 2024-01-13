@@ -7,12 +7,12 @@ public class GridChangePhase : MonoBehaviour
     public Transform finalPosition;
     private void Awake()
     {
-        EventManager.AddListener(ENUM_GameState.poolAnimals, MoveArregement);
+        EventManager.AddListener(ENUM_GameState.firstPhaseFinished, MoveArregement);
     }
 
     private void OnDestroy()
     {
-        EventManager.RemoveListener(ENUM_GameState.poolAnimals, MoveArregement);
+        EventManager.RemoveListener(ENUM_GameState.firstPhaseFinished, MoveArregement);
     }
 
     private void MoveArregement()

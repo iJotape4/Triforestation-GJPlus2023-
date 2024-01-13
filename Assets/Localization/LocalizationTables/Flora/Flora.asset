@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Flora
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: c908f618a7a19db479f49b0aecc2ae16, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 2b69222e2915c364faaf943f3964fbb6, type: 2}
+  - {fileID: 11400000, guid: e2f168b0d0a8ebb438f6a68760bd9503, type: 2}
+  - {fileID: 11400000, guid: dace4b4144d1e2744acf241ca7fde456, type: 2}
+  - {fileID: 11400000, guid: 9a42adc3c0bb75647b873364d2ce9b0f, type: 2}
+  - {fileID: 11400000, guid: b4af50660ce7f624291ca9a1ed594248, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

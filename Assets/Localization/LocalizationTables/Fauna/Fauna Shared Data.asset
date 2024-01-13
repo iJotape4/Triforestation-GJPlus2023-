@@ -1,0 +1,188 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Fauna Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Fauna
+  m_TableCollectionNameGuidString: 1fc4dc13eec8a2c4bb178afad60c6706
+  m_Entries:
+  - m_Id: 501735424
+    m_Key: Animal_Category_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318336
+    m_Key: Animal_Category_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318337
+    m_Key: Animal_Category_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318338
+    m_Key: Animal_Category_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318339
+    m_Key: Animal_Type_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318340
+    m_Key: Animal_Type_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318341
+    m_Key: Animal_Type_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318342
+    m_Key: Animal_Type_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318343
+    m_Key: Animal_Word
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318344
+    m_Key: AnimalTitle_Toucan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318345
+    m_Key: AnimalTitle_xxxxxxxxxx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318346
+    m_Key: AnimalTitle_Anaconda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514318347
+    m_Key: AnimalTitle_Titan beetle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512640
+    m_Key: AnimalTitle_Titi monkey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512641
+    m_Key: AnimalTitle_Squirrel monkey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512642
+    m_Key: AnimalTitle_Golden poison frog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512643
+    m_Key: AnimalTitle_Blue macaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512644
+    m_Key: AnimalTitle_Capybara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512645
+    m_Key: AnimalTitle_Jaguar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512646
+    m_Key: AnimalTitle_Harpy eagle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512647
+    m_Key: AnimalTitle_Red squirrel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512648
+    m_Key: AnimalTitle_Red fox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512649
+    m_Key: AnimalTitle_Brown bear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512650
+    m_Key: AnimalTitle_Fly agaric
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104972464128
+    m_Key: AnimalTitle_Ice worm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852736
+    m_Key: AnimalTitle_White goat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852737
+    m_Key: AnimalTitle_Snowy owl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852738
+    m_Key: AnimalTitle_Canadian lynx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512655
+    m_Key: AnimalTitle_Okapi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852739
+    m_Key: AnimalTitle_Lion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852740
+    m_Key: AnimalTitle_Hyena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229104980852741
+    m_Key: AnimalTitle_Termite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3487722931478528
+    m_Key: AnimalTitle_Condor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512651
+    m_Key: AnimalTitle_Gusano de las nieves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512652
+    m_Key: 'AnimalTitle_Cabra blanca '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512653
+    m_Key: "AnimalTitle_B\xFAho Nival"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512654
+    m_Key: AnimalTitle_Lince Canadiense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512656
+    m_Key: "AnimalTitle_Le\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512657
+    m_Key: AnimalTitle_Hiena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 518512658
+    m_Key: AnimalTitle_Termita
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5451822943416614916
+  references:
+    version: 2
+    RefIds:
+    - rid: 5451822943416614916
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1704324909927

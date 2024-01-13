@@ -1,0 +1,36 @@
+using Events;
+using UnityEngine;
+
+public class InputManager : MonoBehaviour
+{
+    InputActionsMap actionMap;
+    InputActionsMap.MainActionsActions mainActions;
+
+    private void Awake()
+    {
+        actionMap = new InputActionsMap();
+        mainActions = actionMap.MainActions;
+    }
+
+    private void Start()
+    {
+        mainActions.Rotate.started += ctx => PerformRotation(ctx.ReadValue<float>());
+        mainActions.AskDivineGift.performed += ctx => EventManager.Dispatch(ENUM_DominoeEvent.punishEvent);
+        mainActions.Pause.started += ctx => EventManager.Dispatch(ENUM_InputEvent.PauseMenu);
+    }
+
+    private void PerformRotation(float axisValue)
+    {
+        EventManager.Dispatch(ENUM_InputEvent.Rotate, axisValue);
+    }
+
+    private void OnEnable() => actionMap.Enable();
+    private void  OnDisable() => actionMap.Disable();
+}
+
+public enum ENUM_InputEvent
+{
+    Rotate,
+    AskDivineGift,
+    PauseMenu
+}

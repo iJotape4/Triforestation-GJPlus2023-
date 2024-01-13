@@ -76,3 +76,4 @@ fmod.log
 fmod_editor.log
 Assets/Plugins/CodeAssist
 Assets/Plugins/CodeAssist.meta
+ProjectSettings/Packages/com.unity.probuilder

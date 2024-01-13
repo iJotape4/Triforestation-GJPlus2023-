@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: FTUE_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: e47f5aa9a4286c340a7b77f2fc09c5c6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 505929728
+    m_Localized: "Explore your connection with nature through Ecological Links. Unlock
+      unique accessories for the Frailej\xF3n through your efforts in restoring the
+      world."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 522706944
+    m_Localized: Customize your avatar and carry with you the pride of every triomino
+      placed and challenge overcome!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 522706945
+    m_Localized: In this section are the challenges that may give you extraordinary
+      rewards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554967198859264
+    m_Localized: PLACEHOLDER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554967228219392
+    m_Localized: Lorem ipsum dolor sit amet
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
