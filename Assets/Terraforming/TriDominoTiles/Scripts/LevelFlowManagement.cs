@@ -18,7 +18,7 @@ public class LevelFlowManagement : MonoBehaviour
         EventManager.AddListener(ENUM_DominoeEvent.dominoDroppedEvent, CountTotalTokens);
         EventManager.AddListener(ENUM_DominoeEvent.spawnedMoorEvent, CountTotalTokens);
         EventManager.AddListener(ENUM_DominoeEvent.generatedTileEvent, CountGeneratedTiles);
-        EventManager.AddListener(ENUM_DominoeEvent.punishEvent, CheckIfAvailableMovements);
+        EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, CheckIfAvailableMovements);
     }
 
     protected void OnDestroy()
@@ -28,7 +28,7 @@ public class LevelFlowManagement : MonoBehaviour
         EventManager.RemoveListener(ENUM_DominoeEvent.dominoDroppedEvent, CountTotalTokens);
         EventManager.RemoveListener(ENUM_DominoeEvent.spawnedMoorEvent, CountTotalTokens);
         EventManager.RemoveListener(ENUM_DominoeEvent.generatedTileEvent, CountGeneratedTiles);
-        EventManager.RemoveListener(ENUM_DominoeEvent.punishEvent, CheckIfAvailableMovements);
+        EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, CheckIfAvailableMovements);
     }
     private void CountSavablehazards()
     {

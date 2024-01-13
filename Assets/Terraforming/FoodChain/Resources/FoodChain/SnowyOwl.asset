@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
-  m_Name: SnowOwl
+  m_Name: SnowyOwl
   m_EditorClassIdentifier: 
-  name: SnowOwl
+  name: SnowyOwl
   chainLevel: 2
   aliments: 4
   biome: 4
   sprite: {fileID: 326271078, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
-  - {fileID: 6649569481775955041, guid: 19bf4843a54f9094eba8d9d075b59d67, type: 3}
+  - {fileID: 4026840535811965006, guid: 127c9bd01d3c93c4d96f78ff11d106de, type: 3}
