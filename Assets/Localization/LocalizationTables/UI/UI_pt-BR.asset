@@ -156,6 +156,22 @@ MonoBehaviour:
     m_Localized: Triforestation
     m_Metadata:
       m_Items: []
+  - m_Id: 3513190728589312
+    m_Localized: Geral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532352
+    m_Localized: Som
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532353
+    m_Localized: Efeitos sonoros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3521262901518336
+    m_Localized: Confirmar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
