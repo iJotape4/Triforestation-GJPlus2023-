@@ -11,16 +11,15 @@ public class PunishesManager : MonoBehaviour
     private void Awake()
     {
         EventManager.AddListener(ENUM_DominoeEvent.punishEvent, TriggerRandomPunish);
-        EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, SetStandBy);
-        EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, QuitStandBy);
+        EventManager.AddListener(ENUM_DominoeEvent.selectDoneEvent, SetStandBy);
+        EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, QuitStandBy);
     }
-
 
     private void OnDestroy()
     {
         EventManager.RemoveListener(ENUM_DominoeEvent.punishEvent, TriggerRandomPunish);
-        EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, SetStandBy);
-        EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, QuitStandBy);
+        EventManager.RemoveListener(ENUM_DominoeEvent.selectDoneEvent, SetStandBy);
+        EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, QuitStandBy);
     }
     private void TriggerRandomPunish()
     {

@@ -24,14 +24,14 @@ namespace Terraforming.Dominoes
            // poles = Array.FindAll(GetComponentsInChildren<DominoPole>(), c => c.gameObject != gameObject);
             dominoCollider = GetComponent<Collider>();
             EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
-            EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
+            EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, SetWasSwappedToFalse);
         }
 
 
         protected virtual void OnDestroy()
         {
             EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
-            EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
+            EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, SetWasSwappedToFalse);
         }
 
         public bool IsUpwards()
