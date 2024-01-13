@@ -5,6 +5,7 @@ using Terraforming.Dominoes;
 using UnityEngine;
 using MyBox;
 using LevelSelector;
+using System.Collections;
 
 public class DominoPooler : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class DominoPooler : MonoBehaviour
     private bool canDeployPunishment = true;
 
     public Dictionary<ENUM_Biome, int> biomeCounts = new Dictionary<ENUM_Biome, int>();
-    [SerializeField] public LevelData levelData;
+    //Must not be assigned in inspector,cuz it will be assigned in runtime. And can cause bugs
+    [SerializeField, ReadOnly] public LevelData levelData;
 
     private void Awake()
     {
@@ -40,17 +42,17 @@ public class DominoPooler : MonoBehaviour
     private void OnDestroy()
     {
         EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, OnDominoDropped);
-        EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
+        EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.spawnedAcidRainEvent, OnDominoDropped);
+        EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.dominoDroppedEvent, FinishDominoPlacement);
         EventManager.RemoveListener(ENUM_DominoeEvent.tradeCardsForMoor, TradeCurrentCards);
     }
 
     private void OnDominoDropped(DominoToken domino)
     {
+        //Debug.LogError("OnDominoDropped, current count: " + currentDominoesList.Count);
         currentDominoesList.Remove(domino);
-        if (currentDominoesList.Count < 3)
-        {
-            GetNextDomino();
-        }
+        //Debug.LogError("Getting next domino, current count: " + currentDominoesList.Count);
+        StartCoroutine(NextDominoCoroutine());
     }
 
 #if UNITY_EDITOR
@@ -85,10 +87,17 @@ public class DominoPooler : MonoBehaviour
 
         // Update the order in layer to ensure the rightmost domino is on top.
         UpdateOrderInLayer();
-        GiveInitialDominoes();
+        StartCoroutine( GiveInitialDominoes());
         EventManager.Dispatch(ENUM_SFXEvent.deckStart);
     }
-    //[ContextMenu("Get next domino")]
+
+    public IEnumerator NextDominoCoroutine()
+    {
+        //This little wait is needed to give time to domino spot get free
+        //It could be improved changing how the events works
+        yield return new WaitForSeconds(0.1f);
+        GetNextDomino();
+    }
 
     public DominoToken GetNextDomino()
     {          
@@ -96,7 +105,10 @@ public class DominoPooler : MonoBehaviour
         {
             Transform _nextPosition = GetNextFreePosition();
             if (_nextPosition == null)
+            {
+
                 return null;
+            }
 
             EventManager.Dispatch(ENUM_DominoeEvent.getCardEvent);
 
@@ -140,16 +152,17 @@ public class DominoPooler : MonoBehaviour
 
      Transform GetNextFreePosition()
      {
-        if (currentDominoesList.Count >= dominoesSpots.Length)
-            return null;
+        if (currentDominoesList.Count >= dominoesSpots.Length)       
+           return null;      
 
         foreach (DominoSpot spot in dominoesSpots)
             if (spot.IsSpotFree())
             {
-                spot.SetCurrentToken(dominoes[currentIndex]); 
+                spot.SetCurrentToken(dominoes[currentIndex]);
+                //Debug.LogError("Spot found");
                 return spot.transform;
             }
-
+        //Debug.LogError("there is no free spots");
         return null;
      }
 
@@ -160,6 +173,7 @@ public class DominoPooler : MonoBehaviour
             dominoes[i].gameObject.GetComponent<MeshRenderer>().sortingOrder = 100 - i;
         }
     }
+
     [ContextMenu("Reset Cards")]
     public void ResetDominoes()
     {
@@ -190,15 +204,28 @@ public class DominoPooler : MonoBehaviour
             spot.SetCurrentToken(null);
         }
         currentDominoesList.Clear();
-        GiveInitialDominoes();
+        StartCoroutine( GiveInitialDominoes());
         EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, false);
     }
 
-    private void GiveInitialDominoes()
+    private IEnumerator GiveInitialDominoes()
     {
-        Invoke("GetNextDomino", 0.2f);
-        Invoke("GetNextDomino", 0.5f);
-        //Invoke("GetNextDomino", 0.8f);
+        //Waits until level is seted properly
+        while(levelData == null)
+        {
+#if UNITY_EDITOR
+            //Level data is set while level loading. You will get this exception if you try to load the game scene directly
+            //Please, don't do it, and don't assign a default value in the level data field. It will cause bugs
+            Debug.LogWarning("Level data is not set yet. Try to load game from level selector if you're not doing it");
+#endif
+            yield return null;
+        }
+
+        GetNextDomino();
+        yield return new WaitForSeconds(0.5f);
+        GetNextDomino();
+        yield return new WaitForSeconds(0.3f);
+        GetNextDomino();
     }
 
     private void FinishDominoPlacement(DominoToken token)
