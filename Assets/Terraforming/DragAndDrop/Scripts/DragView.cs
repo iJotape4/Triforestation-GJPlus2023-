@@ -62,7 +62,7 @@ namespace Terraforming
         {
             //Debug.Log($"OnBeginDrag {eventData.position}", gameObject);
             if (!draggingAllowed) return;
-            initialDragPosition = transform.position;
+            initialDragPosition = transform.localPosition;
             collider.enabled = false;
             isDragging = true;
             OnDragBegan?.Invoke(eventData);
@@ -104,7 +104,7 @@ namespace Terraforming
 
         void ReturnToPosition()
         {
-            transform.position = initialDragPosition;
+            transform.localPosition = initialDragPosition;
             collider.enabled = true;
             isDragging = false;
         }
