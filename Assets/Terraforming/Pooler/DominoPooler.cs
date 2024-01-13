@@ -49,11 +49,10 @@ public class DominoPooler : MonoBehaviour
 
     private void OnDominoDropped(DominoToken domino)
     {
+        //Debug.LogError("OnDominoDropped, current count: " + currentDominoesList.Count);
         currentDominoesList.Remove(domino);
-        if (currentDominoesList.Count < 3)
-        {
-            GetNextDomino();
-        }
+        //Debug.LogError("Getting next domino, current count: " + currentDominoesList.Count);
+        StartCoroutine(NextDominoCoroutine());
     }
 
 #if UNITY_EDITOR
@@ -91,7 +90,14 @@ public class DominoPooler : MonoBehaviour
         StartCoroutine( GiveInitialDominoes());
         EventManager.Dispatch(ENUM_SFXEvent.deckStart);
     }
-    //[ContextMenu("Get next domino")]
+
+    public IEnumerator NextDominoCoroutine()
+    {
+        //This little wait is needed to give time to domino spot get free
+        //It could be improved changing how the events works
+        yield return new WaitForSeconds(0.1f);
+        GetNextDomino();
+    }
 
     public DominoToken GetNextDomino()
     {          
@@ -99,7 +105,10 @@ public class DominoPooler : MonoBehaviour
         {
             Transform _nextPosition = GetNextFreePosition();
             if (_nextPosition == null)
+            {
+
                 return null;
+            }
 
             EventManager.Dispatch(ENUM_DominoeEvent.getCardEvent);
 
@@ -143,16 +152,17 @@ public class DominoPooler : MonoBehaviour
 
      Transform GetNextFreePosition()
      {
-        if (currentDominoesList.Count >= dominoesSpots.Length)
-            return null;
+        if (currentDominoesList.Count >= dominoesSpots.Length)       
+           return null;      
 
         foreach (DominoSpot spot in dominoesSpots)
             if (spot.IsSpotFree())
             {
-                spot.SetCurrentToken(dominoes[currentIndex]); 
+                spot.SetCurrentToken(dominoes[currentIndex]);
+                //Debug.LogError("Spot found");
                 return spot.transform;
             }
-
+        //Debug.LogError("there is no free spots");
         return null;
      }
 
@@ -163,6 +173,7 @@ public class DominoPooler : MonoBehaviour
             dominoes[i].gameObject.GetComponent<MeshRenderer>().sortingOrder = 100 - i;
         }
     }
+
     [ContextMenu("Reset Cards")]
     public void ResetDominoes()
     {
@@ -213,7 +224,7 @@ public class DominoPooler : MonoBehaviour
         GetNextDomino();
         yield return new WaitForSeconds(0.5f);
         GetNextDomino();
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.3f);
         GetNextDomino();
     }
 
