@@ -13,6 +13,7 @@ public class PunishesManager : MonoBehaviour
         EventManager.AddListener(ENUM_DominoeEvent.punishEvent, TriggerRandomPunish);
         EventManager.AddListener(ENUM_DominoeEvent.selectDoneEvent, SetStandBy);
         EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, QuitStandBy);
+        EventManager.AddListener(ENUM_GameState.firstPhaseFinished, SetStandBy);
     }
 
     private void OnDestroy()
@@ -20,6 +21,7 @@ public class PunishesManager : MonoBehaviour
         EventManager.RemoveListener(ENUM_DominoeEvent.punishEvent, TriggerRandomPunish);
         EventManager.RemoveListener(ENUM_DominoeEvent.selectDoneEvent, SetStandBy);
         EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, QuitStandBy);
+        EventManager.RemoveListener(ENUM_GameState.firstPhaseFinished, SetStandBy);
     }
     private void TriggerRandomPunish()
     {
