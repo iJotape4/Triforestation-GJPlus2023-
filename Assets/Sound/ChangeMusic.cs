@@ -33,13 +33,21 @@ public class ChangeMusic : MonoBehaviour
         }
     }
 
-    public void ChangeSectionMusic(int value) { fmodEventInstance.setParameterByName("ChangeMusic", value); Debug.Log(value); }
+    public void ChangeSectionMusic(int value) { fmodEventInstance.setParameterByName("MainMusic", value); Debug.Log(value); }
     private void OnDestroy()
     {
         fmodEventInstance.release();
     }
-
     private IEnumerator ChangeMusicCoroutine()
+    {
+        for (int i = 0; i <= 10; i++)
+        {
+            yield return new WaitForSeconds(16f);
+            ChangeSectionMusic(i + 1);
+        }
+    }
+
+    /*private IEnumerator ChangeMusicCoroutine()
     {
         yield return new WaitForSeconds(30f);
         ChangeSectionMusic(2);
@@ -49,6 +57,6 @@ public class ChangeMusic : MonoBehaviour
 
         yield return new WaitForSeconds(90f);
         ChangeSectionMusic(4);
-    }
+    }*/
 
 }
