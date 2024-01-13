@@ -199,5 +199,13 @@ namespace Terraforming.Dominoes
             animal.transform.position = position.position;
             EventManager.Dispatch(ENUM_AnimalEvent.animalDroped);
         }
+
+        /// <summary>
+        /// This method should only be called by the PunishToken script
+        /// </summary>
+        public void MarkPunishTokenPoleAsOccupied()
+        {
+            occupuied = true;
+        }
     }
 }
