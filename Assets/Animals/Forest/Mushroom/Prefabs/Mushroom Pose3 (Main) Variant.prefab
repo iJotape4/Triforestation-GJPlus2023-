@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9949b93f0a9e0484e96f4fd149c4eec2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.026
+      value: -0.026000023
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9949b93f0a9e0484e96f4fd149c4eec2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -48,10 +48,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 9949b93f0a9e0484e96f4fd149c4eec2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9949b93f0a9e0484e96f4fd149c4eec2, type: 3}
       propertyPath: m_Name
       value: Mush03
@@ -62,14 +58,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9949b93f0a9e0484e96f4fd149c4eec2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 149926950879388064}
+      addedObject: {fileID: 8146042955741648235}
   m_SourcePrefab: {fileID: 100100000, guid: 9949b93f0a9e0484e96f4fd149c4eec2, type: 3}
 --- !u!1 &1683206645737549864 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9949b93f0a9e0484e96f4fd149c4eec2, type: 3}
   m_PrefabInstance: {fileID: 1989071885480906105}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &149926950879388064
+--- !u!114 &8146042955741648235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColorTexture: {fileID: 0}
+  baseColorTexture: {fileID: 2800000, guid: 2785c04026a9ac24fb8a236b73c24264, type: 3}
   activeNormal: 0
   normalTexture: {fileID: 0}
   activeAO: 0

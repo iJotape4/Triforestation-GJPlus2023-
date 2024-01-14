@@ -5,10 +5,13 @@ public class AnimalShader : MonoBehaviour
 {
     Material animalMat;
     [SerializeField] Texture2D baseColorTexture;
+    [Space(10)]
     [SerializeField] bool activeNormal = false;
     [SerializeField] Texture2D normalTexture;
+    [Space(10)]
     [SerializeField] bool activeAO = false;
     [SerializeField] Texture2D aoTexture;
+    [Space(10)]
     [SerializeField] bool activeAlpha = false;
     [SerializeField] Texture2D alphaTexture;
 
