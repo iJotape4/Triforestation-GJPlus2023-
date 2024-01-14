@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[ExecuteAlways]
+[ExecuteInEditMode]
 public class AutoBase : MonoBehaviour
 {
     Material mat;
@@ -51,6 +51,8 @@ public class AutoBase : MonoBehaviour
 
     void OnValidate()
     {
+        if (Application.isPlaying)
+            return;
         // Update the GroupColor in the Unity Editor
         if (mat.HasProperty(p_GroupColor))
         {

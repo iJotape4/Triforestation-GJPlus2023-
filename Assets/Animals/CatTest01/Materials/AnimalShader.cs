@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[ExecuteAlways]
+[ExecuteInEditMode]
 public class AnimalShader : MonoBehaviour
 {
     Material animalMat;
@@ -41,6 +41,9 @@ public class AnimalShader : MonoBehaviour
 
     void OnValidate()
     {
+        if (Application.isPlaying)
+            return;
+
         SetTextureProperty(p_BaseColor, baseColorTexture);
         SetTextureProperty(p_Normal, normalTexture);
         SetTextureProperty(p_AO, aoTexture);
