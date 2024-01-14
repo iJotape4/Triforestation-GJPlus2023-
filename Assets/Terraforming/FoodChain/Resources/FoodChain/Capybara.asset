@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Capybara
   m_EditorClassIdentifier: 
   name: Capybara
-  chainLevel: 4
-  aliments: 8
+  chainLevel: 2
+  aliments: 4
   biome: 1
   sprite: {fileID: 1598763977, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
-  _3dPrefab: {fileID: 5610368355758788582, guid: 839b805b17093404f803335a0460fb48, type: 3}
+  _3dPrefab:
+  - {fileID: 5610368355758788582, guid: 839b805b17093404f803335a0460fb48, type: 3}

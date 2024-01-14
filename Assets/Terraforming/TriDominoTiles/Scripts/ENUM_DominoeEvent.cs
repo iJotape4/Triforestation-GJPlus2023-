@@ -7,7 +7,7 @@ public enum ENUM_DominoeEvent
     dominoDroppedEvent,
     startOrRestartSwapEvent,
     selectCardToSwipeEvent,
-    confirmSwapEvent,
+    finishPunishEvent,
     setActivePlayFieldObjects,
     cancelEvent,
     validSwap,
@@ -15,4 +15,5 @@ public enum ENUM_DominoeEvent
     tradeCardsForMoor,
     spawnedAcidRainEvent,
     spawnedMoorEvent,
+    generatedTileEvent,
 }

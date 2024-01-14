@@ -139,11 +139,36 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864197
-    m_Localized: "N\xE3o h\xE1 ecossistemas para recuperar neste n\xEDvel"
+    m_Localized: "N\xE3o h\xE1 ecossistemas para recuperar neste n\xEDvel. \xC9 hora
+      de repovoar o mundo"
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864198
     m_Localized: "\xC9 hora de recuperar alguns ecossistemas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555160522719232
+    m_Localized: "\xA1Oops"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3487724911190016
+    m_Localized: Triforestation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190728589312
+    m_Localized: Geral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532352
+    m_Localized: Som
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532353
+    m_Localized: Efeitos sonoros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3521262901518336
+    m_Localized: Confirmar
     m_Metadata:
       m_Items: []
   references:

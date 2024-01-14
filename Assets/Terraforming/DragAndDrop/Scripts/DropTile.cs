@@ -4,17 +4,19 @@ using Terraforming.Dominoes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DropTile : TriangularGrid
+public class DropTile : DropView
 {
     public bool isUpwards = true;
     MeshRenderer meshRenderer;
     public Vector3Int intCenter;
     public MeshCollider meshCollider { get; private set; }
+    public TriangularGrid grid;
 
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         meshCollider = GetComponent<MeshCollider>();
+        grid = GetComponentInParent<TriangularGrid>();
         ChangeAlphaMaterial(0);
     }
 
@@ -75,10 +77,10 @@ public class DropTile : TriangularGrid
         meshRenderer.material.color = color;
     }
 
-    public void GenerateNeighBors()=> GenerateNeighBors(intCenter);
+    public void GenerateNeighBors()=> grid.GenerateNeighBors(intCenter);
     
-    public void OccupyCell() => OccupyCell(intCenter);
+    public void OccupyCell() => grid.OccupyCell(intCenter);
 
     //Method to determine if this cell is free
-    public bool IsCellFree() => IsCellFree(intCenter);
+    public bool IsCellFree() => grid.IsCellFree(intCenter);
 }

@@ -143,6 +143,30 @@ MonoBehaviour:
     m_Key: IG_TimeToRecover
     m_Metadata:
       m_Items: []
+  - m_Id: 3487724911190016
+    m_Key: MM_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3521262901518336
+    m_Key: MM_Confirmar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190728589312
+    m_Key: MM_General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532352
+    m_Key: MM_music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532353
+    m_Key: MM_SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555160522719232
+    m_Key: IG_GameOver
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

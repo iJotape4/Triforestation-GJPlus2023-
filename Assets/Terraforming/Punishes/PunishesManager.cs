@@ -6,26 +6,29 @@ public class PunishesManager : MonoBehaviour
     [SerializeField] private GameObject acidRainPrefab;
     private TriangularGrid grid;
     private bool inStandBy = false;
+    public int punishCount = 0;
 
     private void Awake()
     {
         EventManager.AddListener(ENUM_DominoeEvent.punishEvent, TriggerRandomPunish);
-        EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, SetStandBy);
-        EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, QuitStandBy);
+        EventManager.AddListener(ENUM_DominoeEvent.selectDoneEvent, SetStandBy);
+        EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, QuitStandBy);
+        EventManager.AddListener(ENUM_GameState.firstPhaseFinished, SetStandBy);
     }
-
 
     private void OnDestroy()
     {
         EventManager.RemoveListener(ENUM_DominoeEvent.punishEvent, TriggerRandomPunish);
-        EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, SetStandBy);
-        EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, QuitStandBy);
+        EventManager.RemoveListener(ENUM_DominoeEvent.selectDoneEvent, SetStandBy);
+        EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, QuitStandBy);
+        EventManager.RemoveListener(ENUM_GameState.firstPhaseFinished, SetStandBy);
     }
     private void TriggerRandomPunish()
     {
         if(inStandBy)
             return;
         // TODO: Add more random punishes
+        punishCount++;
         AcidRainPunish();
         EventManager.Dispatch(ENUM_DominoeEvent.selectDoneEvent);
     }

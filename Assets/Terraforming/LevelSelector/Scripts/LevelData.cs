@@ -14,8 +14,8 @@ namespace LevelSelector
 
         public int level;
         [Header("Dominoes")]
-        [Range(1, 200)] public int dominoesAmount;
-
+        [Range(1, 5)] public int tokensInLevelMultiplier =1;
+        [HideInInspector] public int dominoesAmount;
         [SerializeField] public TokenData[] tokenDatas;
 
         //[Header("LevelGoals")]
@@ -32,9 +32,22 @@ namespace LevelSelector
 
         public TokenData[] GetTokenDatas()
         {
-            tokenDatas = LoadAssets<TokenData>(tokenDatasPath+level);
+            tokenDatas = DuplicateArray(LoadAssets<TokenData>(tokenDatasPath+level), tokensInLevelMultiplier);
             dominoesAmount = tokenDatas.Length;
             return tokenDatas;
+        }
+
+        //Method to duplicate every of the elements of an array N times
+        public T[] DuplicateArray<T>(T[] array, int times)
+        {
+            List<T> duplicatedArray = new List<T>();
+
+            for (int i = 0; i < times; i++)
+            {
+                duplicatedArray.AddRange(array);
+            }
+
+            return duplicatedArray.ToArray();
         }
 
         [MenuItem("DevTools/UpdateAllLevelsData",false, 10)]

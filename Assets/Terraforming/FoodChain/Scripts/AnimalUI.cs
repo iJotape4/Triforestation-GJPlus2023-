@@ -1,3 +1,4 @@
+using Events;
 using Terraforming.Dominoes;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,7 +11,6 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     [Header("Animal Data")]
     [SerializeField] public Animal animal;
     [SerializeField] Image UiImage;
-    public GameObject prefabToSpawn; // Reference to the prefab
 
     [Header("CurrentPrefab Data")]
     private bool isDragging = false;
@@ -31,14 +31,13 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private void SetAnimalValues()
     {
         UiImage.sprite = animal.sprite;
-        prefabToSpawn = animal._3dPrefab;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         // Spawn the prefab at the cursor position
-        spawnedPrefab = Instantiate(prefabToSpawn, GetMouseWorldPosition(eventData), Quaternion.identity);
-
+        spawnedPrefab = Instantiate(animal.Get3DPrefab(), GetMouseWorldPosition(eventData), Quaternion.identity);
+        EventManager.Dispatch(ENUM_AnimalEvent.animalPrefabCreated);
         isDragging = true;
     }
 
@@ -95,5 +94,6 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     {
         Destroy(spawnedPrefab);
         spawnedPrefab = null;
+        EventManager.Dispatch(ENUM_AnimalEvent.animalPrefabDestroyed);
     }
 }

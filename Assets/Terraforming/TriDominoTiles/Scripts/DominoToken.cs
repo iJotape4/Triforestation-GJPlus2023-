@@ -24,14 +24,14 @@ namespace Terraforming.Dominoes
            // poles = Array.FindAll(GetComponentsInChildren<DominoPole>(), c => c.gameObject != gameObject);
             dominoCollider = GetComponent<Collider>();
             EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
-            EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
+            EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, SetWasSwappedToFalse);
         }
 
 
         protected virtual void OnDestroy()
         {
             EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
-            EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
+            EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, SetWasSwappedToFalse);
         }
 
         public bool IsUpwards()
@@ -210,26 +210,34 @@ namespace Terraforming.Dominoes
 
             foreach (DominoPole pole in poles)
             {
-                if (pole.pivot == null)
+                if (poles[0].pivot == null)
                     return;
 
-                for (int direction = 0; direction < 2; direction++)
+                for (int direction = 0; direction < 4; direction++)
                 {
-                    float angleOffset = direction == 0 ? 60f : -60f;
-                    Quaternion rotation = Quaternion.Euler(0, pole.pivot.eulerAngles.y + angleOffset, 0); // Rotate in the Y-axis
+                   float angleOffset = direction switch
+                    {
+                       0 => 60f,
+                       1 => -60f,
+                       2 => 120f,
+                       3 => -120f,
+                        _ => 60f, // Handle other cases or error condition.
+                    };
+
+                    Quaternion rotation = Quaternion.Euler(0, poles[0].pivot.eulerAngles.y + angleOffset, 0); // Rotate in the Y-axis
                     Vector3 directionVector = rotation * Vector3.forward; // Use Vector3.forward for the X-Z plane
 
                     Gizmos.color = Color.red; // Set the color of the Gizmo line
-                    Gizmos.DrawRay(pole.pivot.position, directionVector * 1.2f); // Draw the ray
+                    Gizmos.DrawRay(poles[0].pivot.position, directionVector * 1.2f); // Draw the ray
 
                     int dominoPoleLayerMask = LayerMask.GetMask("DominoPole");
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(pole.pivot.position, directionVector, out hit, 1.2f, dominoPoleLayerMask))
+                    if (Physics.Raycast(poles[0].pivot.position, directionVector, out hit, 1.2f, dominoPoleLayerMask))
                     {
                         Gizmos.color = Color.green; // Set the color of the Gizmo line for successful hit
-                        Gizmos.DrawLine(pole.pivot.position, hit.point);
+                        Gizmos.DrawLine(poles[0].pivot.position, hit.point);
                     }
                 }
             }

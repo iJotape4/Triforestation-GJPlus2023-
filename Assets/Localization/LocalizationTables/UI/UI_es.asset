@@ -139,11 +139,37 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864197
-    m_Localized: No hay ecosistemas para recuperar en este nivel
+    m_Localized: No hay ecosistemas para recuperar en este nivel. Momento de repoblar
+      el mundo
     m_Metadata:
       m_Items: []
   - m_Id: 2229106297864198
     m_Localized: Hora de recuperar algunos ecosistemas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555160522719232
+    m_Localized: ' Proterozoic acid rain! Eco-friendly fashion has its whims. Try
+      again and show nature your power!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3487724911190016
+    m_Localized: Triforestation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190728589312
+    m_Localized: General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532352
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513190770532353
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3521262901518336
+    m_Localized: Confirmar
     m_Metadata:
       m_Items: []
   references:

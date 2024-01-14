@@ -12,8 +12,8 @@ public class TriangularGrid : DropView
     [SerializeField] private GameObject token;
     public GameObject gridTile;
     public Vector3Int initialPosition;
-    private static HashSet<Vector3Int> generatedCells = new HashSet<Vector3Int>();
-    private static HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
+    private HashSet<Vector3Int> generatedCells = new HashSet<Vector3Int>();
+    private HashSet<Vector3Int> occupiedCells = new HashSet<Vector3Int>();
 
     private ((int min, int max) x , (int min, int max) y , (int min,  int max) z) currentRange;
     
@@ -180,6 +180,7 @@ public class TriangularGrid : DropView
                 dropTile.intCenter = neighbor;
             }
 
+            EventManager.Dispatch(ENUM_DominoeEvent.generatedTileEvent, center);
             //Debug.Log($"Neighbor {center}");
             //  Instantiate(gridTile, TriCenter(neighbor), transform.rotation);
         }
