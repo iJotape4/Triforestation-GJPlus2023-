@@ -1,4 +1,5 @@
 using Events;
+using System;
 using System.Collections.Generic;
 using Terraforming.Dominoes;
 using UnityEngine;
@@ -9,21 +10,31 @@ public class DominoPolesGrouper : MonoBehaviour
     List<DominoPole> agroupedPoles = new List<DominoPole>();
 
     List<Group> groupsList = new List<Group>();
-
+    int droppedAnimals=0;
 
     private void Awake()
     {
-        EventManager.AddListener(ENUM_GameState.secondPhaseFinished, OnSecondPhaseFinished);
-        EventManager.AddListener(ENUM_GameState.firstPhaseFinished, OnSecondPhaseFinished);
+        EventManager.AddListener(ENUM_GameState.secondPhaseFinished, SecondPhaseFinised);
+        EventManager.AddListener(ENUM_GameState.poolAnimals, OnPoolAnimalsStarted);
+        EventManager.AddListener(ENUM_AnimalEvent.animalDroped, CheckLevelEnd);
     }
 
     private void OnDestroy()
     {
-        EventManager.RemoveListener(ENUM_GameState.secondPhaseFinished, OnSecondPhaseFinished);
-        EventManager.RemoveListener(ENUM_GameState.firstPhaseFinished, OnSecondPhaseFinished);
+        EventManager.RemoveListener(ENUM_GameState.secondPhaseFinished, SecondPhaseFinised);
+        EventManager.RemoveListener(ENUM_GameState.poolAnimals, OnPoolAnimalsStarted);
+        EventManager.RemoveListener(ENUM_AnimalEvent.animalDroped, CheckLevelEnd);
+    }
+    private void CheckLevelEnd()
+    {
+        droppedAnimals++;
+        if(droppedAnimals >= polesList.Length)
+        {
+            EventManager.Dispatch(ENUM_GameState.secondPhaseFinished);
+        }
     }
 
-    private void OnSecondPhaseFinished()
+    private void OnPoolAnimalsStarted()
     {
         polesList = GetComponentsInChildren<DominoPole>();  
 
@@ -39,7 +50,6 @@ public class DominoPolesGrouper : MonoBehaviour
                 CheckPoleConnections(pole, newGroup);
             }          
         }
-
         CountGroupsList();
     }
 
@@ -48,6 +58,7 @@ public class DominoPolesGrouper : MonoBehaviour
         Debug.Log("Checking " + pole.biome + " pole connections", pole.gameObject);
         agroupedPoles.Add(pole);
         group.poles.Add(pole);
+        pole.group = group;
 
         bool[] connected = new bool[4];
 
@@ -92,7 +103,18 @@ public class DominoPolesGrouper : MonoBehaviour
             Debug.Log(" Group " + group.ID + " of " + group.biome + " has " + group.poles.Count + " poles");
 
         }
-    }        
+    }
+    
+    void SecondPhaseFinised()
+    {
+        int totalScore=0;
+        foreach (Group group in groupsList)
+        {
+            totalScore += group.GetGroupScore();
+        }
+
+        Debug.Log("total score" + totalScore);
+    }
 }
 
 
@@ -103,39 +125,67 @@ public struct Group
         this.ID = ID;
         this.biome = biome;
         poles = new List<DominoPole>();
-        animals = new List<Animal>();
+       // animals = new List<Animal>();
+        alphas = 0;
+        predators = 0;   
+        preys = 0;
     }
 
    public int ID;
    public ENUM_Biome biome;
    public List<DominoPole> poles;
-   public List<Animal> animals;
+    //public List<Animal> animals;
+    private int alphas;
+    private int predators;
+    private int preys;
 
-    public void CalculateAnimalsAmount()
+    public bool AddAnimal(ENUM_FoodChainLevel chainLevel)
     {
-        int alphas=0, primaryConsomers=0, secondaryConsomers=0;
-
-
-        foreach (DominoPole pole in poles)       
-            if (pole.animalData)            
-               animals.Add(pole.animalData);       
-        
-        foreach (Animal animal in animals)
+        switch (chainLevel)
         {
-            switch (animal.chainLevel)
-            {
-                case ENUM_FoodChainLevel.AnimalKing:
+            case ENUM_FoodChainLevel.Prey:
+                preys++;
+
+                return true;
+            case ENUM_FoodChainLevel.Predator:
+                if(predators == 0 && preys >= 2)
+                {
+                    predators++;
+                    return true;
+                }
+                else if(preys >= predators * 2 && preys>0)
+                {
+                    predators++;
+                    return true;
+                }
+                else return false;
+            case ENUM_FoodChainLevel.AnimalKing:
+                if (alphas == 0 && predators >= 2)
+                {
+                    predators++;
+                    return true;
+                }
+                else if(predators >= alphas * 2 && predators>0)
+                {
                     alphas++;
-                    break;
-                case ENUM_FoodChainLevel.Predator:
-                    primaryConsomers++;
-                    break;
-                case ENUM_FoodChainLevel.Prey:
-                    secondaryConsomers++;
-                    break;
-                default:
-                    break;
-            }
+                    return true;
+                }       
+                else return false;
+            default:
+                return false;
         }
+    }
+    
+    public int GetGroupScore()
+    {
+        //Suggested Score
+        //int score = 0;
+        //score += alphas * 3;
+        //score += primaryConsomers * 2;
+        //score += secondaryConsomers;
+
+        //Current score
+        int score = (predators+preys+alphas)*2;        
+        return score;
     }
 }
