@@ -3,6 +3,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class AutoBase : MonoBehaviour
 {
+#if UNITY_EDITOR
     Material mat;
     [SerializeField] Animal animal;
 
@@ -98,7 +99,6 @@ public class AutoBase : MonoBehaviour
         }
     }
 
-#if UNITY_EDITOR
     [ContextMenu("UpdateMaterials")]
     void UpdateMaterials()
     {

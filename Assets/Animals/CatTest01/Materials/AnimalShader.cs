@@ -3,6 +3,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class AnimalShader : MonoBehaviour
 {
+ #if UNITY_EDITOR
     Material animalMat;
     [SerializeField] Texture2D baseColorTexture;
     [Space(10)]
@@ -84,4 +85,5 @@ public class AnimalShader : MonoBehaviour
             Debug.LogError("Shader does not have the specified parameter: " + propertyName);
         }
     }
+    #endif
 }
