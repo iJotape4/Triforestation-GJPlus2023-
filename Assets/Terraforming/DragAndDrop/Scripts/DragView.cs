@@ -66,6 +66,8 @@ namespace Terraforming
             collider.enabled = false;
             isDragging = true;
             OnDragBegan?.Invoke(eventData);
+            if (mainCamera == null)
+                mainCamera = Camera.main;
             distanceToCamera = Vector3.Distance(transform.position, mainCamera.transform.position);
             EventManager.Dispatch(ENUM_SFXEvent.dragSound);
         }
