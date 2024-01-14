@@ -24,6 +24,17 @@ public enum SFXParameters_ActionSfx
 {
     LluviaAcida = 0,
     Tormenta = 1,
+    
+}
+public enum SFXParameters_FaseLluvia
+{
+    Inicio = 0,
+    Suave = 1,
+    Medio = 2,
+    Alto = 3,
+    PreFinal = 4,
+    Final = 5,
+    Silenci = 6
 }
 
 public enum SFXParameters_Animal
