@@ -55,13 +55,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 83094f2b92f3e224bb431de91a370e0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8703510531824197061}
   m_SourcePrefab: {fileID: 100100000, guid: 83094f2b92f3e224bb431de91a370e0c, type: 3}
 --- !u!4 &1279132030529532837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 83094f2b92f3e224bb431de91a370e0c, type: 3}
   m_PrefabInstance: {fileID: 1606336668744553550}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1912819697657129247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 83094f2b92f3e224bb431de91a370e0c, type: 3}
+  m_PrefabInstance: {fileID: 1606336668744553550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8703510531824197061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912819697657129247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseColorTexture: {fileID: 2800000, guid: 0a04ed849cc3bc346a5378a5b922a769, type: 3}
+  activeNormal: 1
+  normalTexture: {fileID: 2800000, guid: f9282428b375f9b448afc599fced261a, type: 3}
+  activeAO: 0
+  aoTexture: {fileID: 0}
+  activeAlpha: 0
+  alphaTexture: {fileID: 0}
 --- !u!1001 &3831048777268793761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,6 +141,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 82e2c1ea814793a4098bc9be9a6c9d6a, type: 2}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: animal
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d1766f84fe6c9e429c2249708792df4, type: 2}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: baseTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: a7c1fbd91384fd042bc3dcf592eb1e78, type: 3}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.b
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.r
+      value: 0.38431373
+      objectReference: {fileID: 0}
     - target: {fileID: 7666611121050271113, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
       propertyPath: m_Name
       value: GoldenPoisonFrog

@@ -48,6 +48,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: animal
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b5344f6cbba374469b0941a3922f95c, type: 2}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: baseTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: a7c1fbd91384fd042bc3dcf592eb1e78, type: 3}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.b
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.r
+      value: 0.38431373
+      objectReference: {fileID: 0}
     - target: {fileID: 7666611121050271113, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
       propertyPath: m_Name
       value: SquirrelMonkey
@@ -120,10 +136,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e35ca037aeb54c146bc6f90f5bc47ee0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7659264613587347896}
   m_SourcePrefab: {fileID: 100100000, guid: e35ca037aeb54c146bc6f90f5bc47ee0, type: 3}
 --- !u!4 &5049109215896832434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e35ca037aeb54c146bc6f90f5bc47ee0, type: 3}
   m_PrefabInstance: {fileID: 4726725076288007769}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5573726497775997704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e35ca037aeb54c146bc6f90f5bc47ee0, type: 3}
+  m_PrefabInstance: {fileID: 4726725076288007769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7659264613587347896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573726497775997704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseColorTexture: {fileID: 2800000, guid: dbce79cf5fb2b7843bbe73bdc57be193, type: 3}
+  activeNormal: 1
+  normalTexture: {fileID: 2800000, guid: 51a6ef34f41b0f04ea35f66fc15e223c, type: 3}
+  activeAO: 1
+  aoTexture: {fileID: 2800000, guid: 848598e564fc8fe4baee1b9ce292e00b, type: 3}
+  activeAlpha: 0
+  alphaTexture: {fileID: 0}

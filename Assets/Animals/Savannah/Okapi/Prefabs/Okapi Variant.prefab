@@ -67,13 +67,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55d9fd37cf4416e47b23222891cd0f17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 673759623522192920}
   m_SourcePrefab: {fileID: 100100000, guid: 55d9fd37cf4416e47b23222891cd0f17, type: 3}
 --- !u!4 &1279367008045110564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 55d9fd37cf4416e47b23222891cd0f17, type: 3}
   m_PrefabInstance: {fileID: 1606519522869605071}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1912597381611933598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 55d9fd37cf4416e47b23222891cd0f17, type: 3}
+  m_PrefabInstance: {fileID: 1606519522869605071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &673759623522192920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912597381611933598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseColorTexture: {fileID: 2800000, guid: 7fa51d18adb29454a81f3d67d1fee24c, type: 3}
+  activeNormal: 1
+  normalTexture: {fileID: 2800000, guid: e6fe7852e69b25c4ebbf68583b00b63e, type: 3}
+  activeAO: 1
+  aoTexture: {fileID: 2800000, guid: 812f4b2e671a3644a8c0a30605697b73, type: 3}
+  activeAlpha: 0
+  alphaTexture: {fileID: 0}
 --- !u!1001 &7345380311567884473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,6 +148,22 @@ PrefabInstance:
     - target: {fileID: 509094693854522474, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: animal
+      value: 
+      objectReference: {fileID: 11400000, guid: c176c52ee4ee5824ba746fc395d61d51, type: 2}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: baseTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 68ab107824e189b439798fc5f5db6d7f, type: 3}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.b
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.r
+      value: 0.38431373
       objectReference: {fileID: 0}
     - target: {fileID: 7666611121050271113, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
       propertyPath: m_Name
