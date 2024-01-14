@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 106de4c2ddcdaaa4a86f62c95fcde1d3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a66c5f383dd39c4b88dcc59597b5dd2, type: 2}
     - target: {fileID: 919132149155446097, guid: 106de4c2ddcdaaa4a86f62c95fcde1d3, type: 3}
       propertyPath: m_Name
       value: Ardilla
@@ -55,8 +59,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 106de4c2ddcdaaa4a86f62c95fcde1d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2059729694545376516}
   m_SourcePrefab: {fileID: 100100000, guid: 106de4c2ddcdaaa4a86f62c95fcde1d3, type: 3}
+--- !u!1 &2583607303804090971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 106de4c2ddcdaaa4a86f62c95fcde1d3, type: 3}
+  m_PrefabInstance: {fileID: 3394510113444579082}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2059729694545376516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583607303804090971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseColorTexture: {fileID: 2800000, guid: e10b3124844b46847b9d215102fa8fb6, type: 3}
+  activeNormal: 1
+  normalTexture: {fileID: 2800000, guid: 530f9e744e5895d4bab9139237e1e94a, type: 3}
+  activeAO: 0
+  aoTexture: {fileID: 0}
+  activeAlpha: 0
+  alphaTexture: {fileID: 0}
 --- !u!4 &2923119333492695265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 106de4c2ddcdaaa4a86f62c95fcde1d3, type: 3}
@@ -109,6 +140,26 @@ PrefabInstance:
     - target: {fileID: 509094693854522474, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: animal
+      value: 
+      objectReference: {fileID: 11400000, guid: 4eb44443037f62f40b580ea82914f0e0, type: 2}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: baseTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 1a4cc7cca6014a947a7402c5f7d4874e, type: 3}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.b
+      value: 0.1882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.g
+      value: 0.40784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.r
+      value: 0.13725491
       objectReference: {fileID: 0}
     - target: {fileID: 7666611121050271113, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
       propertyPath: m_Name
