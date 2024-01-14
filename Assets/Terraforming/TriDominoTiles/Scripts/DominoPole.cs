@@ -115,7 +115,10 @@ namespace Terraforming.Dominoes
             {
                 //Check current population in the group
                 if (group.AddAnimal(token.animal.chainLevel))
+                {
+                    EventManager.Dispatch(ENUM_AnimalEvent.biomePoleOccupied);
                     OccupyPole(token.spawnedPrefab, centroid);
+                }
                 else
                     token.InvalidDrop();
 
