@@ -118,7 +118,7 @@ public class DominoPolesGrouper : MonoBehaviour
 }
 
 
-public struct Group
+public class Group
 {
     public Group(int ID, ENUM_Biome biome)
     {
@@ -126,48 +126,35 @@ public struct Group
         this.biome = biome;
         poles = new List<DominoPole>();
        // animals = new List<Animal>();
-        alphas = 0;
-        predators = 0;   
-        preys = 0;
     }
 
    public int ID;
    public ENUM_Biome biome;
    public List<DominoPole> poles;
     //public List<Animal> animals;
-    private int alphas;
-    private int predators;
-    private int preys;
+    private int alphas=0;
+    private int predators=0;
+    private int preys = 0;
 
     public bool AddAnimal(ENUM_FoodChainLevel chainLevel)
     {
         switch (chainLevel)
         {
             case ENUM_FoodChainLevel.Prey:
-                preys++;
+                this.preys++;
 
                 return true;
             case ENUM_FoodChainLevel.Predator:
-                if(predators == 0 && preys >= 2)
-                {
+                 if(predators+1 <= preys / 2 && preys>0)
+                 {
                     predators++;
                     return true;
-                }
-                else if(preys >= predators * 2 && preys>0)
-                {
-                    predators++;
-                    return true;
-                }
+                 }
                 else return false;
             case ENUM_FoodChainLevel.AnimalKing:
-                if (alphas == 0 && predators >= 2)
+                if(alphas+1 <= predators / 2 && predators>0)
                 {
-                    predators++;
-                    return true;
-                }
-                else if(predators >= alphas * 2 && predators>0)
-                {
-                    alphas++;
+                    this.alphas++;
                     return true;
                 }       
                 else return false;
