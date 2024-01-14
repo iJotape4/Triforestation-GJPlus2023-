@@ -13,13 +13,14 @@ public class GetLocalizationSettingsOnStartApplication : MonoBehaviour
     public int GetDefaultLocale() => PlayerPrefs.GetInt("LocaleKey", GetSystemLanguage());
     public int GetSystemLanguage()
     {
-        if (Application.systemLanguage == SystemLanguage.English)
-            return 0;
-        if (Application.systemLanguage == SystemLanguage.Portuguese)
-            return 1;
-        if (Application.systemLanguage == SystemLanguage.Spanish)
-            return 2;
-
-        return 0;
+        return Application.systemLanguage switch
+        {
+            SystemLanguage.English => 0,
+            SystemLanguage.Portuguese => 1,
+            SystemLanguage.Korean => 2,
+            SystemLanguage.Italian => 3,
+            SystemLanguage.Spanish => 4,
+            _ => 0,
+        };
     }
 }
