@@ -10,13 +10,13 @@ public class WildCardToken : DominoToken
     protected override void Awake()
     {
         base.Awake();
-        EventManager.AddListener(ENUM_GameState.poolAnimals, SetWildCardPole);
+        EventManager.AddListener(ENUM_GameState.firstPhaseFinished, SetWildCardPole);
     }
 
     protected override void OnDestroy()
     {
         base.OnDestroy();
-        EventManager.RemoveListener(ENUM_GameState.poolAnimals, SetWildCardPole);
+        EventManager.RemoveListener(ENUM_GameState.firstPhaseFinished, SetWildCardPole);
     }
     /// <summary>
     /// Transforms the WildCard token into an whole pole that only receives the condor
