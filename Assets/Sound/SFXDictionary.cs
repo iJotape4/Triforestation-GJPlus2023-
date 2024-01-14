@@ -9,9 +9,7 @@ public static class SFXDictionary
     public const string Play = "event:/Button";
     public const string Rotate = "event:/Button";
     public const string Select = "event:/Button";
-    public const string Unselect = "event:/Button";
-    public const string AnimalSFX= "event:/Animal";
-    
+    public const string Unselect = "event:/Button";    
 
     //Actions 
     public const string ActionSFX = "event:/ActionSfx";

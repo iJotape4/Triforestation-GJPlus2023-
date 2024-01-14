@@ -45,7 +45,7 @@ public enum SFXParameters_Animal
     Jungla_Rana = 3,
     Jungla_Jaguar = 4,
     Jungla_Guacamayo = 5,
-    Jungla_Tucán = 6,
+    Jungla_Tucan = 6,
 
     BosqueOtonal_Ciervo = 7,
     BosqueOtonal_Oso = 8,
