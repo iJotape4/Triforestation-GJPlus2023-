@@ -82,7 +82,7 @@ public class ChangeMusic : MonoBehaviour
       {
             for (int i = 5; i <=8; i++)
             {
-                yield return new WaitForSeconds(16f);
+                yield return new WaitForSeconds(32f);
                 ChangeSectionMusic(i + 1);
             }       
       }
