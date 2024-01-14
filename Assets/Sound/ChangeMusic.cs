@@ -12,7 +12,7 @@ public class ChangeMusic : MonoBehaviour
 
     private EventInstance fmodEventInstance;
 
-    [SerializeField] [Range(0, 4)] private int sectionMusic;
+    [SerializeField] [Range(0, 10)] private int sectionMusic;
     private int sectionPlaying;
 
     private void Start()

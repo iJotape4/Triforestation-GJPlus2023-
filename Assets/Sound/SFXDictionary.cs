@@ -3,15 +3,16 @@ public static class SFXDictionary
     public const string spellCard = "event:/SFX/Button/SpellCard";
     public const string drag = "event:/SFX/DragCard";
     public const string drop = "event:/SFX/DropCard";
-    public const string check = "event:/SFX/Button/Check";
-    public const string Error = "event:/SFX/Button/Error";
-    public const string Good = "event:/SFX/Button/Good";
-    public const string Play = "event:/SFX/Button/Play";
-    public const string Rotate = "event:/SFX/Button/Rotate";
-    public const string Select = "event:/SFX/Button/Select";
-    public const string Unselect = "event:/SFX/Button/Unselect";
+    public const string check = "event:/SFX/Button";
+    public const string Error = "event:/SFX/Button";
+    public const string Good = "event:/SFX/Button";
+    public const string Play = "event:/SFX/Button";
+    public const string Rotate = "event:/SFX/Button";
+    public const string Select = "event:/SFX/Button";
+    public const string Unselect = "event:/SFX/Button";
 
     //Animalles Sabana Africana
+    
     public const string EscarabajoSabanaAfricana = "event:/SFX/AfricanSavannah/Escarabajo";
     public const string GuepardoSabanaAfricana = "event:/SFX/AfricanSavannah/Guepardo";
     public const string ElefanteSabanaAfricana = "event:/SFX/AfricanSavannah/Elefante";
