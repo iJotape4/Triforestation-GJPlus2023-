@@ -148,7 +148,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2555160522719232
-    m_Localized: xxxxxxxxxx
+    m_Localized: " lluvia \xE1cida del Proterozoico! La moda ecol\xF3gica tiene sus
+      caprichos. \xA1Vuelve a intentarlo y demu\xE9strale a la naturaleza tu poder!"
     m_Metadata:
       m_Items: []
   - m_Id: 3487724911190016
@@ -156,19 +157,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3513190728589312
-    m_Localized: xxxxxxxxxx
+    m_Localized: Generale
     m_Metadata:
       m_Items: []
   - m_Id: 3513190770532352
-    m_Localized: xxxxxxxxxx
+    m_Localized: Suono
     m_Metadata:
       m_Items: []
   - m_Id: 3513190770532353
-    m_Localized: xxxxxxxxxx
+    m_Localized: Effetti sonori
     m_Metadata:
       m_Items: []
   - m_Id: 3521262901518336
-    m_Localized: xxxxxxxxxx
+    m_Localized: Confermare
     m_Metadata:
       m_Items: []
   references:
