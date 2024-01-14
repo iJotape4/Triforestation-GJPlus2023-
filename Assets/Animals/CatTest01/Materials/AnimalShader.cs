@@ -24,7 +24,7 @@ public class AnimalShader : MonoBehaviour
 
     void Awake()
     {
-        animalMat = GetComponent<MeshRenderer>().material;
+        animalMat = GetComponent<Renderer>().material;
 
         SetTextureProperty(p_BaseColor, baseColorTexture);
         SetTextureProperty(p_Normal, normalTexture);

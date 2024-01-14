@@ -48,20 +48,144 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3867982987519753701, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a66c5f383dd39c4b88dcc59597b5dd2, type: 2}
+    - target: {fileID: -1112904363587386685, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a66c5f383dd39c4b88dcc59597b5dd2, type: 2}
+    - target: {fileID: -779773414512100305, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a66c5f383dd39c4b88dcc59597b5dd2, type: 2}
     - target: {fileID: 919132149155446097, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
       propertyPath: m_Name
       value: Worms
       objectReference: {fileID: 0}
+    - target: {fileID: 8311967949878192064, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a66c5f383dd39c4b88dcc59597b5dd2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -2589507490209878263, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8363347769529279599}
+    - targetCorrespondingSourceObject: {fileID: -3108199782784350515, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2750014522922879827}
+    - targetCorrespondingSourceObject: {fileID: -8030182054170757871, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2141463701911024736}
+    - targetCorrespondingSourceObject: {fileID: 6155073465189307661, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7281646190253274112}
   m_SourcePrefab: {fileID: 100100000, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+--- !u!1 &1650698797935218918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3108199782784350515, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+  m_PrefabInstance: {fileID: 4770720532966839851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2750014522922879827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650698797935218918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseColorTexture: {fileID: 2800000, guid: b548e2ebadf2c6d4e9392b21848720e9, type: 3}
+  activeNormal: 1
+  normalTexture: {fileID: 2800000, guid: 568512724450b3d40818fc07c8b27580, type: 3}
+  activeAO: 0
+  aoTexture: {fileID: 0}
+  activeAlpha: 0
+  alphaTexture: {fileID: 0}
+--- !u!1 &1683844577337541414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6155073465189307661, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+  m_PrefabInstance: {fileID: 4770720532966839851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7281646190253274112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683844577337541414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseColorTexture: {fileID: 2800000, guid: b548e2ebadf2c6d4e9392b21848720e9, type: 3}
+  activeNormal: 1
+  normalTexture: {fileID: 2800000, guid: 568512724450b3d40818fc07c8b27580, type: 3}
+  activeAO: 0
+  aoTexture: {fileID: 0}
+  activeAlpha: 0
+  alphaTexture: {fileID: 0}
+--- !u!1 &2172205772567820578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2589507490209878263, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+  m_PrefabInstance: {fileID: 4770720532966839851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8363347769529279599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2172205772567820578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseColorTexture: {fileID: 2800000, guid: b548e2ebadf2c6d4e9392b21848720e9, type: 3}
+  activeNormal: 1
+  normalTexture: {fileID: 2800000, guid: 568512724450b3d40818fc07c8b27580, type: 3}
+  activeAO: 0
+  aoTexture: {fileID: 0}
+  activeAlpha: 0
+  alphaTexture: {fileID: 0}
 --- !u!4 &5025938505119560128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
   m_PrefabInstance: {fileID: 4770720532966839851}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5961093531354915642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8030182054170757871, guid: e4e557666c167bc4a9598e494b85e810, type: 3}
+  m_PrefabInstance: {fileID: 4770720532966839851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2141463701911024736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961093531354915642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseColorTexture: {fileID: 2800000, guid: b548e2ebadf2c6d4e9392b21848720e9, type: 3}
+  activeNormal: 1
+  normalTexture: {fileID: 2800000, guid: 568512724450b3d40818fc07c8b27580, type: 3}
+  activeAO: 0
+  aoTexture: {fileID: 0}
+  activeAlpha: 0
+  alphaTexture: {fileID: 0}
 --- !u!1001 &8576374588800530779
 PrefabInstance:
   m_ObjectHideFlags: 0
