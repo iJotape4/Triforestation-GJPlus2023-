@@ -40,27 +40,6 @@ public class AnimalShader : MonoBehaviour
         SetBoolProperty(p_ActiveAlpha, activeAlpha);
     }
 
-    void OnValidate()
-    {
-        if (Application.isPlaying)
-            return;
-
-        SetTextureProperty(p_BaseColor, baseColorTexture);
-        SetTextureProperty(p_Normal, normalTexture);
-        SetTextureProperty(p_AO, aoTexture);
-        SetTextureProperty(p_Alpha, alphaTexture);
-
-        SetBoolProperty(p_ActiveNormal, activeNormal);
-        SetBoolProperty(p_ActiveAO, activeAO);
-        SetBoolProperty(p_ActiveAlpha, activeAlpha);
-    }
-
-    void Start()
-    {
-        // You can add additional runtime logic here if needed
-    }
-
-    // Helper method to set a texture property on the material
     void SetTextureProperty(string propertyName, Texture2D texture)
     {
         if (animalMat.HasProperty(propertyName))

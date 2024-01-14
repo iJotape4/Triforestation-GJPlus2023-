@@ -1,9 +1,7 @@
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class AutoBase : MonoBehaviour
 {
-#if UNITY_EDITOR
     Material mat;
     [SerializeField] Animal animal;
 
@@ -28,6 +26,7 @@ public class AutoBase : MonoBehaviour
     void Awake()
     {
         mat = GetComponent<MeshRenderer>().material;
+        UpdateMaterials();
 
         // Set the GroupColor during Awake if it's not already set in the Unity Editor
         if (!mat.HasProperty(p_GroupColor))
@@ -50,56 +49,6 @@ public class AutoBase : MonoBehaviour
         }
     }
 
-    void OnValidate()
-    {
-        if (Application.isPlaying)
-            return;
-        // Update the GroupColor in the Unity Editor
-        if (mat.HasProperty(p_GroupColor))
-        {
-            mat.SetColor(p_GroupColor, groupColor);
-        }
-        else
-        {
-            Debug.LogError("Shader Graph does not have the specified parameter: " + p_GroupColor);
-        }
-
-        // Update the BaseTexture in the Unity Editor
-        if (mat.HasProperty(p_BaseTexture))
-        {
-            mat.SetTexture(p_BaseTexture, baseTexture);
-        }
-        else
-        {
-            Debug.LogError("Shader Graph does not have the specified parameter: " + p_BaseTexture);
-        }
-        UpdateMaterials();
-    }
-
-    void Start()
-    {
-        // Set the GroupColor during runtime if it's not already set
-        if (mat.HasProperty(p_GroupColor))
-        {
-            mat.SetColor(p_GroupColor, groupColor);
-        }
-        else
-        {
-            Debug.LogError("Shader Graph does not have the specified parameter: " + p_GroupColor);
-        }
-
-        // Set the BaseTexture during runtime if it's not already set
-        if (mat.HasProperty(p_BaseTexture))
-        {
-            mat.SetTexture(p_BaseTexture, baseTexture);
-        }
-        else
-        {
-            Debug.LogError("Shader Graph does not have the specified parameter: " + p_BaseTexture);
-        }
-    }
-
-    [ContextMenu("UpdateMaterials")]
     void UpdateMaterials()
     {
         UpdateBorderMaterial();
@@ -164,5 +113,4 @@ public class AutoBase : MonoBehaviour
         };
         return biomeID;
     }
-#endif
 }

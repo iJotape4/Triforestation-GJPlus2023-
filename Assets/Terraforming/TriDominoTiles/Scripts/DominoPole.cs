@@ -22,6 +22,7 @@ namespace Terraforming.Dominoes
 
         public Collider poleCollider;
         public bool occupuied { get; private set; }
+        [HideInInspector] public Animal animalData;
 
         // Define the first color with hexadecimal code #6481FF
         public static Color blue = new Color(0x64 / 255f, 0x81 / 255f, 0xFF / 255f);
@@ -196,8 +197,11 @@ namespace Terraforming.Dominoes
         public void OccupyPole(GameObject animal, Transform position)
         {
             occupuied = true;
+            AnimalBehaviour animalBehaviour = GetComponent<AnimalBehaviour>();
+
             animal.transform.position = position.position;
-            animal.GetComponent<AnimalBehaviour>().OnAnimalDroped();
+            animalBehaviour.OnAnimalDroped();
+            animalData = animalBehaviour.animalData;
             EventManager.Dispatch(ENUM_AnimalEvent.animalDroped);
         }
 

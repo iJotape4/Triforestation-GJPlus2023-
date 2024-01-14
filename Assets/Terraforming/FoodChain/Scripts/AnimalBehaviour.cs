@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AnimalBehaviour : MonoBehaviour
 {
-    [SerializeField] Animal animalData;
+    [SerializeField] public Animal animalData { get; private set; }
 
     public void OnAnimalDroped()
     {
