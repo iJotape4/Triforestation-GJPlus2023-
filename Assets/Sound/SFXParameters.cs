@@ -25,85 +25,81 @@ public enum SFXParameters_ActionSfx
     LluviaAcida = 0,
     Tormenta = 1,
 }
-public enum SFXParameters_SabanaAfricana
-{
-    Escarabajo = 0,
-    Guepardo = 1,
-    Elefante = 2,
-    Gacela = 3,
-    Ñu = 4,
-    Hiena = 5,
-    Jirafa = 6,
-    León = 7,
-    Avestruz = 8,
-    Termita =9,
-    Cebra =10
 
-}
-public enum SFXParameters_SabanaAustraliana
+public enum SFXParameters_Animal
 {
-    Lechuza = 1,
-    Escarabajo = 2,
-    Dingo = 3,
-    Emu = 4,
-    Canguro = 5,
-    Koala = 6,
-    Termita = 7
-}
+    Jungla_Escarabajo = 0,
+    Jungla_Mariposa = 1,
+    Jungla_Capibara = 2,
+    Jungla_Rana = 3,
+    Jungla_Jaguar = 4,
+    Jungla_Guacamayo = 5,
+    Jungla_Tucán = 6,
 
-public enum SFXParameters_Jungla
-{
-    Escarabajo = 1,
-    Mariposa = 2,
-    Capibara = 3,
-    RanaVenenosa = 4,
-    Jaguar = 5,
-    Guacamayo = 6,
-    Tucan = 7
-}
+    BosqueOtonal_Ciervo = 7,
+    BosqueOtonal_Oso = 8,
+    BosqueOtonal_Buho = 9,
+    BosqueOtonal_Mapache = 10,
+    BosqueOtonal_Lince = 11,
+    BosqueOtonal_Culebra = 12,
+    BosqueOtonal_Ardilla = 13,
 
-public enum SFXParameters_BosqueOtonial
-{
-    Ciervo = 1,
-    OsoGrizzly = 2,
-    BuhoComun = 3,
-    Mapache = 4,
-    LinceRojo = 5,
-    Culebra = 6,
-    Ardilla = 7
-}
+    Pradera_Bisonte = 14,
+    Pradera_Coyote = 15,
+    Pradera_Halcon = 16,
+    Pradera_Aguila = 17,
+    Pradera_Perdiz = 18,
+    Pradera_Conejo = 19,
+    Pradera_Serpiente = 20,
 
-public enum SFXParameters_Pradera {
-    Bisonte = 1,
-    Coyote = 2,
-    HalconPeregrino = 3,
-    AguilaReal = 4,
-    Perdiz = 5,
-    Conejo = 6,
-    Serpiente = 7
-}
-public enum SFXParameters_PradoFLoral {
-    Abeja = 1,
-    Mariposa = 2,
-    Halcon = 3,
-    Zorro = 4,
-    Liebre = 5,
-    Perdiz = 6
-}
-public enum SFXParameters_Manglar { }
-public enum SFXParameters_TundraNevada {
-    Zorro = 1,
-    Buho = 2,
-    Liebre = 3,
-    Alce = 4,
-    Jabali = 5,
-    Lobo = 6
-}
-public enum SFXParameters_Montania {
-    Condor = 1,
-    Aguila = 2,
-    Cabra = 3,
-    Llama = 4,
-    Lince = 5,
-    Conejo = 6
+    PradoFloral_Abeja = 21,
+    PradoFloral_Mariposa = 22,
+    PradoFloral_Halcon = 23,
+    PradoFloral_Zorro = 24,
+    PradoFloral_Liebre = 25,
+    PradoFloral_Perdiz = 26,
+
+    RioYManglar_Anaconda = 27,
+    RioYManglar_Caiman = 28,
+    RioYManglar_Camaron = 29,
+    RioYManglar_Delfin = 30,
+    RioYManglar_Libelula = 31,
+    RioYManglar_Pirana = 32,
+    RioYManglar_Salmon = 33,
+    RioYManglar_Tortuga = 34,
+
+    TundraNevada_ZorroArtico = 35,
+    TundraNevada_BuhoNival = 36,
+    TundraNevada_Liebre = 37,
+    TundraNevada_Alce = 38,
+    TundraNevada_Jabali = 39,
+    TundraNevada_Lobo = 40,
+
+    SabanaAfricana_Escarabajo = 41,
+    SabanaAfricana_Guepardo = 42,
+    SabanaAfricana_Elefante = 43,
+    SabanaAfricana_Gacela = 44,
+    SabanaAfricana_Nu = 45,
+    SabanaAfricana_Hiena = 46,
+    SabanaAfricana_Jirafa = 47,
+    SabanaAfricana_Leon = 48,
+    SabanaAfricana_Avestruz = 49,
+    SabanaAfricana_Termita = 50,
+    SabanaAfricana_Cebra = 51,
+
+    SabanaAustraliana_Lechuza = 52,
+    SabanaAustraliana_Escarabajo = 53,
+    SabanaAustraliana_Dingo = 54,
+    SabanaAustraliana_Emu = 55,
+    SabanaAustraliana_Canguro = 56,
+    SabanaAustraliana_Koala = 57,
+    SabanaAustraliana_Termita = 58,
+    SabanaAustraliana_Varano = 59,
+
+    Montana_Condor = 60,
+    Montana_Aguila = 61,
+    Montana_Cabra = 62,
+    Montana_Llama = 63,
+    Montana_Lince = 64,
+    Montana_Conejo = 65
 }
