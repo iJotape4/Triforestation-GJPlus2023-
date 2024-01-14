@@ -19,8 +19,8 @@ public class AutoBase : MonoBehaviour
     public static Color blue = new Color(0x5D / 255f, 0x94 / 255f, 0xFF / 255f);
     // Define the second color with hexadecimal code #FF6D6D
     public static Color red = new Color(0xFF / 255f, 0x55 / 255f, 0x55 / 255f);
-    // Define the third color with hexadecimal code #62FF7F
-    public static Color green = new Color(0x62 / 255f, 0xFF / 255f, 0x7F / 255f);
+    // Define the third color with hexadecimal code #236830
+    public static Color green = new Color(0x23 / 255f, 0x68 / 255f, 0x30 / 255f);
     // Define the fourth color with hexadecimal code #797979
     public static Color grey = new Color(0x79 / 255f, 0x79 / 255f, 0x79 / 255f);
 
