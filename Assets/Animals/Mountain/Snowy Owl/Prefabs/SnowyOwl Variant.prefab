@@ -77,12 +77,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColorTexture: {fileID: 2800000, guid: 38d39fb50d8e937429d188a00c056380, type: 3}
-  activeNormal: 1
+  baseColorTexture: {fileID: 0}
+  activeNormal: 0
   normalTexture: {fileID: 2800000, guid: 71b4383e9aa146041bff8628f7f94d61, type: 3}
   activeAO: 0
   aoTexture: {fileID: 0}
-  activeAlpha: 1
+  activeAlpha: 0
   alphaTexture: {fileID: 2800000, guid: d11e8a7d26f94164c8d262543154c842, type: 3}
 --- !u!4 &6607801369341707817 stripped
 Transform:
