@@ -1,21 +1,24 @@
 using Events;
+using FMOD;
 using FMOD.Studio;
 using System;
 using System.Collections;
+using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 using UnityEngine;
 
 public class ChangeMusic : MonoBehaviour
 {
-    [FMODUnity.EventRef]
-    public string fmodEventPathGame;
-
-    private EventInstance fmodEventInstance;
+    
     Coroutine currentCoroutine;
     [SerializeField] [Range(0, 10)] private int sectionMusic;
+    [SerializeField] private string music = "event:/MainMusic";
+    private FMOD.Studio.EventInstance fmodEventInstance;
     private int sectionPlaying;
 
     private void Awake()
     {
+        
+        fmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(music);
         EventManager.AddListener(ENUM_GameState.firstPhaseFinished, OnFirstPhaseFinished);
         EventManager.AddListener(ENUM_GameState.secondPhaseFinished, OnSecondPhaseFinished);
     }
@@ -27,7 +30,6 @@ public class ChangeMusic : MonoBehaviour
     }
     private void Start()
     {
-        fmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEventPathGame);
         fmodEventInstance.start();
         sectionPlaying = sectionMusic;
 
@@ -38,6 +40,7 @@ public class ChangeMusic : MonoBehaviour
     {
         StopCoroutine(currentCoroutine);
         sectionMusic = 9;
+        
     }
 
     private void OnFirstPhaseFinished()
@@ -50,14 +53,23 @@ public class ChangeMusic : MonoBehaviour
     private void FixedUpdate()
     {
         
-        if(sectionMusic != sectionPlaying)
+        if (sectionMusic != sectionPlaying)
         {
+                print(sectionMusic);
+                print(sectionPlaying);
+            
                 sectionPlaying = sectionMusic;
                 ChangeSectionMusic(sectionMusic);
         }
     }
 
-    public void ChangeSectionMusic(int value) { fmodEventInstance.setParameterByName("MainMusic", value); Debug.Log(value); }
+    public void ChangeSectionMusic(int value) {
+
+        sectionMusic = value;
+        fmodEventInstance.setParameterByName("MainMusic", value);
+        print(fmodEventInstance.setParameterByName("MainMusic", value)); 
+    }
+
     private IEnumerator ChangeMusicCoroutine()
     {
         for (int i = 0; i <= 4; i++)
