@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 6868347495551249457}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.643, y: 0.26, z: -0.434}
+  m_LocalPosition: {x: 0.592, y: 0.26, z: -0.324}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -180,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 9082646385810611790}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.621, y: 0.26, z: -0.52}
+  m_LocalPosition: {x: -0.619, y: 0.26, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -366,6 +366,7 @@ MonoBehaviour:
   position: 3
   biome: 0
   poleCollider: {fileID: 0}
+  animalData: {fileID: 0}
 --- !u!64 &1980388499556223665
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -421,6 +422,7 @@ MonoBehaviour:
   position: 1
   biome: 0
   poleCollider: {fileID: 0}
+  animalData: {fileID: 0}
 --- !u!64 &6044199075420639526
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -916,6 +918,7 @@ MonoBehaviour:
   position: 2
   biome: 0
   poleCollider: {fileID: 0}
+  animalData: {fileID: 0}
 --- !u!64 &1241708834892502672
 MeshCollider:
   m_ObjectHideFlags: 0
