@@ -134,18 +134,21 @@ public class Group
         {
             case ENUM_FoodChainLevel.Prey:
                 this.preys++;
+                EventManager.Dispatch(ENUM_AnimalEvent.biomePoleOccupied,1);
 
                 return true;
             case ENUM_FoodChainLevel.Predator:
                  if(predators+1 <= preys / 2 && preys>0)
                  {
                     predators++;
+                    EventManager.Dispatch(ENUM_AnimalEvent.biomePoleOccupied,2);
                     return true;
                  }
                 else return false;
             case ENUM_FoodChainLevel.AnimalKing:
                 if(alphas+1 <= predators / 2 && predators>0)
                 {
+                    EventManager.Dispatch(ENUM_AnimalEvent.biomePoleOccupied,3);
                     this.alphas++;
                     return true;
                 }       
@@ -158,13 +161,10 @@ public class Group
     public int GetGroupScore()
     {
         //Suggested Score
-        //int score = 0;
-        //score += alphas * 3;
-        //score += primaryConsomers * 2;
-        //score += secondaryConsomers;
-
-        //Current score
-        int score = (predators+preys+alphas)*2;        
+        int score = 0;
+        score += alphas * 3;
+        score += predators * 2;
+        score += preys;      
         return score;
     }
 }
