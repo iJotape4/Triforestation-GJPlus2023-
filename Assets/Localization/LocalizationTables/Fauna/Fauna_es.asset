@@ -178,6 +178,10 @@ MonoBehaviour:
     m_Localized: Condor
     m_Metadata:
       m_Items: []
+  - m_Id: 3680056709210112
+    m_Localized: "C\xF3ndor"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
