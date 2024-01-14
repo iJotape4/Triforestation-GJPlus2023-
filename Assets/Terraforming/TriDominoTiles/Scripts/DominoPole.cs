@@ -197,6 +197,7 @@ namespace Terraforming.Dominoes
         {
             occupuied = true;
             animal.transform.position = position.position;
+            animal.GetComponent<AnimalBehaviour>().OnAnimalDroped();
             EventManager.Dispatch(ENUM_AnimalEvent.animalDroped);
         }
 
