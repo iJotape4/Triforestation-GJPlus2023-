@@ -10,7 +10,7 @@ public static class SFXDictionary
     public const string Rotate = "event:/Button";
     public const string Select = "event:/Button";
     public const string Unselect = "event:/Button";
-
+    public const string AnimalSFX= "event:/Animal";
     //Animalles Sabana Africana
 
     public const string EscarabajoSabanaAfricana = "event:/AfricanSavannah/Escarabajo";
