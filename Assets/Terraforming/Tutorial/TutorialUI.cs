@@ -9,6 +9,7 @@ public class TutorialUI : MonoBehaviour
     public GameObject tutorialPanelUI;
     public GameObject[] firstBlock;
     public GameObject[] secondBlock;
+    public GameObject[] thirdBlock;
     private int currentDialogueBlockIndex = 0;
     private int currentDialogueIndex = 0;
 
@@ -30,6 +31,7 @@ public class TutorialUI : MonoBehaviour
     {
         dialogueBlocks.Add(firstBlock);
         dialogueBlocks.Add(secondBlock);
+        dialogueBlocks.Add(thirdBlock);
     }
 
     private void Start()

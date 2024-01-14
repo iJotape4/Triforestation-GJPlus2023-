@@ -12,7 +12,7 @@ namespace LevelSelector
         [SerializeField] Collider circleCollider;
         [SerializeField] ParticleSystem ps;
         Coroutine openPopUpRoutine;
-        const string sceneToLoad = "TriangularGridWithTiles"; 
+        protected virtual string sceneToLoad => "TriangularGridWithTiles"; 
         const string levelSelectorScene = "LevelSelector";
 
         private void Awake()

@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 
 public class TriangularGrid : DropView
 {
-    private float edgeLength = 2.962f; // Lenght of the edge of the Triangular Token
-    private float sqrt3 = Mathf.Sqrt(3);
+    protected float edgeLength = 2.962f; // Lenght of the edge of the Triangular Token
+    protected float sqrt3 = Mathf.Sqrt(3);
 
     [SerializeField] protected GameObject token;
     public GameObject gridTile;

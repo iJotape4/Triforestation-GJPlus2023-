@@ -8,6 +8,8 @@ using LevelSelector;
 
 public class TutorialDominoPooler : DominoPooler
 {
+    public DominoToken actualTutorialToken;
+
     protected override void CreateDominoes()
     {
         for (int i = 0; i < levelData.dominoesAmount; i++)
@@ -23,9 +25,16 @@ public class TutorialDominoPooler : DominoPooler
             domino.ResetDomino();
         }
         // Update the order in layer to ensure the rightmost domino is on top.
-        base.UpdateOrderInLayer();
-        base.GiveInitialDominoes();
+        UpdateOrderInLayer();
+        StartCoroutine(GiveInitialDominoes());
         EventManager.Dispatch(ENUM_SFXEvent.deckStart);
+        actualTutorialToken = GetComponentInChildren<DominoToken>();
+    }
+
+    // To update the current token that need to be placed
+    public void GetNextToken()
+    {
+        actualTutorialToken = GetComponentInChildren<DominoToken>();
     }
 }
 

@@ -208,7 +208,7 @@ public class DominoPooler : MonoBehaviour
         EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, false);
     }
 
-    private IEnumerator GiveInitialDominoes()
+    protected IEnumerator GiveInitialDominoes()
     {
         //Waits until level is seted properly
         while(levelData == null)
