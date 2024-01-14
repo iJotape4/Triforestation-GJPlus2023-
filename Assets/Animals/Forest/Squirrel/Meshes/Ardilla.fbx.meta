@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ardilla_Mat
-    second: {fileID: 2100000, guid: 5a66c5f383dd39c4b88dcc59597b5dd2, type: 2}
+    second: {fileID: 2100000, guid: 44523336017e5df44a80a7520850b7cc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

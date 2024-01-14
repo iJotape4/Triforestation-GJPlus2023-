@@ -67,35 +67,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c5cb44ad9018b2c43ab56ddc195a7eeb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1438662996894902547}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5cb44ad9018b2c43ab56ddc195a7eeb, type: 3}
---- !u!1 &7124286405013604124 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5cb44ad9018b2c43ab56ddc195a7eeb, type: 3}
-  m_PrefabInstance: {fileID: 7935313323236932173}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1438662996894902547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7124286405013604124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f25dec356400d143a6ba0e3d49f49b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseColorTexture: {fileID: 2800000, guid: 20d737b1fcda5454fb6712eba13f9090, type: 3}
-  activeNormal: 0
-  normalTexture: {fileID: 2800000, guid: 10cff876febbac74683acf72d273566e, type: 3}
-  activeAO: 0
-  aoTexture: {fileID: 0}
-  activeAlpha: 1
-  alphaTexture: {fileID: 2800000, guid: bfa960fc8d853eb4c847e261fde57149, type: 3}
 --- !u!4 &7608088377258892710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c5cb44ad9018b2c43ab56ddc195a7eeb, type: 3}
