@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd432c43e3bf014e8f908935cd34a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalsPanel: {fileID: 5788627811611534968}
+  animalsPanel: {fileID: 8675488044381462174}
 --- !u!114 &705310475531687030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3107,9 +3107,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e43391d2d5e70046b5809e01574c0c0, type: 3}
---- !u!114 &5788627811611534968 stripped
+--- !u!224 &7428797990632746459 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1085777302538877846, guid: 3e43391d2d5e70046b5809e01574c0c0, type: 3}
+  m_PrefabInstance: {fileID: 7496541598471034445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8675488044381462174 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4061198543116005429, guid: 3e43391d2d5e70046b5809e01574c0c0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1183486505928050899, guid: 3e43391d2d5e70046b5809e01574c0c0, type: 3}
   m_PrefabInstance: {fileID: 7496541598471034445}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -3118,8 +3123,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9129694156b8374e9d0ede0ebf4ce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &7428797990632746459 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1085777302538877846, guid: 3e43391d2d5e70046b5809e01574c0c0, type: 3}
-  m_PrefabInstance: {fileID: 7496541598471034445}
-  m_PrefabAsset: {fileID: 0}
