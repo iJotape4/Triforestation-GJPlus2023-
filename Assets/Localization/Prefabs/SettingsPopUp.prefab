@@ -2064,7 +2064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2270110e42907fc42bf73ee0292dc20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: event:/SFX/UI/Click button
+  sound: event:/Button
+  value: 4
 --- !u!1 &5190832800310968314
 GameObject:
   m_ObjectHideFlags: 0
