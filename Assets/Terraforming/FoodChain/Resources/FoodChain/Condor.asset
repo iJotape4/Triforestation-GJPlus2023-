@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Condor
   chainLevel: 1
   aliments: 6
-  biome: 4
+  biome: 0
   sprite: {fileID: -1590002696, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
   _3dPrefab:
-  - {fileID: 7666611121050271113, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
-  animalSFX: 60
+  - {fileID: 4900423996290013307, guid: 32826dcdb6f9efa499abdb6797cf517f, type: 3}
+  animalSFX: 0

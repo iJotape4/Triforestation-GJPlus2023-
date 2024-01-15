@@ -1,7 +1,5 @@
 using Events;
-using System;
 using System.Collections;
-using Terraforming.Dominoes;
 using UnityEngine;
 
 public class LevelFlowManagement : MonoBehaviour
@@ -10,6 +8,7 @@ public class LevelFlowManagement : MonoBehaviour
     private int droppedTokens;
     private int generatedDropTiles;
     private int generatedPunishTiles;
+    private int droppablePoles, droppedAnimals=0;
 
     protected void Awake()
     {
@@ -19,6 +18,7 @@ public class LevelFlowManagement : MonoBehaviour
         EventManager.AddListener(ENUM_DominoeEvent.spawnedMoorEvent, CountTotalTokens);
         EventManager.AddListener(ENUM_DominoeEvent.generatedTileEvent, CountGeneratedTiles);
         EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, CheckIfAvailableMovements);
+        EventManager.AddListener(ENUM_AnimalEvent.biomePoleOccupied, CheckLevelEnd);
     }
 
     protected void OnDestroy()
@@ -29,7 +29,9 @@ public class LevelFlowManagement : MonoBehaviour
         EventManager.RemoveListener(ENUM_DominoeEvent.spawnedMoorEvent, CountTotalTokens);
         EventManager.RemoveListener(ENUM_DominoeEvent.generatedTileEvent, CountGeneratedTiles);
         EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, CheckIfAvailableMovements);
+        EventManager.RemoveListener(ENUM_AnimalEvent.biomePoleOccupied, CheckLevelEnd);
     }
+
     private void CountSavablehazards()
     {
         StartCoroutine(CountSavablehazardsCoroutine());
@@ -78,6 +80,7 @@ public class LevelFlowManagement : MonoBehaviour
             EventManager.Dispatch(ENUM_GameState.loose);
             return true;
         }
+        droppablePoles = (droppedTokens +savableHazardsAmount) * 3;
         return false;
     }
 
@@ -86,5 +89,13 @@ public class LevelFlowManagement : MonoBehaviour
         savableHazardsAmount--;
         if(savableHazardsAmount<=0)
             EventManager.Dispatch(ENUM_GameState.poolAnimals);
+    }
+    private void CheckLevelEnd()
+    {
+        droppedAnimals++;
+        if (droppedAnimals >= droppablePoles)
+        {
+            EventManager.Dispatch(ENUM_GameState.secondPhaseFinished);
+        }
     }
 }
