@@ -88,5 +88,9 @@ public enum ENUM_SFXAnimals
     Montana_Cabra = 62,
     Montana_Llama = 63,
     Montana_Lince = 64,
-    Montana_Conejo = 65
+    Montana_Conejo = 65,
+
+    Okapi = 66,
+    Titi_Mono = 67,
+    Mushroom = 68
 }
