@@ -19,6 +19,8 @@ namespace Terraforming.Dominoes
         // Define the valid rotation angles for upwards tokens
         float[] validUpwardsRotations = new float[] { 0f, 120f, 240f };
 
+        [SerializeField] SpriteRenderer back;
+
         [Header("Animation Params")]
         [SerializeField] Animator animator;
         const string ANIMATOR_SWAPTRIGGER = "Swap";
@@ -143,6 +145,8 @@ namespace Terraforming.Dominoes
                 pole.TurnColliderOff();
             }
         }
+
+        public void DisableBack() => back.enabled = false;
 
         public void UncoverDomino()
         {

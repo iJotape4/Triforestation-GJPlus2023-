@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5005061320271882429, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5010632919338565808, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: biome
       value: -1
@@ -138,3 +142,5 @@ MonoBehaviour:
   poles: []
   uncoverDuration: 0.5
   tokenData: {fileID: 0}
+  back: {fileID: 0}
+  animator: {fileID: 0}
