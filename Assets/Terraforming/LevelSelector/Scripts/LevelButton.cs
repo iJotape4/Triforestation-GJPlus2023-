@@ -55,7 +55,7 @@ namespace LevelSelector
             EventManager.Dispatch(ENUM_LevelSelectorEvent.Play);
             ps.Play();
             menuCam.Priority = 0;
-            lvlSelected[0].Priority = 1;
+            lvlSelected[level.level].Priority = 1;
             yield return new WaitForSeconds(2f);
             StartCoroutine(LoadSceneAndExecuteScript());
         }
