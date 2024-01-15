@@ -10,15 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
-  m_Name: TitiMonkey
+  m_Name: 1. Squirrel
   m_EditorClassIdentifier: 
-  name: TitiMonkey
+  name: Squirrel
   chainLevel: 4
   aliments: 8
-  biome: 1
-  sprite: {fileID: 1662164548, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
+  biome: 2
+  sprite: {fileID: -336954498, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
-  - {fileID: 109292326872980405, guid: 80a25b07aa161514f8eb2d635029b34f, type: 3}
-  - {fileID: 3468805291146441492, guid: c59870367c4bcad4eb8e89959bfdf544, type: 3}
-  - {fileID: 6731452989351083449, guid: 738ff028ca859e14e9d3441f00235e31, type: 3}
-  animalSFX: 67
+  - {fileID: 3096839409865954737, guid: dd37397c3c6336646a9407f44cf146af, type: 3}
+  animalSFX: 13

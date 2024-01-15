@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
-  m_Name: Squirrel
+  m_Name: 2. Capybara
   m_EditorClassIdentifier: 
-  name: Squirrel
-  chainLevel: 4
-  aliments: 8
-  biome: 2
-  sprite: {fileID: -336954498, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
+  name: Capybara
+  chainLevel: 2
+  aliments: 4
+  biome: 1
+  sprite: {fileID: 1598763977, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
   _3dPrefab:
-  - {fileID: 3096839409865954737, guid: dd37397c3c6336646a9407f44cf146af, type: 3}
-  animalSFX: 13
+  - {fileID: 5610368355758788582, guid: 839b805b17093404f803335a0460fb48, type: 3}
+  animalSFX: 2

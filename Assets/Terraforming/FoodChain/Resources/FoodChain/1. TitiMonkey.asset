@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
-  m_Name: Okapi
+  m_Name: 1. TitiMonkey
   m_EditorClassIdentifier: 
-  name: Okapi
+  name: TitiMonkey
   chainLevel: 4
   aliments: 8
-  biome: 8
-  sprite: {fileID: 280296314, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
+  biome: 1
+  sprite: {fileID: 1662164548, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
-  - {fileID: 1122889753887530288, guid: 8cc8042a696969246a2d1eb6c1315dc1, type: 3}
-  animalSFX: 66
+  - {fileID: 109292326872980405, guid: 80a25b07aa161514f8eb2d635029b34f, type: 3}
+  - {fileID: 3468805291146441492, guid: c59870367c4bcad4eb8e89959bfdf544, type: 3}
+  - {fileID: 6731452989351083449, guid: 738ff028ca859e14e9d3441f00235e31, type: 3}
+  animalSFX: 67
