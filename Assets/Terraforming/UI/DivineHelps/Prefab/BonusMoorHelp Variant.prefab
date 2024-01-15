@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:ba93719ce5695f149a4e5277b03064e6
       objectReference: {fileID: 0}
+    - target: {fileID: 5410669495655104039, guid: 540ee2f8d62ff2a4b951be74c59bfb39, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d53d44e97eb55124cbda230e5a2e86e2, type: 3}
     - target: {fileID: 7343594673675320018, guid: 540ee2f8d62ff2a4b951be74c59bfb39, type: 3}
       propertyPath: m_text
       value: Bonus WildCard
