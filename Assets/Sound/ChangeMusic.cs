@@ -74,18 +74,23 @@ public class ChangeMusic : MonoBehaviour
     {
         for (int i = 0; i <= 4; i++)
         {
-            yield return new WaitForSeconds(16f);
+            yield return new WaitForSeconds(48f);
             ChangeSectionMusic(i + 1);
         }
     }
       private IEnumerator ChangeMusicSeconPhaseCoroutine()
       {
-            for (int i = 5; i <=8; i++)
+            for (int i = 5; i <=6; i++)
             {
-                yield return new WaitForSeconds(32f);
+                yield return new WaitForSeconds(16f);
                 ChangeSectionMusic(i + 1);
-            }       
-      }
+            }
+            for (int i = 7; i <= 8; i++)
+            {
+                yield return new WaitForSeconds(64f);
+                ChangeSectionMusic(i + 1);
+            }
+    }
     //OLD implementation
     /*private IEnumerator ChangeMusicCoroutine()
     {
