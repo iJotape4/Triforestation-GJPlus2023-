@@ -6,6 +6,7 @@ using UnityEngine;
 using MyBox;
 using LevelSelector;
 using System.Collections;
+using Terraforming;
 
 public class DominoPooler : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class DominoPooler : MonoBehaviour
         for (int i = 0; i < levelData.dominoesAmount; i++)
         {
             GameObject dominoObj = Instantiate(dominoPrefab, transform);
-            DominoToken domino = dominoObj.GetComponent<DominoToken>();
+            DominoToken domino = dominoObj.GetComponentInChildren<DominoToken>();
 
             // Set the position of the domino in a row from left to right.
             float xPos = i * dominoSpacing; // Adjust the spacing as needed.
@@ -120,14 +121,14 @@ public class DominoPooler : MonoBehaviour
 
           
             // Add the local move animation to the sequence
-            uncoverSequence.Append(domino.transform.DOLocalMove(_nextPosition.localPosition, moveDuration))
+            uncoverSequence.Append(domino.transform.parent.DOLocalMove(_nextPosition.localPosition, moveDuration))
                 .OnStart(() =>
                 {
                     
                 });
 
             // Add the rotation animation (both parts) to the sequence using Join
-            uncoverSequence.Join(domino.transform.DORotate(new Vector3(0, 0, 180), moveDuration, RotateMode.WorldAxisAdd))
+            uncoverSequence.Join(domino.transform.parent.DORotate(new Vector3(0, 0, 180), moveDuration, RotateMode.WorldAxisAdd))
                 .OnComplete(() =>
                 {
 
@@ -138,7 +139,7 @@ public class DominoPooler : MonoBehaviour
 
             // Play the sequence
             uncoverSequence.Play();
- 
+            domino.gameObject.AddComponent<DragView>();
             return domino;
         }
         lastCardOnHand = true;
@@ -183,7 +184,7 @@ public class DominoPooler : MonoBehaviour
 
             // Reset the position of the domino in the row from left to right.
             float xPos = i * dominoSpacing; // Adjust the spacing as needed.
-            domino.transform.localPosition = new Vector3(xPos, 0, 0);
+            domino.transform.parent.localPosition = new Vector3(xPos, 0, 0);
 
             domino.ResetDomino();
         }

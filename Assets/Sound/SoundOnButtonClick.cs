@@ -6,7 +6,9 @@ namespace Kitchen
     [RequireComponent(typeof(Button))]
     public class SoundOnButtonClick : MonoBehaviour
     {
-        [SerializeField] private string sound = "event:/SFX/UI/Click button";
+
+        [SerializeField] private string sound = "event:/Button";
+        [SerializeField] private SFXParameters_Button value = SFXParameters_Button.Correcto;
         private Button button;
         private FMOD.Studio.EventInstance buttonSound;
 
@@ -20,7 +22,12 @@ namespace Kitchen
         private void OnDestroy() =>
             button.onClick.RemoveListener(PlayButtonClickSound);
 
-        public void PlayButtonClickSound() =>
+        public void PlayButtonClickSound()
+        {
+            SelectSoundFX((int)value);
             buttonSound.start();
+        }
+
+        public void SelectSoundFX(int parameterValue) { buttonSound.setParameterByName("Button", parameterValue); }
     }
 }

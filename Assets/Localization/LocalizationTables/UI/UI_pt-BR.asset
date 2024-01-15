@@ -148,7 +148,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2555160522719232
-    m_Localized: "\xA1Oops"
+    m_Localized: "Ops. chuva \xE1cida proteroz\xF3ica! A moda ecol\xF3gica tem seus
+      caprichos. Tente novamente e mostre \xE0 natureza o seu poder!"
     m_Metadata:
       m_Items: []
   - m_Id: 3487724911190016
@@ -169,6 +170,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3521262901518336
     m_Localized: Confirmar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4284283642961920
+    m_Localized: Tutorial
     m_Metadata:
       m_Items: []
   references:

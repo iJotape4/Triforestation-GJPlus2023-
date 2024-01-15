@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 4
   tokensInLevelMultiplier: 2
-  dominoesAmount: 48
+  dominoesAmount: 60
   tokenDatas:
   - {fileID: 11400000, guid: 468cba3bb574461428dcf67f86745d65, type: 2}
   - {fileID: 11400000, guid: 23956447c3e0ec340af8f17f1fe280a3, type: 2}
@@ -40,6 +40,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1cf1f7eb1715a8b4da7da988b7246fb1, type: 2}
   - {fileID: 11400000, guid: 1ecbef96e82617c479d691167de2e5f9, type: 2}
   - {fileID: 11400000, guid: c69b5ec00177b5b4690adfa33bd7e748, type: 2}
+  - {fileID: 11400000, guid: 81e80a0787b888545ba147444da1623d, type: 2}
+  - {fileID: 11400000, guid: 68de4b53d29565442b5c07b4954a1143, type: 2}
+  - {fileID: 11400000, guid: d9d0a24f23f41304193090862cf298d1, type: 2}
+  - {fileID: 11400000, guid: d5276b83e6fafe344b2482244e0d7bd1, type: 2}
+  - {fileID: 11400000, guid: c8d9ae1acec13b04d821fe0325d94b0d, type: 2}
+  - {fileID: 11400000, guid: b0ee88f20ddabac459b57dbefc334011, type: 2}
   - {fileID: 11400000, guid: 468cba3bb574461428dcf67f86745d65, type: 2}
   - {fileID: 11400000, guid: 23956447c3e0ec340af8f17f1fe280a3, type: 2}
   - {fileID: 11400000, guid: a4ea5a6d0cbe3e741a488ba884b47466, type: 2}
@@ -64,3 +70,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1cf1f7eb1715a8b4da7da988b7246fb1, type: 2}
   - {fileID: 11400000, guid: 1ecbef96e82617c479d691167de2e5f9, type: 2}
   - {fileID: 11400000, guid: c69b5ec00177b5b4690adfa33bd7e748, type: 2}
+  - {fileID: 11400000, guid: 81e80a0787b888545ba147444da1623d, type: 2}
+  - {fileID: 11400000, guid: 68de4b53d29565442b5c07b4954a1143, type: 2}
+  - {fileID: 11400000, guid: d9d0a24f23f41304193090862cf298d1, type: 2}
+  - {fileID: 11400000, guid: d5276b83e6fafe344b2482244e0d7bd1, type: 2}
+  - {fileID: 11400000, guid: c8d9ae1acec13b04d821fe0325d94b0d, type: 2}
+  - {fileID: 11400000, guid: b0ee88f20ddabac459b57dbefc334011, type: 2}

@@ -19,6 +19,10 @@ namespace Terraforming.Dominoes
         // Define the valid rotation angles for upwards tokens
         float[] validUpwardsRotations = new float[] { 0f, 120f, 240f };
 
+        [Header("Animation Params")]
+        [SerializeField] Animator animator;
+        const string ANIMATOR_SWAPTRIGGER = "Swap";
+
         protected virtual void Awake()
         {
            // poles = Array.FindAll(GetComponentsInChildren<DominoPole>(), c => c.gameObject != gameObject);
@@ -143,17 +147,17 @@ namespace Terraforming.Dominoes
         public void UncoverDomino()
         {
             // Rotate the GameObject by 180 degrees in the Z-axis
-            transform.DORotate(new Vector3(0, 0, 180), uncoverDuration)
+            transform.parent.DORotate(new Vector3(0, 0, 180), uncoverDuration)
                 .OnComplete(() =>
                 {
                     // Rotate the GameObject back to 0 degrees
-                    transform.DORotate(Vector3.zero, uncoverDuration);
+                    transform.parent.DORotate(Vector3.zero, uncoverDuration);
                 });
         }
 
         protected void CoverDomino()
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180f));
+            transform.parent.rotation = Quaternion.Euler(new Vector3(0, 0, 180f));
         }
 
         public void ResetDomino()
@@ -175,11 +179,21 @@ namespace Terraforming.Dominoes
         //Swap the biomes. Can be reverted calling the method again
         public void SwapBiomes()
         {
-            ENUM_Biome biome1 = poles[0].biome;
-            ENUM_Biome biome2 = poles[1].biome;
-            poles[0].AssignBiome(biome2);
-            poles[1].AssignBiome(biome1);
-            wasSwaped = true;
+            animator.enabled =true;
+            animator.SetBool(ANIMATOR_SWAPTRIGGER, !wasSwaped) ;
+
+            ENUM_PolePosition positionPole0 = poles[0].position;
+            ENUM_PolePosition positionPole1 = poles[1].position;
+
+            poles[0].position = positionPole1;
+            poles[1].position = positionPole0;
+
+            //OLD Implementation
+            //ENUM_Biome biome1 = poles[0].biome;
+            //ENUM_Biome biome2 = poles[1].biome;
+            //poles[0].AssignBiome(biome2);
+            //poles[1].AssignBiome(biome1);
+            wasSwaped = !wasSwaped;
         }
 
         public void RevertSwapBiome()
@@ -188,7 +202,9 @@ namespace Terraforming.Dominoes
                 return;
 
             SwapBiomes();
-            SetWasSwappedToFalse();
+            //animator.SetBool(ANIMATOR_SWAPTRIGGER, false);
+            //Array.Reverse(poles);
+            //SetWasSwappedToFalse();
         }
 
         public void SetWasSwappedToFalse() => wasSwaped =false;
@@ -213,31 +229,24 @@ namespace Terraforming.Dominoes
                 if (poles[0].pivot == null)
                     return;
 
-                for (int direction = 0; direction < 4; direction++)
+                for (int direction = 0; direction < 2; direction++)
                 {
-                   float angleOffset = direction switch
-                    {
-                       0 => 60f,
-                       1 => -60f,
-                       2 => 120f,
-                       3 => -120f,
-                        _ => 60f, // Handle other cases or error condition.
-                    };
+                    float angleOffset = direction == 0 ? 60f : -60f;
 
-                    Quaternion rotation = Quaternion.Euler(0, poles[0].pivot.eulerAngles.y + angleOffset, 0); // Rotate in the Y-axis
+                    Quaternion rotation = Quaternion.Euler(0, pole.pivot.eulerAngles.y + angleOffset, 0); // Rotate in the Y-axis
                     Vector3 directionVector = rotation * Vector3.forward; // Use Vector3.forward for the X-Z plane
 
                     Gizmos.color = Color.red; // Set the color of the Gizmo line
-                    Gizmos.DrawRay(poles[0].pivot.position, directionVector * 1.2f); // Draw the ray
+                    Gizmos.DrawRay(pole.pivot.position, directionVector * 1.2f); // Draw the ray
 
                     int dominoPoleLayerMask = LayerMask.GetMask("DominoPole");
 
                     RaycastHit hit;
 
-                    if (Physics.Raycast(poles[0].pivot.position, directionVector, out hit, 1.2f, dominoPoleLayerMask))
+                    if (Physics.Raycast(pole.pivot.position, directionVector, out hit, 1.2f, dominoPoleLayerMask))
                     {
                         Gizmos.color = Color.green; // Set the color of the Gizmo line for successful hit
-                        Gizmos.DrawLine(poles[0].pivot.position, hit.point);
+                        Gizmos.DrawLine(pole.pivot.position, hit.point);
                     }
                 }
             }

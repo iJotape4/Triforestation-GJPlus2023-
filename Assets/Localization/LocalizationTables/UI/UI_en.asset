@@ -148,7 +148,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2555160522719232
-    m_Localized: Oops
+    m_Localized: Oops. Proterozoic acid rain! Eco-friendly fashion has its whims.
+      Try again and show nature your power!
     m_Metadata:
       m_Items: []
   - m_Id: 3487724911190016
@@ -169,6 +170,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3521262901518336
     m_Localized: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4284283642961920
+    m_Localized: Tutorial
     m_Metadata:
       m_Items: []
   references:

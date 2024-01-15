@@ -91,8 +91,13 @@ namespace Terraforming.Dominoes
                     return;
                 }
             }
-            else if(token.animal.chainLevel == ENUM_FoodChainLevel.Bug && biome == 0)
+            else if(token.animal.chainLevel == ENUM_FoodChainLevel.Bug)
             {
+                if (biome != 0)
+                {
+                    token.InvalidDrop();
+                    return;
+                }
                 PunishToken thisPunishToken = GetComponent<PunishToken>();
                 if (thisPunishToken.savable)
                 {
@@ -115,7 +120,9 @@ namespace Terraforming.Dominoes
             {
                 //Check current population in the group
                 if (group.AddAnimal(token.animal.chainLevel))
+                {
                     OccupyPole(token.spawnedPrefab, centroid);
+                }
                 else
                     token.InvalidDrop();
 

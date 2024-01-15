@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 404305708419152490, guid: 50e26c98dfcedb34f8aa98365b0c36d6, type: 3}
+      propertyPath: mutedSprite
+      value: 
+      objectReference: {fileID: -438655179, guid: fba1972449b9dbb4ab2f620f944f8ae8, type: 3}
+    - target: {fileID: 404305708419152490, guid: 50e26c98dfcedb34f8aa98365b0c36d6, type: 3}
+      propertyPath: activeSprite
+      value: 
+      objectReference: {fileID: 896818774, guid: fba1972449b9dbb4ab2f620f944f8ae8, type: 3}
     - target: {fileID: 865563005811884269, guid: 50e26c98dfcedb34f8aa98365b0c36d6, type: 3}
       propertyPath: m_text
       value: 'Music
@@ -34,6 +42,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4030133664605253771, guid: 50e26c98dfcedb34f8aa98365b0c36d6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 896818774, guid: fba1972449b9dbb4ab2f620f944f8ae8, type: 3}
     - target: {fileID: 4558743274495911791, guid: 50e26c98dfcedb34f8aa98365b0c36d6, type: 3}
       propertyPath: m_Name
       value: MusicSlider Variant

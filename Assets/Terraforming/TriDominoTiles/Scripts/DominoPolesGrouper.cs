@@ -11,36 +11,27 @@ public class DominoPolesGrouper : MonoBehaviour
 
     List<Group> groupsList = new List<Group>();
     int droppedAnimals=0;
+    int polesAmount = 0;
 
     private void Awake()
     {
         EventManager.AddListener(ENUM_GameState.secondPhaseFinished, SecondPhaseFinised);
         EventManager.AddListener(ENUM_GameState.poolAnimals, OnPoolAnimalsStarted);
-        EventManager.AddListener(ENUM_AnimalEvent.animalDroped, CheckLevelEnd);
     }
 
     private void OnDestroy()
     {
         EventManager.RemoveListener(ENUM_GameState.secondPhaseFinished, SecondPhaseFinised);
         EventManager.RemoveListener(ENUM_GameState.poolAnimals, OnPoolAnimalsStarted);
-        EventManager.RemoveListener(ENUM_AnimalEvent.animalDroped, CheckLevelEnd);
     }
-    private void CheckLevelEnd()
-    {
-        droppedAnimals++;
-        if(droppedAnimals >= polesList.Length)
-        {
-            EventManager.Dispatch(ENUM_GameState.secondPhaseFinished);
-        }
-    }
+
 
     private void OnPoolAnimalsStarted()
     {
-        polesList = GetComponentsInChildren<DominoPole>();  
-
+        polesList = GetComponentsInChildren<DominoPole>();
         foreach (var pole in polesList)
         {
-            if ((int)pole.biome == -1)
+            if ((int)pole.biome == -1 || (int)pole.biome ==0)
                 continue;
 
             if (!agroupedPoles.Contains(pole))
@@ -55,7 +46,7 @@ public class DominoPolesGrouper : MonoBehaviour
 
     void CheckPoleConnections(DominoPole pole , Group group)
     {
-        Debug.Log("Checking " + pole.biome + " pole connections", pole.gameObject);
+        //Debug.Log("Checking " + pole.biome + " pole connections", pole.gameObject);
         agroupedPoles.Add(pole);
         group.poles.Add(pole);
         pole.group = group;
@@ -111,6 +102,7 @@ public class DominoPolesGrouper : MonoBehaviour
         foreach (Group group in groupsList)
         {
             totalScore += group.GetGroupScore();
+            Debug.Log(" Group " + group.ID + " of " + group.biome + " has " + group.poles.Count + " poles and score " + group.GetGroupScore());
         }
 
         Debug.Log("total score" + totalScore);
@@ -118,7 +110,7 @@ public class DominoPolesGrouper : MonoBehaviour
 }
 
 
-public struct Group
+public class Group
 {
     public Group(int ID, ENUM_Biome biome)
     {
@@ -126,48 +118,38 @@ public struct Group
         this.biome = biome;
         poles = new List<DominoPole>();
        // animals = new List<Animal>();
-        alphas = 0;
-        predators = 0;   
-        preys = 0;
     }
 
    public int ID;
    public ENUM_Biome biome;
    public List<DominoPole> poles;
     //public List<Animal> animals;
-    private int alphas;
-    private int predators;
-    private int preys;
+    private int alphas=0;
+    private int predators=0;
+    private int preys = 0;
 
     public bool AddAnimal(ENUM_FoodChainLevel chainLevel)
     {
         switch (chainLevel)
         {
             case ENUM_FoodChainLevel.Prey:
-                preys++;
+                this.preys++;
+                EventManager.Dispatch(ENUM_AnimalEvent.biomePoleOccupied,1);
 
                 return true;
             case ENUM_FoodChainLevel.Predator:
-                if(predators == 0 && preys >= 2)
-                {
+                 if(predators+1 <= preys / 2 && preys>0)
+                 {
                     predators++;
+                    EventManager.Dispatch(ENUM_AnimalEvent.biomePoleOccupied,2);
                     return true;
-                }
-                else if(preys >= predators * 2 && preys>0)
-                {
-                    predators++;
-                    return true;
-                }
+                 }
                 else return false;
             case ENUM_FoodChainLevel.AnimalKing:
-                if (alphas == 0 && predators >= 2)
+                if(alphas+1 <= predators / 2 && predators>0)
                 {
-                    predators++;
-                    return true;
-                }
-                else if(predators >= alphas * 2 && predators>0)
-                {
-                    alphas++;
+                    EventManager.Dispatch(ENUM_AnimalEvent.biomePoleOccupied,3);
+                    this.alphas++;
                     return true;
                 }       
                 else return false;
@@ -179,13 +161,10 @@ public struct Group
     public int GetGroupScore()
     {
         //Suggested Score
-        //int score = 0;
-        //score += alphas * 3;
-        //score += primaryConsomers * 2;
-        //score += secondaryConsomers;
-
-        //Current score
-        int score = (predators+preys+alphas)*2;        
+        int score = 0;
+        score += alphas * 3;
+        score += predators * 2;
+        score += preys;      
         return score;
     }
 }
