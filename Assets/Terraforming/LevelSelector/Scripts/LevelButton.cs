@@ -13,9 +13,9 @@ namespace LevelSelector
         [SerializeField] ParticleSystem ps;
         Coroutine openPopUpRoutine;
         protected virtual string sceneToLoad => "TriangularGridWithTiles"; 
-        const string levelSelectorScene = "LevelSelector";
+        protected const string levelSelectorScene = "LevelSelector";
 
-        private void Awake()
+        protected void Awake()
         {
             pregamePopUP = FindObjectOfType<PregamePopUp>(); 
             circleCollider= GetComponent<Collider>(); 
@@ -26,25 +26,25 @@ namespace LevelSelector
             EventManager.AddListener(ENUM_LevelSelectorEvent.LevelSelected, UnselectNode);
         }
 
-        private void OnDestroy()
+        protected void OnDestroy()
         {
             EventManager.RemoveListener(ENUM_LevelSelectorEvent.LevelSelected, UnselectNode);           
         }
 
-        private void UnselectNode()
+        protected void UnselectNode()
         {
             ps.Stop();
             if (openPopUpRoutine != null)
                 StopCoroutine(openPopUpRoutine);
         }
 
-        private void SwitchButtonsActivation(bool activated)=>
+        protected void SwitchButtonsActivation(bool activated)=>
             circleCollider.enabled= !activated;
 
         public void OnMouseDown()=>
            openPopUpRoutine= StartCoroutine(LevelSelected()) ;     
 
-        IEnumerator LevelSelected()
+        protected IEnumerator LevelSelected()
         {
             EventManager.Dispatch(ENUM_LevelSelectorEvent.LevelSelected);
             EventManager.Dispatch(ENUM_LevelSelectorEvent.Play);
@@ -53,7 +53,7 @@ namespace LevelSelector
             StartCoroutine(LoadSceneAndExecuteScript());
         }
 
-        IEnumerator LoadSceneAndExecuteScript()
+        protected IEnumerator LoadSceneAndExecuteScript()
         {
             // Load the scene asynchronously
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
@@ -67,7 +67,7 @@ namespace LevelSelector
             StartCoroutine(SetLevelData());          
         }
 
-        IEnumerator SetLevelData()
+        protected virtual IEnumerator SetLevelData()
         {
             DominoPooler pooler = FindObjectOfType<DominoPooler>();
             pooler.SetLevel(level);

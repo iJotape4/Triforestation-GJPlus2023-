@@ -150,7 +150,7 @@ public class TriangularGrid : DropView
         tokenData.biomes = new ENUM_Biome[] { (ENUM_Biome)(-1), (ENUM_Biome)(-1), (ENUM_Biome)(-1) };
     }
 
-    public void GenerateNeighBors(Vector3Int position)
+    public virtual void GenerateNeighBors(Vector3Int position)
     {
         //We assume that when I want to generate neighbors is because I occupied the cell in any way
         OccupyCell(position);
@@ -206,7 +206,7 @@ public class TriangularGrid : DropView
         return  (TriCenter( freeCells[randomIndex]) , rotation, freeCells[randomIndex]);
     }
 
-    public DropTile FindDropTileByIntCenter(Vector3Int center)
+    public virtual DropTile FindDropTileByIntCenter(Vector3Int center)
     {
         foreach(var tile in FindObjectsOfType<DropTile>())
         {

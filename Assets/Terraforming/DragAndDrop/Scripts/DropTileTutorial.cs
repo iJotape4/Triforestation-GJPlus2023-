@@ -1,4 +1,5 @@
 using Events;
+using PlasticGui.WorkspaceWindow.PendingChanges;
 using Terraforming;
 using Terraforming.Dominoes;
 using UnityEngine;
@@ -30,7 +31,11 @@ public class DropTileTutorial : DropView
             return;
 
         token.transform.position = transform.position;
-        if (token.IsUpwards() == isUpwards && token.IsValidBiome() && manager.CurrentTokenMatch(token) && grid.CheckCardLocation(transform))
+        print("is upwards = " + (token.IsUpwards() == isUpwards));
+        print("valid biome = " + token.IsValidBiome());
+        print("current token match = " + manager.CurrentTokenMatch(token));
+        print("check card location = " + grid.CheckCardLocation(transform));
+        if ((token.IsUpwards() == isUpwards) && token.IsValidBiome() && manager.CurrentTokenMatch(token) && grid.CheckCardLocation(transform))
         {
             eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
             eventData.pointerDrag.transform.position = transform.position;

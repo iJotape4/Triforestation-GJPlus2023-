@@ -194,7 +194,7 @@ public class DominoPooler : MonoBehaviour
         lastCardOnHand = false;
     }
 
-    private void TradeCurrentCards()
+    protected void TradeCurrentCards()
     {
         foreach(DominoSpot spot in dominoesSpots)
         {
@@ -204,7 +204,7 @@ public class DominoPooler : MonoBehaviour
             spot.SetCurrentToken(null);
         }
         currentDominoesList.Clear();
-        StartCoroutine( GiveInitialDominoes());
+        StartCoroutine(GiveInitialDominoes());
         EventManager.Dispatch(ENUM_DominoeEvent.setActivePlayFieldObjects, false);
     }
 
@@ -228,7 +228,7 @@ public class DominoPooler : MonoBehaviour
         GetNextDomino();
     }
 
-    private void FinishDominoPlacement(DominoToken token)
+    protected void FinishDominoPlacement(DominoToken token)
     {
         if (currentDominoesList.Count == 0)
         {

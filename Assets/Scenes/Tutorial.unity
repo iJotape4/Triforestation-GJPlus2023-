@@ -231,7 +231,8 @@ PrefabInstance:
       propertyPath: tokenDatas.Array.data[10]
       value: 
       objectReference: {fileID: 11400000, guid: 356a843b2f231bf4eb293ec334448c23, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6160824936123004036, guid: b83d733b592a0ae44a81f84074509f3b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -455,7 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   token: {fileID: 2085694070061048311, guid: f4ee5526b4f10f348b18b3ff6c1079c8, type: 3}
   gridTile: {fileID: 3413864865296479242, guid: ba7e56ff1b04f684c93fd62b2934c194, type: 3}
-  initialPosition: {x: 0, y: 1, z: 1}
+  initialPosition: {x: 0, y: 1, z: 0}
 --- !u!1001 &651243343
 PrefabInstance:
   m_ObjectHideFlags: 0

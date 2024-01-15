@@ -15,7 +15,6 @@ public class TutorialUI : MonoBehaviour
 
     private void Awake()
     {
-        Time.timeScale = 0;
         InitializeDialogues();
         EventManager.AddListener(ENUM_TutorialEvent.OnDialogueOn, OnDialogueOnEvent);
         EventManager.AddListener(ENUM_TutorialEvent.OnDialogueOff, OnDialogueOffEvent);
@@ -98,11 +97,6 @@ public class TutorialUI : MonoBehaviour
             // Display the first dialogue element
             SetDialogueElementActive(currentDialogueBlockIndex, currentDialogueIndex, true);
         }
-        else
-        {
-            // If there are no more blocks, resume the game
-            Time.timeScale = 1;
-        }
     }
 
     // Event triggered when dialogue is turned off
@@ -110,7 +104,6 @@ public class TutorialUI : MonoBehaviour
     {
         // Deactivate the current dialogue element
         SetDialogueElementActive(currentDialogueBlockIndex, currentDialogueIndex, false);
-        Time.timeScale = 1;
         tutorialPanelUI.SetActive(false);
     }
 }

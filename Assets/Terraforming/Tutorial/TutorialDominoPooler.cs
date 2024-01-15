@@ -28,7 +28,6 @@ public class TutorialDominoPooler : DominoPooler
         UpdateOrderInLayer();
         StartCoroutine(GiveInitialDominoes());
         EventManager.Dispatch(ENUM_SFXEvent.deckStart);
-        actualTutorialToken = GetComponentInChildren<DominoToken>();
     }
 
     // To update the current token that need to be placed
