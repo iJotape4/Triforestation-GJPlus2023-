@@ -12,7 +12,7 @@ public class DummyDominoToken : MonoBehaviour
     private void Awake()
     {
         EventManager.AddListener<DominoToken>(ENUM_DominoeEvent.selectCardToSwipeEvent, SetPoles);
-        EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, ConfirmSwap);
+        EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, ConfirmSwap);
         EventManager.AddListener(ENUM_DominoeEvent.cancelEvent, CancelSelection);
     }
 
@@ -20,7 +20,7 @@ public class DummyDominoToken : MonoBehaviour
     private void OnDestroy()
     {
         EventManager.RemoveListener<DominoToken>(ENUM_DominoeEvent.selectCardToSwipeEvent, SetPoles);
-        EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, ConfirmSwap);
+        EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, ConfirmSwap);
         EventManager.RemoveListener(ENUM_DominoeEvent.cancelEvent, CancelSelection);
     }
 

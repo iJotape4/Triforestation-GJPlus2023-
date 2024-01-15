@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4902368056358863031, guid: 1775d7a70bf603d439d8e60baf3e394f, type: 3}
       propertyPath: m_Name
-      value: Mushroom Variant Variant
+      value: Mushroom Pose2 Variant Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

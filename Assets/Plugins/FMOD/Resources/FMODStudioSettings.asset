@@ -308,9 +308,11 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - MusicGame
-  - MusicMenu
-  - Sfx
+  - Master.assets
+  - Music
+  - Music.assets
+  - SFX
+  - SFX.assets
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -757,13 +759,13 @@ MonoBehaviour:
   active: 1
   Properties:
     LiveUpdate:
-      Value: 1
+      Value: 0
       HasValue: 1
     LiveUpdatePort:
       Value: 9264
       HasValue: 1
     Overlay:
-      Value: 1
+      Value: 2
       HasValue: 1
     Logging:
       Value: 0

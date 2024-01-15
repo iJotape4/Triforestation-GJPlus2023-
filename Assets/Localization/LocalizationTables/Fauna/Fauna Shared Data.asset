@@ -143,6 +143,10 @@ MonoBehaviour:
     m_Key: AnimalTitle_Termite
     m_Metadata:
       m_Items: []
+  - m_Id: 3680056709210112
+    m_Key: "AnimalTitle_C\xF3ndor"
+    m_Metadata:
+      m_Items: []
   - m_Id: 3487722931478528
     m_Key: AnimalTitle_Condor
     m_Metadata:

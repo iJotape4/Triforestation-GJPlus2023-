@@ -10,7 +10,7 @@ public class Animal : ScriptableObject
     [SerializeField] public ENUM_Biome biome;
     [SerializeField] public Sprite sprite;
     [SerializeField] private GameObject[] _3dPrefab;
-    
+    [SerializeField] public ENUM_SFXAnimals animalSFX;
 
    //Create  a method that returns a random prefab from the array
    public GameObject Get3DPrefab()

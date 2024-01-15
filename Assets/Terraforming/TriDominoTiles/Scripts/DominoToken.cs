@@ -19,19 +19,23 @@ namespace Terraforming.Dominoes
         // Define the valid rotation angles for upwards tokens
         float[] validUpwardsRotations = new float[] { 0f, 120f, 240f };
 
+        [Header("Animation Params")]
+        [SerializeField] Animator animator;
+        const string ANIMATOR_SWAPTRIGGER = "Swap";
+
         protected virtual void Awake()
         {
            // poles = Array.FindAll(GetComponentsInChildren<DominoPole>(), c => c.gameObject != gameObject);
             dominoCollider = GetComponent<Collider>();
             EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
-            EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
+            EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, SetWasSwappedToFalse);
         }
 
 
         protected virtual void OnDestroy()
         {
             EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, RevertSwapBiome);
-            EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, SetWasSwappedToFalse);
+            EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, SetWasSwappedToFalse);
         }
 
         public bool IsUpwards()
@@ -175,11 +179,21 @@ namespace Terraforming.Dominoes
         //Swap the biomes. Can be reverted calling the method again
         public void SwapBiomes()
         {
-            ENUM_Biome biome1 = poles[0].biome;
-            ENUM_Biome biome2 = poles[1].biome;
-            poles[0].AssignBiome(biome2);
-            poles[1].AssignBiome(biome1);
-            wasSwaped = true;
+            animator.enabled =true;
+            animator.SetBool(ANIMATOR_SWAPTRIGGER, !wasSwaped) ;
+
+            ENUM_PolePosition positionPole0 = poles[0].position;
+            ENUM_PolePosition positionPole1 = poles[1].position;
+
+            poles[0].position = positionPole1;
+            poles[1].position = positionPole0;
+
+            //OLD Implementation
+            //ENUM_Biome biome1 = poles[0].biome;
+            //ENUM_Biome biome2 = poles[1].biome;
+            //poles[0].AssignBiome(biome2);
+            //poles[1].AssignBiome(biome1);
+            wasSwaped = !wasSwaped;
         }
 
         public void RevertSwapBiome()
@@ -188,7 +202,9 @@ namespace Terraforming.Dominoes
                 return;
 
             SwapBiomes();
-            SetWasSwappedToFalse();
+            //animator.SetBool(ANIMATOR_SWAPTRIGGER, false);
+            //Array.Reverse(poles);
+            //SetWasSwappedToFalse();
         }
 
         public void SetWasSwappedToFalse() => wasSwaped =false;
@@ -210,12 +226,13 @@ namespace Terraforming.Dominoes
 
             foreach (DominoPole pole in poles)
             {
-                if (pole.pivot == null)
+                if (poles[0].pivot == null)
                     return;
 
                 for (int direction = 0; direction < 2; direction++)
                 {
                     float angleOffset = direction == 0 ? 60f : -60f;
+
                     Quaternion rotation = Quaternion.Euler(0, pole.pivot.eulerAngles.y + angleOffset, 0); // Rotate in the Y-axis
                     Vector3 directionVector = rotation * Vector3.forward; // Use Vector3.forward for the X-Z plane
 

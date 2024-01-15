@@ -48,6 +48,11 @@ public class PunishToken : DominoToken
 
         if(validPoles>=6)
             savable = true;
+        else
+        {
+            savable = false;
+            GetComponent<DominoPole>().MarkPunishTokenPoleAsOccupied();
+        }
     }
 
     private void EnableDrop()

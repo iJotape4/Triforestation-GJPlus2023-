@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6268585740690386699}
   - component: {fileID: 8521356881192559224}
   - component: {fileID: 5794915451906864518}
+  - component: {fileID: 1571381210553587752}
+  - component: {fileID: 4821697559086255612}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -60,3 +62,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca75d37977e66ca47aefe489cc5143ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1571381210553587752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880946060814512151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165ac55f0cb395b44af52e966f2c3302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4821697559086255612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880946060814512151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce0f655006fc7a428406450d5115307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEventPathGame: event:/MainMusic
+  sectionMusic: 0

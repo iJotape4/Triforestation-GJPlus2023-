@@ -52,6 +52,30 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ae00e779df41fb6469ab440a4af84e70, type: 2}
+    - target: {fileID: 5957310857724888309, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: animalData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2513e36f474f1594f95496d0211444f9, type: 2}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: animal
+      value: 
+      objectReference: {fileID: 11400000, guid: 2513e36f474f1594f95496d0211444f9, type: 2}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: baseTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 1a4cc7cca6014a947a7402c5f7d4874e, type: 3}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.b
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.g
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7666611121050271113, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
       propertyPath: m_Name
       value: Grizzly Variant

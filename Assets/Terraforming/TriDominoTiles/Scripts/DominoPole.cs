@@ -22,6 +22,8 @@ namespace Terraforming.Dominoes
 
         public Collider poleCollider;
         public bool occupuied { get; private set; }
+        [HideInInspector] public Animal animalData;
+        [HideInInspector] public Group group { get; set; }
 
         // Define the first color with hexadecimal code #6481FF
         public static Color blue = new Color(0x64 / 255f, 0x81 / 255f, 0xFF / 255f);
@@ -89,8 +91,13 @@ namespace Terraforming.Dominoes
                     return;
                 }
             }
-            else if(token.animal.chainLevel == ENUM_FoodChainLevel.Bug && biome == 0)
+            else if(token.animal.chainLevel == ENUM_FoodChainLevel.Bug)
             {
+                if (biome != 0)
+                {
+                    token.InvalidDrop();
+                    return;
+                }
                 PunishToken thisPunishToken = GetComponent<PunishToken>();
                 if (thisPunishToken.savable)
                 {
@@ -111,7 +118,15 @@ namespace Terraforming.Dominoes
             //Check when animal is not a condor
             else if ((biome & token.animal.biome) == biome)
             {
-                OccupyPole(token.spawnedPrefab, centroid);
+                //Check current population in the group
+                if (group.AddAnimal(token.animal.chainLevel))
+                {
+                    OccupyPole(token.spawnedPrefab, centroid);
+                }
+                else
+                    token.InvalidDrop();
+
+                return;
             }
             else
             {
@@ -197,7 +212,19 @@ namespace Terraforming.Dominoes
         {
             occupuied = true;
             animal.transform.position = position.position;
+
+            AnimalBehaviour animalBehaviour = animal.GetComponent<AnimalBehaviour>();
+            animalBehaviour.OnAnimalDroped();
+            animalData = animalBehaviour.animalData;
             EventManager.Dispatch(ENUM_AnimalEvent.animalDroped);
+        }
+
+        /// <summary>
+        /// This method should only be called by the PunishToken script
+        /// </summary>
+        public void MarkPunishTokenPoleAsOccupied()
+        {
+            occupuied = true;
         }
     }
 }

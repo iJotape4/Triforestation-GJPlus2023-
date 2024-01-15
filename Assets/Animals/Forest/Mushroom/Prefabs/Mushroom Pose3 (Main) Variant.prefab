@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9949b93f0a9e0484e96f4fd149c4eec2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.026
+      value: -0.026000023
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9949b93f0a9e0484e96f4fd149c4eec2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -114,9 +114,33 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f81970790e2fedb48b3d63576e2063ee, type: 2}
+    - target: {fileID: 5957310857724888309, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: animalData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1bb0996353e8cf24f8502592140dc224, type: 2}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: animal
+      value: 
+      objectReference: {fileID: 11400000, guid: 1bb0996353e8cf24f8502592140dc224, type: 2}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: baseTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 1a4cc7cca6014a947a7402c5f7d4874e, type: 3}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.b
+      value: 0.4745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.g
+      value: 0.4745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723494122121730569, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
+      propertyPath: groupColor.r
+      value: 0.4745098
+      objectReference: {fileID: 0}
     - target: {fileID: 7666611121050271113, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
       propertyPath: m_Name
-      value: Mushroom Variant
+      value: Mushroom Pose3 (Main) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7666611121050271113, guid: e3170d6c87faae645859ea638cb1339c, type: 3}
       propertyPath: m_IsActive

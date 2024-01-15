@@ -21,8 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/TriangularGridWithTiles.unity
     guid: 5efa14d7929170c4dafae18a39bc52e1
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: f99cb20bf29f6664d8d7623b8424ff7a
+    path: Assets/Scenes/Credits.unity
+    guid: aed36ab2dee4ffb409ca86c945c88def
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: ece7049f36eddc742a5e559130e9269e, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 98a2627a5fc675c4891aeda314e11928, type: 2}

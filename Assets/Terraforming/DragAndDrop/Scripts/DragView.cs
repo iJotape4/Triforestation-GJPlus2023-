@@ -33,14 +33,14 @@ namespace Terraforming
             collider = GetComponent<Collider>();
             EventManager.AddListener(ENUM_DominoeEvent.startOrRestartSwapEvent, EnableClicking);
             EventManager.AddListener(ENUM_DominoeEvent.selectCardToSwipeEvent, DisableClicking);
-            EventManager.AddListener(ENUM_DominoeEvent.confirmSwapEvent, EnableDrag);
+            EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, EnableDrag);
         }
 
         private void OnDestroy()
         {
             EventManager.RemoveListener(ENUM_DominoeEvent.startOrRestartSwapEvent, EnableClicking);
             EventManager.RemoveListener(ENUM_DominoeEvent.selectCardToSwipeEvent, DisableClicking);
-            EventManager.RemoveListener(ENUM_DominoeEvent.confirmSwapEvent, EnableDrag);
+            EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, EnableDrag);
         }
 
         private void EnableClicking()
@@ -62,10 +62,12 @@ namespace Terraforming
         {
             //Debug.Log($"OnBeginDrag {eventData.position}", gameObject);
             if (!draggingAllowed) return;
-            initialDragPosition = transform.position;
+            initialDragPosition = transform.localPosition;
             collider.enabled = false;
             isDragging = true;
             OnDragBegan?.Invoke(eventData);
+            if (mainCamera == null)
+                mainCamera = Camera.main;
             distanceToCamera = Vector3.Distance(transform.position, mainCamera.transform.position);
             EventManager.Dispatch(ENUM_SFXEvent.dragSound);
         }
@@ -104,7 +106,7 @@ namespace Terraforming
 
         void ReturnToPosition()
         {
-            transform.position = initialDragPosition;
+            transform.localPosition = initialDragPosition;
             collider.enabled = true;
             isDragging = false;
         }

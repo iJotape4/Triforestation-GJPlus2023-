@@ -15,6 +15,7 @@ public class DivineHelpsManager : SinglentonParent<DivineHelpsManager>
     private void OnDestroy()
     {
         EventManager.RemoveListener(ENUM_DominoeEvent.selectDoneEvent, EnableDivineHelpsPanel);      
+        EventManager.RemoveListener<GameObject>(ENUM_DominoeEvent.startBonusMoorEvent, SpawnBonusMoor); 
     }
 
     private void EnableDivineHelpsPanel()
