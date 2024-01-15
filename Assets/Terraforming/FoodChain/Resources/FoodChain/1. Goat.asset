@@ -16,7 +16,7 @@ MonoBehaviour:
   chainLevel: 4
   aliments: 8
   biome: 4
-  sprite: {fileID: 1315108004, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
+  sprite: {fileID: 21300000, guid: 21c7eabbe540d4b4b8fb5c6baebfe2fc, type: 3}
   _3dPrefab:
   - {fileID: 6805557486217847188, guid: ace56b206907edb4e9608b9f1fbcad6c, type: 3}
   animalSFX: 62
