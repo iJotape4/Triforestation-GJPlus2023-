@@ -10,7 +10,8 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     [Header("Animal Data")]
     [SerializeField] public Animal animal;
-    [SerializeField] Image UiImage;
+    [SerializeField] Image animalImage;
+    [SerializeField] Image backgroundImage;
 
     [Header("CurrentPrefab Data")]
     private bool isDragging = false;
@@ -30,7 +31,8 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     private void SetAnimalValues()
     {
-        UiImage.sprite = animal.sprite;
+        animalImage.sprite = animal.sprite;
+        backgroundImage.color = animal.GetChainLevelColor();
     }
 
     public void OnPointerDown(PointerEventData eventData)
