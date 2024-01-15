@@ -19,4 +19,4 @@ MonoBehaviour:
   sprite: {fileID: 1662164548, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
   - {fileID: 6649569481775955041, guid: 19bf4843a54f9094eba8d9d075b59d67, type: 3}
-  animalSFX: 0
+  animalSFX: 67
