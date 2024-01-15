@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TutorialLevelButton : LevelButton
 {
-    protected override string sceneToLoad => "Tutorial";
+    protected override string sceneToLoad => "TutorialSOS";
 
 
     protected override IEnumerator SetLevelData()
@@ -14,5 +14,10 @@ public class TutorialLevelButton : LevelButton
         pooler.SetLevel(level);
         SceneManager.UnloadSceneAsync(levelSelectorScene);
         yield return null;
+    }
+
+    public override void OnMouseDown()
+    {
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

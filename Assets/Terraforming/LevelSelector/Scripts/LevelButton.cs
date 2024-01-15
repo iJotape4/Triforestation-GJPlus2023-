@@ -41,7 +41,7 @@ namespace LevelSelector
         protected void SwitchButtonsActivation(bool activated)=>
             circleCollider.enabled= !activated;
 
-        public void OnMouseDown()=>
+        public virtual void OnMouseDown()=>
            openPopUpRoutine= StartCoroutine(LevelSelected()) ;     
 
         protected IEnumerator LevelSelected()
