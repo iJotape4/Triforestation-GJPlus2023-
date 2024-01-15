@@ -2503,8 +2503,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: TUTORIAL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1b795a591c3e873429ce6d64a226f99d, type: 2}
-  m_sharedMaterial: {fileID: 7204491610982886953, guid: 1b795a591c3e873429ce6d64a226f99d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 44d737a8133f8f941943622c4bbbc109, type: 2}
+  m_sharedMaterial: {fileID: 1305574659375970016, guid: 44d737a8133f8f941943622c4bbbc109, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2528,13 +2528,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7.55
+  m_fontSize: 8.45
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 5
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
