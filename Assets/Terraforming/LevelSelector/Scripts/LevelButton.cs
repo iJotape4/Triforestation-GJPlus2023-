@@ -16,7 +16,7 @@ namespace LevelSelector
         [SerializeField] GameObject transFlashes;
 
         [SerializeField] private CinemachineVirtualCamera menuCam;
-        [SerializeField] private CinemachineVirtualCamera[] lvlSelected;
+        [SerializeField] private CinemachineVirtualCamera lvlSelected;
 
         Coroutine openPopUpRoutine;
         const string sceneToLoad = "TriangularGridWithTiles"; 
@@ -57,7 +57,7 @@ namespace LevelSelector
             EventManager.Dispatch(ENUM_LevelSelectorEvent.Play);
             ps.Play();
             menuCam.Priority = 0;
-            lvlSelected[level.level - 1].Priority = 1;
+            lvlSelected.Priority = 1;
             transFlashes.SetActive(true);
             yield return new WaitForSeconds(2f);
             StartCoroutine(LoadSceneAndExecuteScript());
