@@ -4,4 +4,5 @@ public enum ENUM_AnimalEvent
     animalPrefabDestroyed,
     animalDroped,
     biomePoleOccupied,
+    pointerUp,
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     private Camera mainCamera;
 
@@ -23,6 +23,28 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         mainCamera = Camera.main;
     }
 
+    private void Awake()
+    {
+        EventManager.AddListener(ENUM_AnimalEvent.animalPrefabCreated, DisableAnimalUIImage);
+        EventManager.AddListener(ENUM_AnimalEvent.pointerUp, EnableAnimalUIImage);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.RemoveListener(ENUM_AnimalEvent.animalPrefabCreated, DisableAnimalUIImage);
+        EventManager.RemoveListener(ENUM_AnimalEvent.pointerUp, EnableAnimalUIImage);
+    }
+
+    private void DisableAnimalUIImage()
+    {
+        animalImage.raycastTarget = false;
+    }
+
+    private void EnableAnimalUIImage()
+    {
+       animalImage.raycastTarget = true;
+    }
+
     public void SetAnimal(Animal _animal)
     {
         animal = _animal;
@@ -35,12 +57,25 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         //backgroundImage.color = animal.GetChainLevelColor();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        // Spawn the prefab at the cursor position
         spawnedPrefab = Instantiate(animal.Get3DPrefab(), GetMouseWorldPosition(eventData), Quaternion.identity);
         EventManager.Dispatch(ENUM_AnimalEvent.animalPrefabCreated);
         isDragging = true;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        isDragging = false;
+        EventManager.Dispatch(ENUM_AnimalEvent.pointerUp);
+        if (!canDrop)
+            InvalidDrop();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        // Spawn the prefab at the cursor position
+        animalImage.raycastTarget = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -55,12 +90,6 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     /// Clean the spawned prefab if the drop is not valid
     /// </summary>
     /// <param name="eventData"></param>
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        isDragging = false;
-        if (!canDrop)    
-            InvalidDrop();       
-    }
 
     private Vector3 GetMouseWorldPosition(PointerEventData eventData)
     {
