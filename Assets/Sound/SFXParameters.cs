@@ -118,3 +118,9 @@ public enum SFXParameters_Animal
     Titi_Mono = 67,
     Mushroom = 68
 }
+public enum SFXParameters_Lenguage
+{
+    //Parameter Name -> Lenguage
+    ES = 0,
+    US = 1,
+}
