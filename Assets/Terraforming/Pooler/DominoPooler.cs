@@ -6,6 +6,7 @@ using UnityEngine;
 using MyBox;
 using LevelSelector;
 using System.Collections;
+using Terraforming;
 
 public class DominoPooler : MonoBehaviour
 {
@@ -138,7 +139,7 @@ public class DominoPooler : MonoBehaviour
 
             // Play the sequence
             uncoverSequence.Play();
- 
+            domino.gameObject.AddComponent<DragView>();
             return domino;
         }
         lastCardOnHand = true;
