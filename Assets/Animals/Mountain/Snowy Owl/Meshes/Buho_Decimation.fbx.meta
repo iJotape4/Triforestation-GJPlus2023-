@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Buho
+    second: {fileID: 2100000, guid: 3653648f88fd29648b48e60739522343, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Merged_Buho8
     second: {fileID: 2100000, guid: 3653648f88fd29648b48e60739522343, type: 2}
   materials:
