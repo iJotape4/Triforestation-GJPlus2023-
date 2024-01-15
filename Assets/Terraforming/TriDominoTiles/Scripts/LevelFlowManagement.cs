@@ -6,6 +6,7 @@ public class LevelFlowManagement : MonoBehaviour
 {
     private int savableHazardsAmount = 0;
     private int droppedTokens;
+    private int droppedMoors;
     private int generatedDropTiles;
     private int generatedPunishTiles;
     private int droppablePoles, droppedAnimals=0;
@@ -15,7 +16,7 @@ public class LevelFlowManagement : MonoBehaviour
         EventManager.AddListener(ENUM_GameState.firstPhaseFinished, CountSavablehazards);
         EventManager.AddListener(ENUM_GameState.recoveredEcosystem, RecoveredEcosystem);
         EventManager.AddListener(ENUM_DominoeEvent.dominoDroppedEvent, CountTotalTokens);
-        EventManager.AddListener(ENUM_DominoeEvent.spawnedMoorEvent, CountTotalTokens);
+        EventManager.AddListener(ENUM_DominoeEvent.spawnedMoorEvent, CountMoors);
         EventManager.AddListener(ENUM_DominoeEvent.generatedTileEvent, CountGeneratedTiles);
         EventManager.AddListener(ENUM_DominoeEvent.finishPunishEvent, CheckIfAvailableMovements);
         EventManager.AddListener(ENUM_AnimalEvent.biomePoleOccupied, CheckLevelEnd);
@@ -26,7 +27,7 @@ public class LevelFlowManagement : MonoBehaviour
         EventManager.RemoveListener(ENUM_GameState.firstPhaseFinished, CountSavablehazards);
         EventManager.RemoveListener(ENUM_GameState.recoveredEcosystem, RecoveredEcosystem);
         EventManager.RemoveListener(ENUM_DominoeEvent.dominoDroppedEvent, CountTotalTokens);
-        EventManager.RemoveListener(ENUM_DominoeEvent.spawnedMoorEvent, CountTotalTokens);
+        EventManager.RemoveListener(ENUM_DominoeEvent.spawnedMoorEvent, CountMoors);
         EventManager.RemoveListener(ENUM_DominoeEvent.generatedTileEvent, CountGeneratedTiles);
         EventManager.RemoveListener(ENUM_DominoeEvent.finishPunishEvent, CheckIfAvailableMovements);
         EventManager.RemoveListener(ENUM_AnimalEvent.biomePoleOccupied, CheckLevelEnd);
@@ -38,6 +39,7 @@ public class LevelFlowManagement : MonoBehaviour
     }
 
     public void CountTotalTokens() => droppedTokens++;
+    public void CountMoors() => droppedMoors++;
     public void CountGeneratedTiles() => generatedDropTiles++;
     public void CheckIfAvailableMovements()
     {
@@ -47,7 +49,7 @@ public class LevelFlowManagement : MonoBehaviour
         Debug.Log("Generated punish tiles" + generatedPunishTiles);
         Debug.Log("Dropped tokens" + droppedTokens);
 
-        if(generatedPunishTiles +  droppedTokens >= generatedDropTiles)
+        if(generatedPunishTiles +  droppedTokens +droppedMoors >= generatedDropTiles)
         {
             Debug.Log("No more available movements");
             EventManager.Dispatch(ENUM_GameState.firstPhaseFinished);

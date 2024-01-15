@@ -1039,6 +1039,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 999322801207313637, guid: 2af43dd13e5f446488e961710c6b0752, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5880946060814512151, guid: 2af43dd13e5f446488e961710c6b0752, type: 3}
       propertyPath: m_Name
       value: Grid
@@ -1082,6 +1086,10 @@ PrefabInstance:
     - target: {fileID: 6268585740690386699, guid: 2af43dd13e5f446488e961710c6b0752, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231698663814202805, guid: 2af43dd13e5f446488e961710c6b0752, type: 3}
+      propertyPath: fmodEventPathGame
+      value: event:/MainMusic
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
