@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
-  m_Name: Condor
+  m_Name: 1. Goat
   m_EditorClassIdentifier: 
-  name: Condor
-  chainLevel: 1
-  aliments: 6
-  biome: 0
-  sprite: {fileID: -1590002696, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
+  name: Goat
+  chainLevel: 4
+  aliments: 8
+  biome: 4
+  sprite: {fileID: 1315108004, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
-  - {fileID: 4900423996290013307, guid: 32826dcdb6f9efa499abdb6797cf517f, type: 3}
-  animalSFX: 60
+  - {fileID: 6805557486217847188, guid: ace56b206907edb4e9608b9f1fbcad6c, type: 3}
+  animalSFX: 62

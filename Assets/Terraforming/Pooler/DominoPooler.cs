@@ -121,14 +121,14 @@ public class DominoPooler : MonoBehaviour
 
           
             // Add the local move animation to the sequence
-            uncoverSequence.Append(domino.transform.DOMove(_nextPosition.position, moveDuration))
+            uncoverSequence.Append(domino.transform.parent.DOLocalMove(_nextPosition.localPosition, moveDuration))
                 .OnStart(() =>
                 {
                     
                 });
 
             // Add the rotation animation (both parts) to the sequence using Join
-            uncoverSequence.Join(domino.transform.DORotate(new Vector3(0, 0, 180), moveDuration, RotateMode.WorldAxisAdd))
+            uncoverSequence.Join(domino.transform.parent.DORotate(new Vector3(0, 0, 180), moveDuration, RotateMode.WorldAxisAdd))
                 .OnComplete(() =>
                 {
 
@@ -184,7 +184,7 @@ public class DominoPooler : MonoBehaviour
 
             // Reset the position of the domino in the row from left to right.
             float xPos = i * dominoSpacing; // Adjust the spacing as needed.
-            domino.transform.localPosition = new Vector3(xPos, 0, 0);
+            domino.transform.parent.localPosition = new Vector3(xPos, 0, 0);
 
             domino.ResetDomino();
         }

@@ -147,17 +147,17 @@ namespace Terraforming.Dominoes
         public void UncoverDomino()
         {
             // Rotate the GameObject by 180 degrees in the Z-axis
-            transform.DORotate(new Vector3(0, 0, 180), uncoverDuration)
+            transform.parent.DORotate(new Vector3(0, 0, 180), uncoverDuration)
                 .OnComplete(() =>
                 {
                     // Rotate the GameObject back to 0 degrees
-                    transform.DORotate(Vector3.zero, uncoverDuration);
+                    transform.parent.DORotate(Vector3.zero, uncoverDuration);
                 });
         }
 
         protected void CoverDomino()
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180f));
+            transform.parent.rotation = Quaternion.Euler(new Vector3(0, 0, 180f));
         }
 
         public void ResetDomino()

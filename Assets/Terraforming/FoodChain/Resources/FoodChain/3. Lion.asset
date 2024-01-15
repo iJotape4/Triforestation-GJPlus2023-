@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
-  m_Name: Anaconda
+  m_Name: 3. Lion
   m_EditorClassIdentifier: 
-  name: Anaconda
+  name: Lion
   chainLevel: 1
   aliments: 6
-  biome: 1
-  sprite: {fileID: -1307022405, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
+  biome: 8
+  sprite: {fileID: 1042037671, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
-  - {fileID: 2008245617533206449, guid: fb3a333eff852424c89f81fad6bfee46, type: 3}
-  animalSFX: 20
+  - {fileID: 1122889753887530288, guid: 8cc8042a696969246a2d1eb6c1315dc1, type: 3}
+  animalSFX: 48

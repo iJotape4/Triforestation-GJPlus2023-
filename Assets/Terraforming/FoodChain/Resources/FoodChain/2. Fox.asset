@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0fbc63f3eecdc34586eb44c5692cc58, type: 3}
-  m_Name: Grizzly
+  m_Name: 2. Fox
   m_EditorClassIdentifier: 
-  name: Grizzly
-  chainLevel: 1
-  aliments: 6
+  name: Fox
+  chainLevel: 2
+  aliments: 4
   biome: 2
-  sprite: {fileID: 141989173, guid: 7c14ca976a935de4a95d2ebec80df5ce, type: 3}
+  sprite: {fileID: -1954884513, guid: 53074d1b4bbe2dd47a02fb4050238072, type: 3}
   _3dPrefab:
-  - {fileID: 3748672138636635967, guid: b531993067ac4b542828a4f8db0788cb, type: 3}
-  animalSFX: 8
+  - {fileID: 8849616815564060321, guid: 4b3d36e9ee3cfff4ca5c4e69f081e792, type: 3}
+  animalSFX: 24
