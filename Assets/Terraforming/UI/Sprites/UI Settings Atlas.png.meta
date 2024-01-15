@@ -144,7 +144,7 @@ TextureImporter:
         width: 487
         height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
         width: 277
         height: 347
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
         width: 2458
         height: 1669
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
         width: 446
         height: 319
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,7 +228,7 @@ TextureImporter:
         width: 456
         height: 348
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,48 +236,6 @@ TextureImporter:
       bones: []
       spriteID: fc73cc825556b084d9de419b25ed239a
       internalID: -438655179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Settings Atlas_9
-      rect:
-        serializedVersion: 2
-        x: 2787
-        y: 813
-        width: 1422
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce880725112f76847884a6c9d5fd3057
-      internalID: 715264235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Settings Atlas_10
-      rect:
-        serializedVersion: 2
-        x: 2785
-        y: 637
-        width: 1419
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fae25c0387dbd5b4f965e352625c374b
-      internalID: 1295133542
       vertices: []
       indices: 
       edges: []
@@ -291,7 +249,7 @@ TextureImporter:
         width: 87
         height: 148
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,6 +257,48 @@ TextureImporter:
       bones: []
       spriteID: 724c03c4c113e33479872e1acbd888a2
       internalID: -638843520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Settings Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 3059
+        y: 832
+        width: 262
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 44, y: 0, z: 44, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82137cd0936000a42becc94ebe3c8cd9
+      internalID: 964355398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Settings Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 3069
+        y: 600
+        width: 224
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 32, y: 0, z: 32, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b6a9acd3947f5409d5a4244643343b
+      internalID: -1091554783
       vertices: []
       indices: 
       edges: []
