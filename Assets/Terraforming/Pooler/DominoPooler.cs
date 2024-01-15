@@ -75,7 +75,7 @@ public class DominoPooler : MonoBehaviour
         for (int i = 0; i < levelData.dominoesAmount; i++)
         {
             GameObject dominoObj = Instantiate(dominoPrefab, transform);
-            DominoToken domino = dominoObj.GetComponent<DominoToken>();
+            DominoToken domino = dominoObj.GetComponentInChildren<DominoToken>();
 
             // Set the position of the domino in a row from left to right.
             float xPos = i * dominoSpacing; // Adjust the spacing as needed.
@@ -121,7 +121,7 @@ public class DominoPooler : MonoBehaviour
 
           
             // Add the local move animation to the sequence
-            uncoverSequence.Append(domino.transform.DOLocalMove(_nextPosition.localPosition, moveDuration))
+            uncoverSequence.Append(domino.transform.DOMove(_nextPosition.position, moveDuration))
                 .OnStart(() =>
                 {
                     

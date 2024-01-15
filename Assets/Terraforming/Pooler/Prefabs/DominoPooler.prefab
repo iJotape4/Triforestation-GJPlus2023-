@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733df23e1cb0f614a96008333d661947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dominoPrefab: {fileID: 4477710225184033123, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+  dominoPrefab: {fileID: 5050254421979034670, guid: fd526f905fa92b744a15a580d9771f3f, type: 3}
   dominoSpacing: -0.2
   dominoesSpots:
   - {fileID: 9155162338373733049}

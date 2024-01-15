@@ -180,14 +180,20 @@ namespace Terraforming.Dominoes
         public void SwapBiomes()
         {
             animator.enabled =true;
-            animator.SetBool(ANIMATOR_SWAPTRIGGER, true) ;
+            animator.SetBool(ANIMATOR_SWAPTRIGGER, !wasSwaped) ;
+
+            ENUM_PolePosition positionPole0 = poles[0].position;
+            ENUM_PolePosition positionPole1 = poles[1].position;
+
+            poles[0].position = positionPole1;
+            poles[1].position = positionPole0;
 
             //OLD Implementation
             //ENUM_Biome biome1 = poles[0].biome;
             //ENUM_Biome biome2 = poles[1].biome;
             //poles[0].AssignBiome(biome2);
             //poles[1].AssignBiome(biome1);
-            wasSwaped = true;
+            wasSwaped = !wasSwaped;
         }
 
         public void RevertSwapBiome()
@@ -195,9 +201,10 @@ namespace Terraforming.Dominoes
             if (!wasSwaped)
                 return;
 
-            //SwapBiomes();
-            animator.SetBool(ANIMATOR_SWAPTRIGGER, false);
-            SetWasSwappedToFalse();
+            SwapBiomes();
+            //animator.SetBool(ANIMATOR_SWAPTRIGGER, false);
+            //Array.Reverse(poles);
+            //SetWasSwappedToFalse();
         }
 
         public void SetWasSwappedToFalse() => wasSwaped =false;
