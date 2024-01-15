@@ -13,6 +13,8 @@ namespace LevelSelector
         [SerializeField] Collider circleCollider;
         [SerializeField] ParticleSystem ps;
 
+        [SerializeField] GameObject transFlashes;
+
         [SerializeField] private CinemachineVirtualCamera menuCam;
         [SerializeField] private CinemachineVirtualCamera[] lvlSelected;
 
@@ -55,7 +57,8 @@ namespace LevelSelector
             EventManager.Dispatch(ENUM_LevelSelectorEvent.Play);
             ps.Play();
             menuCam.Priority = 0;
-            lvlSelected[level.level].Priority = 1;
+            lvlSelected[level.level - 1].Priority = 1;
+            transFlashes.SetActive(true);
             yield return new WaitForSeconds(2f);
             StartCoroutine(LoadSceneAndExecuteScript());
         }
