@@ -100,6 +100,7 @@ public class TutorialUI : MonoBehaviour
     }
 
     // Event triggered when dialogue is turned off
+    // Event triggered when dialogue is turned off
     private void OnDialogueOffEvent()
     {
         // Deactivate the current dialogue element

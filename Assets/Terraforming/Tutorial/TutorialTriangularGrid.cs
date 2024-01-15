@@ -37,7 +37,17 @@ public class TutorialTriangularGrid : TriangularGrid
         // SECOND TUTORIAL STEP
         tutorialLocationQueue.Enqueue(new Vector3Int(1, 0, 0)); // ACID RAIN CELL
         tutorialLocationQueue.Enqueue(new Vector3Int(0, -1, 2)); // SWAPED DOMINO CELL
-        // Add more locations as needed.
+
+
+        // LAST PIECES
+        tutorialLocationQueue.Enqueue(new Vector3Int(0, 0, 1)); //1
+        tutorialLocationQueue.Enqueue(new Vector3Int(0, 1, 1)); // 2
+        tutorialLocationQueue.Enqueue(new Vector3Int(0, 1, 0)); // 3
+        tutorialLocationQueue.Enqueue(new Vector3Int(1, 1, 0)); // 4
+        tutorialLocationQueue.Enqueue(new Vector3Int(2, -1, 0)); // 5
+        tutorialLocationQueue.Enqueue(new Vector3Int(2, 0, 0)); // 6
+        tutorialLocationQueue.Enqueue(new Vector3Int(0, 2, 0)); // 7
+        tutorialLocationQueue.Enqueue(new Vector3Int(0, 0, 2)); // 8
     }
 
     public Vector3 GiveNextCenter()

@@ -155,9 +155,64 @@ public class TutorialManager : MonoBehaviour
         Vector3 position = _triangularGrid.GiveNextCenter();
         swapedDomino.transform.DOMove(position, 2f).SetEase(Ease.Linear).OnComplete(() =>
         {
+            StartCoroutine(ThirdTutorialStep());
+        });
+        yield return null;
+    }
+
+    private IEnumerator ThirdTutorialStep()
+    {
+        yield return new WaitForSeconds(1.5f);
+        /*
+        for (int i = 6; i < 9; i++)
+        {
+            // Get the current domino and spot
+            GameObject currentDomino = dominoes[i];
+            GameObject currentSpot = dominoesSpots[i - 3];
+
+            // Set the initial position of the domino to the spot
+            currentDomino.transform.position = currentSpot.transform.position;
+
+            // Use DoTween to move the domino to its initial position with a delay
+            currentDomino.transform.DOMove(currentSpot.transform.position, 1.0f)
+                .SetDelay(i * 0.5f)  // Adjust the delay as needed
+                .SetEase(Ease.Linear);  // Adjust the ease as needed
+        }
+        yield return new WaitForSeconds(1.5f);
+        */
+
+        Sequence mySequence = DOTween.Sequence();
+
+        // First Tween (Move and Rotate)
+        mySequence.Append(dominoes[4].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f));
+        mySequence.Join(dominoes[4].transform.DORotate(new Vector3(0f, -180f, 0f), 0.6f)).SetEase(Ease.Linear);
+
+        mySequence.Append(dominoes[5].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        mySequence.Join(dominoes[5].transform.DORotate(new Vector3(0f, 120f, 0f), 0.6f).SetEase(Ease.Linear));
+
+        mySequence.Append(dominoes[6].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        mySequence.Join(dominoes[6].transform.DORotate(new Vector3(0f, -180f, 0f), 0.6f).SetEase(Ease.Linear));
+
+        // Start the second Tween after a delay of 1 second
+        mySequence.Append(dominoes[7].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        mySequence.Join(dominoes[7].transform.DORotate(new Vector3(0f, 0, 0f), 0.6f).SetEase(Ease.Linear));
+
+        mySequence.Append(dominoes[8].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        mySequence.Join(dominoes[8].transform.DORotate(new Vector3(0f, -60f, 0f), 0.6f).SetEase(Ease.Linear));
+
+        mySequence.Append(dominoes[9].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        mySequence.Join(dominoes[9].transform.DORotate(new Vector3(0f, 0, 0f), 0.6f).SetEase(Ease.Linear));
+
+        mySequence.Append(dominoes[10].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        mySequence.Join(dominoes[10].transform.DORotate(new Vector3(0f, 240, 0f), 0.6f).SetEase(Ease.Linear));
+
+        mySequence.Append(dominoes[11].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        mySequence.Join(dominoes[11].transform.DORotate(new Vector3(0f, 0, 0f), 0.6f).SetEase(Ease.Linear)).OnComplete(() =>
+        {
             // Dispatch an event when the third animation finishes
             EventManager.Dispatch(ENUM_TutorialEvent.OnDialogueOn);
-        });
+        }); ;
+
         yield return null;
     }
 }
