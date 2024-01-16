@@ -12,6 +12,7 @@ public class TutorialManager : MonoBehaviour
     private TutorialTriangularGrid _triangularGrid;
     public GameObject[] dominoes;
     public GameObject[] dominoesSpots;
+    public DominoToken[] tokensInBoard = new DominoToken[12];
 
 
     // Second tutorial step
@@ -20,12 +21,22 @@ public class TutorialManager : MonoBehaviour
     public GameObject divineHelpsUI;
     public GameObject swapConfirmUI;
 
+    // Animals phase
+    public GameObject mainCamera;
+    public GameObject[] dominoSpots;
+
     private int dialogueOffCount = 0; // Counter to keep track of how many times DialogueOff is dispatched
+
+    public Dictionary<ENUM_Biome, int> biomeCounts = new Dictionary<ENUM_Biome, int>();
 
     private void Start()
     {
         SetFirstDominoes();
         _triangularGrid = FindObjectOfType<TutorialTriangularGrid>();
+        foreach (ENUM_Biome biome in System.Enum.GetValues(typeof(ENUM_Biome)))
+        {
+            biomeCounts[biome] = 0;
+        }
         EventManager.AddListener(ENUM_TutorialEvent.OnDialogueOff, OnDialogueOffEvent);
     }
 
@@ -43,6 +54,52 @@ public class TutorialManager : MonoBehaviour
     public void UpdateNextTokenToPlace()
     {
         _pooler.GetNextToken();
+    }
+
+    [ContextMenu("Contar biomas")]
+    public void CountBiomes()
+    {
+        
+
+        // Iterate through the dominoes array
+        for (int i = 0; i < dominoes.Length; i++)
+        {
+            // Get the DominoToken component from the current GameObject
+            DominoToken dominoToken = dominoes[i].GetComponent<DominoToken>();
+
+            // Check if the component exists
+            if (dominoToken != null)
+            {
+                // Assign the obtained DominoToken to the tokensInBoard array
+                tokensInBoard[i] = dominoToken;
+            }
+            else
+            {
+                // Handle the case where DominoToken component is not found
+                Debug.LogError($"DominoToken component not found on {dominoes[i].name}");
+            }
+        }
+
+        foreach (DominoToken token in tokensInBoard)
+        {
+            DominoPole[] poles = token.gameObject.GetComponentsInChildren<DominoPole>();
+
+            foreach (var pole in poles)
+            {
+                IncreaseBiomeCount(pole.biome);
+            }
+        }
+
+        GameManager.Instance.SetDictionary(biomeCounts);
+    }
+
+    // Method to increase the count of a specific biome.
+    public void IncreaseBiomeCount(ENUM_Biome biome)
+    {
+        if (biomeCounts.ContainsKey(biome))
+        {
+            biomeCounts[biome]++;
+        }
     }
 
     public void SetFirstDominoes()
@@ -99,6 +156,7 @@ public class TutorialManager : MonoBehaviour
 
             // Set the initial position of the domino to the spot
             currentDomino.transform.position = currentSpot.transform.position;
+            currentDomino.SetActive(true);
 
             // Use DoTween to move the domino to its initial position with a delay
             currentDomino.transform.DOMove(currentSpot.transform.position, 1.0f)
@@ -123,6 +181,10 @@ public class TutorialManager : MonoBehaviour
                 break;
             case 2:
                 SecondTutorialStep();
+                break;
+
+            case 3:
+                AnimalsPhase();
                 break;
             default:
                 break;
@@ -184,28 +246,55 @@ public class TutorialManager : MonoBehaviour
         Sequence mySequence = DOTween.Sequence();
 
         // First Tween (Move and Rotate)
+        dominoes[4].SetActive(true);
         mySequence.Append(dominoes[4].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f));
-        mySequence.Join(dominoes[4].transform.DORotate(new Vector3(0f, -180f, 0f), 0.6f)).SetEase(Ease.Linear);
+        mySequence.Join(dominoes[4].transform.DORotate(new Vector3(0f, -180f, 0f), 0.6f)).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            dominoes[5].SetActive(true);
+        }); 
 
-        mySequence.Append(dominoes[5].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        
+        mySequence.Append(dominoes[5].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f).OnComplete(() =>
+        {
+            dominoes[6].SetActive(true);
+        }));
         mySequence.Join(dominoes[5].transform.DORotate(new Vector3(0f, 120f, 0f), 0.6f).SetEase(Ease.Linear));
 
-        mySequence.Append(dominoes[6].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        mySequence.Append(dominoes[6].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f).OnComplete(() =>
+        {
+            dominoes[7].SetActive(true);
+        }));
         mySequence.Join(dominoes[6].transform.DORotate(new Vector3(0f, -180f, 0f), 0.6f).SetEase(Ease.Linear));
 
         // Start the second Tween after a delay of 1 second
-        mySequence.Append(dominoes[7].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        mySequence.Append(dominoes[7].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f).OnComplete(() =>
+        {
+            dominoes[8].SetActive(true);
+        })); 
         mySequence.Join(dominoes[7].transform.DORotate(new Vector3(0f, 0, 0f), 0.6f).SetEase(Ease.Linear));
 
-        mySequence.Append(dominoes[8].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        dominoes[8].SetActive(true);
+        mySequence.Append(dominoes[8].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f).OnComplete(() =>
+        {
+            dominoes[9].SetActive(true);
+        }));
         mySequence.Join(dominoes[8].transform.DORotate(new Vector3(0f, -60f, 0f), 0.6f).SetEase(Ease.Linear));
 
-        mySequence.Append(dominoes[9].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        
+        mySequence.Append(dominoes[9].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f).OnComplete(() =>
+        {
+            dominoes[10].SetActive(true);
+        }));
         mySequence.Join(dominoes[9].transform.DORotate(new Vector3(0f, 0, 0f), 0.6f).SetEase(Ease.Linear));
 
-        mySequence.Append(dominoes[10].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
+        
+        mySequence.Append(dominoes[10].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f).OnComplete(() =>
+        {
+            dominoes[11].SetActive(true);
+        }));
         mySequence.Join(dominoes[10].transform.DORotate(new Vector3(0f, 240, 0f), 0.6f).SetEase(Ease.Linear));
 
+        
         mySequence.Append(dominoes[11].transform.DOMove(_triangularGrid.GiveNextCenter(), 1f).SetDelay(0.5f));
         mySequence.Join(dominoes[11].transform.DORotate(new Vector3(0f, 0, 0f), 0.6f).SetEase(Ease.Linear)).OnComplete(() =>
         {
@@ -214,5 +303,15 @@ public class TutorialManager : MonoBehaviour
         }); ;
 
         yield return null;
+    }
+
+    private void AnimalsPhase()
+    {
+        foreach(GameObject spot in dominoesSpots)
+        {
+            spot.SetActive(false);
+        }
+        CountBiomes();
+        EventManager.Dispatch(ENUM_GameState.poolAnimals);
     }
 }
