@@ -184,6 +184,14 @@ MonoBehaviour:
     m_Localized: Bonus Wildcard
     m_Metadata:
       m_Items: []
+  - m_Id: 4363708451512320
+    m_Localized: 'Congratulations. Your score is: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4363708476678144
+    m_Localized: You are a true nature lover!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

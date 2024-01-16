@@ -184,6 +184,14 @@ MonoBehaviour:
     m_Localized: "B\xF4nus curinga"
     m_Metadata:
       m_Items: []
+  - m_Id: 4363708451512320
+    m_Localized: "Parab\xE9ns. Sua pontua\xE7\xE3o \xE9: "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4363708476678144
+    m_Localized: "Voc\xEA \xE9 um verdadeiro amante da natureza!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

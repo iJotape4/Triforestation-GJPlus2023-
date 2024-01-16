@@ -185,6 +185,14 @@ MonoBehaviour:
     m_Localized: "Comod\xEDn Extra"
     m_Metadata:
       m_Items: []
+  - m_Id: 4363708451512320
+    m_Localized: "Felicitaciones. Tu puntuaci\xF3n es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4363708476678144
+    m_Localized: '!Eres todo un amante de la naturaleza!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

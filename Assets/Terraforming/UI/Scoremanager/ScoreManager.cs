@@ -33,4 +33,8 @@ public class ScoreManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
+    public int GetScore()
+    {
+        return score;
+    }
 }

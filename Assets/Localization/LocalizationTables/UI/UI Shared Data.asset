@@ -167,6 +167,14 @@ MonoBehaviour:
     m_Key: IG_GameOver
     m_Metadata:
       m_Items: []
+  - m_Id: 4363708451512320
+    m_Key: IG_Win
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4363708476678144
+    m_Key: IG_Win2
+    m_Metadata:
+      m_Items: []
   - m_Id: 4284283642961920
     m_Key: MM_Tutorial
     m_Metadata:

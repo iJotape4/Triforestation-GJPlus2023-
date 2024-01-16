@@ -184,6 +184,14 @@ MonoBehaviour:
     m_Localized: Bonus jolly
     m_Metadata:
       m_Items: []
+  - m_Id: 4363708451512320
+    m_Localized: "Congratulazioni. Il vostro punteggio \xE8: "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4363708476678144
+    m_Localized: Sei un vero amante della natura!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
