@@ -7,18 +7,17 @@ public class WinPopUp : PopUp
     [SerializeField] TextMeshProUGUI scoreText;
     private void Awake()
     {
-        EventManager.AddListener(ENUM_GameState.secondPhaseFinished, OpenPopUp);
+        EventManager.AddListener<int>(ENUM_GameState.win, OpenPopUp);
     }
 
     private void OnDestroy()
     {
-        EventManager.RemoveListener(ENUM_GameState.secondPhaseFinished, OpenPopUp);
+        EventManager.RemoveListener<int>(ENUM_GameState.win, OpenPopUp);
     }
 
-    private void OpenPopUp()
+    private void OpenPopUp(int eventData)
     {
-        //TODO: Improve this
-        scoreText.text = FindObjectOfType<ScoreManager>().GetScore().ToString();
+        scoreText.text = eventData.ToString();
         OpenPopUp(true);
     }
 }

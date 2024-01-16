@@ -2269,6 +2269,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3922173514716576214}
     m_Modifications:
+    - target: {fileID: 2864898064789719788, guid: bf29900be0a986c49aff0f96dfdc70e7, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864898064789719788, guid: bf29900be0a986c49aff0f96dfdc70e7, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864898064789719788, guid: bf29900be0a986c49aff0f96dfdc70e7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5438891156915293097, guid: bf29900be0a986c49aff0f96dfdc70e7, type: 3}
       propertyPath: m_Name
       value: ScoreManager
