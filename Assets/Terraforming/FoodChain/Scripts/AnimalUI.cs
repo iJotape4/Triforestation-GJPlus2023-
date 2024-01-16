@@ -118,7 +118,7 @@ public class AnimalUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegin
         }
 
         Debug.LogWarning("No hit", spawnedPrefab);
-        return Vector3.zero; // Default if no hit
+        return new Vector3(1000f, 1000f, 1000f); // Default if no hit
     }
 
     public void InvalidDrop()
