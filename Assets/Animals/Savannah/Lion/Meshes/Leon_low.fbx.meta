@@ -9,6 +9,46 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material_0
     second: {fileID: 2100000, guid: 2be454ec89df17c46b7d02e833e7919f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinnEyes
+    second: {fileID: 2100000, guid: b5f9781cf9ca28f4bb51c6d7e3284b45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinnManeDark
+    second: {fileID: 2100000, guid: 7eb99c5d711942247b0768237101b1eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn_body
+    second: {fileID: 2100000, guid: fa696e5f278957f41b6c743e02f17c7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyes_Lion_complete_pasted__blinn1SG1
+    second: {fileID: 2100000, guid: ecc7866acecea484c9ba6608da8b0876, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fur_fur_blinnManeBeige
+    second: {fileID: 2100000, guid: ca4bac84f00a9d644900578d5a5f77fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fur_fur_blinnManeDark
+    second: {fileID: 2100000, guid: 8c3fc9a4b773b914da51ce47fc5dd644, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fur_fur_blinnManeWhite
+    second: {fileID: 2100000, guid: 5aa74d097dc30b94a801f9ce98de1946, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: guUp_blinn_body
+    second: {fileID: 2100000, guid: fa2c4c36b073ecc458aa86267a9c51b0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -40,7 +80,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 0.4
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -95,7 +135,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.4
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

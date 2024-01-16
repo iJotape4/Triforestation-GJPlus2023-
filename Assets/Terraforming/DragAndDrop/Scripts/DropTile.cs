@@ -33,6 +33,7 @@ public class DropTile : DropView
             eventData.pointerDrag.GetComponent<DragView>().ValidateDrop();
             eventData.pointerDrag.transform.position = transform.position;
             token.TurnOnColliders();
+            token.DisableBack();
             GenerateNeighBors();
             //Set the token as child of the grid-cell
             //In this way, the grid cell could be free again if the token is removed by a swipe

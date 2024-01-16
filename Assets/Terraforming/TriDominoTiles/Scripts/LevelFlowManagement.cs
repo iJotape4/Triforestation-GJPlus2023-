@@ -95,9 +95,11 @@ public class LevelFlowManagement : MonoBehaviour
     private void CheckLevelEnd()
     {
         droppedAnimals++;
+        Debug.Log("Dropped animals" + droppedAnimals);
         if (droppedAnimals >= droppablePoles)
         {
             EventManager.Dispatch(ENUM_GameState.secondPhaseFinished);
+            Debug.Log("Level finished");
         }
     }
 }

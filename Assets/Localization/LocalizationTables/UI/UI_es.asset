@@ -173,6 +173,26 @@ MonoBehaviour:
     m_Localized: Confirmar
     m_Metadata:
       m_Items: []
+  - m_Id: 4284283642961920
+    m_Localized: Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4299790345560064
+    m_Localized: Intercambiar biomas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4299790370725888
+    m_Localized: "Comod\xEDn Extra"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4363708451512320
+    m_Localized: "Felicitaciones. Tu puntuaci\xF3n es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4363708476678144
+    m_Localized: '!Eres todo un amante de la naturaleza!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

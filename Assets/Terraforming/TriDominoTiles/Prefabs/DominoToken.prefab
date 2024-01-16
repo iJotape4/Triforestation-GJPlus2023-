@@ -63,6 +63,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1484172310169694130}
     m_Modifications:
     - target: {fileID: -8795550288409427267, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+      propertyPath: back
+      value: 
+      objectReference: {fileID: 8620025737723975589}
+    - target: {fileID: -8795550288409427267, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 3719814647453920111}
@@ -119,5 +123,10 @@ PrefabInstance:
 --- !u!4 &2964471197849942137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3850530493829927897, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
+  m_PrefabInstance: {fileID: 2039074878294993824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8620025737723975589 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7776665906753649669, guid: 03fbef6377bd96345aba79fc4978a966, type: 3}
   m_PrefabInstance: {fileID: 2039074878294993824}
   m_PrefabAsset: {fileID: 0}

@@ -1,7 +1,8 @@
-using Events;
 using System.Collections;
+using Events;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 namespace LevelSelector
 {
@@ -11,6 +12,12 @@ namespace LevelSelector
         [SerializeField] PregamePopUp pregamePopUP;
         [SerializeField] Collider circleCollider;
         [SerializeField] ParticleSystem ps;
+
+        [SerializeField] GameObject transFlashes;
+
+        [SerializeField] private CinemachineVirtualCamera menuCam;
+        [SerializeField] private CinemachineVirtualCamera lvlSelected;
+
         Coroutine openPopUpRoutine;
         protected virtual string sceneToLoad => "TriangularGridWithTiles"; 
         protected const string levelSelectorScene = "LevelSelector";
@@ -49,7 +56,10 @@ namespace LevelSelector
             EventManager.Dispatch(ENUM_LevelSelectorEvent.LevelSelected);
             EventManager.Dispatch(ENUM_LevelSelectorEvent.Play);
             ps.Play();
-            yield return new WaitForSeconds(1f);
+            menuCam.Priority = 0;
+            lvlSelected.Priority = 1;
+            transFlashes.SetActive(true);
+            yield return new WaitForSeconds(2f);
             StartCoroutine(LoadSceneAndExecuteScript());
         }
 

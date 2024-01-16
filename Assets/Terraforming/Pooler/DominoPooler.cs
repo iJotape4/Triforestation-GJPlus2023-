@@ -227,6 +227,11 @@ public class DominoPooler : MonoBehaviour
         GetNextDomino();
         yield return new WaitForSeconds(0.3f);
         GetNextDomino();
+
+        if (currentDominoesList.Count == 0)
+        {
+            CountBiomes();
+        }
     }
 
     protected void FinishDominoPlacement(DominoToken token)

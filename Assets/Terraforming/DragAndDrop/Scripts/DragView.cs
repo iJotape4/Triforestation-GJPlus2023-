@@ -102,6 +102,9 @@ namespace Terraforming
         public void ValidateDrop()
         {
             validDrop = true;
+            GetComponent<Collider>().enabled = false;
+            //Remove Drag View when dropped. TODO: disable drop in other way if move tokens help is re-enabled
+            Destroy(this);
         }
 
         void ReturnToPosition()
