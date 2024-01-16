@@ -10,7 +10,8 @@ public enum ENUM_SFXEvent
     RotateSound,
     SelectSound,
     UnselectSound,
-    animalSound
+    animalSound,
+    dialogueSound,
 }
 
 public enum ENUM_SFXAnimals
@@ -93,4 +94,44 @@ public enum ENUM_SFXAnimals
     Okapi = 66,
     Titi_Mono = 67,
     Mushroom = 68
+}
+
+public enum ENUM_DialogueEnum
+{
+    DM_Dialogue1_1 = 1,
+    DM_Dialogue1_2,
+    DM_Dialogue1_3,
+    DM_Dialogue1_4,
+    DM_Dialogue1_5,
+    DM_Dialogue1_6,
+    DM_Dialogue1_7,
+    DM_Dialogue1_8,
+    DM_Dialogue1_9,
+    DM_Dialogue1_10,
+    DM_Dialogue1_11,
+    DM_Dialogue1_12,
+    DM_Dialogue1_13,
+    DM_Dialogue2_1,
+    DM_Dialogue2_2,
+    DM_Dialogue2_3,
+    DM_Dialogue2_4,
+    DM_Dialogue2_5,
+    DM_Dialogue2_6,
+    DM_Dialogue2_7,
+    DM_Dialogue2_8,
+    DM_Dialogue2_9,
+    DM_Dialogue2_10,
+    DM_Dialogue2_11,
+    DM_Dialogue2_12,
+    DM_Dialogue2_13,
+    DM_Dialogue2_14,
+    DM_Dialogue2_15,
+    DM_Dialogue2_16,
+    DM_Dialogue2_17,
+    DM_Dialogue2_18,
+    DM_MP_Dialogue3_1,
+    DM_MP_Dialogue3_2,
+    DM_MP_Dialogue4_1,
+    DM_MP_Dialogue4_2,
+    DM_MP_Dialogue4_3
 }
