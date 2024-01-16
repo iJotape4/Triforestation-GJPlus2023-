@@ -15,4 +15,5 @@ public static class SFXDictionary
     public const string ActionSFX = "event:/ActionSfx";
     public const string Animal = "event:/Animal";
     public const string AnimalSeleccionado = "event:/AnimalIsSelected";
+    public const string Dialogos = "event:/Dialogos";
 }
