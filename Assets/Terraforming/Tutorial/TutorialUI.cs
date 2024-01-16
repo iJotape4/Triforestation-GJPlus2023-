@@ -10,6 +10,7 @@ public class TutorialUI : MonoBehaviour
     public GameObject[] firstBlock;
     public GameObject[] secondBlock;
     public GameObject[] thirdBlock;
+    public GameObject[] fourthBlock;
     private int currentDialogueBlockIndex = 0;
     private int currentDialogueIndex = 0;
 
@@ -31,6 +32,7 @@ public class TutorialUI : MonoBehaviour
         dialogueBlocks.Add(firstBlock);
         dialogueBlocks.Add(secondBlock);
         dialogueBlocks.Add(thirdBlock);
+        dialogueBlocks.Add(fourthBlock);
     }
 
     private void Start()

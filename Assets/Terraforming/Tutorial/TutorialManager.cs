@@ -5,6 +5,7 @@ using UnityEngine;
 using DG.Tweening;
 using Events;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class TutorialManager : MonoBehaviour
     // Animals phase
     public GameObject mainCamera;
     public GameObject[] dominoSpots;
+
+    public Transform[] animalLocations;
+    public GameObject ardillaPrefab;
+    public GameObject cabraPrefab;
+    public GameObject zorroPrefab;
 
     private int dialogueOffCount = 0; // Counter to keep track of how many times DialogueOff is dispatched
 
@@ -186,6 +192,9 @@ public class TutorialManager : MonoBehaviour
             case 3:
                 AnimalsPhase();
                 break;
+            case 4:
+                SceneManager.LoadScene("MainMenu");
+                break;
             default:
                 break;
         }
@@ -313,5 +322,38 @@ public class TutorialManager : MonoBehaviour
         }
         CountBiomes();
         EventManager.Dispatch(ENUM_GameState.poolAnimals);
+        StartCoroutine(PlaceAnimals());
+    }
+
+    private IEnumerator PlaceAnimals()
+    {
+        yield return new WaitForSeconds(2f);
+
+        // Instantiate animals
+        GameObject ardilla = Instantiate(ardillaPrefab);
+        GameObject cabra = Instantiate(cabraPrefab);
+        GameObject zorro = Instantiate(zorroPrefab);
+
+        // Move each animal to its respective location using DoTween
+        yield return MoveAnimalToLocation(ardilla, animalLocations[0]);
+        yield return MoveAnimalToLocation(cabra, animalLocations[1]);
+        yield return MoveAnimalToLocation(zorro, animalLocations[2]);
+
+        // The animals are now instantiated and moved to their respective locations
+        // Dispatch the event after the last coroutine is done
+        EventManager.Dispatch(ENUM_TutorialEvent.OnDialogueOn);
+    }
+
+    private IEnumerator MoveAnimalToLocation(GameObject animal, Transform targetLocation)
+    {
+        if (animal != null)
+        {
+            // Use DoTween to move the animal to the target location
+            yield return animal.transform.DOMove(targetLocation.position, 1.0f).WaitForCompletion();
+        }
+        else
+        {
+            Debug.LogError("Animal is null. Make sure the prefab is assigned.");
+        }
     }
 }

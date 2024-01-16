@@ -1188,7 +1188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8002136184903487976, guid: 3c997236157e9ca48b48440a4741d91f, type: 3}
       propertyPath: sceneName
-      value: LevelSelector
+      value: TutorialSOS
       objectReference: {fileID: 0}
     - target: {fileID: 8253758928285584024, guid: 3c997236157e9ca48b48440a4741d91f, type: 3}
       propertyPath: m_LocalPosition.x
