@@ -113,7 +113,7 @@ Material:
     - _AOStrength: 0
     - _ActiveAO: 0
     - _ActiveAlpha: 0
-    - _ActiveNormal: 1
+    - _ActiveNormal: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
