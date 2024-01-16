@@ -25,6 +25,7 @@ public class SFXManager : MonoBehaviour
         EventManager.AddListener(ENUM_AnimalEvent.animalDroped, PlayGoodSound);
         EventManager.AddListener(ENUM_AnimalEvent.animalPrefabDestroyed, PlayErrorSound);
         EventManager.AddListener<ENUM_SFXAnimals>(ENUM_SFXEvent.animalSound, PlayAnimalSound);
+        EventManager.AddListener<ENUM_DialogueEnum>(ENUM_SFXEvent.dialogueSound, PlayDialogueSound);
    }
 
     private void OnDestroy()
@@ -45,6 +46,7 @@ public class SFXManager : MonoBehaviour
         EventManager.RemoveListener(ENUM_AnimalEvent.animalDroped, PlayGoodSound);
         EventManager.RemoveListener(ENUM_AnimalEvent.animalPrefabDestroyed, PlayErrorSound);
         EventManager.RemoveListener<ENUM_SFXAnimals>(ENUM_SFXEvent.animalSound, PlayAnimalSound);
+        EventManager.RemoveListener<ENUM_DialogueEnum>(ENUM_SFXEvent.dialogueSound, PlayDialogueSound);
     }
 
     void PlaySFX(string sFX) => RuntimeManager.PlayOneShot(sFX);
@@ -71,4 +73,6 @@ public class SFXManager : MonoBehaviour
     void PlayAcidRain() => PlaySFX(SFXDictionary.ActionSFX,SFXParameters_ActionSfx.LluviaAcida );
 
     private void PlayAnimalSound(ENUM_SFXAnimals eventData) => PlaySFX(SFXDictionary.Animal, eventData);
+
+    private void PlayDialogueSound(ENUM_DialogueEnum eventData) => PlaySFX(SFXDictionary.Dialogos, eventData);
 }

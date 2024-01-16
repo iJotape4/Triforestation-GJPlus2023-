@@ -81,6 +81,7 @@ public class TutorialUI : MonoBehaviour
         {
             GameObject obj = dialogueBlocks[blockIndex][elementIndex];
             obj.SetActive(isActive);
+            EventManager.Dispatch(ENUM_SFXEvent.dialogueSound, ENUM_DialogueEnum.DM_Dialogue1_1);
         }
     }
 
