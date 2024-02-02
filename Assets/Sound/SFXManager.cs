@@ -59,6 +59,16 @@ public class SFXManager : MonoBehaviour
         sound.start();
     }
 
+    void PlaySFX<T>(string sFx, T parameter, int language) where T : Enum
+    {
+        EventInstance sound = RuntimeManager.CreateInstance(sFx);
+        int parameterID = Convert.ToInt32(parameter);
+        string result = Regex.Replace(sFx, ".*?/", "");
+        FMOD.RESULT param = sound.setParameterByName(result, parameterID);
+        FMOD.RESULT languageParam = sound.setParameterByName("Lenguage", language);
+        sound.start();
+    }
+
     //TOOD Create Methods
     void PlaySFX1() => PlaySFX(SFXDictionary.spellCard, SFXParameters_Button.SpellCard);
     void PlayDragSound() => PlaySFX(SFXDictionary.drag);
@@ -74,5 +84,5 @@ public class SFXManager : MonoBehaviour
 
     private void PlayAnimalSound(ENUM_SFXAnimals eventData) => PlaySFX(SFXDictionary.Animal, eventData);
 
-    private void PlayDialogueSound(ENUM_DialogueEnum eventData) => PlaySFX(SFXDictionary.Dialogos, eventData);
+    private void PlayDialogueSound(ENUM_DialogueEnum eventData) => PlaySFX(SFXDictionary.Dialogos, eventData, LocaleSelector.GetCurrentLanguage());
 }

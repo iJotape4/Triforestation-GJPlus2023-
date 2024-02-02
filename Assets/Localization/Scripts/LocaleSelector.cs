@@ -33,6 +33,8 @@ public class LocaleSelector : MonoBehaviour
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[ID];
         PlayerPrefs.SetInt("LocaleKey", ID);
         SetCircleSelector();
+        Debug.Log(LocalizationSettings.SelectedLocale.name);
+        Debug.Log(GetCurrentLanguage());
     }
 
     private void SetCircleSelector()
@@ -40,5 +42,17 @@ public class LocaleSelector : MonoBehaviour
         circle.rectTransform.parent = rectTransform;
         circle.rectTransform.localPosition = Vector2.zero;
         circle.enabled = true;
+    }
+    public static int GetCurrentLanguage()
+    {
+        return LocalizationSettings.SelectedLocale.name switch
+        {
+            "English (en)" => 0,
+            "Portuguese (Brazil)(pt-BR) " => 1,
+            "Korean (ko)" => 2,
+            "Italian (it)" => 3,
+            "Spanish (es)" => 4,
+            _ => 0,
+        };
     }
 }
